@@ -12,11 +12,14 @@ module.exports = class {
             version: '1.0.0',
             author:  'theMarzon',
 
-            icon:   'https://i.ibb.co/PQGdPKQ/icon.png',
-            banner: 'https://i.ibb.co/b3frzx9/banner.png',
-            logo:   'https://i.ibb.co/ypHGbDq/logo.png',
+            repository: 'https://github.com/theMarzon/Harley',
 
-            repository: 'https://github.com/theMarzon/Harley'
+            images: {
+
+                icon:       'https://i.ibb.co/TksS3Hf/icon.png',
+                banner:     'https://i.ibb.co/BnXP1xg/banner.png',
+                repository: 'https://i.ibb.co/xMqSDYh/repository.png'
+            }
         };
 
         this.flags = {

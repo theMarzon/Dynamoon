@@ -1,7 +1,6 @@
 <div align="center">
-  <br />
   <p>
-    <img src="https://i.ibb.co/ypHGbDq/logo.png" width="546" alt="discord.js" /></a>
+    <img src="https://i.ibb.co/xMqSDYh/repository.png" width="546" alt="discord.js" /></a>
   </p>
 </div>
 
