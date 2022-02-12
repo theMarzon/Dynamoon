@@ -4,7 +4,9 @@
   </p>
 </div>
 
-Handler modular para la creacion de bots con la libreria ``discord.js``
+Handler para crear robots con la libreria ``discord.js``
+
+## Requisitos del proyecto
 
 | Dependencias | Version |
 |--------------|---------|
@@ -14,13 +16,9 @@ Handler modular para la creacion de bots con la libreria ``discord.js``
 
 > _Se recomienda utilizar ``Node.js`` en la version ``16``_
 
-# Estructura
+## Estructura de los directorios
 
-### Orden de los archivos
-
-Cree las carpetas ``events``, ``services``, ``databases`` y ``applications`` junto a sus subcarpetas ``commands``, ``messages`` y ``users`` si no existen para evitar errores
-
-> _Ejemplo de como se verian las carpeta con su contenido_
+> _Ejemplo de como se ven los directorios con contenido_
 
 ```
 applications\
@@ -62,13 +60,13 @@ databases\
     |__ main.js
 ```
 
-### Crea una aplicacion de tipo comando
+## Crear una aplicacion (Comando)
 
-El nombre de la carpeta sera el que utilizara la aplicacion (No puede contener espacios)
+> _El nombre de la carpeta sera el que utilizara la aplicacion (No puede contener espacios)_
 
-El tipo de aplicacion se obtiene dependiendo de en cual categoria se creo la carpeta de la aplicacion
+> _El tipo de aplicacion se obtiene dependiendo de en cual categoria se creo la carpeta de la aplicacion_
 
-El esquema se genera segun los valores del archivo principal
+> _El esquema se genera segun los valores del archivo principal_
 
 ```js
 module.exports = {
@@ -115,13 +113,13 @@ module.exports = {
 };
 ```
 
-### Crea una aplicacion de tipo mensaje
+## Crear una aplicacion (Mensaje)
 
-El nombre de la carpeta sera el que utilizara la aplicacion (No puede contener espacios)
+> _El nombre de la carpeta sera el que utilizara la aplicacion (No puede contener espacios)_
 
-El tipo de aplicacion se obtiene dependiendo de en cual categoria se creo la carpeta de la aplicacion
+> _El tipo de aplicacion se obtiene dependiendo de en cual categoria se creo la carpeta de la aplicacion_
 
-El esquema se genera segun los valores del archivo principal
+> _El esquema se genera segun los valores del archivo principal_
 
 ```js
 module.exports = {
@@ -163,13 +161,13 @@ module.exports = {
 };
 ```
 
-### Crea una aplicacion de tipo usuario
+## Crear una aplicacion (Usuario)
 
-El nombre de la carpeta sera el que utilizara la aplicacion (No puede contener espacios)
+> _El nombre de la carpeta sera el que utilizara la aplicacion (No puede contener espacios)_
 
-El tipo de aplicacion se obtiene dependiendo de en cual categoria se creo la carpeta de la aplicacion
+> _El tipo de aplicacion se obtiene dependiendo de en cual categoria se creo la carpeta de la aplicacion_
 
-El esquema se genera segun los valores del archivo principal
+> _El esquema se genera segun los valores del archivo principal_
 
 ```js
 module.exports = {
@@ -211,9 +209,9 @@ module.exports = {
 };
 ```
 
-### Crea un servicio
+## Crear un servicio
 
-El nombre de la carpeta sera el que utilizara el servicio
+> _El nombre de la carpeta sera el que utilizara el servicio_
 
 ```js
 module.exports = {
@@ -235,9 +233,9 @@ module.exports = {
 };
 ```
 
-### Crea un evento
+## Crear un evento
 
-El nombre de la carpeta sera el que utilizara el evento
+> _El nombre de la carpeta sera el que utilizara el evento_
 
 ```js
 module.exports = {
@@ -259,9 +257,9 @@ module.exports = {
 };
 ```
 
-### Crea una base de datos
+## Crear una base de datos
 
-El nombre de la carpeta sera el que utilizara la base de datos
+> _El nombre de la carpeta sera el que utilizara la base de datos_
 
 ```js
 module.exports = {
@@ -274,7 +272,7 @@ module.exports = {
 };
 ```
 
-# Servicios prefabricados 
+## Servicios prefabricados 
 
 ### Indexer
 

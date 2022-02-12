@@ -3,7 +3,7 @@ const manager = require('./manager/exports.js');
 
 module.exports = function (client) {
 
-    for (const _event of manager.loadeds.events) {
+    for (const _event of manager.files.events) {
 
         // Salta el evento si este no fue cargado
         if (!manager.events[_event.name]) continue;

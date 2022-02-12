@@ -1,9 +1,9 @@
-const loadeds = require('./loadeds.js');
-const events  = require('./events.js');
+const files  = require('./files.js');
+const events = require('./events.js');
 
 let cache = [];
 
-for (const _event of loadeds.events) {
+for (const _event of files.events) {
 
     // Salta la carga si el evento no fue cargado
     if (!events[_event.name]) continue;

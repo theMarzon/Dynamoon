@@ -11,11 +11,11 @@ module.exports = {
         
         application: function ({ client, event, manager, bases, utils }) {
 
-            const embed = new discord.Embed()
+            const messageEmbed = new discord.Embed()
             .setDescription(`Hola ${event.user.toString()}`)
             .setColor(discord.Colors.White);
 
-            event.editReply({ embeds: [ embed ] });
+            event.editReply({ embeds: [ messageEmbed ] });
         }
     }
 };

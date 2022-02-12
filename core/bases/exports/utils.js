@@ -36,48 +36,6 @@ module.exports = class {
     permissions (content) {
 
         const list = {
-/*
-            addReactions:            'Añadir reacciones',
-            administrator:           'Administrador',
-            attachFiles:             'Adjuntar archivos',
-            banMembers:              'Banear miembros',
-            changeNickname:          'Cambiar apodo',
-            connect:                 'Conectar',
-            createInstantInvite:     'Crear invitacion',
-            deafenMembers:           'Ensordecer miembros',
-            embedLinks:              'Insertar Enlaces',
-            kickMembers:             'Expulsar miembros',
-            manageChannels:          'Gestionar canales',
-            manageEmojisAndStickers: 'Gestionar emojis y pegatinas',
-            manageGuild:             'Gestionar servidor',
-            manageMessages:          'Gestionar mensajes',
-            manageNicknames:         'Gestionar apodos',
-            manageRoles:             'Gestionar roles',
-            manageThreads:           'Gestionar hilos',
-            manageWebhooks:          'Gestionar webhooks',
-            mentionEveryone:         'Mencionar @everyone, @here y todos los roles',
-            moveMembers:             'Mover miembros',
-            muteMembers:             'Silenciar miembros',
-            prioritySpeaker:         'Prioridad de palabra',
-            readMessageHistory:      'Leer el historial de mensajes',
-            requestToSpeak:          'Solicitar hablar',
-            sendMessages:            'Enviar mensajes',
-            sendTTSMessages:         'Enviar mensajes de texto a voz',
-            speak:                   'Hablar',
-            stream:                  'Video',
-            useApplicationCommands:  'User comandos de barra diagonal',
-            useExternalEmojis:       'Usar emojis externos',
-            useExternalStickers:     'Usar hilos publicos',
-            useVAD:                  'Usar actividad de voz',
-            viewAuditLog:            'Ver el registro de auditoria',
-            viewChannel:             'Ver canales',
-            viewGuildInsights:       'Ver informacion del servidor',
-            manageEvents:            'Gestionar eventos',
-            createPublicThreads:     'Crear hilos publicos',
-            createPrivateThreads:    'Crear hilos privados',
-            sendMessagesInThreads:   'Enviar mensajes en hilos',
-            startEmbeddedActivities: 'Empezar actividades',
-            moderateMembers:         'Aislar temporalmente a miembros',*/
 
             [discord.PermissionsBitField.Flags.AddReactions]:            'Añadir reacciones',
             [discord.PermissionsBitField.Flags.Administrator]:           'Administrador',
@@ -121,9 +79,6 @@ module.exports = class {
             [discord.PermissionsBitField.Flags.StartEmbeddedActivities]: 'Empezar actividades',
             [discord.PermissionsBitField.Flags.ModerateMembers]:         'Aislar temporalmente a miembros'
         };
-/*
-        // Si es String 
-        if (typeof content === 'string') return list[content];*/
 
         // Si es Bigint
         if (typeof content === 'bigint') return list[content];

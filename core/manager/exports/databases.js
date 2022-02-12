@@ -1,10 +1,9 @@
-const loadeds = require('./loadeds.js');
+const files = require('./files.js');
 
 let cache = {};
 
-for (const _database of loadeds.databases) {
+for (const _database of files.databases) {
 
-    // Carga el evento
     cache[_database.name] = _database.database;
 };
 

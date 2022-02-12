@@ -1,11 +1,11 @@
-const loadeds = require('./loadeds.js');
+const files = require('./files.js');
 
 let cache = {};
 
-for (const _event of loadeds.events) {
+for (const _event of files.events) {
 
-    const applications = loadeds.applications.filter((val) => val.events[_event.name]);
-    const services     = loadeds.services.filter((val) => val.events[_event.name]);
+    const applications = files.applications.filter((val) => val.events[_event.name]);
+    const services     = files.services.filter((val) => val.events[_event.name]);
     const all          = applications.concat(services);
 
     // Salta el evento si este no es requerido

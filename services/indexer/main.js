@@ -8,11 +8,11 @@ module.exports = {
 
         ready: async function ({ client, manager, bases, utils }) {
 
-            const loadedApplications = manager.loadeds.applications.map((val) => val.schema);
+            const loadedApplications = manager.files.applications.map((val) => val.schema);
             const botApplications    = await client.application.commands.fetch();
 
             function index () {
-    
+
                 client.application.commands.set(loadedApplications)
                 .then(() => console.log('Indexacion finalizada'))
                 .catch((err) => console.log('Indexacion fallida', err));
