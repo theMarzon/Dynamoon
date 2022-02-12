@@ -14,7 +14,7 @@ Handler para crear robots con la libreria ``discord.js``
 | dotenv       | 10.0.0  |
 | megadb       | 3.4.0   |
 
-> _Se recomienda utilizar ``Node.js`` en la version ``16``_
+> _Se recomienda utilizar ``Node.js`` en la version ``16`` como minimo_
 
 ## Estructura de los directorios
 

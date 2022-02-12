@@ -50,7 +50,7 @@ for (const _folder of folders.applications.commands) {
     fileContent.options     ??= [];
     fileContent.intents     ??= [];
     fileContent.partials    ??= [];
-    // content.permissions ??= [];
+    // fileContent.permissions ??= [];
 
     fileContent.events ??= {};
     
@@ -89,7 +89,7 @@ for (const _folder of folders.applications.messages) {
 
     fileContent.intents     ??= [];
     fileContent.partials    ??= [];
-    // content.permissions ??= [];
+    // fileContent.permissions ??= [];
 
     fileContent.events ??= {};
 
@@ -126,7 +126,7 @@ for (const _folder of folders.applications.users) {
 
     fileContent.intents     ??= [];
     fileContent.partials    ??= [];
-    // content.permissions ??= [];
+    // fileContent.permissions ??= [];
 
     fileContent.events ??= {};
 
@@ -220,87 +220,33 @@ cache.services     = cache.services.sort((a, b) => b.priority - a.priority);
 // Controla los intentos
 for (const _application of cache.applications) {
 
-    let intents = [];
-
-    for (const _intent of _application.intents) {
-
-        if (intents.includes(_intent)) continue;
-
-        intents.push(_intent);
-    };
-
-    _application.intents = intents;
+    _application.intents = _application.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
 };
 
 for (const _event of cache.events) {
 
-    let intents = [];
-
-    for (const _intent of _event.intents) {
-
-        if (intents.includes(_intent)) continue;
-
-        intents.push(_intent);
-    };
-
-    _event.intents = intents;
+    _event.intents = _event.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
 };
 
-for (const _services of cache.services) {
+for (const _service of cache.services) {
 
-    let intents = [];
-
-    for (const _intent of _services.intents) {
-
-        if (intents.includes(_intent)) continue;
-
-        intents.push(_intent);
-    };
-
-    _services.intents = intents;
+    _service.intents = _service.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
 };
 
 // Controla los parciales
 for (const _application of cache.applications) {
 
-    let partials = [];
-
-    for (const _partial of _application.partials) {
-
-        if (partials.includes(_partial)) continue;
-
-        partials.push(_partial);
-    };
-
-    _application.partials = partials;
+    _application.partials = _application.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
 };
 
 for (const _event of cache.events) {
 
-    let partials = [];
-
-    for (const _partial of _event.partials) {
-
-        if (partials.includes(_partial)) continue;
-
-        partials.push(_partial);
-    };
-
-    _event.partials = partials;
+    _event.partials = _event.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
 };
 
-for (const _services of cache.services) {
+for (const _service of cache.services) {
 
-    let partials = [];
-
-    for (const _partial of _services.partials) {
-
-        if (partials.includes(_partial)) continue;
-
-        partials.push(_partial);
-    };
-
-    _services.partials = partials;
+    _service.partials = _service.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
 };
 
 // Exporta los archivos cargados en la cache

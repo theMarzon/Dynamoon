@@ -7,6 +7,9 @@ const manager = require('./core/manager/exports.js');
 // Configura las variables de entorno
 dotenv.config();
 
+console.log(manager.intents);
+console.log(manager.partials);
+
 // Crea el cliente
 const client = new discord.Client({
 
