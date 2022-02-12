@@ -6,13 +6,14 @@ const paths = {
 
     applications: {
 
-        commands: path.join(__dirname, '../../../applications/commands'),
-        messages: path.join(__dirname, '../../../applications/messages'),
-        users:    path.join(__dirname, '../../../applications/users')
+        commands: path.join(process.cwd(), 'applications/commands'),
+        messages: path.join(process.cwd(), 'applications/messages'),
+        users:    path.join(process.cwd(), 'applications/users')
     },
 
-    events:   path.join(__dirname, '../../../events'),
-    services: path.join(__dirname, '../../../services')
+    events:    path.join(process.cwd(), 'events'),
+    services:  path.join(process.cwd(), 'services'),
+    databases: path.join(process.cwd(), 'databases')
 };
 
 const folders = {
@@ -24,18 +25,20 @@ const folders = {
         users:    fs.readdirSync(paths.applications.users).filter((val) => !val.startsWith('.'))
     },
 
-    events:   fs.readdirSync(paths.events).filter((val) => !val.startsWith('.')),
-    services: fs.readdirSync(paths.services).filter((val) => !val.startsWith('.'))
+    events:    fs.readdirSync(paths.events).filter((val) => !val.startsWith('.')),
+    services:  fs.readdirSync(paths.services).filter((val) => !val.startsWith('.')),
+    databases: fs.readdirSync(paths.databases).filter((val) => !val.startsWith('.'))
 };
 
 let cache = {
 
     applications: [],
     events:       [],
-    services:     []
+    services:     [],
+    databases:    []
 };
 
-// Carga las aplicaciones del tipo comando
+// Carga los archivos
 for (const _folder of folders.applications.commands) {
 
     // Genera la ruta exacta del archivo
@@ -45,21 +48,23 @@ for (const _folder of folders.applications.commands) {
     const content = require(file);
 
     // Configura el archivo
-    content.name          = _folder;
+    content.name = _folder;
+
     content.type          = 'command';
     content.description ??= 'No especificada';
-    content.options     ??= [];
 
     content.priority ??= 0;
-
+    
     content.users   ??= false;
     content.servers ??= false;
     content.hide    ??= false;
 
+    content.options     ??= [];
     content.intents     ??= [];
     content.partials    ??= [];
     // content.permissions ??= [];
-    content.events      ??= {};
+
+    content.events ??= {};
     
     content.schema                   = {};
     content.schema.name              = content.name;
@@ -75,7 +80,6 @@ for (const _folder of folders.applications.commands) {
     delete require.cache[file];
 };
 
-// Carga las aplicaciones del tipo mensaje
 for (const _folder of folders.applications.messages) {
     
     // Genera la ruta exacta del archivo
@@ -86,6 +90,7 @@ for (const _folder of folders.applications.messages) {
 
     // Configura el archivo
     content.name = _folder;
+
     content.type = 'message';
 
     content.priority ??= 0;
@@ -97,7 +102,8 @@ for (const _folder of folders.applications.messages) {
     content.intents     ??= [];
     content.partials    ??= [];
     // content.permissions ??= [];
-    content.events      ??= {};
+
+    content.events ??= {};
 
     content.schema                   = {};
     content.schema.name              = content.name;
@@ -111,7 +117,6 @@ for (const _folder of folders.applications.messages) {
     delete require.cache[file];
 };
 
-// Carga las aplicaciones del tipo usuario
 for (const _folder of folders.applications.users) {
 
     // Genera la ruta exacta del archivo
@@ -122,6 +127,7 @@ for (const _folder of folders.applications.users) {
 
     // Configura el archivo
     content.name = _folder;
+    
     content.type = 'user';
 
     content.priority ??= 0;
@@ -133,7 +139,8 @@ for (const _folder of folders.applications.users) {
     content.intents     ??= [];
     content.partials    ??= [];
     // content.permissions ??= [];
-    content.events      ??= {};
+
+    content.events ??= {};
 
     content.schema                   = {};
     content.schema.name              = content.name;
@@ -147,7 +154,6 @@ for (const _folder of folders.applications.users) {
     delete require.cache[file];
 };
 
-// Carga los eventos
 for (const _folder of folders.events) {
 
     // Genera la ruta exacta del archivo
@@ -173,7 +179,6 @@ for (const _folder of folders.events) {
     delete require.cache[file];
 };
 
-// Carga los servicios
 for (const _folder of folders.services) {
 
     // Genera la ruta exacta del archivo
@@ -189,7 +194,8 @@ for (const _folder of folders.services) {
     
     content.intents  ??= [];
     content.partials ??= [];
-    content.events   ??= {};
+
+    content.events ??= {};
 
     // Carga el archivo en la cache
     cache.services.push(content);
@@ -198,46 +204,115 @@ for (const _folder of folders.services) {
     delete require.cache[file];
 };
 
-// Controlador de prioridades
-for (const _cache in cache) {
+for (const _folder of folders.databases) {
 
-    cache[_cache] = cache[_cache].sort((a, b) => b.priority - a.priority);
+    // Genera la ruta exacta del archivo
+    const file = path.join(paths.databases, _folder, 'main.js');
+
+    // Carga el archivo
+    const content = require(file);
+
+    // Configura el archivo
+    content.name = _folder;
+
+    content.database ??= {};
+
+    // Carga el archivo en la cache
+    cache.databases.push(content);
+    
+    // Limpia la cache temporal
+    delete require.cache[file];
 };
 
-// Controlador de intentos
-for (const _cache in cache) {
+// Organiza por prioridades
+cache.applications = cache.applications.sort((a, b) => b.priority - a.priority);
+cache.events       = cache.events.sort((a, b) => b.priority - a.priority);
+cache.services     = cache.services.sort((a, b) => b.priority - a.priority);
 
-    for (const _file of cache[_cache]) {
+// Controla los intentos
+for (const _application of cache.applications) {
 
-        let intents = [];
+    let intents = [];
 
-        for (const _intent of _file.intents) {
+    for (const _intent of _application.intents) {
 
-            if (intents.includes(_intent)) continue;
+        if (intents.includes(_intent)) continue;
 
-            intents.push(_intent);
-        };
-
-        _file.intents = intents;
+        intents.push(_intent);
     };
+
+    _application.intents = intents;
 };
 
-// Controlador de parciales
-for (const _cache in cache) {
+for (const _event of cache.events) {
 
-    for (const _file of cache[_cache]) {
+    let intents = [];
 
-        let partials = [];
+    for (const _intent of _event.intents) {
 
-        for (const _partial of _file.partials) {
+        if (intents.includes(_intent)) continue;
 
-            if (partials.includes(_partial)) continue;
-
-            partials.push(_partial);
-        };
-
-        _file.partials = partials;
+        intents.push(_intent);
     };
+
+    _event.intents = intents;
+};
+
+for (const _services of cache.services) {
+
+    let intents = [];
+
+    for (const _intent of _services.intents) {
+
+        if (intents.includes(_intent)) continue;
+
+        intents.push(_intent);
+    };
+
+    _services.intents = intents;
+};
+
+// Controla los parciales
+for (const _application of cache.applications) {
+
+    let partials = [];
+
+    for (const _partial of _application.partials) {
+
+        if (partials.includes(_partial)) continue;
+
+        partials.push(_partial);
+    };
+
+    _application.partials = partials;
+};
+
+for (const _event of cache.events) {
+
+    let partials = [];
+
+    for (const _partial of _event.partials) {
+
+        if (partials.includes(_partial)) continue;
+
+        partials.push(_partial);
+    };
+
+    _event.partials = partials;
+};
+
+for (const _services of cache.services) {
+
+    let partials = [];
+
+    for (const _partial of _services.partials) {
+
+        if (partials.includes(_partial)) continue;
+
+        partials.push(_partial);
+    };
+
+    _services.partials = partials;
 };
 
 // Exporta los archivos cargados en la cache

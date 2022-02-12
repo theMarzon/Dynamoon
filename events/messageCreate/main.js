@@ -8,7 +8,7 @@ module.exports = {
         discord.IntentsBitField.Flags.GuildMessages
     ],
 
-    event: function ({ client, manager, databases, bases, utils }) {
+    event: function ({ client, manager, bases, utils }) {
 
         client.on(discord.Events.MessageCreate, (event) => {
 
@@ -22,7 +22,6 @@ module.exports = {
                         client,
                         event,
                         manager,
-                        databases,
                         bases,
                         utils: new bases.utils(_file)
                     });

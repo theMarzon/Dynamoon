@@ -18,7 +18,7 @@ Handler modular para la creacion de bots con la libreria ``discord.js``
 
 ### Orden de los archivos
 
-Cree las carpetas ``events``, ``services`` y ``applications`` junto a sus subcarpetas ``commands``, ``messages`` y ``users`` si no existen para evitar errores
+Cree las carpetas ``events``, ``services``, ``databases`` y ``applications`` junto a sus subcarpetas ``commands``, ``messages`` y ``users`` si no existen para evitar errores
 
 > _Ejemplo de como se verian las carpeta con su contenido_
 
@@ -50,6 +50,12 @@ services\
     |__ main.js
 
 events\
+|
+|__ test\
+    |
+    |__ main.js
+
+databases\
 |
 |__ test\
     |
@@ -253,10 +259,23 @@ module.exports = {
 };
 ```
 
+### Crea una base de datos
+
+El nombre de la carpeta sera el que utilizara la base de datos
+
+```js
+module.exports = {
+
+    // El nombre de la base de datos (Automatico).
+    // name: 'test',
+
+    // la base de datos.
+    database: {}
+};
+```
+
 # Servicios prefabricados 
 
 ### Indexer
 
-Registra y actualiza las ``Aplicaciones`` creadas, editadas o eliminadas 
-
-> _Puede fallar la indexacion_
+Registra y actualiza las ``Aplicaciones`` creadas, editadas y eliminadas 

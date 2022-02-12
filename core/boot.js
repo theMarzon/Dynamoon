@@ -1,6 +1,5 @@
-const bases     = require('./bases/export.js');
-const databases = require('./databases/export.js');
-const manager   = require('./manager/exports.js');
+const bases   = require('./bases/export.js');
+const manager = require('./manager/exports.js');
 
 module.exports = function (client) {
 
@@ -14,7 +13,6 @@ module.exports = function (client) {
             
             client,
             manager,
-            databases,
             bases,
             utils: new bases.utils(_event)
         });

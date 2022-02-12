@@ -6,19 +6,16 @@ module.exports = {
 
     events: {
 
-        ready: async function ({ client, manager, databases, bases, utils }) {
+        ready: async function ({ client, manager, bases, utils }) {
 
             const loadedApplications = manager.loadeds.applications.map((val) => val.schema);
             const botApplications    = await client.application.commands.fetch();
 
             function index () {
     
-                /*client.application.commands.set(loadedApplications)
+                client.application.commands.set(loadedApplications)
                 .then(() => console.log('Indexacion finalizada'))
-                .catch((err) => console.log('Indexacion fallida', err));*/
-
-                console.log('Indexado');
-                throw new Error('Hola')
+                .catch((err) => console.log('Indexacion fallida', err));
             };
 
             // return index ();
@@ -30,6 +27,9 @@ module.exports = {
 
                 // Si el valor es diferente
                 if (fileChoice.value !== botChoice.value) return false;
+
+                // Si todo coincide
+                return true;
             };
 
             function verifyOption (fileOption, botOption) {
@@ -55,8 +55,7 @@ module.exports = {
                         // Si la cantidad de selecciones son diferentes
                         if (fileOption.choices.length !== botOption.choices.length) return false;
 
-                        // Si las selecciones son diferentes
-                        for (let i = 0; i < fileOption.length; i++) {
+                        for (let i = 0; i < fileOption.choices.length; i++) {
 
                             // Si la opcion es diferente
                             if (!verifyChoice(fileOption.choices[i], botOption.choices[i])) return false;
@@ -83,8 +82,7 @@ module.exports = {
                         // Si la cantidad de selecciones son diferentes
                         if (fileOption.choices.length !== botOption.choices.length) return false;
 
-                        // Si las selecciones son diferentes
-                        for (let i = 0; i < fileOption.length; i++) {
+                        for (let i = 0; i < fileOption.choices.length; i++) {
 
                             // Si la opcion es diferente
                             if (!verifyChoice(fileOption.choices[i], botOption.choices[i])) return false;
@@ -111,8 +109,7 @@ module.exports = {
                         // Si la cantidad de selecciones son diferentes
                         if (fileOption.choices.length !== botOption.choices.length) return false;
 
-                        // Si las selecciones son diferentes
-                        for (let i = 0; i < fileOption.length; i++) {
+                        for (let i = 0; i < fileOption.choices.length; i++) {
 
                             // Si la opcion es diferente
                             if (!verifyChoice(fileOption.choices[i], botOption.choices[i])) return false;
@@ -139,8 +136,7 @@ module.exports = {
                         // Si la cantidad de selecciones son diferentes
                         if (fileOption.choices.length !== botOption.choices.length) return false;
 
-                        // Si las selecciones son diferentes
-                        for (let i = 0; i < fileOption.length; i++) {
+                        for (let i = 0; i < fileOption.choices.length; i++) {
 
                             // Si la opcion es diferente
                             if (!verifyChoice(fileOption.choices[i], botOption.choices[i])) return false;
@@ -148,39 +144,45 @@ module.exports = {
                         
                         break;
                     };
+                };
 
-                    // Si es un Subcommand
-                    case (discord.ApplicationCommandOptionType.Subcommand): {
+                // Si todo coincide
+                return true;
+            };
 
-                        // Si la cantidad de opciones son diferentes
-                        if (fileOption.options.length !== botOption.options.length) return false;
+            function verifyCommand (fileCommand, botCommand) {
 
-                        for (let i = 0; i < fileOption.length; i++) {
+                // Si el nombre es diferente
+                if (fileCommand.name !== botCommand.name) return false;
+
+                // Si los permisos son diferentes
+                if (fileCommand.defaultPermission !== botCommand.defaultPermission) return false;
+
+                // Si el tipo es diferente
+                if (fileCommand.type !== botCommand.type) return false;
+                
+                // Comprueba segun el tipo
+                switch (fileCommand.type) {
+
+                    case (discord.ApplicationCommandType.ChatInput): {
+        
+                        // Si la descripcion es diferente
+                        if (fileCommand.description !== botCommand.description) return false;
+
+                        // Si la cantidad de opciones es diferente
+                        if (fileCommand.options.length !== botCommand.options.length) return false;
+
+                        for (let i = 0; i < fileCommand.options.length; i++) {
 
                             // Si la opcion es diferente
-                            if (!verifyOption(fileOption.options[i], botOption.options[i])) return false;
+                            if (!verifyOption(fileCommand.options[i], botCommand.options[i])) return false;
                         };
-
-                        break;
-                    };
-
-                    // Si es un SubcommandGroup
-                    case (discord.ApplicationCommandOptionType.SubcommandGroup): {
-
-                        // Si la cantidad de opciones son diferentes
-                        if (fileOption.options.length !== botOption.options.length) return false;
-
-                        for (let i = 0; i < fileOption.length; i++) {
-
-                            // Si la opcion es diferente
-                            if (!verifyOption(fileOption.options[i], botOption.options[i])) return false;
-                        };
-
+                        
                         break;
                     };
                 };
 
-                // Si todo es igual
+                // Si todo coincide
                 return true;
             };
 
@@ -191,13 +193,13 @@ module.exports = {
             for (const _application of loadedApplications) {
 
                 // Obtiene la applicacion
-                const findedApplication = botApplications.find((val) => val.name === _application.name);
+                const findedApplication = botApplications.find((val) => val.name === _application.name && val.type === _application.type);
 
                 // Si no se obtuvo la applicacion
                 if (!findedApplication) return index();
-                
+
                 // Si las opciones son diferentes
-                if (!verifyOption(_application, findedApplication)) return index();
+                if (!verifyCommand(_application, findedApplication)) return index();
             };  
         }
     }

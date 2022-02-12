@@ -4,7 +4,7 @@ module.exports = {
 
     priority: 2,
 
-    event: function ({ client, manager, databases, bases, utils }) {
+    event: function ({ client, manager, bases, utils }) {
 
         client.on(discord.Events.ClientReady, () => {
 
@@ -17,7 +17,6 @@ module.exports = {
 
                         client,
                         manager,
-                        databases,
                         bases,
                         utils: new bases.utils(_file)
                     });
