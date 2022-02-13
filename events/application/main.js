@@ -11,6 +11,9 @@ module.exports = {
 
         client.on(discord.Events.InteractionCreate, async (event) => {
 
+            // Verifica si es un comando
+            if (!event.isCommand()) return;
+
             for (const _file of manager.events[utils.file.name].applications) {
 
                 if (event.commandName === _file.name

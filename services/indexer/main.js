@@ -79,6 +79,9 @@ module.exports = {
                         // Si el requerido es diferente
                         if (fileOption.required !== botOption.required) return false;
 
+                        // Si el autocompletado es diferente
+                        if (fileOption.autocomplete !== botOption.autocomplete) return false;
+
                         // Si la cantidad de selecciones son diferentes
                         if (fileOption.choices.length !== botOption.choices.length) return false;
 
@@ -106,6 +109,9 @@ module.exports = {
                         // Si el requerido es diferente
                         if (fileOption.required !== botOption.required) return false;
 
+                        // Si el autocompletado es diferente
+                        if (fileOption.autocomplete !== botOption.autocomplete) return false;
+
                         // Si la cantidad de selecciones son diferentes
                         if (fileOption.choices.length !== botOption.choices.length) return false;
 
@@ -132,6 +138,9 @@ module.exports = {
 
                         // Si el requerido es diferente
                         if (fileOption.required !== botOption.required) return false;
+
+                        // Si el autocompletado es diferente
+                        if (fileOption.autocomplete !== botOption.autocomplete) return false;
 
                         // Si la cantidad de selecciones son diferentes
                         if (fileOption.choices.length !== botOption.choices.length) return false;
