@@ -60,6 +60,69 @@ databases\
     |__ main.js
 ```
 
+## Crear un evento
+
+> _El nombre de la carpeta sera el que utilizara el evento_
+
+```js
+module.exports = {
+
+    // El nombre del servicio (Automatico).
+    // name: 'test',
+
+    // La prioridad del servicio ante los otros (Mientras mayor sea el numero mas alta sera).
+    priority: 0,
+
+    // Los intentos que necesite el servicio.
+    intents: [],
+
+    // Las parciales que necesite el servicio.
+    partials: [],
+
+    // El evento del evento.
+    event: function () {}
+};
+```
+
+## Crear un servicio
+
+> _El nombre de la carpeta sera el que utilizara el servicio_
+
+```js
+module.exports = {
+
+    // El nombre del servicio (Automatico).
+    // name: 'test',
+
+    // La prioridad del servicio ante los otros (Mientras mayor sea el numero mas alta sera).
+    priority: 0,
+
+    // Los intentos que necesite el servicio.
+    intents: [],
+
+    // Las parciales que necesite el servicio.
+    partials: [],
+
+    // Los eventos del servicio.
+    events: {}
+};
+```
+
+## Crear una base de datos
+
+> _El nombre de la carpeta sera el que utilizara la base de datos_
+
+```js
+module.exports = {
+
+    // El nombre de la base de datos (Automatico).
+    // name: 'test',
+
+    // la base de datos.
+    database: {}
+};
+```
+
 ## Crear una aplicacion (Comando)
 
 > _El nombre de la carpeta sera el que utilizara la aplicacion (No puede contener espacios)_
@@ -209,71 +272,12 @@ module.exports = {
 };
 ```
 
-## Crear un servicio
-
-> _El nombre de la carpeta sera el que utilizara el servicio_
-
-```js
-module.exports = {
-
-    // El nombre del servicio (Automatico).
-    // name: 'test',
-
-    // La prioridad del servicio ante los otros (Mientras mayor sea el numero mas alta sera).
-    priority: 0,
-
-    // Los intentos que necesite el servicio.
-    intents: [],
-
-    // Las parciales que necesite el servicio.
-    partials: [],
-
-    // Los eventos del servicio.
-    events: {}
-};
-```
-
-## Crear un evento
-
-> _El nombre de la carpeta sera el que utilizara el evento_
-
-```js
-module.exports = {
-
-    // El nombre del servicio (Automatico).
-    // name: 'test',
-
-    // La prioridad del servicio ante los otros (Mientras mayor sea el numero mas alta sera).
-    priority: 0,
-
-    // Los intentos que necesite el servicio.
-    intents: [],
-
-    // Las parciales que necesite el servicio.
-    partials: [],
-
-    // El evento del evento.
-    event: function () {}
-};
-```
-
-## Crear una base de datos
-
-> _El nombre de la carpeta sera el que utilizara la base de datos_
-
-```js
-module.exports = {
-
-    // El nombre de la base de datos (Automatico).
-    // name: 'test',
-
-    // la base de datos.
-    database: {}
-};
-```
-
 ## Servicios prefabricados 
 
 ### Indexer
 
 Registra y actualiza las ``Aplicaciones`` creadas, editadas y eliminadas 
+
+### Task
+
+Gestiona la prioridad del proyecto

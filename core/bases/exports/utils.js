@@ -9,7 +9,7 @@ module.exports = class {
         this.core = {
 
             name:    'Harley',
-            version: '1.0.0',
+            version: '0.1.0',
             author:  'theMarzon',
 
             repository: 'https://github.com/theMarzon/Harley',

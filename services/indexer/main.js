@@ -201,10 +201,10 @@ module.exports = {
             // Verifica si los arrays son iguales
             for (const _application of loadedApplications) {
 
-                // Obtiene la applicacion
+                // Obtiene la aplicacion
                 const findedApplication = botApplications.find((val) => val.name === _application.name && val.type === _application.type);
 
-                // Si no se obtuvo la applicacion
+                // Si no se obtuvo la aplicacion
                 if (!findedApplication) return index();
 
                 // Si las opciones son diferentes

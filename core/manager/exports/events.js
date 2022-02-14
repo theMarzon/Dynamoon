@@ -4,15 +4,15 @@ let cache = {};
 
 for (const _event of files.events) {
 
-    const applications = files.applications.filter((val) => val.events[_event.name]);
     const services     = files.services.filter((val) => val.events[_event.name]);
-    const all          = applications.concat(services);
+    const applications = files.applications.filter((val) => val.events[_event.name]);
+    const all          = services.concat(applications);
 
     // Salta el evento si este no es requerido
     if (!all.length) continue;
 
     // Carga el evento
-    cache[_event.name] = { applications, services, all };
+    cache[_event.name] = { all, services, applications };
 };
 
 // Exporta los eventos

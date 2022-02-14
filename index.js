@@ -1,6 +1,5 @@
 const discord = require('discord.js');
 const dotenv  = require('dotenv');
-const os      = require('os');
 
 const manager = require('./core/manager/exports.js');
 
@@ -20,14 +19,8 @@ const client = new discord.Client({
     }
 });
 
-// Configura la prioridad en alta
-os.setPriority(os.constants.priority.PRIORITY_HIGH);
-
 // Carga los archivos
 require('./core/boot.js')(client);
-
-// Configura la prioridad en normal
-os.setPriority(os.constants.priority.PRIORITY_NORMAL);
 
 // Conecta el cliente
 client.login(process.env.token)
