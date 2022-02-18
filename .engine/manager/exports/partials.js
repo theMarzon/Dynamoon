@@ -25,8 +25,5 @@ for (const _event of files.events) {
     };
 };
 
-// Elimina los parciales repetidos
-// partials = partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
-
 // Exporta los parciales
 module.exports = partials;
