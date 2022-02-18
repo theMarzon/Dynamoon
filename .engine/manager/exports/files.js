@@ -196,10 +196,10 @@ for (const _folder of folders.applicationsUsers) {
     files.applications.push(fileContent);
 };
 
-// Organiza los archivos por su prioridad
-for (const _cache in files) {
+for (const _file in files) {
 
-    files[_cache] = files[_cache].sort((a, b) => b.priority - a.priority);
+    // Organiza los archivos por su prioridad
+    files[_file] = files[_file].sort((a, b) => b.priority - a.priority);
 };
 
 // Exporta los archivos

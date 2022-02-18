@@ -15,8 +15,11 @@ const client = new discord.Client({
     allowedMentions: { 
         
         parse: [], 
+
         repliedUser: false 
-    }
+    },
+
+    rest: { version: '10' }
 });
 
 // Carga los archivos
