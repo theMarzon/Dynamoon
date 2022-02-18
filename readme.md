@@ -1,4 +1,4 @@
-Un motor para crear robots en la libreria ``discord.js``
+Un motor para desarrollar robots con la libreria ``discord.js``
 
 ## Requisitos del proyecto
 

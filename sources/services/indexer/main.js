@@ -14,8 +14,7 @@ module.exports = {
             function index () {
 
                 client.application.commands.set(loadedApplications)
-                .then(() => console.log('Indexacion finalizada'))
-                .catch((err) => console.log('Indexacion fallida', err));
+                .then(() => console.log('Indexacion finalizada'));
             };
 
             // return index ();
@@ -163,6 +162,9 @@ module.exports = {
 
                 // Si el nombre es diferente
                 if (fileCommand.name !== botCommand.name) return false;
+
+                // Si el permiso por defecto son diferentes
+                if (fileCommand.defaultPermission !== botCommand.defaultPermission) return false;
 
                 // Si el tipo es diferente
                 if (fileCommand.type !== botCommand.type) return false;

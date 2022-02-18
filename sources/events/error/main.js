@@ -2,11 +2,11 @@ const discord = require('discord.js');
 
 module.exports = {
 
-    priority: 3,
+    priority: 1,
 
     event: function ({ client, manager, cache, bases, utils }) {
 
-        client.on(discord.Events.ClientReady, () => {
+        client.on(discord.Events.Error, () => {
 
             for (const _file of manager.events[utils.file.name].all) {
 

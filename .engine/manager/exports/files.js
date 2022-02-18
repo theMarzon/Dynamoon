@@ -11,7 +11,7 @@ let files = {
     applications: []
 };
 
-// Carga los eventos
+// Importa los eventos
 for (const _folder of folders.events) {
 
     // Genera la ruta exacta del archivo
@@ -34,16 +34,13 @@ for (const _folder of folders.events) {
     fileContent.intents = fileContent.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
     // Elimina los parciales repetidos
-    fileContent.intents = fileContent.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
+    fileContent.partials = fileContent.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
     // Exporta el archivo
     files.events.push(fileContent);
-    
-    // Limpia la cache del importador
-    delete require.cache[filePath];
 };
 
-// Carga los servicios
+// Importa los servicios
 for (const _folder of folders.services) {
 
     // Genera la ruta exacta del archivo
@@ -70,12 +67,9 @@ for (const _folder of folders.services) {
 
     // Exporta el archivo
     files.services.push(fileContent);
-    
-    // Limpia la cache del importador
-    delete require.cache[filePath];
 };
 
-// Carga las aplicaciones (Comando)
+// Importa las aplicaciones (Comando)
 for (const _folder of folders.applicationsCommands) {
 
     // Genera la ruta exacta del archivo
@@ -92,37 +86,35 @@ for (const _folder of folders.applicationsCommands) {
 
     fileContent.priority ??= 0;
     
-    fileContent.users   ??= false;
-    fileContent.servers ??= false;
-    fileContent.hide    ??= false;
+    fileContent.defaultPermission ??= true;
+    fileContent.users             ??= false;
+    fileContent.servers           ??= false;
+    fileContent.hide              ??= false;
 
     fileContent.options  ??= [];
     fileContent.intents  ??= [];
     fileContent.partials ??= [];
 
     fileContent.events ??= {};
-    
-    fileContent.schema = {};
+    fileContent.schema   = {};
 
-    fileContent.schema.name        = fileContent.name;
-    fileContent.schema.description = fileContent.description;
-    fileContent.schema.options     = fileContent.options;
-    fileContent.schema.type        = discord.ApplicationCommandType.ChatInput;
+    fileContent.schema.name              = fileContent.name;
+    fileContent.schema.description       = fileContent.description;
+    fileContent.schema.options           = fileContent.options;
+    fileContent.schema.defaultPermission = fileContent.defaultPermission;
+    fileContent.schema.type              = discord.ApplicationCommandType.ChatInput;
 
     // Elimina los intentos repetidos
     fileContent.intents = fileContent.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
     // Elimina los parciales repetidos
-    fileContent.intents = fileContent.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
+    fileContent.partials = fileContent.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
     // Exporta el archivo
     files.applications.push(fileContent);
-
-    // Limpia la cache del importador
-    delete require.cache[filePath];
 };
 
-// Carga las aplicaciones (Mensaje)
+// Importa las aplicaciones (Mensaje)
 for (const _folder of folders.applicationsMessages) {
     
     // Genera la ruta exacta del archivo
@@ -138,34 +130,32 @@ for (const _folder of folders.applicationsMessages) {
 
     fileContent.priority ??= 0;
 
-    fileContent.users   ??= false;
-    fileContent.servers ??= false;
-    fileContent.hide    ??= false;
+    fileContent.defaultPermission ??= true;
+    fileContent.users             ??= false;
+    fileContent.servers           ??= false;
+    fileContent.hide              ??= false;
 
     fileContent.intents  ??= [];
     fileContent.partials ??= [];
 
     fileContent.events ??= {};
+    fileContent.schema   = {};
 
-    fileContent.schema = {};
-
-    fileContent.schema.name = fileContent.name;
-    fileContent.schema.type = discord.ApplicationCommandType.Message;
+    fileContent.schema.name              = fileContent.name;
+    fileContent.schema.defaultPermission = fileContent.defaultPermission;
+    fileContent.schema.type              = discord.ApplicationCommandType.Message;
 
     // Elimina los intentos repetidos
     fileContent.intents = fileContent.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
     // Elimina los parciales repetidos
-    fileContent.intents = fileContent.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
+    fileContent.partials = fileContent.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
     // Exporta el archivo
     files.applications.push(fileContent);
-    
-    // Limpia la cache del importador
-    delete require.cache[filePath];
 };
 
-// Carga las aplicaciones (Usuario)
+// Importa las aplicaciones (Usuario)
 for (const _folder of folders.applicationsUsers) {
 
     // Genera la ruta exacta del archivo
@@ -181,31 +171,29 @@ for (const _folder of folders.applicationsUsers) {
 
     fileContent.priority ??= 0;
 
-    fileContent.users   ??= false;
-    fileContent.servers ??= false;
-    fileContent.hide    ??= false;
+    fileContent.defaultPermission ??= true;
+    fileContent.users             ??= false;
+    fileContent.servers           ??= false;
+    fileContent.hide              ??= false;
 
     fileContent.intents  ??= [];
     fileContent.partials ??= [];
 
     fileContent.events ??= {};
+    fileContent.schema   = {};
 
-    fileContent.schema = {};
-
-    fileContent.schema.name = fileContent.name;
-    fileContent.schema.type = discord.ApplicationCommandType.User;
+    fileContent.schema.name              = fileContent.name;
+    fileContent.schema.defaultPermission = fileContent.defaultPermission;
+    fileContent.schema.type              = discord.ApplicationCommandType.User;
 
     // Elimina los intentos repetidos
     fileContent.intents = fileContent.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
     // Elimina los parciales repetidos
-    fileContent.intents = fileContent.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
+    fileContent.partials = fileContent.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
     // Exporta el archivo
     files.applications.push(fileContent);
-
-    // Limpia la cache del importador
-    delete require.cache[filePath];
 };
 
 // Organiza los archivos por su prioridad

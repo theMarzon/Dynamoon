@@ -5,7 +5,7 @@ const reply  = require('./controls/reply.js');
 
 module.exports = {
 
-    priority: 1,
+    priority: 2,
 
     event: function ({ client, manager, cache, bases, utils }) {
 

@@ -9,7 +9,7 @@ module.exports = class {
         this.engine = {
 
             name:    'Disore',
-            version: '0.2',
+            version: '0.2.0',
             author:  'theMarzon',
 
             repository: 'https://github.com/theMarzon/Disore',
@@ -30,9 +30,9 @@ module.exports = class {
     
     /**
      * Traduce los permisos
-     * @param {bigint} values
+     * @param {bigint[]} values
      */
-    toSpanish (...values) {
+    toSpanish (values) {
 
         const permissions = {
     
@@ -94,9 +94,9 @@ module.exports = class {
 
     /**
      * Verifica si contiene enlaces
-     * @param {string} values
+     * @param {string[]} values
      */
-    isLink (...values) {
+    isLink (values) {
 
         for (let _value of values) {
         
@@ -114,9 +114,9 @@ module.exports = class {
 
     /**
      * Verifica si contiene nsfw
-     * @param {string} values
+     * @param {string[]} values
      */
-    isNsfw (...values) {
+    isNsfw (values) {
 
         for (let _value of values) {
         
