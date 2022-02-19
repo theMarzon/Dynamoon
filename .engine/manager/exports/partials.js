@@ -18,8 +18,8 @@ for (const _event of files.events) {
     };
 };
 
-// Elimina los intentos repetidos
-intents = intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
+// Elimina los parciales repetidos
+partials = partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
 // Exporta los parciales
 module.exports = partials;

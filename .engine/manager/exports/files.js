@@ -63,7 +63,7 @@ for (const _folder of folders.services) {
     fileContent.intents = fileContent.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
     // Elimina los parciales repetidos
-    fileContent.intents = fileContent.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
+    fileContent.partials = fileContent.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
     // Exporta el archivo
     files.services.push(fileContent);
