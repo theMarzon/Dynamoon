@@ -6,9 +6,9 @@ module.exports = {
 
     events: {
 
-        ready: async function ({ client, manager, cache, bases, utils }) {
+        ready: async function ({ client, loadeds, sources, managers, bases, utils }) {
 
-            const loadedApplications = manager.files.applications.map((val) => val.schema);
+            const loadedApplications = loadeds.applications.map((val) => val.schema);
             const botApplications    = await client.application.commands.fetch();
 
             function index () {

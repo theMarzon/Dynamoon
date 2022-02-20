@@ -7,7 +7,7 @@ module.exports = {
 
     events: {
         
-        application: function ({ client, event, manager, cache, bases, utils }) {
+        application: function ({ client, event, loadeds, sources, managers, bases, utils }) {
 
             const messageEmbed = new discord.Embed()
             .setDescription(`Hola ${event.user.toString()}`)

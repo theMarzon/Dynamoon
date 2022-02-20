@@ -1,7 +1,8 @@
 const discord = require('discord.js');
 const dotenv  = require('dotenv');
 
-const manager = require('./.engine/manager/export.js');
+const sources  = require('./engine/sources/export.js');
+const managers = require('./engine/managers/export.js');
 
 // Configura las variables de entorno
 dotenv.config();
@@ -9,8 +10,8 @@ dotenv.config();
 // Crea el cliente
 const client = new discord.Client({
 
-    intents:  manager.intents,
-    partials: manager.partials,
+    intents:  sources.intents,
+    partials: sources.partials,
 
     allowedMentions: { 
         
@@ -22,8 +23,8 @@ const client = new discord.Client({
     rest: { version: '10' }
 });
 
-// Carga los archivos
-require('./.engine/boot.js')(client);
+// Ejecuta los eventos
+managers.boot(client);
 
 // Conecta el cliente
 client.login(process.env.token)

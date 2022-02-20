@@ -4,14 +4,14 @@ module.exports = {
 
     priority: 2,
 
-    event: function ({ client, manager, cache, bases, utils }) {
+    event: function ({ client, loadeds, sources, managers, bases, utils }) {
 
         client.on(discord.Events.InteractionCreate, (event) => {
 
             // Verifica si es un autocompletado
             if (!event.isAutocomplete()) return;
 
-            for (const _file of manager.events[utils.file.name].applications) {
+            for (const _file of sources.events[utils.file.name].applications) {
 
                 if (event.commandName === _file.name
                 &&  _file.type        === 'command') {
@@ -21,8 +21,9 @@ module.exports = {
 
                         client,
                         event,
-                        manager,
-                        cache,
+                        loadeds,
+                        sources,
+                        managers,
                         bases,
                         utils: new bases.utils(_file)
                     });

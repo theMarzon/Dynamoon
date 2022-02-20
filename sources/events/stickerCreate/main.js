@@ -8,19 +8,20 @@ module.exports = {
         discord.IntentsBitField.Flags.GuildEmojisAndStickers
     ],
 
-    event: function ({ client, manager, cache, bases, utils }) {
+    event: function ({ client, loadeds, sources, managers, bases, utils }) {
 
         client.on(discord.Events.GuildStickerCreate, (event) => {
 
-            for (const _file of manager.events[utils.file.name].all) {
+            for (const _file of sources.events[utils.file.name].all) {
 
                 // Carga el evento
                 _file.events[utils.file.name]({
 
                     client,
                     event,
-                    manager,
-                    cache,
+                    loadeds,
+                    sources,
+                    managers,
                     bases,
                     utils: new bases.utils(_file)
                 });

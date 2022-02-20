@@ -1,4 +1,4 @@
-module.exports = function ({ client, event, manager, cache, bases, utils }) {
+module.exports = function ({ client, event, loadeds, sources, managers, bases, utils }) {
 
     // Si la aplicacion permite ejecutarse en servidores
     if (event.inGuild()

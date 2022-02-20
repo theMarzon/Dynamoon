@@ -1,79 +1,16 @@
 const discord = require('discord.js');
 const path    = require('path');
 
-const paths   = require('./paths.js');
-const folders = require('./folders.js');
+const pathsSource   = require('../../sources/exports/pathsSource.js');
+const foldersSource = require('../../sources/exports/foldersSource.js');
 
-let files = {
-
-    events:       [],
-    services:     [],
-    applications: []
-};
-
-// Importa los eventos
-for (const _folder of folders.events) {
-
-    // Genera la ruta exacta del archivo
-    const filePath = path.join(paths.events, _folder, 'main.js');
-
-    // Importa el archivo
-    let fileContent = require(filePath);
-
-    // Configura el archivo
-    fileContent.name = _folder;
-
-    fileContent.priority ??= 0;
-
-    fileContent.intents  ??= [];
-    fileContent.partials ??= [];
-
-    fileContent.event ??= function () {};
-
-    // Elimina los intentos repetidos
-    fileContent.intents = fileContent.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
-
-    // Elimina los parciales repetidos
-    fileContent.partials = fileContent.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
-
-    // Exporta el archivo
-    files.events.push(fileContent);
-};
-
-// Importa los servicios
-for (const _folder of folders.services) {
-
-    // Genera la ruta exacta del archivo
-    const filePath = path.join(paths.services, _folder, 'main.js');
-
-    // Importa el archivo
-    let fileContent = require(filePath);
-
-    // Configura la estructura del archivo
-    fileContent.name = _folder;
-
-    fileContent.priority ??= 0;
-    
-    fileContent.intents  ??= [];
-    fileContent.partials ??= [];
-
-    fileContent.events ??= {};
-
-    // Elimina los intentos repetidos
-    fileContent.intents = fileContent.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
-
-    // Elimina los parciales repetidos
-    fileContent.partials = fileContent.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
-
-    // Exporta el archivo
-    files.services.push(fileContent);
-};
+let cache = [];
 
 // Importa las aplicaciones (Comando)
-for (const _folder of folders.applicationsCommands) {
+for (const _folder of foldersSource.applicationsCommands) {
 
     // Genera la ruta exacta del archivo
-    const filePath = path.join(paths.applicationsCommands, _folder, 'main.js');
+    const filePath = path.join(pathsSource.applicationsCommands, _folder, 'main.js');
 
     // Importa el archivo
     let fileContent = require(filePath);
@@ -111,14 +48,14 @@ for (const _folder of folders.applicationsCommands) {
     fileContent.partials = fileContent.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
     // Exporta el archivo
-    files.applications.push(fileContent);
+    cache.push(fileContent);
 };
 
 // Importa las aplicaciones (Mensaje)
-for (const _folder of folders.applicationsMessages) {
+for (const _folder of foldersSource.applicationsMessages) {
     
     // Genera la ruta exacta del archivo
-    const filePath = path.join(paths.applicationsMessages, _folder, 'main.js');
+    const filePath = path.join(pathsSource.applicationsMessages, _folder, 'main.js');
 
     // Importa el archivo
     let fileContent = require(filePath);
@@ -152,14 +89,14 @@ for (const _folder of folders.applicationsMessages) {
     fileContent.partials = fileContent.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
     // Exporta el archivo
-    files.applications.push(fileContent);
+    cache.push(fileContent);
 };
 
 // Importa las aplicaciones (Usuario)
-for (const _folder of folders.applicationsUsers) {
+for (const _folder of foldersSource.applicationsUsers) {
 
     // Genera la ruta exacta del archivo
-    const filePath = path.join(paths.applicationsUsers, _folder, 'main.js');
+    const filePath = path.join(pathsSource.applicationsUsers, _folder, 'main.js');
     
     // Importa el archivo
     let fileContent = require(filePath);
@@ -193,14 +130,11 @@ for (const _folder of folders.applicationsUsers) {
     fileContent.partials = fileContent.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
     // Exporta el archivo
-    files.applications.push(fileContent);
+    cache.push(fileContent);
 };
 
-for (const _file in files) {
-
-    // Organiza los archivos por su prioridad
-    files[_file] = files[_file].sort((a, b) => b.priority - a.priority);
-};
+// Organiza los archivos por su prioridad
+cache = cache.sort((a, b) => b.priority - a.priority);
 
 // Exporta los archivos
-module.exports = files;
+module.exports = cache;

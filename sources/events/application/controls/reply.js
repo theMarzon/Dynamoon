@@ -1,4 +1,4 @@
-module.exports = async function ({ client, event, manager, cache, bases, utils }) {
+module.exports = async function ({ client, event, loadeds, sources, managers, bases, utils }) {
 
     try {
 
