@@ -2,7 +2,6 @@ const bases    = require('../../bases/export.js');
 const loadeds  = require('../../loadeds/export.js');
 const sources  = require('../../sources/export.js');
 const managers = require('../../managers/export.js');
-const cache    = require('../../cache.js');
 
 module.exports = function (client) {
 
@@ -18,7 +17,6 @@ module.exports = function (client) {
             loadeds,
             sources,
             managers,
-            cache,
             bases,
             utils: new bases.utils(_event)
         });
