@@ -1,0 +1,12 @@
+{
+    "delay": 6,
+
+    "ignore": [ 
+        
+        "node_modules/*", 
+        "*.md", 
+        ".gitignore", 
+        "package-lock.json",
+        "nodemon.json"
+    ]
+}
