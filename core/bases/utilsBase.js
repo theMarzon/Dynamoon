@@ -10,14 +10,13 @@ module.exports = class {
 
             name:    'DisCore',
             version: '0.3.0',
-            author:  'theMarzon',
 
             repository: 'https://github.com/theMarzon/DisCore',
 
             images: {
 
-                icon:   'https://i.ibb.co/P1Gn8sm/icon.png',
-                banner: 'https://i.ibb.co/kGV8GhZ/banner.png'
+                icon:   'https://i.ibb.co/Kqj0WwZ/icon.png',
+                banner: 'https://i.ibb.co/gdzFQw5/banner.png'
             }
         };
 

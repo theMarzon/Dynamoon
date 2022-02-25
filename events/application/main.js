@@ -1,17 +1,11 @@
 const discord = require('discord.js');
 
-const access      = require('./controls/access.js');
-// const permissions = require('./controls/permissions.js');
-const reply       = require('./controls/reply.js');
+const access = require('./controls/access.js');
+const reply  = require('./controls/reply.js');
 
 module.exports = {
 
     priority: 2,
-
-    intents: [
-
-        // discord.IntentsBitField.Flags.Guilds
-    ],
 
     event: function ({ client, loadeds, sources, managers, bases, utils }) {
 
@@ -39,7 +33,6 @@ module.exports = {
                     };
 
                     if (access(arguments)
-                    // &&  await permissions(arguments)
                     &&  await reply(arguments)) {
                         
                         // Carga el evento
