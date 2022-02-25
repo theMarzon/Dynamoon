@@ -1,4 +1,8 @@
-Un motor para desarrollar robots con la libreria ``discord.js``
+<div align="center">
+    <img src="https://i.ibb.co/JFrJgNS/logo.png" width="512" />
+</div>
+
+Un proyecto para empezar a desarrollar robots con la libreria ``discord.js``
 
 ## Requisitos del proyecto
 
@@ -246,7 +250,7 @@ module.exports = {
 
 ### Booster
 
-Aumenta la velocidad de carga del motor al iniciarse
+Aumenta la velocidad de carga momentaneamente al iniciarse la ejecucion del proyecto
 
 ### Indexer
 

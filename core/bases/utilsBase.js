@@ -15,8 +15,9 @@ module.exports = class {
 
             images: {
 
+                banner: 'https://i.ibb.co/gdzFQw5/banner.png',
                 icon:   'https://i.ibb.co/Kqj0WwZ/icon.png',
-                banner: 'https://i.ibb.co/gdzFQw5/banner.png'
+                logo:   'https://i.ibb.co/JFrJgNS/logo.png'
             }
         };
 
