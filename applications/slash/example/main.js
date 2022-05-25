@@ -1,0 +1,27 @@
+import discord from 'discord.js';
+
+export default {
+
+    description: {
+        
+        default: 'Comando de ejemplo',
+
+        'es-ES': 'Comando de ejemplo',
+        'en-US': 'Example command'
+    },
+
+    events: {
+        
+        application: ({ client, event, loaders, groupers, managers, tools }) => {
+
+            const messageEmbed = new discord.EmbedBuilder({
+
+                color: discord.Colors.White,
+
+                description: `👋😃 ${event.user.toString()}`
+            });
+            
+            event.editReply({ embeds: [ messageEmbed ] });
+        }
+    }
+};
