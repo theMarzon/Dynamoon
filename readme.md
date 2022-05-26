@@ -321,7 +321,7 @@ export default {
 
 ### Indexer
 
-Crea y actualiza las ``Aplicaciones`` creadas, editadas y eliminadas .
+Crea y actualiza las ``Aplicaciones`` creadas, editadas y eliminadas.
 
 ## Eventos prefabricados
 
