@@ -156,7 +156,7 @@ export default {
         // Si se tiene que responder una interacción automáticamente.
         automatic: true,
 
-        // Si la respuesta automatica se tiene que responder como efímera.
+        // Si la respuesta automática se tiene que responder como efímera.
         private: false,
 
         // Los canales a ignorar si empiezan una interacción.
@@ -187,7 +187,7 @@ export default {
 };
 ```
 
-## Crear una aplicación de menu contextual para usuarios
+## Crear una aplicación de menú contextual para usuarios
 
 ```js
 export default {
@@ -221,10 +221,10 @@ export default {
 
     replys: {
 
-        // Si se tiene que responder una interaccion automaticamente.
+        // Si se tiene que responder una interaccion automáticamente.
         automatic: true,
 
-        // Si la respuesta automatica se tiene que responder como efimera.
+        // Si la respuesta automática se tiene que responder como efimera.
         private: false,
 
         // Los canales a ignorar si empiezan una interaccion.
@@ -252,7 +252,7 @@ export default {
 };
 ```
 
-## Crear una aplicación de menu contextual para mensajes
+## Crear una aplicación de menú contextual para mensajes
 
 ```js
 export default {
@@ -286,10 +286,10 @@ export default {
 
     replys: {
 
-        // Si se tiene que responder una interaccion automaticamente.
+        // Si se tiene que responder una interaccion automáticamente.
         automatic: true,
 
-        // Si la respuesta automatica se tiene que responder como efimera.
+        // Si la respuesta automática se tiene que responder como efimera.
         private: false,
 
         // Los canales a ignorar si empiezan una interaccion.
