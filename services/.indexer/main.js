@@ -30,7 +30,7 @@ module.exports = {
 
             for (const _application of loadedApplications) {
                 
-                const findedApplication = botApplications.find((val) => val.name === _application.package && val.type === _application.type);
+                const findedApplication = botApplications.find((val) => val.name === _application.name && val.type === _application.type);
 
                 if (!findedApplication
                 ||  !commandsVerifier(_application, findedApplication)) {

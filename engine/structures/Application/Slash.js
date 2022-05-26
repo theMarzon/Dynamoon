@@ -13,8 +13,7 @@ export class SlashApplicationBuilder {
 
     constructor (options) {
 
-        this.package = options.package;
-        this.type    = discord.ApplicationCommandType.ChatInput;
+        this.type = discord.ApplicationCommandType.ChatInput;
 
         this.priority = options.priority ?? 0;
         
@@ -29,7 +28,7 @@ export class SlashApplicationBuilder {
         // Nombres de la aplicacion
         this.name = options.name ?? {};
 
-        this.name.default = options.name?.default ?? this.package;
+        this.name.default = options.name?.default ?? 'undefined';
 
         // Descripciones de la aplicacion
         this.description = options.description ?? {};

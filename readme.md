@@ -79,7 +79,7 @@ export default {
     partials: [],
 
     // El evento que se va a ejecutar.
-    execute: ({ client, loaders, groupers, managers, tools }) => {
+    execute: ({ client, me, loaders, groupers, managers }) => {
 
         // ...
     }
@@ -113,22 +113,22 @@ export default {
 ```js
 export default {
 
-    // El nombre por defecto de la aplicacion (Automatico).
-    // name: 'example',
+    // Los nombres de la aplicacion.
+    name: {
 
-    // El nombre de la aplicacion segun el idioma.
-    nameLocalizations: {
+        // El nombre por defecto de la aplicacion (Automatico).
+        default: 'example',
 
         // 'es-ES': 'ejemplo',
         // 'en-US': 'example',
         // ...
     },
 
-    // La descripcion por defecto de la aplicacion.
-    description: 'Example command',
-
-    // La descripcion de la aplicacion segun el idioma.
-    descriptionLocalizations: {
+    // Las descripciones de la aplicacion.
+    description: {
+        
+        // La descripcion por defecto de la aplicacion.
+        default: 'Example command',
 
         // 'es-ES': 'Comando de ejemplo',
         // 'en-US': 'Example command',
@@ -136,16 +136,20 @@ export default {
     },
 
     // El tipo de la aplicacion (Automatico).
-    // type: 'message',
+    // type: 1,
 
     // La prioridad del aplicacion para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
     priority: 0,
 
     // Si la aplicacion puede ejecutarse en DM's.
-    DMPermission: true,
+    dm: true,
 
-    // Los permisos que un miembro necesita para poder ejecutar esta aplicacion.
-    defaultMemberPermissions: null,
+    // Los permisos necesarios para ejecutar la aplicacion.
+    permissions: {
+
+        // Los permisos que necesita un miembro para ejecutar la aplicacion.
+        member: null
+    },
 
     replys: {
 
@@ -174,23 +178,25 @@ export default {
     //  name: 'example',
     //  description: 'Example command',
     //  type: 1,
-    //  defaultPermission: true,
-    //  nameLocalizations: {},
-    //  descriptionLocalizations: {}
+    //  options: [],
+    //  default_member_permissions: null,
+    //  dm_permission: true,
+    //  name_localizations: {},
+    //  description_localizations: {}
     // }
 };
 ```
 
-## Crear una aplicacion de menu contextual para mensajes
+## Crear una aplicacion de menu contextual para usuarios
 
 ```js
 export default {
 
-    // El nombre por defecto de la aplicacion (Automatico).
-    // name: 'example',
+    // Los nombres de la aplicacion.
+    name: {
 
-    // El nombre de la aplicacion segun el idioma.
-    nameLocalizations: {
+        // El nombre por defecto de la aplicacion (Automatico).
+        default: 'example',
 
         // 'es-ES': 'ejemplo',
         // 'en-US': 'example',
@@ -198,16 +204,20 @@ export default {
     },
 
     // El tipo de la aplicacion (Automatico).
-    // type: 'message',
+    // type: 2,
 
     // La prioridad del aplicacion para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
     priority: 0,
 
     // Si la aplicacion puede ejecutarse en DM's.
-    DMPermission: true,
+    dm: true,
 
-    // Los permisos que un miembro necesita para poder ejecutar esta aplicacion.
-    defaultMemberPermissions: null,
+    // Los permisos necesarios para ejecutar la aplicacion.
+    permissions: {
+
+        // Los permisos que necesita un miembro para ejecutar la aplicacion.
+        member: null
+    },
 
     replys: {
 
@@ -235,22 +245,23 @@ export default {
     // 
     //  name: 'example',
     //  type: 2,
-    //  defaultPermission: true,
-    //  nameLocalizations: {}
+    //  default_member_permissions: null,
+    //  dm_permission: true,
+    //  name_localizations: {}
     // }
 };
 ```
 
-## Crear una aplicacion de menu contextual para usuarios
+## Crear una aplicacion de menu contextual para mensajes
 
 ```js
 export default {
 
-    // El nombre por defecto de la aplicacion (Automatico).
-    // name: 'example',
+    // Los nombres de la aplicacion.
+    name: {
 
-    // El nombre de la aplicacion segun el idioma.
-    nameLocalizations: {
+        // El nombre por defecto de la aplicacion (Automatico).
+        default: 'example',
 
         // 'es-ES': 'ejemplo',
         // 'en-US': 'example',
@@ -258,16 +269,20 @@ export default {
     },
 
     // El tipo de la aplicacion (Automatico).
-    // type: 'user',
+    // type: 3,
 
     // La prioridad del aplicacion para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
     priority: 0,
 
     // Si la aplicacion puede ejecutarse en DM's.
-    DMPermission: true,
+    dm: true,
 
-    // Los permisos que un miembro necesita para poder ejecutar esta aplicacion.
-    defaultMemberPermissions: null,
+    // Los permisos necesarios para ejecutar la aplicacion.
+    permissions: {
+
+        // Los permisos que necesita un miembro para ejecutar la aplicacion.
+        member: null
+    },
 
     replys: {
 
@@ -295,8 +310,9 @@ export default {
     // 
     //  name: 'example',
     //  type: 3,
-    //  defaultPermission: true,
-    //  nameLocalizations: {}
+    //  default_member_permissions: null,
+    //  dm_permission: true,
+    //  name_localizations: {}
     // }
 };
 ```

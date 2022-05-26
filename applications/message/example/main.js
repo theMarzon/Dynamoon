@@ -4,7 +4,7 @@ export default {
 
     events: {
         
-        application: ({ client, event, loaders, groupers, managers, tools }) => {
+        application: ({ client, event, me, loaders, groupers, managers }) => {
 
             const messageEmbed = new discord.EmbedBuilder({
 

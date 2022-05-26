@@ -23,7 +23,7 @@ for (const _folder of eventsFolders) {
         
         ...fileContent.default,
     
-        package: _folder
+        name: _folder
     });
 
     loadedEvents.push(fileContent);

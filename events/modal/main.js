@@ -1,27 +1,23 @@
-import { ToolsBuilder } from '../../engine/structures/Tools.js';
-
 export default {
 
     priority: 2,
     
-    execute: ({ client, loaders, groupers, managers, tools }) => {
+    execute: ({ client, me, loaders, groupers, managers }) => {
 
-        client.on('interactionCreate', async (event) => {
+        client.on('interactionCreate', (event) => {
             
             // Si no es un modal
             if (!event.isModalSubmit()) return;
 
-            for (const _loadedFile of groupers.events[tools.file.name].all) {
+            for (const _loadedFile of groupers.events[me.name].all) {
 
-                const fileArguments = {
+                // Carga el evento 
+                _loadedFile.events[me.name]({
 
                     client, event, loaders, managers, groupers,
 
-                    tools: new ToolsBuilder(_loadedFile)
-                };
-
-                // Carga el evento 
-                _loadedFile.events[tools.file.name](fileArguments);
+                    me: _loadedFile
+                });
             };
         });
     }

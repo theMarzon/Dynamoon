@@ -23,7 +23,7 @@ for (const _folder of servicesFolders) {
         
         ...fileContent.default,
     
-        package: _folder
+        name: _folder
     });
 
     loadedServices.push(fileContent);

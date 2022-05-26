@@ -3,22 +3,20 @@ import discord from 'discord.js';
 import channelRestriction from './restrictions/channel.js';
 import replyRestriction   from './restrictions/reply.js';
 
-import { ToolsBuilder } from '../../engine/structures/Tools.js';
-
 export default {
 
     priority: 2,
     
-    execute: ({ client, loaders, groupers, managers, tools }) => {
+    execute: ({ client, me, loaders, groupers, managers }) => {
 
         client.on('interactionCreate', async (event) => {
             
             // Si no es un comando
             if (!event.isCommand()) return;
 
-            for (const _loadedApplication of groupers.events[tools.file.package].applications) {
+            for (const _loadedApplication of groupers.events[me.name].applications) {
 
-                if (event.commandName === _loadedApplication.package
+                if (event.commandName === _loadedApplication.name.default
                 &&    (event.isChatInputCommand()          && _loadedApplication.type === discord.ApplicationCommandType.ChatInput
                     || event.isUserContextMenuCommand()    && _loadedApplication.type === discord.ApplicationCommandType.User
                     || event.isMessageContextMenuCommand() && _loadedApplication.type === discord.ApplicationCommandType.Message)) {
@@ -27,14 +25,14 @@ export default {
 
                         client, event, loaders, managers, groupers,
 
-                        tools: new ToolsBuilder(_loadedApplication)
+                        me: _loadedApplication
                     };
 
                     if (await channelRestriction(fileArguments)
                     &&  await replyRestriction(fileArguments)) {
 
                         // Carga el evento 
-                        _loadedApplication.events[tools.file.package](fileArguments);
+                        _loadedApplication.events[me.name](fileArguments);
                     };
 
                     // Detiene el bucle

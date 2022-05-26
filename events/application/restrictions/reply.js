@@ -1,11 +1,11 @@
-export default async ({ client, event, loaders, groupers, managers, tools }) => {
+export default async ({ client, event, me, loaders, groupers, managers }) => {
     
     // Si se permite responder automaticamente las interacciones
-    if (tools.file.replys.automatic) {
+    if (me.replys.automatic) {
 
         try {
 
-            await event.deferReply({ ephemeral: tools.file.replys.private });
+            await event.deferReply({ ephemeral: me.replys.private });
         } catch {
 
             return false;

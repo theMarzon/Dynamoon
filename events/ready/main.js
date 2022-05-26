@@ -1,21 +1,19 @@
-import { ToolsBuilder } from '../../engine/structures/Tools.js';
-
 export default {
 
     priority: 3,
 
-    execute: ({ client, loaders, groupers, managers, tools }) => {
+    execute: ({ client, me, loaders, groupers, managers }) => {
 
         client.on('ready', () => {
 
-            for (const _loadedFile of groupers.events[tools.file.package].all) {
+            for (const _loadedFile of groupers.events[me.name].all) {
 
-                // Carga el evento
-                _loadedFile.events[tools.file.package]({
+                // Carga el evento 
+                _loadedFile.events[me.name]({
 
                     client, loaders, managers, groupers,
-    
-                    tools: new ToolsBuilder(_loadedFile)
+
+                    me: _loadedFile
                 });
             };
         });

@@ -8,11 +8,11 @@ let groupedEvents = {};
 
 for (const _loadedEvent of eventsLoader) {
 
-    const servicesFiles = servicesLoader.filter((val) => val.events[_loadedEvent.package]);
+    const servicesFiles = servicesLoader.filter((val) => val.events[_loadedEvent.name]);
 
     const applicationsFiles = slashApplicationsLoader.concat(userApplicationsLoader)
                                                      .concat(messageApplicationsLoader)
-                                                     .filter((val) => val.events[_loadedEvent.package]);
+                                                     .filter((val) => val.events[_loadedEvent.name]);
 
     const allFiles = servicesFiles.concat(applicationsFiles);
 
@@ -20,7 +20,7 @@ for (const _loadedEvent of eventsLoader) {
     if (!allFiles.length) continue;
 
     // Importa el evento y los archivos que lo utilizan
-    groupedEvents[_loadedEvent.package] = { 
+    groupedEvents[_loadedEvent.name] = { 
         
         services:     servicesFiles, 
         applications: applicationsFiles,

@@ -2,7 +2,7 @@ export class EventBuilder {
 
     constructor (options) {
 
-        this.package = options.package;
+        this.name = options.name;
 
         this.priority = options.priority ?? 0;
 

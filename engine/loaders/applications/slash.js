@@ -23,7 +23,7 @@ for (const _folder of applicationsFolders) {
         
         ...fileContent.default,
     
-        package: _folder
+        name: { default: _folder }
     });
 
     loadedApplications.push(fileContent);

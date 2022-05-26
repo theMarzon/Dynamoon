@@ -9,15 +9,13 @@ import eventsManager             from './events.js';
 
 import * as directoryManager from './directory.js';
 
-import { ToolsBuilder } from '../structures/Tools.js';
-
 export default (client) => {
 
     // Carga los eventos
     for (const _loadedEvent of eventsLoader) {
 
         // Si el evento no fue cargado salta al siguiente
-        if (!eventsGroup[_loadedEvent.package]) continue;
+        if (!eventsGroup[_loadedEvent.name]) continue;
 
         _loadedEvent.execute({
                 
@@ -48,7 +46,7 @@ export default (client) => {
                 directory: directoryManager
             },
 
-            tools: new ToolsBuilder(_loadedEvent)
+            me: _loadedEvent
         });
     }  
 };

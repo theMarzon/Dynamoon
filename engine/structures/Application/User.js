@@ -13,8 +13,7 @@ export class UserApplicationBuilder {
 
     constructor (options) {
 
-        this.package = options.package;
-        this.type    = discord.ApplicationCommandType.User;
+        this.type = discord.ApplicationCommandType.User;
 
         this.priority = options.priority ?? 0;
         
@@ -28,7 +27,7 @@ export class UserApplicationBuilder {
         // Nombres de la aplicacion
         this.name = options.name ?? {};
 
-        this.name.default = options.name?.default ?? this.package;
+        this.name.default = options.name?.default ?? 'undefined';
 
         // Permisos de la aplicacion
         this.permissions = {};
