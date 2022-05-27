@@ -72,6 +72,9 @@ export default {
     // La prioridad del evento para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
     priority: 0,
 
+    // Si el evento esta en desarrollo.
+    developing: true,
+
     // Los "intents" necesarios.
     intents: [],
 
@@ -96,6 +99,9 @@ export default {
 
     // La prioridad del servicio para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
     priority: 0,
+
+    // Si el servicio esta en desarrollo.
+    developing: true,
 
     // Los "intents" necesarios.
     intents: [],
@@ -140,6 +146,9 @@ export default {
 
     // La prioridad del aplicacion para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
     priority: 0,
+
+    // Si la aplicacion esta en desarrollo.
+    developing: true,
 
     // Si la aplicacion puede ejecutarse en DM's.
     dm: true,
@@ -209,6 +218,9 @@ export default {
     // La prioridad del aplicacion para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
     priority: 0,
 
+    // Si la aplicacion esta en desarrollo.
+    developing: true,
+
     // Si la aplicacion puede ejecutarse en DM's.
     dm: true,
 
@@ -274,6 +286,9 @@ export default {
     // La prioridad del aplicacion para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
     priority: 0,
 
+    // Si la aplicacion esta en desarrollo.
+    developing: true,
+
     // Si la aplicacion puede ejecutarse en DM's.
     dm: true,
 
@@ -327,7 +342,21 @@ Crea y actualiza las ``Aplicaciones`` creadas, editadas y eliminadas
 
 ### Application
 
-Este evento ejecuta las ``Aplicaciones`` cuando se crea una interaccion
+Este evento ejecuta las ``Aplicaciones`` cuando se crea una interaccion proveniente de una aplicacion de barra lateral o menu contextual
+
+> Si el proyecto se ejecuta en modo produccion las aplicaciones que esten en desarrollo no se ejecutaran
+
+### Button
+
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un boton
+
+### Menu
+
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un menu
+
+### Modal
+
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un modal
 
 ### Ready
 
