@@ -2,28 +2,28 @@
     <img src="https://i.ibb.co/02kJWXt/logo.png" width="512" />
 </div>
 
-Desarrolla Bots utilizando [discord.js](https://discord.js.org/) de la forma mas facil, rapida, modular y dinamica posible
+Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de la forma mas fácil, rápida, modular y dinámica posible.
 
 ## Iniciando un proyecto
 
-- Instale [Node](https://nodejs.org/) en la version ``v18.2.0`` y ejecute ``npm init``
+- Instale [Node](https://nodejs.org/) en la versión ``v18.2.0`` y ejecute ``npm init``
 
-- Abra el archivo ``package.json`` y agrege el objeto ``"type": "module"``
+- Abra el archivo ``package.json`` y agregue el objeto ``"type": "module"``
 
-- Instale las siguientes dependencias
+- Instale las siguientes dependencias:
 
-    | Nombre     | Version                       |
+    | Nombre     | Versión                       |
     |------------|-------------------------------|
     | discord.js | 14.0.0-dev.1653480262-68d5169 |
     | dotenv     | 16.0.0                        |
 
-- Cree un archivo ``.env`` (_Este archivo contendra ``TOKEN``, ``DEVELOPMENT_TOKEN`` y ``PRODUCTION_TOKEN`` segun el uso_)
+- Cree un archivo ``.env`` (_Este archivo contendrá ``TOKEN``, ``DEVELOPMENT_TOKEN`` y ``PRODUCTION_TOKEN`` según el uso_)
 
-    > ``TOKEN`` se utilizara al ejecutar ``node ./index.js``
+    > ``TOKEN`` se utilizará al ejecutar ``node ./index.js``
 
-    > ``DEVELOPMENT_TOKEN`` se utilizara al ejecutar ``node ./index.js --dev-mode``
+    > ``DEVELOPMENT_TOKEN`` se utilizará al ejecutar ``node ./index.js --dev-mode``
 
-    > ``PRODUCTION_TOKEN`` se utilizara al ejecutar ``node ./index.js --prod-mode``
+    > ``PRODUCTION_TOKEN`` se utilizará al ejecutar ``node ./index.js --prod-mode``
 
 ## Estructura de archivos
 
@@ -66,10 +66,10 @@ events\
 ```js
 export default {
 
-    // El nombre de la carpeta (Automatico).
+    // El nombre de la carpeta (automático).
     // package: 'example',
 
-    // La prioridad del evento para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
+    // La prioridad del evento para cargarlo antes que al resto (mientras mayor sea el número, más alta es).
     priority: 0,
 
     // Si el evento esta en desarrollo.
@@ -94,10 +94,10 @@ export default {
 ```js
 export default {
 
-    // El nombre a utilizar (Automatico).
+    // El nombre a utilizar (automático).
     // name: 'example',
 
-    // La prioridad del servicio para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
+    // La prioridad del servicio para cargarlo antes que al resto (mientras mayor sea el número, mas alta es).
     priority: 0,
 
     // Si el servicio esta en desarrollo.
@@ -114,15 +114,15 @@ export default {
 };
 ```
 
-## Crear una aplicacion de barra lateral
+## Crear una aplicación de barra lateral
 
 ```js
 export default {
 
-    // Los nombres de la aplicacion.
+    // Los nombres de la aplicación.
     name: {
 
-        // El nombre por defecto de la aplicacion (Automatico).
+        // El nombre por defecto de la aplicación (automático).
         default: 'example',
 
         // 'es-ES': 'ejemplo',
@@ -130,10 +130,10 @@ export default {
         // ...
     },
 
-    // Las descripciones de la aplicacion.
+    // Las descripciones de la aplicación.
     description: {
         
-        // La descripcion por defecto de la aplicacion.
+        // La descripcion por defecto de la aplicación.
         default: 'Example command',
 
         // 'es-ES': 'Comando de ejemplo',
@@ -141,34 +141,36 @@ export default {
         // ...
     },
 
-    // El tipo de la aplicacion (Automatico).
+    // El tipo de la aplicación (automático).
     // type: 1,
 
-    // La prioridad del aplicacion para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
+    // La prioridad del aplicación para cargarlo antes que al resto (mientras mayor sea el número, más alta es).
     priority: 0,
 
-    // Si la aplicacion esta en desarrollo.
+
+    // Si la aplicación está en desarrollo.
     developing: true,
 
     // Si la aplicacion puede ejecutarse en DM's.
+
     dm: true,
 
-    // Los permisos necesarios para ejecutar la aplicacion.
+    // Los permisos necesarios para ejecutar la aplicación.
     permissions: {
 
-        // Los permisos que necesita un miembro para ejecutar la aplicacion.
+        // Los permisos que necesita un miembro para ejecutar la aplicación.
         member: null
     },
 
     replys: {
 
-        // Si se tiene que responder una interaccion automaticamente.
+        // Si se tiene que responder una interacción automáticamente.
         automatic: true,
 
-        // Si la respuesta automatica se tiene que responder como efimera.
+        // Si la respuesta automática se tiene que responder como efímera.
         private: false,
 
-        // Los canales a ignorar si empiezan una interaccion.
+        // Los canales a ignorar si empiezan una interacción.
         ignore: []
     },
 
@@ -181,7 +183,7 @@ export default {
     // Los "partials" necesarios.
     partials: [],
 
-    // El esquema de la aplicacion (Automatico).
+    // El esquema de la aplicación (automático).
     // schema: {
     // 
     //  name: 'example',
@@ -196,15 +198,15 @@ export default {
 };
 ```
 
-## Crear una aplicacion de menu contextual para usuarios
+## Crear una aplicación de menú contextual para usuarios
 
 ```js
 export default {
 
-    // Los nombres de la aplicacion.
+    // Los nombres de la aplicación.
     name: {
 
-        // El nombre por defecto de la aplicacion (Automatico).
+        // El nombre por defecto de la aplicación (automático).
         default: 'example',
 
         // 'es-ES': 'ejemplo',
@@ -212,31 +214,33 @@ export default {
         // ...
     },
 
-    // El tipo de la aplicacion (Automatico).
+    // El tipo de la aplicación (automático).
     // type: 2,
 
-    // La prioridad del aplicacion para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
+    // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
     priority: 0,
 
-    // Si la aplicacion esta en desarrollo.
+
+    // Si la aplicación está en desarrollo.
     developing: true,
 
-    // Si la aplicacion puede ejecutarse en DM's.
+    // Si la aplicación puede ejecutarse en DM's.
+
     dm: true,
 
-    // Los permisos necesarios para ejecutar la aplicacion.
+    // Los permisos necesarios para ejecutar la aplicación.
     permissions: {
 
-        // Los permisos que necesita un miembro para ejecutar la aplicacion.
+        // Los permisos que necesita un miembro para ejecutar la aplicación.
         member: null
     },
 
     replys: {
 
-        // Si se tiene que responder una interaccion automaticamente.
+        // Si se tiene que responder una interaccion automáticamente.
         automatic: true,
 
-        // Si la respuesta automatica se tiene que responder como efimera.
+        // Si la respuesta automática se tiene que responder como efimera.
         private: false,
 
         // Los canales a ignorar si empiezan una interaccion.
@@ -252,7 +256,7 @@ export default {
     // Los "partials" necesarios.
     partials: [],
 
-    // El esquema de la aplicacion (Automatico).
+    // El esquema de la aplicación (automático).
     // schema: {
     // 
     //  name: 'example',
@@ -264,15 +268,15 @@ export default {
 };
 ```
 
-## Crear una aplicacion de menu contextual para mensajes
+## Crear una aplicación de menú contextual para mensajes
 
 ```js
 export default {
 
-    // Los nombres de la aplicacion.
+    // Los nombres de la aplicación.
     name: {
 
-        // El nombre por defecto de la aplicacion (Automatico).
+        // El nombre por defecto de la aplicación (automático).
         default: 'example',
 
         // 'es-ES': 'ejemplo',
@@ -280,31 +284,33 @@ export default {
         // ...
     },
 
-    // El tipo de la aplicacion (Automatico).
+    // El tipo de la aplicación (automático).
     // type: 3,
 
-    // La prioridad del aplicacion para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
+    // La prioridad del aplicación para cargarlo antes que al resto (mientras mayor sea el número, más alta es).
     priority: 0,
 
-    // Si la aplicacion esta en desarrollo.
+
+    // Si la aplicación está en desarrollo.
     developing: true,
 
-    // Si la aplicacion puede ejecutarse en DM's.
+    // Si la aplicación puede ejecutarse en DM's.
+
     dm: true,
 
-    // Los permisos necesarios para ejecutar la aplicacion.
+    // Los permisos necesarios para ejecutar la aplicación.
     permissions: {
 
-        // Los permisos que necesita un miembro para ejecutar la aplicacion.
+        // Los permisos que necesita un miembro para ejecutar la aplicación.
         member: null
     },
 
     replys: {
 
-        // Si se tiene que responder una interaccion automaticamente.
+        // Si se tiene que responder una interaccion automáticamente.
         automatic: true,
 
-        // Si la respuesta automatica se tiene que responder como efimera.
+        // Si la respuesta automática se tiene que responder como efimera.
         private: false,
 
         // Los canales a ignorar si empiezan una interaccion.
@@ -320,7 +326,7 @@ export default {
     // Los "partials" necesarios.
     partials: [],
 
-    // El esquema de la aplicacion (Automatico).
+    // El esquema de la aplicación (automático).
     // schema: {
     // 
     //  name: 'example',
@@ -336,32 +342,32 @@ export default {
 
 ### Indexer
 
-Crea y actualiza las ``Aplicaciones`` creadas, editadas y eliminadas 
+Crea y actualiza las ``Aplicaciones`` creadas, editadas y eliminadas.
 
 ## Eventos prefabricados
 
 ### Application
 
-Este evento ejecuta las ``Aplicaciones`` cuando se crea una interaccion proveniente de una aplicacion de barra lateral o menu contextual
+Este evento ejecuta las ``Aplicaciones`` cuando se crea una interacción proveniente de una aplicación de barra lateral o menú contextual.
 
-> Si el proyecto se ejecuta en modo produccion las aplicaciones que esten en desarrollo no se ejecutaran
+> Si el proyecto se ejecuta en modo producción las aplicaciones que estén en desarrollo no se ejecutarán.
 
 ### Button
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un boton
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un boton.
 
 ### Menu
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un menu
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un menu.
 
 ### Modal
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un modal
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un modal.
 
 ### Ready
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` al momento de establecerse la conexion
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` al momento de establecerse la conexión.
 
 ### Boot
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` al momento de inicializarse el proyecto
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` al momento de inicializarse el proyecto.
