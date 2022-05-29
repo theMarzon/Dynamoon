@@ -5,6 +5,7 @@ import userApplicationsLoader    from '../loaders/applications/user.js';
 import messageApplicationsLoader from '../loaders/applications/message.js';
 import eventsGroup               from '../groupers/events.js';
 import intentsGroup              from '../groupers/intents.js';
+import partialsGroup             from '../groupers/partials.js';
 import eventsManager             from './events.js';
 
 import * as directoryManager from './directory.js';
@@ -21,6 +22,8 @@ export default (client) => {
                 
             client,
 
+            me: _loadedEvent,
+
             loaders: {
 
                 events:   eventsLoader,
@@ -36,17 +39,16 @@ export default (client) => {
 
             groupers: {
 
-                events:  eventsGroup,
-                intents: intentsGroup
+                events:   eventsGroup,
+                intents:  intentsGroup,
+                partials: partialsGroup
             },
 
             managers: {
 
                 events:    eventsManager,
                 directory: directoryManager
-            },
-
-            me: _loadedEvent
+            }
         });
     }  
 };

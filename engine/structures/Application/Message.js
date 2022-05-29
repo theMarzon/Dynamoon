@@ -17,7 +17,8 @@ export class MessageApplicationBuilder {
 
         this.priority = options.priority ?? 0;
         
-        this.dm = options.dm ?? true;
+        this.developing = options.developing ?? true;
+        this.dm         = options.dm         ?? true;
 
         this.intents  = options.intents  ?? [];
         this.partials = options.partials ?? [];
@@ -38,7 +39,7 @@ export class MessageApplicationBuilder {
         this.replys = {};
 
         this.replys.automatic = options.replys?.automatic ?? true;
-        this.replys.priority  = options.replys?.private   ?? false;
+        this.replys.private   = options.replys?.private   ?? false;
 
         this.replys.ignore = options.replys?.ignore ?? [];
 

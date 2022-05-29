@@ -72,6 +72,9 @@ export default {
     // La prioridad del evento para cargarlo antes que al resto (mientras mayor sea el número, más alta es).
     priority: 0,
 
+    // Si el evento esta en desarrollo.
+    developing: true,
+
     // Los "intents" necesarios.
     intents: [],
 
@@ -96,6 +99,9 @@ export default {
 
     // La prioridad del servicio para cargarlo antes que al resto (mientras mayor sea el número, mas alta es).
     priority: 0,
+
+    // Si el servicio esta en desarrollo.
+    developing: true,
 
     // Los "intents" necesarios.
     intents: [],
@@ -141,7 +147,12 @@ export default {
     // La prioridad del aplicación para cargarlo antes que al resto (mientras mayor sea el número, más alta es).
     priority: 0,
 
-    // Si la aplicación puede ejecutarse en DM's.
+
+    // Si la aplicación está en desarrollo.
+    developing: true,
+
+    // Si la aplicacion puede ejecutarse en DM's.
+
     dm: true,
 
     // Los permisos necesarios para ejecutar la aplicación.
@@ -209,7 +220,12 @@ export default {
     // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
     priority: 0,
 
+
+    // Si la aplicación está en desarrollo.
+    developing: true,
+
     // Si la aplicación puede ejecutarse en DM's.
+
     dm: true,
 
     // Los permisos necesarios para ejecutar la aplicación.
@@ -274,7 +290,12 @@ export default {
     // La prioridad del aplicación para cargarlo antes que al resto (mientras mayor sea el número, más alta es).
     priority: 0,
 
+
+    // Si la aplicación está en desarrollo.
+    developing: true,
+
     // Si la aplicación puede ejecutarse en DM's.
+
     dm: true,
 
     // Los permisos necesarios para ejecutar la aplicación.
@@ -327,7 +348,21 @@ Crea y actualiza las ``Aplicaciones`` creadas, editadas y eliminadas.
 
 ### Application
 
-Este evento ejecuta las ``Aplicaciones`` cuando se crea una interacción.
+Este evento ejecuta las ``Aplicaciones`` cuando se crea una interacción proveniente de una aplicación de barra lateral o menú contextual.
+
+> Si el proyecto se ejecuta en modo producción las aplicaciones que estén en desarrollo no se ejecutarán.
+
+### Button
+
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un boton.
+
+### Menu
+
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un menu.
+
+### Modal
+
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un modal.
 
 ### Ready
 

@@ -2,6 +2,7 @@ import discord from 'discord.js';
 import dotenv  from 'dotenv';
 
 import intentsGroup  from './engine/groupers/intents.js';
+import partialsGroup from './engine/groupers/partials.js';
 import eventsManager from './engine/managers/events.js';
 
 // El modo en el que se ejecuta el proyecto
@@ -15,7 +16,8 @@ dotenv.config();
 // Crea el cliente
 let client = new discord.Client({
 
-    intents: intentsGroup,
+    intents:  intentsGroup,
+    partials: partialsGroup,
 
     allowedMentions: { parse: [], repliedUser: false }
 });

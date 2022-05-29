@@ -5,6 +5,8 @@ export class ServiceBuilder {
         this.name = options.name;
 
         this.priority = options.priority ?? 0;
+        
+        this.developing = options.developing ?? true;
 
         this.intents  = options.intents  ?? [];
         this.partials = options.partials ?? [];

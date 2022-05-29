@@ -10,6 +10,8 @@ export default {
         'en-US': 'Example command'
     },
 
+    stable: true,
+
     events: {
         
         application: ({ client, event, me, loaders, groupers, managers }) => {
