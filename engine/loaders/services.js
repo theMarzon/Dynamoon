@@ -8,7 +8,7 @@ import { ServiceBuilder } from '../structures/Service.js';
 let loadedServices = [];
 
 const servicesFolders = fs.readdirSync(servicesPath)
-                          .filter((val) => !val.startsWith('.'));
+                          .filter((v) => !v.startsWith('.'));
 
 for (const _folder of servicesFolders) {
 

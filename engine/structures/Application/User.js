@@ -17,8 +17,8 @@ export class UserApplicationBuilder {
 
         this.priority = options.priority ?? 0;
         
-        this.developing = options.developing ?? true;
-        this.dm         = options.dm         ?? true;
+        this.stable = options.stable ?? false;
+        this.dm     = options.dm     ?? true;
 
         this.intents  = options.intents  ?? [];
         this.partials = options.partials ?? [];
@@ -54,9 +54,9 @@ export class UserApplicationBuilder {
         this.schema.name_localizations = removeDefaultObject(this.name);
         
         // Elimina los "intents" duplicados
-        this.intents = this.intents.filter((val, ind, arr) => arr.indexOf(val) === ind);
+        this.intents = this.intents.filter((v, i, a) => a.indexOf(v) === i);
         
         // Elimina los "partials" duplicados
-        this.partials = this.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
+        this.partials = this.partials.filter((v, i, a) => a.indexOf(v) === i);
     };
 };

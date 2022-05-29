@@ -8,11 +8,11 @@ let groupedEvents = {};
 
 for (const _loadedEvent of eventsLoader) {
 
-    const servicesFiles = servicesLoader.filter((val) => val.events[_loadedEvent.name]);
+    const servicesFiles = servicesLoader.filter((v) => v.events[_loadedEvent.name]);
 
     const applicationsFiles = slashApplicationsLoader.concat(userApplicationsLoader)
                                                      .concat(messageApplicationsLoader)
-                                                     .filter((val) => val.events[_loadedEvent.name]);
+                                                     .filter((v) => v.events[_loadedEvent.name]);
 
     const allFiles = servicesFiles.concat(applicationsFiles);
 

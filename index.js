@@ -1,17 +1,23 @@
 import discord from 'discord.js';
 import dotenv  from 'dotenv';
+import path    from 'node:path';
 
 import intentsGroup  from './engine/groupers/intents.js';
 import partialsGroup from './engine/groupers/partials.js';
 import eventsManager from './engine/managers/events.js';
 
 // El modo en el que se ejecuta el proyecto
-const mode = (process.argv.includes('--dev-mode'))  ? 'development'
-           : (process.argv.includes('--prod-mode')) ? 'production'
-           :                                          'default';
+const projectMode = (process.argv.includes('--dev-mode'))  ? 'development'
+                  : (process.argv.includes('--prod-mode')) ? 'production'
+                                                           : 'default';
+
+// Genera la ruta exacta del archivo ".env" segun el modo en el que se ejecute el proyecto
+const envPath = (projectMode === 'development') ? path.join(process.cwd(), '.env.development')
+              : (projectMode === 'production')  ? path.join(process.cwd(), '.env.production')
+                                                : path.join(process.cwd(), '.env');
 
 // Configura las variables de entorno
-dotenv.config();
+dotenv.config({ path: envPath });
 
 // Crea el cliente
 let client = new discord.Client({
@@ -25,7 +31,7 @@ let client = new discord.Client({
 // Crea valores extra en el cliente
 client.engine = {
 
-    mode,
+    mode: projectMode,
 
     name:    'Dinamoon',
     version: '0.5.0',
@@ -43,10 +49,5 @@ client.engine = {
 // Ejecuta los eventos
 eventsManager(client);
 
-// Conecta el cliente
-const token = (mode === 'development') ? process.env.DEVELOPMENT_TOKEN
-            : (mode === 'production')  ? process.env.PRODUCTION_TOKEN
-            :                            process.env.TOKEN;
-
-client.login(token)
+client.login(process.env.TOKEN)
       .then(() => console.log('Connection established'));

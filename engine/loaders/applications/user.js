@@ -8,7 +8,7 @@ import { UserApplicationBuilder } from '../../structures/Application/User.js';
 let loadedApplications = [];
 
 const applicationsFolders = fs.readdirSync(userApplicationsPath)
-                              .filter((val) => !val.startsWith('.'));
+                              .filter((v) => !v.startsWith('.'));
 
 for (const _folder of applicationsFolders) {
 

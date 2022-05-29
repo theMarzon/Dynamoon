@@ -8,7 +8,7 @@ import { SlashApplicationBuilder } from '../../structures/Application/Slash.js';
 let loadedApplications = [];
 
 const applicationsFolders = fs.readdirSync(slashApplicationsPath)
-                              .filter((val) => !val.startsWith('.'));
+                              .filter((v) => !v.startsWith('.'));
 
 for (const _folder of applicationsFolders) {
 

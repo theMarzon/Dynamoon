@@ -8,7 +8,7 @@ import { EventBuilder } from '../structures/Event.js';
 let loadedEvents = [];
 
 const eventsFolders = fs.readdirSync(eventsPath)
-                        .filter((val) => !val.startsWith('.'));
+                        .filter((v) => !v.startsWith('.'));
 
 for (const _folder of eventsFolders) {
 
