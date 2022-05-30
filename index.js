@@ -7,14 +7,14 @@ import partialsGroup from './engine/groupers/partials.js';
 import eventsManager from './engine/managers/events.js';
 
 // El modo en el que se ejecuta el proyecto
-const projectMode = (process.argv.includes('--dev-mode'))  ? 'development'
-                  : (process.argv.includes('--prod-mode')) ? 'production'
-                                                           : 'default';
+const runMode = (process.argv.includes('--dev-mode'))  ? 'development'
+              : (process.argv.includes('--prod-mode')) ? 'production'
+                                                       : 'standar';
 
-// Genera la ruta exacta del archivo ".env" segun el modo en el que se ejecute el proyecto
-const envPath = (projectMode === 'development') ? path.join(process.cwd(), '.env.development')
-              : (projectMode === 'production')  ? path.join(process.cwd(), '.env.production')
-                                                : path.join(process.cwd(), '.env');
+// Genera la ruta exacta del archivo ".env" segun el modo en el que se ejecuta el proyecto
+const envPath = (runMode === 'development') ? path.join(process.cwd(), '.env.development')
+              : (runMode === 'production')  ? path.join(process.cwd(), '.env.production')
+                                            : path.join(process.cwd(), '.env');
 
 // Configura las variables de entorno
 dotenv.config({ path: envPath });
@@ -31,7 +31,7 @@ let client = new discord.Client({
 // Crea valores extra en el cliente
 client.engine = {
 
-    mode: projectMode,
+    mode: runMode,
 
     name:    'Dinamoon',
     version: '0.5.0',

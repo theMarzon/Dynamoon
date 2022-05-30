@@ -2,7 +2,9 @@ import discord from 'discord.js';
 
 export default {
 
-    stable: true,
+    reply: { private: true },
+
+    public: true,
 
     events: {
         

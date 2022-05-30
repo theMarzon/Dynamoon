@@ -1,35 +1,34 @@
 import fs   from 'node:fs';
 import path from 'node:path';
 
-import { eventsPath } from '../managers/directory.js';
+import eventBuilder from '../builders/event.js';
 
-import { EventBuilder } from '../structures/Event.js';
+import { eventDirectory } from '../managers/directory.js';
 
 let loadedEvents = [];
 
-const eventsFolders = fs.readdirSync(eventsPath)
+const eventsFolders = fs.readdirSync(eventDirectory)
                         .filter((v) => !v.startsWith('.'));
 
-for (const _folder of eventsFolders) {
+for (const _eventFolder of eventsFolders) {
 
-    // Genera la ruta exacta del archivo
-    const filePath = path.join(eventsPath, _folder, 'main.js');
+    // Genera una ruta del archivo principal
+    const filePath = path.join(eventDirectory, _eventFolder, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);
 
-    // Construye el evento
-    fileContent = new EventBuilder({
+    fileContent = new eventBuilder({
         
         ...fileContent.default,
     
-        name: _folder
+        name: _eventFolder
     });
 
     loadedEvents.push(fileContent);
 };
 
-// Organiza los archivos importados por su prioridad
+// Organiza los eventos cargados por su prioridad
 loadedEvents = loadedEvents.sort((a, b) => b.priority - a.priority);
 
 export default loadedEvents;

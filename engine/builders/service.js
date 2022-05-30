@@ -1,12 +1,10 @@
-export class ServiceBuilder {
+export default class {
 
     constructor (options) {
 
         this.name = options.name;
 
         this.priority = options.priority ?? 0;
-        
-        this.stable = options.stable ?? false;
 
         this.intents  = options.intents  ?? [];
         this.partials = options.partials ?? [];

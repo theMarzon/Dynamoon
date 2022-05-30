@@ -8,7 +8,7 @@ export default {
 
             for (const _loadedFile of groupers.events[me.name].all) {
 
-                // Carga el evento 
+                // Ejecuta el evento del archivo
                 _loadedFile.events[me.name]({
 
                     client, loaders, managers, groupers,

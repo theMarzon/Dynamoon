@@ -1,19 +1,17 @@
-import eventsLoader from '../loaders/events.js';
-import eventsGroup  from './events.js';
+import loadedEvents  from '../loaders/events.js';
+import groupedEvents from './events.js';
 
 let groupedPartials = [];
 
-for (const _loadedEvent of eventsLoader) {
+for (const _loadedEvent of loadedEvents) {
 
-    // Si el evento no es utilizado, salta al siguiente
-    if (!eventsGroup[_loadedEvent.name]) continue;
+    // Omite el evento si no es neceserio
+    if (!groupedEvents[_loadedEvent.name]) continue;
 
-    // Importa los "partials" del evento
     groupedPartials = groupedPartials.concat(_loadedEvent.partials);
 
-    for (const _loadedFile of eventsGroup[_loadedEvent.name].all) {
+    for (const _loadedFile of groupedEvents[_loadedEvent.name].all) {
 
-        // Importa los "partials" del archivo que utiliza el evento
         groupedPartials = groupedPartials.concat(_loadedFile.partials);
     };
 };

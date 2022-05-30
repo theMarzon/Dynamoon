@@ -1,6 +1,6 @@
 import discord from 'discord.js';
 
-import statusRestriction  from './restrictions/status.js';
+import accessRestriction  from './restrictions/access.js';
 import channelRestriction from './restrictions/channel.js';
 import replyRestriction   from './restrictions/reply.js';
 
@@ -29,11 +29,11 @@ export default {
                         me: _loadedApplication
                     };
 
-                    if      (statusRestriction(fileArguments)
+                    if      (accessRestriction(fileArguments)
                     && await channelRestriction(fileArguments)
                     && await replyRestriction(fileArguments)) {
 
-                        // Carga el evento 
+                        // Ejecuta el evento del archivo
                         _loadedApplication.events[me.name](fileArguments);
                     };
 

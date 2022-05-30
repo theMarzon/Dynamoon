@@ -1,11 +1,11 @@
-import eventsLoader              from '../loaders/events.js';
-import servicesLoader            from '../loaders/services.js';
-import slashApplicationsLoader   from '../loaders/applications/slash.js';
-import userApplicationsLoader    from '../loaders/applications/user.js';
-import messageApplicationsLoader from '../loaders/applications/message.js';
-import eventsGroup               from '../groupers/events.js';
-import intentsGroup              from '../groupers/intents.js';
-import partialsGroup             from '../groupers/partials.js';
+import loadedEvents              from '../loaders/events.js';
+import loadedServices            from '../loaders/services.js';
+import loadedSlashApplications   from '../loaders/applications/slash.js';
+import loadedUserApplications    from '../loaders/applications/user.js';
+import loadedMessageApplications from '../loaders/applications/message.js';
+import groupedEvents             from '../groupers/events.js';
+import groupedIntents            from '../groupers/intents.js';
+import groupedPartials           from '../groupers/partials.js';
 import eventsManager             from './events.js';
 
 import * as directoryManager from './directory.js';
@@ -13,10 +13,10 @@ import * as directoryManager from './directory.js';
 export default (client) => {
 
     // Carga los eventos
-    for (const _loadedEvent of eventsLoader) {
+    for (const _loadedEvent of loadedEvents) {
 
         // Si el evento no fue cargado salta al siguiente
-        if (!eventsGroup[_loadedEvent.name]) continue;
+        if (!groupedEvents[_loadedEvent.name]) continue;
 
         _loadedEvent.execute({
                 
@@ -26,22 +26,22 @@ export default (client) => {
 
             loaders: {
 
-                events:   eventsLoader,
-                services: servicesLoader,
+                events:   loadedEvents,
+                services: loadedServices,
 
                 applications: {
 
-                    slash:   slashApplicationsLoader,
-                    user:    userApplicationsLoader,
-                    message: messageApplicationsLoader
+                    slash:   loadedSlashApplications,
+                    user:    loadedUserApplications,
+                    message: loadedMessageApplications
                 }
             },
 
             groupers: {
 
-                events:   eventsGroup,
-                intents:  intentsGroup,
-                partials: partialsGroup
+                events:   groupedEvents,
+                intents:  groupedIntents,
+                partials: groupedPartials
             },
 
             managers: {

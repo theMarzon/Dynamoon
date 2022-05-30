@@ -1,35 +1,34 @@
 import fs   from 'node:fs';
 import path from 'node:path';
 
-import { slashApplicationsPath } from '../../managers/directory.js';
+import slashApplicationBuilder from '../../builders/application/slash.js';
 
-import { SlashApplicationBuilder } from '../../structures/Application/Slash.js';
+import { slashApplicationDirectory } from '../../managers/directory.js';
 
 let loadedApplications = [];
 
-const applicationsFolders = fs.readdirSync(slashApplicationsPath)
+const applicationsFolders = fs.readdirSync(slashApplicationDirectory)
                               .filter((v) => !v.startsWith('.'));
 
-for (const _folder of applicationsFolders) {
+for (const _applicationFolder of applicationsFolders) {
 
-    // Genera la ruta exacta del archivo
-    const filePath = path.join(slashApplicationsPath, _folder, 'main.js');
+    // Genera una ruta del archivo principal
+    const filePath = path.join(slashApplicationDirectory, _applicationFolder, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);
 
-    // Construye la aplicacion
-    fileContent = new SlashApplicationBuilder({
+    fileContent = new slashApplicationBuilder({
         
         ...fileContent.default,
     
-        name: { default: _folder }
+        name: { default: _applicationFolder }
     });
 
     loadedApplications.push(fileContent);
 };
 
-// Organiza los archivos importados por su prioridad
+// Organiza las aplicaciones cargadas por su prioridad
 loadedApplications = loadedApplications.sort((a, b) => b.priority - a.priority);
 
 export default loadedApplications;

@@ -10,12 +10,14 @@ export default {
         'en-US': 'Example command'
     },
 
-    stable: true,
+    reply: { private: true },
+
+    public: true,
 
     events: {
         
         application: ({ client, event, me, loaders, groupers, managers }) => {
-
+            
             const messageEmbed = new discord.EmbedBuilder({
 
                 color: discord.Colors.White,
@@ -23,7 +25,7 @@ export default {
                 description: `👋😃 ${event.user.toString()}`
             });
             
-            event.editReply({ embeds: [ messageEmbed ] });
+            // event.editReply({ embeds: [ messageEmbed ] });
         }
     }
 };

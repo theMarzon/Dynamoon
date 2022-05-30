@@ -1,35 +1,34 @@
 import fs   from 'node:fs';
 import path from 'node:path';
 
-import { servicesPath } from '../managers/directory.js';
+import serviceBuilder from '../builders/service.js';
 
-import { ServiceBuilder } from '../structures/Service.js';
+import { serviceDirectory } from '../managers/directory.js';
 
 let loadedServices = [];
 
-const servicesFolders = fs.readdirSync(servicesPath)
+const servicesFolders = fs.readdirSync(serviceDirectory)
                           .filter((v) => !v.startsWith('.'));
 
-for (const _folder of servicesFolders) {
+for (const _serviceFolder of servicesFolders) {
 
-    // Genera la ruta exacta del archivo
-    const filePath = path.join(servicesPath, _folder, 'main.js');
+    // Genera una ruta del archivo principal
+    const filePath = path.join(serviceDirectory, _serviceFolder, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);
 
-    // Construye el servicio
-    fileContent = new ServiceBuilder({
+    fileContent = new serviceBuilder({
         
         ...fileContent.default,
     
-        name: _folder
+        name: _serviceFolder
     });
 
     loadedServices.push(fileContent);
 };
 
-// Organiza los archivos importados por su prioridad
+// Organiza los servicios cargados por su prioridad
 loadedServices = loadedServices.sort((a, b) => b.priority - a.priority);
 
 export default loadedServices;

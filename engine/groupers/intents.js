@@ -1,19 +1,17 @@
-import eventsLoader from '../loaders/events.js';
-import eventsGroup  from './events.js';
+import loadedEvents  from '../loaders/events.js';
+import groupedEvents from './events.js';
 
 let groupedIntents = [];
 
-for (const _loadedEvent of eventsLoader) {
+for (const _loadedEvent of loadedEvents) {
 
-    // Si el evento no es utilizado, salta al siguiente
-    if (!eventsGroup[_loadedEvent.name]) continue;
+    // Omite el evento si no es neceserio
+    if (!groupedEvents[_loadedEvent.name]) continue;
 
-    // Importa los "intents" del evento
     groupedIntents = groupedIntents.concat(_loadedEvent.intents);
 
-    for (const _loadedFile of eventsGroup[_loadedEvent.name].all) {
+    for (const _loadedFile of groupedEvents[_loadedEvent.name].all) {
 
-        // Importa los "intents" del archivo que utiliza el evento
         groupedIntents = groupedIntents.concat(_loadedFile.intents);
     };
 };
