@@ -41,12 +41,6 @@ export default class {
 
         this.permissions.member = options.permissions?.member ?? null;
 
-        // Opciones de respuesta
-        this.reply = {};
-
-        this.reply.automatic = options.reply?.automatic ?? true;
-        this.reply.private   = options.reply?.private   ?? false;
-
         // Restricciones de interacciones
         this.restrict = options.restrict ?? {};
 

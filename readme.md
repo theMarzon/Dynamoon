@@ -157,7 +157,7 @@ export default {
     // Las restricciones para las interacciones de gremios, canales y usuarios.
     restrict: {
 
-        // Si en vez de denegar la ejecucion, permitirla para cierto gremios, canales o usuarios.
+        // Invierte la gestion de las restricciones.
         // invert: false (En desarollo),
 
         // Gremios a restringir.
@@ -241,7 +241,7 @@ export default {
     // Las restricciones para las interacciones de gremios, canales y usuarios.
     restrict: {
 
-        // Si en vez de denegar la ejecucion, permitirla para cierto gremios, canales o usuarios.
+        // Invierte la gestion de las restricciones.
         // invert: false (En desarollo),
 
         // Gremios a restringir.
@@ -322,7 +322,7 @@ export default {
     // Las restricciones para las interacciones de gremios, canales y usuarios.
     restrict: {
 
-        // Si en vez de denegar la ejecucion, permitirla para cierto gremios, canales o usuarios.
+        // Invierte la gestion de las restricciones.
         // invert: false (En desarollo),
 
         // Gremios a restringir.
