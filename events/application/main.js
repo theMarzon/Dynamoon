@@ -1,8 +1,9 @@
 import discord from 'discord.js';
 
-import accessRestriction  from './restrictions/access.js';
-import channelRestriction from './restrictions/channel.js';
-import replyRestriction   from './restrictions/reply.js';
+import modeRestriction     from './restrictions/mode.js';
+import guildsRestriction   from './restrictions/users.js';
+import channelsRestriction from './restrictions/channels.js';
+import usersRestriction    from './restrictions/users.js';
 
 export default {
 
@@ -29,9 +30,10 @@ export default {
                         me: _loadedApplication
                     };
 
-                    if      (accessRestriction(fileArguments)
-                    && await channelRestriction(fileArguments)
-                    && await replyRestriction(fileArguments)) {
+                    if      (modeRestriction(fileArguments)
+                    &&       guildsRestriction(fileArguments)
+                    && await channelsRestriction(fileArguments)
+                    &&       usersRestriction(fileArguments)) {
 
                         // Ejecuta el evento del archivo
                         _loadedApplication.events[me.name](fileArguments);

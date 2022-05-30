@@ -6,33 +6,22 @@ import intentsGroup  from './engine/groupers/intents.js';
 import partialsGroup from './engine/groupers/partials.js';
 import eventsManager from './engine/managers/events.js';
 
-// El modo en el que se ejecuta el proyecto
-const runMode = (process.argv.includes('--dev-mode'))  ? 'development'
-              : (process.argv.includes('--prod-mode')) ? 'production'
-                                                       : 'standar';
-
-// Genera la ruta exacta del archivo ".env" segun el modo en el que se ejecuta el proyecto
-const envPath = (runMode === 'development') ? path.join(process.cwd(), '.env.development')
-              : (runMode === 'production')  ? path.join(process.cwd(), '.env.production')
-                                            : path.join(process.cwd(), '.env');
-
-// Configura las variables de entorno
-dotenv.config({ path: envPath });
-
 // Crea el cliente
 let client = new discord.Client({
 
     intents:  intentsGroup,
     partials: partialsGroup,
-
+    
     allowedMentions: { parse: [], repliedUser: false }
 });
 
 // Crea valores extra en el cliente
 client.engine = {
 
-    mode: runMode,
-
+    mode: (process.argv.includes('--dev-mode'))  ? 'development'
+        : (process.argv.includes('--prod-mode')) ? 'production'
+                                                 : 'standar',
+                                                 
     name:    'Dinamoon',
     version: '0.5.0',
 
@@ -45,6 +34,14 @@ client.engine = {
         logo:   'https://i.ibb.co/02kJWXt/logo.png'
     }
 };
+
+// Configura las variables de entorno
+dotenv.config({ 
+    
+    path: (client.mode === 'development') ? path.join(process.cwd(), '.env.development')
+        : (client.mode === 'production')  ? path.join(process.cwd(), '.env.production')
+                                          : path.join(process.cwd(), '.env')
+});
 
 // Ejecuta los eventos
 eventsManager(client);

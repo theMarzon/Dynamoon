@@ -2,8 +2,6 @@ import discord from 'discord.js';
 
 export default {
 
-    reply: { private: true },
-
     public: true,
 
     events: {

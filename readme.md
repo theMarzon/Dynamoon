@@ -2,7 +2,7 @@
     <img src="https://i.ibb.co/02kJWXt/logo.png" width="512" />
 </div>
 
-Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de la forma mas fácil, rápida, modular y dinámica posible.
+Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de la forma mas fácil, rápida, modular y dinámica posible
 
 ## Iniciando un proyecto
 
@@ -154,16 +154,29 @@ export default {
         member: null
     },
 
-    reply: {
+    // Las restricciones para las interacciones de gremios, canales y usuarios.
+    restrict: {
 
-        // Si se tiene que responder una interacción automáticamente.
-        automatic: true,
+        // Si en vez de denegar la ejecucion, permitirla para cierto gremios, canales o usuarios.
+        // invert: false (En desarollo),
 
-        // Si la respuesta automática se tiene que responder como efímera.
-        private: false,
+        // Gremios a restringir.
+        guilds: [
 
-        // Los canales a ignorar si empiezan una interacción.
-        ignore: []
+            // ID's...
+        ],
+
+        // Canales a restringir.
+        channels: [
+
+            // ID's o tipos...     
+        ],
+
+        // Usuarios a restringir.
+        users: [
+
+            // ID's...
+        ]
     },
 
     // Los eventos a utilizar.
@@ -225,16 +238,29 @@ export default {
         member: null
     },
 
-    reply: {
+    // Las restricciones para las interacciones de gremios, canales y usuarios.
+    restrict: {
 
-        // Si se tiene que responder una interaccion automáticamente.
-        automatic: true,
+        // Si en vez de denegar la ejecucion, permitirla para cierto gremios, canales o usuarios.
+        // invert: false (En desarollo),
 
-        // Si la respuesta automática se tiene que responder como efimera.
-        private: false,
+        // Gremios a restringir.
+        guilds: [
 
-        // Los canales a ignorar si empiezan una interaccion.
-        ignore: []
+            // ID's...
+        ],
+
+        // Canales a restringir.
+        channels: [
+
+            // ID's o tipos...     
+        ],
+
+        // Usuarios a restringir.
+        users: [
+
+            // ID's...
+        ]
     },
 
     // Los eventos a utilizar.
@@ -293,16 +319,29 @@ export default {
         member: null
     },
 
-    reply: {
+    // Las restricciones para las interacciones de gremios, canales y usuarios.
+    restrict: {
 
-        // Si se tiene que responder una interaccion automáticamente.
-        automatic: true,
+        // Si en vez de denegar la ejecucion, permitirla para cierto gremios, canales o usuarios.
+        // invert: false (En desarollo),
 
-        // Si la respuesta automática se tiene que responder como efimera.
-        private: false,
+        // Gremios a restringir.
+        guilds: [
 
-        // Los canales a ignorar si empiezan una interaccion.
-        ignore: []
+            // ID's...
+        ],
+
+        // Canales a restringir.
+        channels: [
+
+            // ID's o tipos...     
+        ],
+
+        // Usuarios a restringir.
+        users: [
+
+            // ID's...
+        ]
     },
 
     // Los eventos a utilizar.
@@ -330,32 +369,32 @@ export default {
 
 ### Indexer
 
-Crea y actualiza las ``Aplicaciones`` creadas, editadas y eliminadas.
+Crea y actualiza las ``Aplicaciones`` creadas, editadas y eliminadas
 
 ## Eventos prefabricados
 
 ### Application
 
-Este evento ejecuta las ``Aplicaciones`` cuando se crea una interacción proveniente de una aplicación de barra lateral o menú contextual.
+Este evento ejecuta las ``Aplicaciones`` cuando se crea una interacción proveniente de una aplicación de barra lateral o menú contextual
 
-> Si el proyecto se ejecuta en modo producción las aplicaciones que estén en desarrollo no se ejecutarán.
+> Si el proyecto se ejecuta en modo producción las aplicaciones que estén en desarrollo no se ejecutarán
 
 ### Button
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un boton.
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un boton
 
 ### Menu
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un menu.
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un menu
 
 ### Modal
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un modal.
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un modal
 
 ### Ready
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` al momento de establecerse la conexión.
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` al momento de establecerse la conexión
 
 ### Boot
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` al momento de inicializarse el proyecto.
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` al momento de inicializarse el proyecto

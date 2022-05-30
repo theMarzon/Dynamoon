@@ -41,7 +41,14 @@ export default class {
         this.reply.automatic = options.reply?.automatic ?? true;
         this.reply.private   = options.reply?.private   ?? false;
 
-        this.reply.ignore = options.reply?.ignore ?? [];
+        // Restricciones de interacciones
+        this.restrict = options.restrict ?? {};
+
+        // this.restrict.invert = options.restrict?.invert ?? false;
+
+        this.restrict.guilds   = options.restrict?.guilds   ?? [];
+        this.restrict.channels = options.restrict?.channels ?? [];
+        this.restrict.users    = options.restrict?.users    ?? [];
 
         // Esquema de la aplicacion
         this.schema = new discord.ContextMenuCommandBuilder();

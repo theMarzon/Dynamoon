@@ -10,7 +10,13 @@ export default {
         'en-US': 'Example command'
     },
 
-    reply: { private: true },
+    restrict: {
+
+        channels: [
+
+            discord.ChannelType.DM
+        ]
+    },
 
     public: true,
 
@@ -25,7 +31,7 @@ export default {
                 description: `👋😃 ${event.user.toString()}`
             });
             
-            // event.editReply({ embeds: [ messageEmbed ] });
+            event.reply({ embeds: [ messageEmbed ], ephemeral: true });
         }
     }
 };
