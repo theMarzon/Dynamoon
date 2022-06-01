@@ -2,15 +2,15 @@ import discord from 'discord.js';
 import dotenv  from 'dotenv';
 import path    from 'node:path';
 
-import intentsGroup  from './engine/groupers/intents.js';
-import partialsGroup from './engine/groupers/partials.js';
-import eventsManager from './engine/managers/events.js';
+import groupedIntents  from './engine/groupeds/intents.js';
+import groupedPartials from './engine/groupeds/partials.js';
+import eventsManager   from './engine/managers/events.js';
 
 // Crea el cliente
 let client = new discord.Client({
 
-    intents:  intentsGroup,
-    partials: partialsGroup,
+    intents:  groupedIntents,
+    partials: groupedPartials,
     
     allowedMentions: { parse: [], repliedUser: false }
 });

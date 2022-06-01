@@ -79,7 +79,7 @@ export default {
     partials: [],
 
     // El evento que se va a ejecutar.
-    execute: ({ client, me, loaders, groupers, managers }) => {
+    execute: ({ client, me, loadeds, groupeds, managers }) => {
 
         // ...
     }
@@ -377,7 +377,7 @@ Crea y actualiza las ``Aplicaciones`` creadas, editadas y eliminadas
 
 Este evento ejecuta las ``Aplicaciones`` cuando se crea una interacción proveniente de una aplicación de barra lateral o menú contextual
 
-> Si el proyecto se ejecuta en modo producción las aplicaciones que estén en desarrollo no se ejecutarán
+> Si el proyecto se ejecuta en modo producción las aplicaciones que no sean publicas no se ejecutarán
 
 ### Button
 

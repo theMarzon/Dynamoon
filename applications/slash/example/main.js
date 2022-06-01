@@ -10,20 +10,12 @@ export default {
         'en-US': 'Example command'
     },
 
-    restrict: {
-
-        channels: [
-
-            discord.ChannelType.DM
-        ]
-    },
-
     public: true,
 
     events: {
         
-        application: ({ client, event, me, loaders, groupers, managers }) => {
-            
+        application: ({ client, event, me, loadeds, groupeds, managers }) => {
+
             const messageEmbed = new discord.EmbedBuilder({
 
                 color: discord.Colors.White,

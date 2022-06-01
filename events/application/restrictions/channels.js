@@ -1,4 +1,4 @@
-export default async ({ client, event, me, loaders, groupers, managers }) => {
+export default async ({ client, event, me, loadeds, groupeds, managers }) => {
 
     // Para evitar fetchear el canal de la interaccion, comprueba si se restringe algun canal
     if (!me.restrict.channels.length) return true;

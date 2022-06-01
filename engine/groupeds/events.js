@@ -1,8 +1,8 @@
-import loadedEvents              from '../loaders/events.js';
-import loadedServices            from '../loaders/services.js';
-import loadedSlashApplications   from '../loaders/applications/slash.js';
-import loadedUserApplications    from '../loaders/applications/user.js';
-import loadedMessageApplications from '../loaders/applications/message.js';
+import loadedEvents              from '../loadeds/events.js';
+import loadedServices            from '../loadeds/services.js';
+import loadedSlashApplications   from '../loadeds/applications/slash.js';
+import loadedUserApplications    from '../loadeds/applications/user.js';
+import loadedMessageApplications from '../loadeds/applications/message.js';
 
 let groupedEvents = {};
 

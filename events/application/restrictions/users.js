@@ -1,4 +1,4 @@
-export default ({ client, event, me, loaders, groupers, managers }) => {
+export default ({ client, event, me, loadeds, groupeds, managers }) => {
 
     if (me.restrict.users.length
     &&  me.restrict.users.includes(event.user.id)) return false;

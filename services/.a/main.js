@@ -2,11 +2,11 @@ export default {
 
     events: {
 
-        ready: ({client, loaders}) => {
+        ready: ({client, loadeds}) => {
 
-            const a = loaders.applications.slash.map((v) => v.schema);
-            const b = loaders.applications.user.map((v) => v.schema);
-            const c = loaders.applications.message.map((v) => v.schema);
+            const a = loadeds.applications.slash.map((v) => v.schema);
+            const b = loadeds.applications.user.map((v) => v.schema);
+            const c = loadeds.applications.message.map((v) => v.schema);
 
             client.application.commands.set(a.concat(b).concat(c))
             .then(() => console.log('Indexed'));

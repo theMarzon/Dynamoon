@@ -3,6 +3,8 @@ node_modules/
 
 # Files
 .env
+.env.development
+.env.production
 .pnpm-debug.log
 package.json
 package-lock.json

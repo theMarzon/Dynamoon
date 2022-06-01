@@ -1,11 +1,11 @@
-import loadedEvents              from '../loaders/events.js';
-import loadedServices            from '../loaders/services.js';
-import loadedSlashApplications   from '../loaders/applications/slash.js';
-import loadedUserApplications    from '../loaders/applications/user.js';
-import loadedMessageApplications from '../loaders/applications/message.js';
-import groupedEvents             from '../groupers/events.js';
-import groupedIntents            from '../groupers/intents.js';
-import groupedPartials           from '../groupers/partials.js';
+import loadedEvents              from '../loadeds/events.js';
+import loadedServices            from '../loadeds/services.js';
+import loadedSlashApplications   from '../loadeds/applications/slash.js';
+import loadedUserApplications    from '../loadeds/applications/user.js';
+import loadedMessageApplications from '../loadeds/applications/message.js';
+import groupedEvents             from '../groupeds/events.js';
+import groupedIntents            from '../groupeds/intents.js';
+import groupedPartials           from '../groupeds/partials.js';
 import eventsManager             from './events.js';
 
 import * as directoryManager from './directory.js';
@@ -24,8 +24,8 @@ export default (client) => {
 
             me: _loadedEvent,
 
-            loaders: {
-
+            loadeds: {
+        
                 events:   loadedEvents,
                 services: loadedServices,
 
@@ -37,7 +37,7 @@ export default (client) => {
                 }
             },
 
-            groupers: {
+            groupeds: {
 
                 events:   groupedEvents,
                 intents:  groupedIntents,

@@ -69,9 +69,4 @@ export default class {
         // Elimina los "partials" duplicados
         this.partials = this.partials.filter((v, i, a) => a.indexOf(v) === i);
     };
-
-    interface (name, options) {
-
-        return this.interfaces[name](options);
-    };
 };

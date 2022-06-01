@@ -1,4 +1,4 @@
-import loadedEvents  from '../loaders/events.js';
+import loadedEvents  from '../loadeds/events.js';
 import groupedEvents from './events.js';
 
 let groupedIntents = [];
