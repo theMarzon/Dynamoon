@@ -8,7 +8,15 @@ import groupedIntents            from '../groupeds/intents.js';
 import groupedPartials           from '../groupeds/partials.js';
 import eventsManager             from './events.js';
 
-import * as directoryManager from './directory.js';
+import {
+
+    eventsDirectory,
+    servicesDirectory,
+    applicationsDirectory,
+    slashApplicationsDirectory,
+    userApplicationsDirectory,
+    messageApplicationsDirectory
+} from './directory.js';
 
 export default (client) => {
 
@@ -46,8 +54,17 @@ export default (client) => {
 
             managers: {
 
-                events:    eventsManager,
-                directory: directoryManager
+                events: eventsManager,
+
+                directory: {
+
+                    events:              eventsDirectory,
+                    services:            servicesDirectory,
+                    applications:        applicationsDirectory,
+                    slashApplications:   slashApplicationsDirectory,
+                    userApplications:    userApplicationsDirectory,
+                    messageApplications: messageApplicationsDirectory
+                }
             }
         });
     }  

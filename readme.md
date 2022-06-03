@@ -6,9 +6,9 @@ Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de la forma mas
 
 ## Iniciando un proyecto
 
-- Instale [Node](https://nodejs.org/) en la versión ``v18.2.0`` y ejecute ``npm init --yes``
+- Instale [Node](https://nodejs.org/) en la versión ``v18.3.0`` o superior y ejecute ``npm init``
 
-- Abra el archivo ``package.json`` y agregue el objeto ``"type": "module"``
+- Abra el archivo ``package.json`` y agregue ``"type": "module"`` para usar modulos ``ECMAScript``
 
 - Instale las siguientes dependencias:
 
@@ -61,7 +61,7 @@ events\
     |__ main.js
 ```
 
-## Crear un evento
+## Estructura de un evento
 
 ```js
 export default {
@@ -86,7 +86,7 @@ export default {
 };
 ```
 
-## Crear un servicio
+## Estructura de un servicio
 
 ```js
 export default {
@@ -108,7 +108,7 @@ export default {
 };
 ```
 
-## Crear una aplicación de barra lateral
+## Estructura de una aplicación de barra lateral
 
 ```js
 export default {
@@ -140,10 +140,7 @@ export default {
 
     // La prioridad del aplicación para cargarlo antes que al resto (mientras mayor sea el número, más alta es).
     priority: 0,
-
-    // Si la aplicación es publica.
-    public: false,
-
+    
     // Si la aplicacion puede ejecutarse en DM's.
     dm: true,
 
@@ -158,7 +155,7 @@ export default {
     restrict: {
 
         // Invierte la gestion de las restricciones.
-        // invert: false (En desarollo),
+        // invert: false (Pendiente),
 
         // Gremios a restringir.
         guilds: [
@@ -203,7 +200,7 @@ export default {
 };
 ```
 
-## Crear una aplicación de menú contextual para usuarios
+## Estructura de una aplicación de menú contextual para usuarios
 
 ```js
 export default {
@@ -225,9 +222,6 @@ export default {
     // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
     priority: 0,
 
-    // Si la aplicación es publica.
-    public: false,
-
     // Si la aplicación puede ejecutarse en DM's.
     dm: true,
 
@@ -242,7 +236,7 @@ export default {
     restrict: {
 
         // Invierte la gestion de las restricciones.
-        // invert: false (En desarollo),
+        // invert: false (Pendiente),
 
         // Gremios a restringir.
         guilds: [
@@ -284,7 +278,7 @@ export default {
 };
 ```
 
-## Crear una aplicación de menú contextual para mensajes
+## Estructura de una aplicación de menú contextual para mensajes
 
 ```js
 export default {
@@ -306,9 +300,6 @@ export default {
     // La prioridad del aplicación para cargarlo antes que al resto (mientras mayor sea el número, más alta es).
     priority: 0,
 
-    // Si la aplicación es publica.
-    public: false,
-
     // Si la aplicación puede ejecutarse en DM's.
     dm: true,
 
@@ -323,7 +314,7 @@ export default {
     restrict: {
 
         // Invierte la gestion de las restricciones.
-        // invert: false (En desarollo),
+        // invert: false (Pendiente),
 
         // Gremios a restringir.
         guilds: [
@@ -377,8 +368,6 @@ Crea y actualiza las ``Aplicaciones`` creadas, editadas y eliminadas
 
 Este evento ejecuta las ``Aplicaciones`` cuando se crea una interacción proveniente de una aplicación de barra lateral o menú contextual
 
-> Si el proyecto se ejecuta en modo producción las aplicaciones que no sean publicas no se ejecutarán
-
 ### Button
 
 Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un boton
@@ -393,7 +382,7 @@ Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una inte
 
 ### Ready
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` al momento de establecerse la conexión
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` al momento de que el cliente establezca la conexión
 
 ### Boot
 

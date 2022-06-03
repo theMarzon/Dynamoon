@@ -10,8 +10,6 @@ export default {
         'en-US': 'Example command'
     },
 
-    public: true,
-
     events: {
         
         application: ({ client, event, me, loadeds, groupeds, managers }) => {

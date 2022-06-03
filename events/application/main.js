@@ -1,6 +1,5 @@
 import discord from 'discord.js';
 
-import modeRestriction     from './restrictions/mode.js';
 import guildsRestriction   from './restrictions/users.js';
 import channelsRestriction from './restrictions/channels.js';
 import usersRestriction    from './restrictions/users.js';
@@ -30,8 +29,7 @@ export default {
                         me: _loadedApplication
                     };
 
-                    if      (modeRestriction(fileArguments)
-                    &&       guildsRestriction(fileArguments)
+                    if      (guildsRestriction(fileArguments)
                     && await channelsRestriction(fileArguments)
                     &&       usersRestriction(fileArguments)) {
 

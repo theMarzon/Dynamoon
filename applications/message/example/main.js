@@ -2,8 +2,6 @@ import discord from 'discord.js';
 
 export default {
 
-    public: true,
-
     events: {
         
         application: ({ client, event, me, loadeds, groupeds, managers }) => {
@@ -15,7 +13,7 @@ export default {
                 description: `👋😃 ${event.user.toString()}`
             });
             
-            event.editReply({ embeds: [ messageEmbed ] });
+            event.reply({ embeds: [ messageEmbed ] });
         }
     }
 };
