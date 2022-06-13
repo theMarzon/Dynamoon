@@ -1,24 +1,24 @@
 import path from 'node:path';
 import fs   from 'node:fs';
 
-import { serviceDirectory } from '../managers/directories.js';
+import { servicesPath } from '../managers/directories.js';
 
-import ServiceBuilder from '../builders/Service.js';
+import Service from '../structures/Service.js';
 
 let loadedServices = [];
 
-const servicesFolders = fs.readdirSync(serviceDirectory)
-                          .filter((val) => !val.startsWith('.'));
+const serviceFolders = fs.readdirSync(servicesPath)
+                         .filter((val) => !val.startsWith('.'));
 
-for (const _folder of servicesFolders) {
+for (const _folder of serviceFolders) {
 
     // Genera una ruta del archivo principal
-    const filePath = path.join(serviceDirectory, _folder, 'main.js');
+    const filePath = path.join(servicesPath, _folder, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);
 
-    fileContent = new ServiceBuilder({
+    fileContent = new Service({
 
         ...fileContent.default,
 

@@ -3,16 +3,16 @@ import groupedEvents from './events.js';
 
 let groupedIntents = [];
 
-for (const _event of loadedEvents) {
+for (const _loadedEvent of loadedEvents) {
 
     // Omite el evento si no es neceserio
-    if (!groupedEvents[_event.name]) continue;
+    if (!groupedEvents[_loadedEvent.name]) continue;
 
-    groupedIntents = groupedIntents.concat(_event.intents);
+    groupedIntents = groupedIntents.concat(_loadedEvent.intents);
 
-    for (const _package of groupedEvents[_event.name].all) {
+    for (const _loadedPackage of groupedEvents[_loadedEvent.name].all) {
 
-        groupedIntents = groupedIntents.concat(_package.intents);
+        groupedIntents = groupedIntents.concat(_loadedPackage.intents);
     };
 };
 

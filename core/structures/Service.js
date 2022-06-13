@@ -1,6 +1,6 @@
-import PackageBuilder from './Package.js';
+import Package from './Package.js';
 
-export default class extends PackageBuilder {
+export default class extends Package {
 
     constructor (content) {
 

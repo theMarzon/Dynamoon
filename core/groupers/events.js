@@ -6,24 +6,24 @@ import loadedMessageApplications from '../loaders/applications/message.js';
 
 const groupedEvents = {};
 
-for (const _event of loadedEvents) {
+for (const _loadedEvent of loadedEvents) {
 
-    const servicesFiles = loadedServices.filter((val) => val.events[_event.name]);
+    const serviceFiles = loadedServices.filter((val) => val.events[_loadedEvent.name]);
 
-    const applicationsFiles = loadedSlashApplications.concat(loadedUserApplications)
+    const applicationFiles = loadedSlashApplications.concat(loadedUserApplications)
                                                      .concat(loadedMessageApplications)
-                                                     .filter((val) => val.events[_event.name]);
+                                                     .filter((val) => val.events[_loadedEvent.name]);
 
-    const allFiles = servicesFiles.concat(applicationsFiles);
+    const allPackages = serviceFiles.concat(applicationFiles);
 
     // Omite el evento si no es neceserio
-    if (!allFiles.length) continue;
+    if (!allPackages.length) continue;
 
-    groupedEvents[_event.name] = {
+    groupedEvents[_loadedEvent.name] = {
 
-        services:     servicesFiles,
-        applications: applicationsFiles,
-        all:          allFiles
+        services:     serviceFiles,
+        applications: applicationFiles,
+        all:          allPackages
     };
 };
 

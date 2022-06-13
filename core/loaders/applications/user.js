@@ -1,24 +1,24 @@
 import path from 'node:path';
 import fs   from 'node:fs';
 
-import { messageApplicationDirectory } from '../managers/directories.js';
+import { userApplicationsPath } from '../../managers/directories.js';
 
-import MessageApplicationBuilder from '../builders/MessageApplication.js';
+import UserApplication from '../../structures/Application/User.js';
 
 let loadedApplications = [];
 
-const applicationsFolders = fs.readdirSync(messageApplicationDirectory)
-                              .filter((val) => !val.startsWith('.'));
+const applicationFolders = fs.readdirSync(userApplicationsPath)
+                             .filter((val) => !val.startsWith('.'));
 
-for (const _folder of applicationsFolders) {
+for (const _folder of applicationFolders) {
 
     // Genera una ruta del archivo principal
-    const filePath = path.join(messageApplicationDirectory, _folder, 'main.js');
+    const filePath = path.join(userApplicationsPath, _folder, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);
 
-    fileContent = new MessageApplicationBuilder({
+    fileContent = new UserApplication({
 
         ...fileContent.default,
 

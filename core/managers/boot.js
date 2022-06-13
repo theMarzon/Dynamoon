@@ -1,20 +1,20 @@
 import loadedEvents              from '../loaders/events.js';
 import loadedServices            from '../loaders/services.js';
-import loadedSlashApplications   from '../loaders/slashApplications.js';
-import loadedUserApplications    from '../loaders/userApplications.js';
-import loadedMessageApplications from '../loaders/messageApplications.js';
+import loadedSlashApplications   from '../loaders/applications/slash.js';
+import loadedUserApplications    from '../loaders/applications/user.js';
+import loadedMessageApplications from '../loaders/applications/message.js';
 import groupedEvents             from '../groupers/events.js';
 import groupedIntents            from '../groupers/intents.js';
 import groupedPartials           from '../groupers/partials.js';
 
 import {
 
-    eventDirectory,
-    serviceDirectory,
-    applicationDirectory,
-    slashApplicationDirectory,
-    userApplicationDirectory,
-    messageApplicationDirectory
+    eventsPath,
+    servicesPath,
+    applicationsPath,
+    slashApplicationsPath,
+    userApplicationsPath,
+    messageApplicationsPath
 } from './directories.js';
 
 export default function (client) {
@@ -54,12 +54,12 @@ export default function (client) {
 
                 directories: {
 
-                    event:              eventDirectory,
-                    service:            serviceDirectory,
-                    application:        applicationDirectory,
-                    slashApplication:   slashApplicationDirectory,
-                    userApplication:    userApplicationDirectory,
-                    messageApplication: messageApplicationDirectory
+                    events:              eventsPath,
+                    services:            servicesPath,
+                    applications:        applicationsPath,
+                    slashApplications:   slashApplicationsPath,
+                    userApplications:    userApplicationsPath,
+                    messageApplications: messageApplicationsPath
                 }
             }
         });
