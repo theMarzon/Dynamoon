@@ -10,13 +10,13 @@ for (const _event of loadedEvents) {
 
     groupedIntents = groupedIntents.concat(_event.intents);
 
-    for (const _file of groupedEvents[_event.name].all) {
+    for (const _package of groupedEvents[_event.name].all) {
 
-        groupedIntents = groupedIntents.concat(_file.intents);
+        groupedIntents = groupedIntents.concat(_package.intents);
     };
 };
 
 // Elimina los "intents" repetidos
-groupedIntents = groupedIntents.filter((v, i, a) => a.indexOf(v) === i);
+groupedIntents = groupedIntents.filter((val, ind, arr) => arr.indexOf(val) === ind);
 
 export default groupedIntents;

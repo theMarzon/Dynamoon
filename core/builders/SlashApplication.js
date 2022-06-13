@@ -1,49 +1,46 @@
 import discord from 'discord.js';
 
-const deleteDefault = function (content) {
+import deletePropertyUtil from '../utils/deleteProperty.js';
 
-    content = { ...content };
+import PackageBuilder from './Package.js';
 
-    delete content.default;
-
-    return content;
-};
-
-export default class {
+export default class extends PackageBuilder {
 
     constructor (content) {
 
+        super(content);
+
+        // El tipo de aplicacion
         content.type = discord.ApplicationCommandType.ChatInput;
 
-        content.priority ??= 0;
-
+        // Si se permite ejecutar la aplicacion en DM's
         content.dm ??= true;
 
-        content.options  ??= [];
-        content.intents  ??= [];
-        content.partials ??= [];
+        // Las opciones de la aplicacion
+        content.options ??= [];
 
+        // Los eventos de la aplicacion
         content.events ??= {};
 
-        // Nombres de la aplicacion
+        // Los nombres de la aplicacion
         content.name ??= {};
 
         content.name.default ??= 'undefined';
 
-        // Descripciones de la aplicacion
+        // Las descripciones de la aplicacion
         content.description ??= {};
 
         content.description.default ??= 'undefined';
 
-        // Permisos de la aplicacion
+        // Los permisos de la aplicacion
         content.permissions ??= {};
 
         content.permissions.member ??= null;
 
-        // Restricciones de interacciones
+        // Las restricciones de interacciones
         content.restrictions ??= [];
 
-        // Esquema de la aplicacion
+        // El esquema de la aplicacion
         content.schema = new discord.SlashCommandBuilder();
 
         content.schema.name                       = content.name.default;
@@ -53,12 +50,8 @@ export default class {
         content.schema.type                       = content.type;
         content.schema.options                    = content.options;
 
-        content.schema.name_localizations        = deleteDefault(content.name);
-        content.schema.description_localizations = deleteDefault(content.description);
-
-        // Elimina los "intents" y "partials" duplicados
-        content.intents  = content.intents.filter((v, i, a) => a.indexOf(v) === i);
-        content.partials = content.partials.filter((v, i, a) => a.indexOf(v) === i);
+        content.schema.name_localizations        = deletePropertyUtil(content.name, 'default');
+        content.schema.description_localizations = deletePropertyUtil(content.description, 'default');
 
         Object.assign(this, content);
     };

@@ -6,12 +6,15 @@ export default {
             
             function ({ client, loadeds }) {
 
-                const a = loadeds.applications.slash.map((v) => v.schema);
-                const b = loadeds.applications.user.map((v) => v.schema);
-                const c = loadeds.applications.message.map((v) => v.schema);
+                const slashApplications   = loadeds.applications.slash.map((val) => val.schema);
+                const userApplications    = loadeds.applications.user.map((val) => val.schema);
+                const messageApplications = loadeds.applications.message.map((val) => val.schema);
 
-                client.application.commands.set(a.concat(b).concat(c))
-                .then(() => console.log('Indexed'));
+                const allApplications = slashApplications.concat(userApplications)
+                                                         .concat(messageApplications);
+
+                client.application.commands.set(allApplications)
+                                           .then(() => console.log('Indexed'));
             }
         ]
     }

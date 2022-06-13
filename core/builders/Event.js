@@ -1,19 +1,13 @@
-export default class {
+import PackageBuilder from './Package.js';
+
+export default class extends PackageBuilder {
 
     constructor (content) {
 
-        content.name ??= 'undefined';
+        super(content);
 
-        content.priority ??= 0;
-
-        content.intents  ??= [];
-        content.partials ??= [];
-
+        // La funcion que se ejecutara al cargarse el evento
         content.execute ??= function () {};
-
-        // Elimina los "intents" y "partials" duplicados
-        content.intents  = content.intents.filter((v, i, a) => a.indexOf(v) === i);
-        content.partials = content.partials.filter((v, i, a) => a.indexOf(v) === i);
 
         Object.assign(this, content);
     };

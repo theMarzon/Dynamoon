@@ -1,19 +1,19 @@
 import path from 'node:path';
 import fs   from 'node:fs';
 
-import { eventsDirectory } from '../managers/directories.js';
+import { eventDirectory } from '../managers/directories.js';
 
 import EventBuilder from '../builders/Event.js';
 
 let loadedEvents = [];
 
-const eventsFolders = fs.readdirSync(eventsDirectory)
-                        .filter((v) => !v.startsWith('.'));
+const eventsFolders = fs.readdirSync(eventDirectory)
+                        .filter((val) => !val.startsWith('.'));
 
 for (const _folder of eventsFolders) {
 
     // Genera una ruta del archivo principal
-    const filePath = path.join(eventsDirectory, _folder, 'main.js');
+    const filePath = path.join(eventDirectory, _folder, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);

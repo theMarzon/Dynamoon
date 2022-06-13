@@ -1,5 +1,8 @@
 # Folders
 node_modules/
+applications/
+events/
+services/
 
 # Files
 .env

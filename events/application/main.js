@@ -11,7 +11,9 @@ export default {
         client.on('interactionCreate', async (event) => {
 
             // Si no es un comando
-            if (!event.isCommand()) return;
+            if (!event.isChatInputCommand()
+            &&  !event.isUserContextMenuCommand()
+            &&  !event.isMessageContextMenuCommand()) return;
 
             for (const _application of groupeds.events[me.name].applications) {
 
