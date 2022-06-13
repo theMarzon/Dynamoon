@@ -1,6 +1,6 @@
 import discord from 'discord.js';
 
-const removeDefault = (content) => {
+const deleteDefault = function (content) {
 
     content = { ...content };
 
@@ -9,7 +9,7 @@ const removeDefault = (content) => {
     return content;
 };
 
-export class UserApplicationBuilder {
+export default class {
 
     constructor (content) {
 
@@ -35,13 +35,7 @@ export class UserApplicationBuilder {
         content.permissions.member ??= null;
 
         // Restricciones de interacciones
-        content.restrict ??= {};
-
-        // content.restrict.invert ??= false;
-
-        content.restrict.guilds   ??= [];
-        content.restrict.channels ??= [];
-        content.restrict.users    ??= [];
+        content.restrictions ??= [];
 
         // Esquema de la aplicacion
         content.schema = new discord.ContextMenuCommandBuilder();
@@ -51,8 +45,8 @@ export class UserApplicationBuilder {
         content.schema.dm_permission              = content.dm;
         content.schema.type                       = content.type;
 
-        content.schema.name_localizations = removeDefault(content.name);
-        
+        content.schema.name_localizations = deleteDefault(content.name);
+
         // Elimina los "intents" y "partials" duplicados
         content.intents  = content.intents.filter((v, i, a) => a.indexOf(v) === i);
         content.partials = content.partials.filter((v, i, a) => a.indexOf(v) === i);

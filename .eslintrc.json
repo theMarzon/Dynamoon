@@ -1,0 +1,33 @@
+{
+    "env": {
+
+        "es2021": true,
+        "node":   true
+    },
+
+    "parserOptions": {
+
+        "ecmaVersion": "latest",
+        "sourceType":  "module"
+    },
+
+    "rules": {
+
+        "func-call-spacing":       "off",
+        "no-case-declarations":    "off",
+        "camelcase":               "off",
+        "no-mixed-operators":      "off",
+        "operator-linebreak":      "off",
+        "array-bracket-spacing":   "off",
+        "padded-blocks":           "off",
+        "object-property-newline": "off",
+        "no-multi-spaces":         "off",
+        "no-irregular-whitespace": "off",
+        "indent":                  "off",
+        "multiline-ternary":       "off",
+        "key-spacing":             "off",
+        "semi":                    "off"
+    },
+
+    "extends": [ "standard" ]
+}

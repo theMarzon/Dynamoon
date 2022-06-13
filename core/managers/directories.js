@@ -1,5 +1,5 @@
-import fs   from 'node:fs';
 import path from 'node:path';
+import fs   from 'node:fs';
 
 export const eventsDirectory              = path.join(process.cwd(), 'events');
 export const servicesDirectory            = path.join(process.cwd(), 'services');

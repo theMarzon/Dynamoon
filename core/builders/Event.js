@@ -1,4 +1,4 @@
-export class EventBuilder {
+export default class {
 
     constructor (content) {
 

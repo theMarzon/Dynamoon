@@ -1,40 +1,39 @@
 import discord from 'discord.js';
 
-import guildsRestriction   from './restrictions/users.js';
-import channelsRestriction from './restrictions/channels.js';
-import usersRestriction    from './restrictions/users.js';
+import restrictions from './restrictions.js';
 
 export default {
 
     priority: 2,
-    
-    execute: ({ client, me, loadeds, groupeds, managers }) => {
+
+    execute: function ({ client, me, loadeds, groupeds, managers }) {
 
         client.on('interactionCreate', async (event) => {
-            
+
             // Si no es un comando
             if (!event.isCommand()) return;
 
-            for (const _loadedApplication of groupeds.events[me.name].applications) {
+            for (const _application of groupeds.events[me.name].applications) {
 
-                if (event.commandName === _loadedApplication.name.default
-                &&    (event.isChatInputCommand()          && _loadedApplication.type === discord.ApplicationCommandType.ChatInput
-                    || event.isUserContextMenuCommand()    && _loadedApplication.type === discord.ApplicationCommandType.User
-                    || event.isMessageContextMenuCommand() && _loadedApplication.type === discord.ApplicationCommandType.Message)) {
+                if (event.commandName === _application.name.default
+                &&    (event.isChatInputCommand()          && _application.type === discord.ApplicationCommandType.ChatInput
+                    || event.isUserContextMenuCommand()    && _application.type === discord.ApplicationCommandType.User
+                    || event.isMessageContextMenuCommand() && _application.type === discord.ApplicationCommandType.Message)) {
 
                     const fileArguments = {
 
                         client, event, loadeds, managers, groupeds,
 
-                        me: _loadedApplication
+                        me: _application
                     };
 
-                    if      (guildsRestriction(fileArguments)
-                    && await channelsRestriction(fileArguments)
-                    &&       usersRestriction(fileArguments)) {
+                    // Si no hay ninguna restriccion a la interaccion
+                    if (!restrictions(fileArguments)) break;
 
-                        // Ejecuta el evento del archivo
-                        _loadedApplication.events[me.name](fileArguments);
+                    // Ejecuta los eventos de la aplicacion
+                    for (const _event of _application.events[me.name]) {
+
+                        _event(fileArguments);
                     };
 
                     // Detiene el bucle

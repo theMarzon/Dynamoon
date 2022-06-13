@@ -1,29 +1,29 @@
+import path    from 'node:path';
 import discord from 'discord.js';
 import dotenv  from 'dotenv';
-import path    from 'node:path';
 
-import groupedIntents  from './engine/groupeds/intents.js';
-import groupedPartials from './engine/groupeds/partials.js';
-import eventsManager   from './engine/managers/events.js';
+import groupedIntents  from './core/groupers/intents.js';
+import groupedPartials from './core/groupers/partials.js';
+import eventsManager   from './core/managers/events.js';
 
 // Crea el cliente
-let client = new discord.Client({
+const client = new discord.Client({
 
     intents:  groupedIntents,
     partials: groupedPartials,
-    
+
     allowedMentions: { parse: [], repliedUser: false }
 });
 
 // Crea valores extra en el cliente
-client.engine = {
+client.core = {
 
-    mode: (process.argv.includes('--dev-mode'))  ? 'development'
-        : (process.argv.includes('--prod-mode')) ? 'production'
-                                                 : 'standar',
-                                                 
+    environment: (process.argv.includes('--development')) ? 'development'
+               : (process.argv.includes('--production'))  ? 'production'
+                                                          : 'standard',
+
     name:    'Dinamoon',
-    version: '0.5.0',
+    version: '0.6.0',
 
     repository: 'https://github.com/theMarzon/Dinamoon',
 
@@ -36,15 +36,15 @@ client.engine = {
 };
 
 // Configura las variables de entorno
-dotenv.config({ 
-    
-    path: (client.mode === 'development') ? path.join(process.cwd(), '.env.development')
-        : (client.mode === 'production')  ? path.join(process.cwd(), '.env.production')
-                                          : path.join(process.cwd(), '.env')
+dotenv.config({
+
+    path: (client.core.environment === 'development') ? path.join(process.cwd(), '.env.development')
+        : (client.core.environment === 'production')  ? path.join(process.cwd(), '.env.production')
+                                                      : path.join(process.cwd(), '.env')
 });
 
 // Ejecuta los eventos
 eventsManager(client);
 
 client.login(process.env.TOKEN)
-      .then(() => console.log('Connection established'));
+      .then(() => console.log('Bot connected'));

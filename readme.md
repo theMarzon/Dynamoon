@@ -14,16 +14,16 @@ Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de la forma mas
 
     | Nombre     | Versión                       |
     |------------|-------------------------------|
-    | discord.js | 14.0.0-dev.1653480262-68d5169 |
+    | discord.js | 14.0.0-dev.1654430643-7a1095b |
     | dotenv     | 16.0.0                        |
 
 - Cree un archivo ``.env``, ``.env.development`` o ``.env.production`` segun su preferencia:
 
     > ``.env`` se utilizará al ejecutar ``node ./index.js``
 
-    > ``.env.development`` se utilizará al ejecutar ``node ./index.js --dev-mode``
+    > ``.env.development`` se utilizará al ejecutar ``node ./index.js --development``
 
-    > ``.env.production`` se utilizará al ejecutar ``node ./index.js --prod-mode``
+    > ``.env.production`` se utilizará al ejecutar ``node ./index.js --production``
 
 ## Estructura de archivos
 

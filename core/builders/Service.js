@@ -1,4 +1,4 @@
-export class ServiceBuilder {
+export default class {
 
     constructor (content) {
 

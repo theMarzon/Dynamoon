@@ -1,23 +1,26 @@
 export default {
 
-    priority: 2,
-    
-    execute: ({ client, me, loadeds, groupeds, managers }) => {
+    priority: 1,
+
+    execute: function ({ client, me, loadeds, groupeds, managers }) {
 
         client.on('interactionCreate', (event) => {
-            
+
             // Si no es un menu
             if (!event.isSelectMenu()) return;
 
-            for (const _loadedFile of groupeds.events[me.name].all) {
+            for (const _file of groupeds.events[me.name].all) {
 
-                // Ejecuta el evento del archivo
-                _loadedFile.events[me.name]({
+                // Ejecuta los eventos del archivo
+                for (const _event of _file.events[me.name]) {
 
-                    client, event, loadeds, managers, groupeds,
+                    _event({
 
-                    me: _loadedFile
-                });
+                        client, event, loadeds, managers, groupeds,
+
+                        me: _file
+                    });
+                };
             };
         });
     }
