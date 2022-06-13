@@ -2,18 +2,18 @@ export default {
 
     priority: 4,
 
-    execute: function ({ client, me, loadeds, groupeds, managers }) {
+    execute: function ({ client, me, loaded, used, directories }) {
 
-        for (const _file of groupeds.events[me.name].all) {
+        for (const _loadedFile of used.events[me.name].all) {
 
             // Ejecuta los eventos del archivo
-            for (const _event of _file.events[me.name]) {
+            for (const _event of _loadedFile.events[me.name]) {
 
                 _event({
 
-                    client, loadeds, managers, groupeds,
+                    client, loaded, used, directories,
 
-                    me: _file
+                    me: _loadedFile
                 });
             };
         };

@@ -2,13 +2,10 @@ export default class {
 
     constructor (content) {
 
-        // El nombre del paquete
         content.name ??= 'undefined';
 
-        // La prioridad de carga del paquete
         content.priority ??= 0;
 
-        // Los "intents" y "partials" necesarios del paquete
         content.intents  ??= [];
         content.partials ??= [];
 

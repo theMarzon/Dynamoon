@@ -10,10 +10,10 @@ let loadedApplications = [];
 const applicationFolders = fs.readdirSync(userApplicationsPath)
                              .filter((val) => !val.startsWith('.'));
 
-for (const _folder of applicationFolders) {
+for (const _applicationFolder of applicationFolders) {
 
     // Genera una ruta del archivo principal
-    const filePath = path.join(userApplicationsPath, _folder, 'main.js');
+    const filePath = path.join(userApplicationsPath, _applicationFolder, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);
@@ -22,7 +22,7 @@ for (const _folder of applicationFolders) {
 
         ...fileContent.default,
 
-        name: { default: _folder }
+        name: { default: _applicationFolder }
     });
 
     loadedApplications.push(fileContent);

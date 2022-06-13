@@ -10,10 +10,10 @@ let loadedEvents = [];
 const eventFolders = fs.readdirSync(eventsPath)
                        .filter((val) => !val.startsWith('.'));
 
-for (const _folder of eventFolders) {
+for (const _eventFolder of eventFolders) {
 
     // Genera una ruta del archivo principal
-    const filePath = path.join(eventsPath, _folder, 'main.js');
+    const filePath = path.join(eventsPath, _eventFolder, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);
@@ -22,7 +22,7 @@ for (const _folder of eventFolders) {
 
         ...fileContent.default,
 
-        name: _folder
+        name: _eventFolder
     });
 
     loadedEvents.push(fileContent);

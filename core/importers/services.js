@@ -10,10 +10,10 @@ let loadedServices = [];
 const serviceFolders = fs.readdirSync(servicesPath)
                          .filter((val) => !val.startsWith('.'));
 
-for (const _folder of serviceFolders) {
+for (const _serviceFolder of serviceFolders) {
 
     // Genera una ruta del archivo principal
-    const filePath = path.join(servicesPath, _folder, 'main.js');
+    const filePath = path.join(servicesPath, _serviceFolder, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);
@@ -22,7 +22,7 @@ for (const _folder of serviceFolders) {
 
         ...fileContent.default,
 
-        name: _folder
+        name: _serviceFolder
     });
 
     loadedServices.push(fileContent);

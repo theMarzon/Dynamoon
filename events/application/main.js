@@ -6,7 +6,7 @@ export default {
 
     priority: 2,
 
-    execute: function ({ client, me, loadeds, groupeds, managers }) {
+    execute: function ({ client, me, loaded, used, directories }) {
 
         client.on('interactionCreate', async (event) => {
 
@@ -15,32 +15,34 @@ export default {
             &&  !event.isUserContextMenuCommand()
             &&  !event.isMessageContextMenuCommand()) return;
 
-            for (const _application of groupeds.events[me.name].applications) {
+            for (const _loadedApplication of used.events[me.name].applications) {
 
-                if (event.commandName === _application.name.default
-                &&    (event.isChatInputCommand()          && _application.type === discord.ApplicationCommandType.ChatInput
-                    || event.isUserContextMenuCommand()    && _application.type === discord.ApplicationCommandType.User
-                    || event.isMessageContextMenuCommand() && _application.type === discord.ApplicationCommandType.Message)) {
+                const fileArguments = {
 
-                    const fileArguments = {
+                    client, event, loaded, used, directories,
 
-                        client, event, loadeds, managers, groupeds,
-
-                        me: _application
-                    };
-
-                    // Si no hay ninguna restriccion a la interaccion
-                    if (!restrictions(fileArguments)) break;
-
-                    // Ejecuta los eventos de la aplicacion
-                    for (const _event of _application.events[me.name]) {
-
-                        _event(fileArguments);
-                    };
-
-                    // Detiene el bucle
-                    break;
+                    me: _loadedApplication
                 };
+
+                // Si la aplicacion que creo la interaccion no tiene el mismo nombre
+                if (event.commandName !== _loadedApplication.name.default) continue;
+
+                // Si la aplicacion que creo la interaccion no tiene el mismo tipo
+                if (event.isChatInputCommand()          && _loadedApplication.type !== discord.ApplicationCommandType.ChatInput) continue;
+                if (event.isUserContextMenuCommand()    && _loadedApplication.type !== discord.ApplicationCommandType.User)      continue;
+                if (event.isMessageContextMenuCommand() && _loadedApplication.type !== discord.ApplicationCommandType.Message)   continue;
+
+                // Si se cumple una restriccion con la interaccion
+                if (restrictions(fileArguments)) continue;
+
+                // Ejecuta los eventos de la aplicacion
+                for (const _event of _loadedApplication.events[me.name]) {
+
+                    _event(fileArguments);
+                };
+
+                // Detiene el bucle
+                break;
             };
         });
     }

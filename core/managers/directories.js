@@ -8,7 +8,7 @@ export const slashApplicationsPath   = path.join(process.cwd(), 'applications', 
 export const userApplicationsPath    = path.join(process.cwd(), 'applications', 'user');
 export const messageApplicationsPath = path.join(process.cwd(), 'applications', 'message');
 
-// Crea los directorios si no existen
+// Crea las carpetas si no existen
 if (!fs.existsSync(eventsPath)) fs.mkdirSync(eventsPath);
 if (!fs.existsSync(servicesPath)) fs.mkdirSync(servicesPath);
 if (!fs.existsSync(applicationsPath)) fs.mkdirSync(applicationsPath);

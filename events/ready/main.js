@@ -6,16 +6,16 @@ export default {
 
         client.on('ready', () => {
 
-            for (const _file of groupeds.events[me.name].all) {
+            for (const _loadedFile of groupeds.events[me.name].all) {
 
                 // Ejecuta los eventos del archivo
-                for (const _event of _file.events[me.name]) {
+                for (const _event of _loadedFile.events[me.name]) {
 
                     _event({
 
                         client, loadeds, managers, groupeds,
 
-                        me: _file
+                        me: _loadedFile
                     });
                 };
             };

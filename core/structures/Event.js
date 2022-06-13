@@ -1,12 +1,12 @@
-import Package from './Package.js';
+import Base from './Base.js';
 
-export default class extends Package {
+export default class extends Base {
 
     constructor (content) {
 
         super(content);
 
-        // La funcion que se ejecutara al cargarse el evento
+        // Funcion que se ejecutara
         content.execute ??= function () {};
 
         Object.assign(this, content);

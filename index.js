@@ -4,7 +4,7 @@ import dotenv  from 'dotenv';
 
 import groupedIntents  from './core/groupers/intents.js';
 import groupedPartials from './core/groupers/partials.js';
-import bootManager     from './core/managers/boot.js';
+import eventsManager   from './core/managers/events.js';
 
 // Crea el cliente
 const client = new discord.Client({
@@ -44,7 +44,7 @@ dotenv.config({
 });
 
 // Ejecuta los eventos
-bootManager(client);
+eventsManager(client);
 
 client.login(process.env.TOKEN)
       .then(() => console.log('Bot connected'));

@@ -1,10 +1,10 @@
 import discord from 'discord.js';
 
-import deleteTool from '../../tools/delete.js';
+import deleteProperty from '../../tools/deleteProperty.js';
 
-import Package from '../Package.js';
+import Base from '../Base.js';
 
-export default class extends Package {
+export default class extends Base {
 
     constructor (content) {
 
@@ -49,8 +49,8 @@ export default class extends Package {
         content.schema.dm_permission              = content.dm;
         content.schema.options                    = content.options;
 
-        content.schema.name_localizations        = deleteTool(content.name, 'default');
-        content.schema.description_localizations = deleteTool(content.description, 'default');
+        content.schema.name_localizations        = deleteProperty(content.name, 'default');
+        content.schema.description_localizations = deleteProperty(content.description, 'default');
 
         Object.assign(this, content);
     };

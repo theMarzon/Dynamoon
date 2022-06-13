@@ -1,12 +1,12 @@
-import Package from './Package.js';
+import Base from './Base.js';
 
-export default class extends Package {
+export default class extends Base {
 
     constructor (content) {
 
         super(content);
 
-        // Los eventos del servicio
+        // Eventos
         content.events ??= {};
 
         Object.assign(this, content);

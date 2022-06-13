@@ -1,38 +1,38 @@
 import discord from 'discord.js';
 
-import deleteTool from '../../tools/delete.js';
+import deleteProperty from '../../tools/deleteProperty.js';
 
-import Package from '../Package.js';
+import Base from '../Base.js';
 
-export default class extends Package {
+export default class extends Base {
 
     constructor (content) {
 
         super(content);
 
-        // El tipo de aplicacion
+        // Tipo
         content.type = discord.ApplicationCommandType.User;
 
         // Si se permite ejecutar la aplicacion en DM's
         content.dm ??= true;
 
-        // Los eventos de la aplicacion
+        // Eventos
         content.events ??= {};
 
-        // Los nombres de la aplicacion
+        // Nombres
         content.name ??= {};
 
         content.name.default ??= 'undefined';
 
-        // Los permisos de la aplicacion
+        // Permisos
         content.permissions ??= {};
 
         content.permissions.member ??= null;
 
-        // Las restricciones de interacciones
+        // Restricciones
         content.restrictions ??= [];
 
-        // El esquema de la aplicacion
+        // Esquema
         content.schema = new discord.ContextMenuCommandBuilder();
 
         content.schema.type                       = content.type;
@@ -40,7 +40,7 @@ export default class extends Package {
         content.schema.default_member_permissions = content.permissions.member;
         content.schema.dm_permission              = content.dm;
 
-        content.schema.name_localizations = deleteTool(content.name, 'default');
+        content.schema.name_localizations = deleteProperty(content.name, 'default');
 
         Object.assign(this, content);
     };

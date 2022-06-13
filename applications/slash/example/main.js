@@ -14,7 +14,7 @@ export default {
 
         application: [
 
-            function ({ client, event, me, loadeds, groupeds, managers }) {
+            function ({ client, event, me, loaded, used, directories }) {
 
                 const messageEmbed = new discord.EmbedBuilder({
 

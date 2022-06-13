@@ -1,5 +1,6 @@
-export default async function ({ event, me }) {
+export default function ({ event, me }) {
 
+    // Si la aplicacion contiene restricciones
     if (me.restrictions.length) {
 
         for (const _restriction of me.restrictions) {
