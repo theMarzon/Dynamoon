@@ -1,30 +1,37 @@
-export default function ({ event, me }) {
+export default async function ({ client, event, me }) {
 
-    // Si la aplicacion contiene restricciones
-    if (me.restrictions.length) {
+    // Si la aplicacion no contiene restricciones
+    if (!me.restrictions.length) return false;
 
-        for (const _restriction of me.restrictions) {
+    for (const _restriction of me.restrictions) {
 
-            switch (_restriction.type) {
+        switch (_restriction.type) {
 
-                case ('user'):
+            case ('user'):
 
-                    if (_restriction.id === event.user.id) return true;
+                if (_restriction.id === event.user.id) return true;
 
-                    break;
+                break;
 
-                case ('channel'):
+            case ('channel'):
 
-                    if (_restriction.id === event.channelId) return true;
+                if (_restriction.id
+                &&  _restriction.id === event.channelId) return true;
 
-                    break;
+                if (_restriction.format) {
 
-                case ('guild'):
+                    const fetchedChannel = await client.channels.fetch(event.channelId);
 
-                    if (_restriction.id === event.guildId) return true;
+                    if (_restriction.format === fetchedChannel.type) return true;
+                };
 
-                    break;
-            };
+                break;
+
+            case ('guild'):
+
+                if (_restriction.id === event.guildId) return true;
+
+                break;
         };
     };
 

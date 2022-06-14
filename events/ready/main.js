@@ -2,18 +2,18 @@ export default {
 
     priority: 3,
 
-    execute: function ({ client, me, loadeds, groupeds, managers }) {
+    execute: function ({ client, me, loaded, grouped, directories }) {
 
         client.on('ready', () => {
 
-            for (const _loadedFile of groupeds.events[me.name].all) {
+            for (const _loadedFile of grouped.events[me.name].all) {
 
-                // Ejecuta los eventos del archivo
-                for (const _event of _loadedFile.events[me.name]) {
+                // Ejecuta los eventos en cadena
+                for (const _chainedEvent of _loadedFile.events[me.name]) {
 
-                    _event({
+                    _chainedEvent({
 
-                        client, loadeds, managers, groupeds,
+                        client, loaded, grouped, directories,
 
                         me: _loadedFile
                     });

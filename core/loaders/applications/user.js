@@ -1,9 +1,10 @@
-import path from 'node:path';
-import fs   from 'node:fs';
+import path    from 'node:path';
+import fs      from 'node:fs';
+import discord from 'discord.js';
 
 import { userApplicationsPath } from '../../managers/directories.js';
 
-import UserApplication from '../../structures/Application/User.js';
+import ContextApplication from '../../structures/Application/ContextApplication.js';
 
 let loadedApplications = [];
 
@@ -18,9 +19,11 @@ for (const _applicationFolder of applicationFolders) {
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);
 
-    fileContent = new UserApplication({
+    fileContent = new ContextApplication({
 
         ...fileContent.default,
+
+        type: discord.ApplicationCommandType.User,
 
         name: { default: _applicationFolder }
     });

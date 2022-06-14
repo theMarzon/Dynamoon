@@ -6,7 +6,7 @@ export default {
 
     priority: 2,
 
-    execute: function ({ client, me, loaded, used, directories }) {
+    execute: async function ({ client, me, loaded, grouped, directories }) {
 
         client.on('interactionCreate', async (event) => {
 
@@ -15,14 +15,7 @@ export default {
             &&  !event.isUserContextMenuCommand()
             &&  !event.isMessageContextMenuCommand()) return;
 
-            for (const _loadedApplication of used.events[me.name].applications) {
-
-                const fileArguments = {
-
-                    client, event, loaded, used, directories,
-
-                    me: _loadedApplication
-                };
+            for (const _loadedApplication of grouped.events[me.name].applications) {
 
                 // Si la aplicacion que creo la interaccion no tiene el mismo nombre
                 if (event.commandName !== _loadedApplication.name.default) continue;
@@ -33,12 +26,22 @@ export default {
                 if (event.isMessageContextMenuCommand() && _loadedApplication.type !== discord.ApplicationCommandType.Message)   continue;
 
                 // Si se cumple una restriccion con la interaccion
-                if (restrictions(fileArguments)) continue;
+                if (await restrictions({
 
-                // Ejecuta los eventos de la aplicacion
-                for (const _event of _loadedApplication.events[me.name]) {
+                    client, event,
 
-                    _event(fileArguments);
+                    me: _loadedApplication
+                })) continue;
+
+                // Ejecuta los eventos en cadena
+                for (const _chainedEvent of _loadedApplication.events[me.name]) {
+
+                    _chainedEvent({
+
+                        client, event, loaded, grouped, directories,
+
+                        me: _loadedApplication
+                    });
                 };
 
                 // Detiene el bucle

@@ -1,6 +1,6 @@
 import discord from 'discord.js';
 
-import deleteProperty from '../../tools/deleteProperty.js';
+import deleteProperty from '../../utils/deleteProperty.js';
 
 import Base from '../Base.js';
 
@@ -10,8 +10,8 @@ export default class extends Base {
 
         super(content);
 
-        // Tipo
-        content.type = discord.ApplicationCommandType.Message;
+        // Tipo (Automatico)
+        // content.type;
 
         // Si se permite ejecutar la aplicacion en DM's
         content.dm ??= true;
@@ -22,7 +22,8 @@ export default class extends Base {
         // Nombres
         content.name ??= {};
 
-        content.name.default ??= 'undefined';
+        // Por defecto (Automatico)
+        // content.name.default;
 
         // Permisos
         content.permissions ??= {};

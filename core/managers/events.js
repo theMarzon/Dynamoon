@@ -1,11 +1,11 @@
-import loadedEvents              from '../importers/events.js';
-import loadedServices            from '../importers/services.js';
-import loadedSlashApplications   from '../importers/applications/slash.js';
-import loadedUserApplications    from '../importers/applications/user.js';
-import loadedMessageApplications from '../importers/applications/message.js';
-import usedEvents                from '../groupers/events.js';
-import usedIntents               from '../groupers/intents.js';
-import usedPartials              from '../groupers/partials.js';
+import loadedEvents              from '../loaders/events.js';
+import loadedServices            from '../loaders/services.js';
+import loadedSlashApplications   from '../loaders/applications/slash.js';
+import loadedUserApplications    from '../loaders/applications/user.js';
+import loadedMessageApplications from '../loaders/applications/message.js';
+import groupedEvents             from '../groupers/events.js';
+import groupedIntents            from '../groupers/intents.js';
+import groupedPartials           from '../groupers/partials.js';
 
 import {
 
@@ -22,7 +22,7 @@ export default function (client) {
     for (const _loadedEvent of loadedEvents) {
 
         // Si el evento no fue cargado salta al siguiente
-        if (!usedEvents[_loadedEvent.name]) continue;
+        if (!groupedEvents[_loadedEvent.name]) continue;
 
         _loadedEvent.execute({
 
@@ -43,11 +43,11 @@ export default function (client) {
                 }
             },
 
-            used: {
+            grouped: {
 
-                events:   usedEvents,
-                intents:  usedIntents,
-                partials: usedPartials
+                events:   groupedEvents,
+                intents:  groupedIntents,
+                partials: groupedPartials
             },
 
             directories: {

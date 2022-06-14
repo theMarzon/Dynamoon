@@ -1,6 +1,6 @@
 import discord from 'discord.js';
 
-import deleteProperty from '../../tools/deleteProperty.js';
+import deleteProperty from '../../utils/deleteProperty.js';
 
 import Base from '../Base.js';
 
@@ -10,37 +10,38 @@ export default class extends Base {
 
         super(content);
 
-        // El tipo de aplicacion
+        // Tipo
         content.type = discord.ApplicationCommandType.ChatInput;
 
         // Si se permite ejecutar la aplicacion en DM's
         content.dm ??= true;
 
-        // Las opciones de la aplicacion
+        // Opciones
         content.options ??= [];
 
-        // Los eventos de la aplicacion
+        // Eventos
         content.events ??= {};
 
-        // Los nombres de la aplicacion
+        // Nombres
         content.name ??= {};
 
-        content.name.default ??= 'undefined';
+        // Por defecto (Automatico)
+        // content.name.default;
 
-        // Las descripciones de la aplicacion
+        // Descripciones
         content.description ??= {};
 
         content.description.default ??= 'undefined';
 
-        // Los permisos de la aplicacion
+        // Permisos
         content.permissions ??= {};
 
         content.permissions.member ??= null;
 
-        // Las restricciones de interacciones
+        // Restricciones
         content.restrictions ??= [];
 
-        // El esquema de la aplicacion
+        // Esquema
         content.schema = new discord.SlashCommandBuilder();
 
         content.schema.name                       = content.name.default;

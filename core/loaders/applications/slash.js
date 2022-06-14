@@ -3,7 +3,7 @@ import fs   from 'node:fs';
 
 import { slashApplicationsPath } from '../../managers/directories.js';
 
-import SlashApplication from '../../structures/Application/Slash.js';
+import SlashApplication from '../../structures/Application/SlashApplication.js';
 
 let loadedApplications = [];
 
