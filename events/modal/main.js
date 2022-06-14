@@ -4,7 +4,7 @@ export default {
 
     execute: function ({ client, me, loaded, grouped, directories }) {
 
-        client.on('interactionCreate', (event) => {
+        client.on('interactionCreate', async (event) => {
 
             // Si no es un modal
             if (!event.isModalSubmit()) return;
@@ -14,7 +14,7 @@ export default {
                 // Ejecuta los eventos en cadena
                 for (const _chainedEvent of _loadedFile.events[me.name]) {
 
-                    _chainedEvent({
+                    await _chainedEvent({
 
                         client, event, loaded, grouped, directories,
 

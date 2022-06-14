@@ -2,15 +2,15 @@ import path    from 'node:path';
 import discord from 'discord.js';
 import dotenv  from 'dotenv';
 
-import groupedIntents  from './core/groupers/intents.js';
-import groupedPartials from './core/groupers/partials.js';
-import eventsManager   from './core/managers/events.js';
+import usedIntents   from './core/groups/usedIntents.js';
+import usedPartials  from './core/groups/usedPartials.js';
+import executeEvents from './core/managers/executeEvents.js';
 
 // Crea el cliente
 const client = new discord.Client({
 
-    intents:  groupedIntents,
-    partials: groupedPartials,
+    intents:  usedIntents,
+    partials: usedPartials,
 
     allowedMentions: { parse: [], repliedUser: false }
 });
@@ -44,7 +44,7 @@ dotenv.config({
 });
 
 // Ejecuta los eventos
-eventsManager(client);
+await executeEvents(client);
 
 client.login(process.env.TOKEN)
       .then(() => console.log('Bot connected'));
