@@ -2,8 +2,8 @@ import path    from 'node:path';
 import discord from 'discord.js';
 import dotenv  from 'dotenv';
 
-import usedIntents   from './core/groups/usedIntents.js';
-import usedPartials  from './core/groups/usedPartials.js';
+import usedIntents   from './core/groupers/usedIntents.js';
+import usedPartials  from './core/groupers/usedPartials.js';
 import executeEvents from './core/managers/executeEvents.js';
 
 // Crea el cliente

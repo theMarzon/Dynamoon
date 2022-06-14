@@ -6,7 +6,9 @@ Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de la forma mas
 
 ## Iniciando un proyecto
 
-- Instale [Node](https://nodejs.org/) (Se recomienda la v18.3.0 o superior) y ejecute ``npm init``
+- Instale [Node](https://nodejs.org/) (Se recomienda la v18.3.0 o superior)
+
+- Ejecute ``npm init``
 
 - Abra el archivo ``package.json`` y agregue ``"type": "module"``
 
@@ -304,15 +306,15 @@ Este evento ejecuta las ``Aplicaciones`` cuando se crea una interacción proveni
 
 ### Button
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un boton
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interacción proveniente de un boton
 
 ### Menu
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un menu
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interacción proveniente de un menu
 
 ### Modal
 
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interaccion proveniente de un modal
+Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interacción proveniente de un modal
 
 ### Ready
 
