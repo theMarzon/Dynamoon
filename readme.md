@@ -6,15 +6,15 @@ Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de la forma mas
 
 ## Iniciando un proyecto
 
-- Instale [Node](https://nodejs.org/) en la versión ``v18.3.0`` o superior y ejecute ``npm init``
+- Instale [Node](https://nodejs.org/) (Se recomienda la v18.3.0 o superior) y ejecute ``npm init``
 
-- Abra el archivo ``package.json`` y agregue ``"type": "module"`` para usar modulos ``ECMAScript``
+- Abra el archivo ``package.json`` y agregue ``"type": "module"``
 
 - Instale las siguientes dependencias:
 
     | Nombre     | Versión                       |
     |------------|-------------------------------|
-    | discord.js | 14.0.0-dev.1654430643-7a1095b |
+    | discord.js | 14.0.0-dev.1655165434-b4e28a8 |
     | dotenv     | 16.0.0                        |
 
 - Cree un archivo ``.env``, ``.env.development`` o ``.env.production`` segun su preferencia:
@@ -79,7 +79,7 @@ export default {
     partials: [],
 
     // El evento que se va a ejecutar.
-    execute: ({ client, me, loadeds, groupeds, managers }) => {
+    execute: ({ client, me, loaded, grouped, directories }) => {
 
         // ...
     }
@@ -151,30 +151,8 @@ export default {
         member: null
     },
 
-    // Las restricciones para las interacciones de gremios, canales y usuarios.
-    restrict: {
-
-        // Invierte la gestion de las restricciones.
-        // invert: false (Pendiente),
-
-        // Gremios a restringir.
-        guilds: [
-
-            // ID's...
-        ],
-
-        // Canales a restringir.
-        channels: [
-
-            // ID's o tipos...     
-        ],
-
-        // Usuarios a restringir.
-        users: [
-
-            // ID's...
-        ]
-    },
+    // Los gremios, canales y usuarios que deban ser ignorados.
+    ignore: [],
 
     // Los eventos a utilizar.
     events: {},
@@ -232,30 +210,8 @@ export default {
         member: null
     },
 
-    // Las restricciones para las interacciones de gremios, canales y usuarios.
-    restrict: {
-
-        // Invierte la gestion de las restricciones.
-        // invert: false (Pendiente),
-
-        // Gremios a restringir.
-        guilds: [
-
-            // ID's...
-        ],
-
-        // Canales a restringir.
-        channels: [
-
-            // ID's o tipos...     
-        ],
-
-        // Usuarios a restringir.
-        users: [
-
-            // ID's...
-        ]
-    },
+    // Los gremios, canales y usuarios que deban ser ignorados.
+    ignore: [],
 
     // Los eventos a utilizar.
     events: {},
@@ -310,30 +266,8 @@ export default {
         member: null
     },
 
-    // Las restricciones para las interacciones de gremios, canales y usuarios.
-    restrict: {
-
-        // Invierte la gestion de las restricciones.
-        // invert: false (Pendiente),
-
-        // Gremios a restringir.
-        guilds: [
-
-            // ID's...
-        ],
-
-        // Canales a restringir.
-        channels: [
-
-            // ID's o tipos...     
-        ],
-
-        // Usuarios a restringir.
-        users: [
-
-            // ID's...
-        ]
-    },
+    // Los gremios, canales y usuarios que deban ser ignorados.
+    ignore: [],
 
     // Los eventos a utilizar.
     events: {},
