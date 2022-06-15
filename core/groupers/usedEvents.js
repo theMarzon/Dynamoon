@@ -1,8 +1,8 @@
-import loadedEvents              from '../loaders/events.js';
-import loadedServices            from '../loaders/services.js';
-import loadedSlashApplications   from '../loaders/applications/slash.js';
-import loadedUserApplications    from '../loaders/applications/user.js';
-import loadedMessageApplications from '../loaders/applications/message.js';
+import loadedEvents              from '../loaders/loadedEvents.js';
+import loadedServices            from '../loaders/loadedServices.js';
+import loadedSlashApplications   from '../loaders/applications/loadedSlashApplications.js';
+import loadedUserApplications    from '../loaders/applications/loadedUserApplications.js';
+import loadedMessageApplications from '../loaders/applications/loadedMessageApplications.js';
 
 const groupedEvents = {};
 

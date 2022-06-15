@@ -1,14 +1,12 @@
 import discord from 'discord.js';
 
-import isIgnored from './restrictions/isIgnored.js';
-
 export default {
 
     priority: 2,
 
-    execute: function ({ client, me, loaded, grouped, directories }) {
+    execute: ({ client, me, loaded, grouped, directories }) => {
 
-        client.on('interactionCreate', async (event) => {
+        client.on('interactionCreate', (event) => {
 
             // Si no es un comando
             if (!event.isChatInputCommand()
@@ -25,18 +23,10 @@ export default {
                 if (event.isUserContextMenuCommand()    && _loadedApplication.type !== discord.ApplicationCommandType.User)      continue;
                 if (event.isMessageContextMenuCommand() && _loadedApplication.type !== discord.ApplicationCommandType.Message)   continue;
 
-                // Si se tiene que ignorar esta interaccion
-                if (isIgnored({
-
-                    event,
-
-                    me: _loadedApplication
-                })) break;
-
                 // Ejecuta los eventos en cadena
                 for (const _chainedEvent of _loadedApplication.events[me.name]) {
 
-                    await _chainedEvent({
+                    _chainedEvent({
 
                         client, event, loaded, grouped, directories,
 

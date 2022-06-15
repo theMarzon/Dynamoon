@@ -38,9 +38,6 @@ export default class extends Base {
 
         content.permissions.member ??= null;
 
-        // Ignorados
-        content.ignore ??= [];
-
         // Esquema
         content.schema = new discord.SlashCommandBuilder();
 

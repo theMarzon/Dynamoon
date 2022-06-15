@@ -1,8 +1,8 @@
-export default function (content, name) {
+export default (content, key) => {
 
     content = { ...content };
 
-    delete content[name];
+    delete content[key];
 
     return content;
 };

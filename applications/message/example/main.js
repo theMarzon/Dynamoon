@@ -6,7 +6,7 @@ export default {
 
         application: [
 
-            function ({ client, event, me, loaded, grouped, directories }) {
+             ({ client, event, me, loaded, grouped, directories }) => {
 
                 const messageEmbed = new discord.EmbedBuilder({
 

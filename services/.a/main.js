@@ -4,7 +4,7 @@ export default {
 
         ready: [
             
-            function ({ client, loaded }) {
+            ({ client, loaded }) => {
 
                 const slashApplications   = loaded.applications.slash.map((val) => val.schema);
                 const userApplications    = loaded.applications.user.map((val) => val.schema);

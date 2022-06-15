@@ -17,14 +17,14 @@ import {
     messageApplicationsPath
 } from './directories.js';
 
-export default async function (client) {
+export default (client) => {
 
     for (const _loadedEvent of loadedEvents) {
 
         // Si el evento no fue cargado salta al siguiente
         if (!usedEvents[_loadedEvent.name]) continue;
 
-        await _loadedEvent.execute({
+        _loadedEvent.execute({
 
             client,
 
