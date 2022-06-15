@@ -16,21 +16,16 @@ const client = new discord.Client({
     allowedMentions: { parse: [], repliedUser: false }
 });
 
-const developmentArgument = getArgument('--developement', '-D');
-const productionArgument  = getArgument('--production', '-P');
-
-const inEnvironment = (developmentArgument) ? 'development'
-                    : (productionArgument)  ? 'production'
-                    :                         'standard';
-
 // Crea valores extra en el cliente
 client.core = {
+
+    environment: (getArgument('--developement', '-D')) ? 'development'
+               : (getArgument('--production', '-P'))   ? 'production'
+               :                                         'standard',
 
     name:       'Dinamoon',
     version:    '0.6.0',
     repository: 'https://github.com/theMarzon/Dinamoon',
-
-    environment: inEnvironment,
 
     images: {
 
@@ -43,9 +38,9 @@ client.core = {
 // Configura las variables de entorno
 dotenv.config({
 
-    path: (inEnvironment === 'development') ? path.join(process.cwd(), '.env.development')
-        : (inEnvironment === 'production')  ? path.join(process.cwd(), '.env.production')
-        :                                     path.join(process.cwd(), '.env')
+    path: (client.core.environment === 'development') ? path.join(process.cwd(), '.env.development')
+        : (client.core.environment === 'production')  ? path.join(process.cwd(), '.env.production')
+        :                                               path.join(process.cwd(), '.env')
 });
 
 // Ejecuta los eventos
