@@ -153,9 +153,6 @@ export default {
         member: null
     },
 
-    // Los gremios, canales y usuarios que deban ser ignorados.
-    ignore: [],
-
     // Los eventos a utilizar.
     events: {},
 
@@ -212,9 +209,6 @@ export default {
         member: null
     },
 
-    // Los gremios, canales y usuarios que deban ser ignorados.
-    ignore: [],
-
     // Los eventos a utilizar.
     events: {},
 
@@ -267,9 +261,6 @@ export default {
         // Los permisos que necesita un miembro para ejecutar la aplicación.
         member: null
     },
-
-    // Los gremios, canales y usuarios que deban ser ignorados.
-    ignore: [],
 
     // Los eventos a utilizar.
     events: {},
