@@ -2,10 +2,10 @@ import path    from 'node:path';
 import discord from 'discord.js';
 import dotenv  from 'dotenv';
 
-import getArgument   from './core/utils/getArgument.js';
-import usedIntents   from './core/groupers/usedIntents.js';
-import usedPartials  from './core/groupers/usedPartials.js';
-import executeEvents from './core/managers/executeEvents.js';
+import usedParameters from './source/core/managers/usedParameters.js';
+import usedIntents    from './source/core/groupers/usedIntents.js';
+import usedPartials   from './source/core/groupers/usedPartials.js';
+import executeEvents  from './source/core/managers/executeEvents.js';
 
 // Crea el cliente
 const client = new discord.Client({
@@ -18,10 +18,6 @@ const client = new discord.Client({
 
 // Crea valores extra en el cliente
 client.core = {
-
-    environment: (getArgument('--developement', '-D')) ? 'development'
-               : (getArgument('--production', '-P'))   ? 'production'
-               :                                         'standard',
 
     name:       'Dinamoon',
     version:    '0.6.0',
@@ -38,9 +34,9 @@ client.core = {
 // Configura las variables de entorno
 dotenv.config({
 
-    path: (client.core.environment === 'development') ? path.join(process.cwd(), '.env.development')
-        : (client.core.environment === 'production')  ? path.join(process.cwd(), '.env.production')
-        :                                               path.join(process.cwd(), '.env')
+    path: (usedParameters.environment === 'development') ? path.join(process.cwd(), '.env.development')
+        : (usedParameters.environment === 'production')  ? path.join(process.cwd(), '.env.production')
+        :                                                  path.join(process.cwd(), '.env')
 });
 
 // Ejecuta los eventos

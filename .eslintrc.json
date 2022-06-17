@@ -15,7 +15,6 @@
 
         "func-call-spacing":       "off",
         "no-case-declarations":    "off",
-        "camelcase":               "off",
         "no-mixed-operators":      "off",
         "operator-linebreak":      "off",
         "array-bracket-spacing":   "off",

@@ -2,11 +2,11 @@
     <img src="https://i.ibb.co/02kJWXt/logo.png" width="512" />
 </div>
 
-Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de la forma mas fácil, rápida, modular y dinámica posible
+Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de una forma rápida y modular
 
-## Iniciando un proyecto
+## 📦 Preparando el proyecto
 
-- Instale [Node](https://nodejs.org/) (Se recomienda la v18.3.0 o superior)
+- Instale [Node](https://nodejs.org/) (Se recomienda la v18.4.0 o superior)
 
 - Ejecute ``npm init``
 
@@ -16,54 +16,80 @@ Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de la forma mas
 
     | Nombre     | Versión                       |
     |------------|-------------------------------|
-    | discord.js | 14.0.0-dev.1655165434-b4e28a8 |
+    | discord.js | 14.0.0-dev.1655381041-4df491c |
     | dotenv     | 16.0.0                        |
 
-- Cree un archivo ``.env``, ``.env.development`` o ``.env.production`` segun su preferencia:
+## 🧰 Configurando el proyecto
 
-    > ``.env`` se utilizará al ejecutar ``node ./index.js``
+### 📂 Espacio de trabajo
 
-    > ``.env.development`` se utilizará al ejecutar ``node ./index.js --development``
+Para definir un espacio de trabajo puede utilizar las siguientes banderas:
 
-    > ``.env.production`` se utilizará al ejecutar ``node ./index.js --production``
+| Bandera           | Espacio de trabajo            |
+|-------------------|-------------------------------|
+| ``--development`` | Development                   |
+| ``-D``            | Development                   |
+| ``--production``  | Production                    |
+| ``-P``            | Production                    |
 
-## Estructura de archivos
+> NOTA: El espacio de trabajo por defecto es ``Standard``
+
+### 🔐 Variables de entorno
+
+Segun el espacio de trabajo utilizado, debera crear uno u otro archivo ``.env``:
+
+| Nombre del archivo | Para el espacio de trabajo |
+|--------------------|----------------------------|
+| ``.env.developemnt`` | Development              |
+| ``.env.production``  | Production               |
+| ``.env``             | Stabdard                 |
+
+## 🧱 Estructura de archivos
 
 ```
-applications\
+source/
 |
-|__ slash\
+|__ applications/
 |   |
-|   |__ example\
+|   |__ standard\, development\ and production\
 |       |
-|       |__ main.js
+|       |__ slash\
+|       |   |
+|       |   |__ example\
+|       |       |
+|       |       |__ main.js
+|       |
+|       |__ messages\
+|       |   |
+|       |   |__ example\
+|       |       |
+|       |       |__ main.js
+|       |
+|       |__ users\
+|           |
+|           |__ example\
+|               |
+|               |__ main.js
 |
-|__ messages\
+|__ services\
 |   |
-|   |__ example\
+|   |__ standard\, development\ and production\
 |       |
-|       |__ main.js
+|       |__ example\
+|           |
+|           |__ main.js
 |
-|__ users\
+|__ events\
     |
-    |__ example\
+    |__ standard\, development\ and production\
         |
-        |__ main.js
-
-services\
-|
-|__ example\
-    |
-    |__ main.js
-
-events\
-|
-|__ example\
-    |
-    |__ main.js
+        |__ example\
+            |
+            |__ main.js
 ```
+## 📦 Creando applicaciones, eventos y archivos
 
-## Estructura de un evento
+### 🎯 Evento
 
 ```js
 export default {
@@ -88,7 +114,7 @@ export default {
 };
 ```
 
-## Estructura de un servicio
+### 🔧 Servicio
 
 ```js
 export default {
@@ -110,7 +136,7 @@ export default {
 };
 ```
 
-## Estructura de una aplicación de barra lateral
+### 💻 Aplicación de barra lateral
 
 ```js
 export default {
@@ -177,7 +203,7 @@ export default {
 };
 ```
 
-## Estructura de una aplicación de menú contextual para usuarios
+### 💻 Aplicación de menú contextual para usuarios
 
 ```js
 export default {
@@ -230,7 +256,7 @@ export default {
 };
 ```
 
-## Estructura de una aplicación de menú contextual para mensajes
+### 💻 Aplicación de menú contextual para mensajes
 
 ```js
 export default {
@@ -282,35 +308,3 @@ export default {
     // }
 };
 ```
-
-## Servicios prefabricados 
-
-### Indexer
-
-Crea y actualiza las ``Aplicaciones`` creadas, editadas y eliminadas
-
-## Eventos prefabricados
-
-### Application
-
-Este evento ejecuta las ``Aplicaciones`` cuando se crea una interacción proveniente de una aplicación de barra lateral o menú contextual
-
-### Button
-
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interacción proveniente de un boton
-
-### Menu
-
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interacción proveniente de un menu
-
-### Modal
-
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` cuando se crea una interacción proveniente de un modal
-
-### Ready
-
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` al momento de que el cliente establezca la conexión
-
-### Boot
-
-Este evento ejecuta las ``Aplicaciones`` y ``Servicios`` al momento de inicializarse el proyecto

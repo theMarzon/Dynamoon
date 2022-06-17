@@ -1,6 +1,10 @@
 # Folders
 node_modules/
 
+source/events/
+source/services/
+source/applications/
+
 # Files
 .env
 .env.development
