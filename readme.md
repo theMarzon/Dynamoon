@@ -8,7 +8,11 @@ Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de una forma r�
 
 - Instale [Node](https://nodejs.org/) (Se recomienda la v18.4.0 o superior)
 
-- Ejecute ``npm init``
+- Ejecute:
+
+    ```sh
+    npm init --yes
+    ```
 
 - Abra el archivo ``package.json`` y agregue ``"type": "module"``
 
@@ -21,73 +25,62 @@ Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de una forma r�
 
 ## 🧰 Configurando el proyecto
 
-### 📂 Espacio de trabajo
+### 📂 Espacios de trabajo
 
-Para definir un espacio de trabajo puede utilizar las siguientes banderas:
+Utilice el parámetro ``--workspace`` seguido el nombre del espacio de trabajo a utilizar, ejemplo:
 
-| Bandera           | Espacio de trabajo            |
-|-------------------|-------------------------------|
-| ``--development`` | Development                   |
-| ``-D``            | Development                   |
-| ``--production``  | Production                    |
-| ``-P``            | Production                    |
+```sh
+node ./index.js --workspace example
+```
 
-> NOTA: El espacio de trabajo por defecto es ``Standard``
+> Por defecto el utilizado es ``none``
 
 ### 🔐 Variables de entorno
 
-Segun el espacio de trabajo utilizado, debera crear uno u otro archivo ``.env``:
-
-| Nombre del archivo | Para el espacio de trabajo |
-|--------------------|----------------------------|
-| ``.env.developemnt`` | Development              |
-| ``.env.production``  | Production               |
-| ``.env``             | Stabdard                 |
+Cree un archivo ``.env`` en el espacio de trabajo utilizado, luego debe abrir el archivo y crear la llave ``TOKEN`` con el token del bot
 
 ## 🧱 Estructura de archivos
 
 ```
-source/
+source\
 |
-|__ applications/
-|   |
-|   |__ standard\, development\ and production\
-|       |
-|       |__ slash\
-|       |   |
-|       |   |__ example\
-|       |       |
-|       |       |__ main.js
-|       |
-|       |__ messages\
-|       |   |
-|       |   |__ example\
-|       |       |
-|       |       |__ main.js
-|       |
-|       |__ users\
-|           |
-|           |__ example\
-|               |
-|               |__ main.js
-|
-|__ services\
-|   |
-|   |__ standard\, development\ and production\
-|       |
-|       |__ example\
-|           |
-|           |__ main.js
-|
-|__ events\
+|__ workspaces\
     |
-    |__ standard\, development\ and production\
+    |__ example\
         |
-        |__ example\
+        |__ applications\
+        |   |
+        |   |__ slash\
+        |   |   |
+        |   |   |__ example\
+        |   |       |
+        |   |       |__ main.js
+        |   |
+        |   |__ messages\
+        |   |   |
+        |   |   |__ example\
+        |   |       |
+        |   |       |__ main.js
+        |   |
+        |   |__ users\
+        |       |
+        |       |__ example\
+        |           |
+        |           |__ main.js
+        |
+        |__ services\
+        |   |
+        |   |__ example\
+        |       |
+        |       |__ main.js
+        |
+        |__ events\
             |
-            |__ main.js
+            |__ example\
+                |
+                |__ main.js
 ```
-## 📦 Creando applicaciones, eventos y archivos
+## 📦 Creando aplicaciones, eventos y archivos
 
 ### 🎯 Evento
 

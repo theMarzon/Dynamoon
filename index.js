@@ -7,6 +7,11 @@ import usedIntents    from './source/core/groupers/usedIntents.js';
 import usedPartials   from './source/core/groupers/usedPartials.js';
 import executeEvents  from './source/core/managers/executeEvents.js';
 
+import {
+
+    workspacesPath
+} from './source/core/managers/directories.js';
+
 // Crea el cliente
 const client = new discord.Client({
 
@@ -32,12 +37,7 @@ client.core = {
 };
 
 // Configura las variables de entorno
-dotenv.config({
-
-    path: (usedParameters.environment === 'development') ? path.join(process.cwd(), '.env.development')
-        : (usedParameters.environment === 'production')  ? path.join(process.cwd(), '.env.production')
-        :                                                  path.join(process.cwd(), '.env')
-});
+dotenv.config({ path: path.join(workspacesPath, usedParameters.workspace, '.env') });
 
 // Ejecuta los eventos
 executeEvents(client);

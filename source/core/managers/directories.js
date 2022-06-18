@@ -5,17 +5,11 @@ import usedParameters from './usedParameters.js';
 
 export const sourcesPath = path.join(process.cwd(), 'source');
 
-export const eventsPath = (usedParameters.environment === 'development') ? path.join(sourcesPath, 'events', 'development')
-                        : (usedParameters.environment === 'production')  ? path.join(sourcesPath, 'events', 'production')
-                        :                                                  path.join(sourcesPath, 'events', 'standard');
+export const workspacesPath = path.join(sourcesPath, 'workspaces');
 
-export const servicesPath = (usedParameters.environment === 'development') ? path.join(sourcesPath, 'services', 'development')
-                          : (usedParameters.environment === 'production')  ? path.join(sourcesPath, 'services', 'production')
-                          :                                                  path.join(sourcesPath, 'services', 'standard');
-
-export const applicationsPath = (usedParameters.environment === 'development') ? path.join(sourcesPath, 'applications', 'development')
-                              : (usedParameters.environment === 'production')  ? path.join(sourcesPath, 'applications', 'production')
-                              :                                                  path.join(sourcesPath, 'applications', 'standard');
+export const eventsPath       = path.join(workspacesPath, usedParameters.workspace, 'events');
+export const servicesPath     = path.join(workspacesPath, usedParameters.workspace, 'services');
+export const applicationsPath = path.join(workspacesPath, usedParameters.workspace, 'applications');
 
 export const slashApplicationsPath   = path.join(applicationsPath, 'slash');
 export const userApplicationsPath    = path.join(applicationsPath, 'user');
@@ -23,6 +17,7 @@ export const messageApplicationsPath = path.join(applicationsPath, 'message');
 
 // Crea las carpetas si no existen
 if (!fs.existsSync(sourcesPath)) fs.mkdirSync(sourcesPath, { recursive: true });
+if (!fs.existsSync(workspacesPath)) fs.mkdirSync(sourcesPath, { recursive: true });
 
 if (!fs.existsSync(eventsPath)) fs.mkdirSync(eventsPath, { recursive: true });
 if (!fs.existsSync(servicesPath)) fs.mkdirSync(servicesPath, { recursive: true });

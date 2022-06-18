@@ -1,9 +1,11 @@
-const developmentParameter = process.argv.includes('--development') || process.argv.includes('-D');
-const productionParameter  = process.argv.includes('--production')  || process.argv.includes('-P');
+// Espacios de trabajo
+const findedWorkspace = process.argv.findIndex((value) => value === '--workspace') + 1;
+
+let workspaceParameter = (findedWorkspace) ? process.argv.at(findedWorkspace) : 'none';
+
+workspaceParameter ??= 'none';
 
 export default {
 
-    environment: (developmentParameter) ? 'development'
-               : (productionParameter)  ? 'production'
-               :                          'standard'
+    workspace: workspaceParameter
 };

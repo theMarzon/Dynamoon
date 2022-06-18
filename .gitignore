@@ -1,14 +1,8 @@
 # Folders
 node_modules/
-
-source/events/
-source/services/
-source/applications/
+source/workspaces/
 
 # Files
-.env
-.env.development
-.env.production
 .pnpm-debug.log
 package.json
 package-lock.json
