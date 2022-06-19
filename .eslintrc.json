@@ -1,7 +1,7 @@
 {
     "env": {
 
-        "es2021": true,
+        "es2022": true,
         "node":   true
     },
 
@@ -13,19 +13,34 @@
 
     "rules": {
 
-        "func-call-spacing":       "off",
-        "no-case-declarations":    "off",
-        "no-mixed-operators":      "off",
-        "operator-linebreak":      "off",
-        "array-bracket-spacing":   "off",
+        "multiline-ternary":       "off",
         "padded-blocks":           "off",
+        "no-mixed-operators":      "off",
+        "no-case-declarations":    "off",
+        "no-irregular-whitespace": "off",
         "object-property-newline": "off",
         "no-multi-spaces":         "off",
-        "no-irregular-whitespace": "off",
         "indent":                  "off",
-        "multiline-ternary":       "off",
-        "key-spacing":             "off",
-        "semi":                    "off"
+        
+        "key-spacing": [ "error", { "afterColon": true, "align": "value" } ],
+        
+        "operator-linebreak": [ 
+            
+            "error", 
+            "before" 
+        ],
+        
+        "array-bracket-spacing": [ 
+            
+            "error", 
+            "always"
+        ],
+        
+        "semi": [ 
+            
+            "error", 
+            "always" 
+        ]
     },
 
     "extends": [ "standard" ]

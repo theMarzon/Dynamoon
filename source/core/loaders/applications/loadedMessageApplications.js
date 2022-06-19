@@ -7,8 +7,9 @@ import MessageApplication from '../../structures/Application/MessageApplication.
 
 let loadedApplications = [];
 
-const applicationFolders = fs.readdirSync(messageApplicationsPath)
-                             .filter((value) => !value.startsWith('.'));
+const applicationFolders = fs
+                            .readdirSync(messageApplicationsPath)
+                            .filter((value) => !value.startsWith('.'));
 
 for (const _applicationFolder of applicationFolders) {
 

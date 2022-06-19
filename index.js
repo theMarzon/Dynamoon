@@ -42,5 +42,6 @@ dotenv.config({ path: path.join(workspacesPath, usedParameters.workspace, '.env'
 // Ejecuta los eventos
 executeEvents(client);
 
-client.login(process.env.TOKEN)
-      .then(() => console.log('Connection established'));
+client
+     .login(process.env.TOKEN)
+     .then(() => console.log('Connection established'));

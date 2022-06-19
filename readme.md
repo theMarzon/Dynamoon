@@ -20,8 +20,8 @@ Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de una forma r�
 
     | Nombre     | Versión                       |
     |------------|-------------------------------|
-    | discord.js | 14.0.0-dev.1655381041-4df491c |
-    | dotenv     | 16.0.0                        |
+    | discord.js | 14.0.0-dev.1655640259-358c3f4 |
+    | dotenv     | 16.0.1                        |
 
 ## 🧰 Configurando el proyecto
 
