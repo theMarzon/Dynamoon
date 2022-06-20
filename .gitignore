@@ -1,8 +1,8 @@
 # Folders
 node_modules/
-source/workspaces/
 
 # Files
+.env
 .pnpm-debug.log
 package.json
 package-lock.json
