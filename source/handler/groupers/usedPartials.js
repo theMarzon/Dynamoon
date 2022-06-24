@@ -5,7 +5,7 @@ let groupedPartials = [];
 
 for (const _loadedEvent of loadedEvents) {
 
-    // Omite el evento si no es neceserio
+    // Omite el evento si no es utilizado
     if (!usedEvents[_loadedEvent.name]) continue;
 
     groupedPartials = groupedPartials.concat(_loadedEvent.partials);

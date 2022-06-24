@@ -2,33 +2,28 @@ import discord from 'discord.js';
 
 import deleteProperty from '../../utils/deleteProperty.js';
 
-import Base from '../Base.js';
-
-export default class extends Base {
+export default class {
 
     constructor (content) {
 
-        super(content);
-
-        // Tipo
         content.type = discord.ApplicationCommandType.ChatInput;
 
-        // Si se permite ejecutar la aplicacion en DM's
         content.dm ??= true;
 
-        // Opciones
-        content.options ??= [];
+        content.priority ??= 0;
 
-        // Eventos
+        content.intents  ??= [];
+        content.partials ??= [];
+        content.options  ??= [];
+
         content.events ??= {};
 
-        // Nombres
+        // Nombre
         content.name ??= {};
 
-        // Por defecto (Automatico)
-        // content.name.default;
+        content.name.default ??= 'undefined';
 
-        // Descripciones
+        // Descripcion
         content.description ??= {};
 
         content.description.default ??= 'undefined';
@@ -45,14 +40,18 @@ export default class extends Base {
             type:                       content.type,
             name:                       content.name.default,
             description:                content.description.default,
-            default_member_permissions: content.permissions.member,
-            // default_bot_permissions:    content.permissions.bot,
-            dm_permission:              content.dm,
             options:                    content.options,
+            default_member_permissions: content.permissions.member,
+            default_bot_permissions:    content.permissions.bot,
+            dm_permission:              content.dm,
 
             name_localizations:        deleteProperty(content.name, 'default'),
             description_localizations: deleteProperty(content.description, 'default')
         };
+
+        // Elimina los "intents" y "partials" duplicados
+        content.intents  = content.intents.filter((value, index, array) => array.indexOf(value) === index);
+        content.partials = content.partials.filter((value, index, array) => array.indexOf(value) === index);
 
         Object.assign(this, content);
     };

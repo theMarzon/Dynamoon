@@ -3,7 +3,9 @@ node_modules/
 
 # Files
 .env
-.pnpm-debug.log
 package.json
 package-lock.json
 pnpm-lock.yaml
+
+# Extensions
+*.log

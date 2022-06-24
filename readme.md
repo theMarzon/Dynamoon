@@ -2,7 +2,7 @@
     <img src="https://i.ibb.co/02kJWXt/logo.png" width="512" />
 </div>
 
-Desarrolle Bots utilizando [discord.js](https://discord.js.org/) de una forma rápida y modular
+Un ``Handler`` para desarrollar bots utilizando [discord.js](https://discord.js.org/) de una forma rápida y modular
 
 ## 📦 Preparando el proyecto
 
@@ -33,11 +33,15 @@ Utilice el parámetro ``--workspace`` seguido el nombre del espacio de trabajo a
 node ./index.js --workspace example
 ```
 
-> Por defecto el utilizado es ``none``
+> Por defecto es ``none``
 
 ### 🔐 Variables de entorno
 
-Cree un archivo ``.env`` en el espacio de trabajo utilizado, luego debe abrir el archivo y crear la llave ``TOKEN`` con el token del bot
+Cree un archivo ``.env`` en el espacio de trabajo utilizado, luego abra el archivo y crear las siguientes llaves:
+
+| Llave | Obligatorio | Valor                |
+|-------|-------------|----------------------|
+| TOKEN | Si          | El ``Token`` del bot |
 
 ## 🧱 Estructura de archivos
 

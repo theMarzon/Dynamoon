@@ -2,15 +2,11 @@ import path    from 'node:path';
 import discord from 'discord.js';
 import dotenv  from 'dotenv';
 
-import usedParameters from './source/core/managers/usedParameters.js';
-import usedIntents    from './source/core/groupers/usedIntents.js';
-import usedPartials   from './source/core/groupers/usedPartials.js';
-import executeEvents  from './source/core/managers/executeEvents.js';
+import usedIntents    from './source/handler/groupers/usedIntents.js';
+import usedPartials   from './source/handler/groupers/usedPartials.js';
+import executeEvents  from './source/handler/managers/executeEvents.js';
 
-import {
-
-    workspacesPath
-} from './source/core/managers/directories.js';
+import { workspaceDirectory } from './source/handler/managers/directories.js';
 
 // Crea el cliente
 const client = new discord.Client({
@@ -21,8 +17,8 @@ const client = new discord.Client({
     allowedMentions: { parse: [], repliedUser: false }
 });
 
-// Crea valores extra en el cliente
-client.core = {
+// Agrega al cliente informacion sobre el "Handler"
+client.handler = {
 
     name:       'Dinamoon',
     version:    '0.6.0',
@@ -36,8 +32,8 @@ client.core = {
     }
 };
 
-// Configura las variables de entorno
-dotenv.config({ path: path.join(workspacesPath, usedParameters.workspace, '.env') });
+// Configura las variables de entorno del espacio de trabajo utilizado
+dotenv.config({ path: path.join(workspaceDirectory, '.env') });
 
 // Ejecuta los eventos
 executeEvents(client);

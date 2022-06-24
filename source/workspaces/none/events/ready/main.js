@@ -10,10 +10,9 @@ export default {
 
             for (const _loadedFile of grouped.events[me.name].all) {
 
-                // Ejecuta los eventos en cadena
-                for (const _chainedEvent of _loadedFile.events[me.name]) {
+                for (const _fileEvent of _loadedFile.events[me.name]) {
 
-                    _chainedEvent({
+                    _fileEvent({
 
                         client, loaded, grouped, directories,
 

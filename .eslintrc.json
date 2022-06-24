@@ -20,33 +20,13 @@
         "no-irregular-whitespace": "off",
         "object-property-newline": "off",
         "no-multi-spaces":         "off",
-    
-        "indent": [
-
-            "error", 4,
-
-            {
-                "SwitchCase": 1,
-                "MemberExpression": 1,
-
-                "VariableDeclarator": "first" 
-            }
-        ],
-        
-        "key-spacing": [ 
-            
-            "error", 
-            
-            {
-                "afterColon": true, 
-        
-                "align": "value" 
-            }
-        ],
+        "indent":                  "off",
         
         "operator-linebreak":    [ "error", "before" ],
         "array-bracket-spacing": [ "error", "always" ],
-        "semi":                  [ "error", "always" ]
+        "semi":                  [ "error", "always" ],
+        
+        "key-spacing": [ "error", { "afterColon": true, "align": "value" } ]
     },
 
     "extends": [ "standard" ]

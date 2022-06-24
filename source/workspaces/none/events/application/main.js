@@ -23,10 +23,9 @@ export default {
                 if (event.isUserContextMenuCommand()    && _loadedApplication.type !== discord.ApplicationCommandType.User)      continue;
                 if (event.isMessageContextMenuCommand() && _loadedApplication.type !== discord.ApplicationCommandType.Message)   continue;
 
-                // Ejecuta los eventos en cadena
-                for (const _chainedEvent of _loadedApplication.events[me.name]) {
+                for (const _fileEvent of _loadedApplication.events[me.name]) {
 
-                    _chainedEvent({
+                    _fileEvent({
 
                         client, event, loaded, grouped, directories,
 

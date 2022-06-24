@@ -1,20 +1,20 @@
 import path from 'node:path';
 import fs   from 'node:fs';
 
-import { userApplicationsPath } from '../../managers/directories.js';
+import { userApplicationsDirectory } from '../../managers/directories.js';
 
 import UserApplication from '../../structures/Application/UserApplication.js';
 
 let loadedApplications = [];
 
 const applicationFolders = fs
-                            .readdirSync(userApplicationsPath)
+                            .readdirSync(userApplicationsDirectory)
                             .filter((value) => !value.startsWith('.'));
 
 for (const _applicationFolder of applicationFolders) {
 
     // Genera una ruta del archivo principal
-    const filePath = path.join(userApplicationsPath, _applicationFolder, 'main.js');
+    const filePath = path.join(userApplicationsDirectory, _applicationFolder, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);

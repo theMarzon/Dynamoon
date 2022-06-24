@@ -17,7 +17,7 @@ for (const _loadedEvent of loadedEvents) {
 
     const allFiles = serviceFiles.concat(applicationFiles);
 
-    // Omite el evento si no es neceserio
+    // Omite el evento si no es utilizado
     if (!allFiles.length) continue;
 
     groupedEvents[_loadedEvent.name] = {

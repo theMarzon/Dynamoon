@@ -1,20 +1,20 @@
 import path from 'node:path';
 import fs   from 'node:fs';
 
-import { slashApplicationsPath } from '../../managers/directories.js';
+import { slashApplicationsDirectory } from '../../managers/directories.js';
 
 import SlashApplication from '../../structures/Application/SlashApplication.js';
 
 let loadedApplications = [];
 
 const applicationFolders = fs
-                            .readdirSync(slashApplicationsPath)
+                            .readdirSync(slashApplicationsDirectory)
                             .filter((value) => !value.startsWith('.'));
 
 for (const _applicationFolder of applicationFolders) {
 
     // Genera una ruta del archivo principal
-    const filePath = path.join(slashApplicationsPath, _applicationFolder, 'main.js');
+    const filePath = path.join(slashApplicationsDirectory, _applicationFolder, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);

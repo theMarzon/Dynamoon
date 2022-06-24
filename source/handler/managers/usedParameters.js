@@ -5,7 +5,4 @@ let workspaceParameter = (findedWorkspace) ? process.argv.at(findedWorkspace) : 
 
 workspaceParameter ??= 'none';
 
-export default {
-
-    workspace: workspaceParameter
-};
+export default { workspace: workspaceParameter };

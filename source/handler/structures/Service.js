@@ -9,6 +9,8 @@ export default class {
         content.intents  ??= [];
         content.partials ??= [];
 
+        content.events ??= {};
+
         // Elimina los "intents" y "partials" duplicados
         content.intents  = content.intents.filter((value, index, array) => array.indexOf(value) === index);
         content.partials = content.partials.filter((value, index, array) => array.indexOf(value) === index);

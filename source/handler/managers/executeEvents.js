@@ -9,19 +9,20 @@ import usedPartials              from '../groupers/usedPartials.js';
 
 import {
 
-    eventsPath,
-    servicesPath,
-    applicationsPath,
-    slashApplicationsPath,
-    userApplicationsPath,
-    messageApplicationsPath
+    workspaceDirectory,
+    eventsDirectory,
+    servicesDirectory,
+    applicationsDirectory,
+    slashApplicationsDirectory,
+    userApplicationsDirectory,
+    messageApplicationsDirectory
 } from './directories.js';
 
 export default (client) => {
 
     for (const _loadedEvent of loadedEvents) {
 
-        // Si el evento no fue cargado salta al siguiente
+        // Omite el evento si no es utilizado
         if (!usedEvents[_loadedEvent.name]) continue;
 
         _loadedEvent.execute({
@@ -52,12 +53,13 @@ export default (client) => {
 
             directories: {
 
-                events:              eventsPath,
-                services:            servicesPath,
-                applications:        applicationsPath,
-                slashApplications:   slashApplicationsPath,
-                userApplications:    userApplicationsPath,
-                messageApplications: messageApplicationsPath
+                workspace:           workspaceDirectory,
+                events:              eventsDirectory,
+                services:            servicesDirectory,
+                applications:        applicationsDirectory,
+                slashApplications:   slashApplicationsDirectory,
+                userApplications:    userApplicationsDirectory,
+                messageApplications: messageApplicationsDirectory
             }
         });
     }

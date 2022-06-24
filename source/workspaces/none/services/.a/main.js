@@ -6,17 +6,17 @@ export default {
             
             ({ client, loaded }) => {
 
-                const slashApplications   = loaded.applications.slash.map((val) => val.schema);
-                const userApplications    = loaded.applications.user.map((val) => val.schema);
-                const messageApplications = loaded.applications.message.map((val) => val.schema);
+                const slashApplications   = loaded.applications.slash.map((value) => value.schema);
+                const userApplications    = loaded.applications.user.map((value) => value.schema);
+                const messageApplications = loaded.applications.message.map((value) => value.schema);
 
                 const allApplications = slashApplications
-                                            .concat(userApplications)
-                                            .concat(messageApplications);
+                                                        .concat(userApplications)
+                                                        .concat(messageApplications);
 
                 client.application.commands
-                    .set(allApplications)   
-                    .then(() => console.log('Indexed'));
+                                          .set(allApplications)   
+                                          .then(() => console.log('Indexed applications'));
             }
         ]
     }

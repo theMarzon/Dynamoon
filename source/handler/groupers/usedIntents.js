@@ -5,7 +5,7 @@ let groupedIntents = [];
 
 for (const _loadedEvent of loadedEvents) {
 
-    // Omite el evento si no es neceserio
+    // Omite el evento si no es utilizado
     if (!usedEvents[_loadedEvent.name]) continue;
 
     groupedIntents = groupedIntents.concat(_loadedEvent.intents);
