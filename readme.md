@@ -39,9 +39,9 @@ node ./index.js --workspace example
 
 Cree un archivo ``.env`` en el espacio de trabajo utilizado, luego abra el archivo y crear las siguientes llaves:
 
-| Llave | Obligatorio | Valor                |
-|-------|-------------|----------------------|
-| TOKEN | Si          | El ``Token`` del bot |
+| Nombre | Obligatorio | Contenido            |
+|--------|-------------|----------------------|
+| TOKEN  | Si          | El ``Token`` del bot |
 
 ## 🧱 Estructura de archivos
 
@@ -51,6 +51,8 @@ source\
 |__ workspaces\
     |
     |__ example\
+        |
+        |__ .env
         |
         |__ applications\
         |   |
