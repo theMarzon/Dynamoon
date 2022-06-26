@@ -20,7 +20,7 @@ Un ``Handler`` para desarrollar bots utilizando [discord.js](https://discord.js.
 
     | Nombre     | Versión                       |
     |------------|-------------------------------|
-    | discord.js | 14.0.0-dev.1655640259-358c3f4 |
+    | discord.js | 14.0.0-dev.1656158629-c4653f9 |
     | dotenv     | 16.0.1                        |
 
 ## 🧰 Configurando el proyecto

@@ -16,7 +16,7 @@ for (const _loadedEvent of loadedEvents) {
     };
 };
 
-// Elimina los "intents" repetidos
+// Elimina los "intents" duplicados
 groupedIntents = groupedIntents.filter((value, index, array) => array.indexOf(value) === index);
 
 export default groupedIntents;

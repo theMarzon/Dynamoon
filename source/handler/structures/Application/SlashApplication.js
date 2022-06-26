@@ -4,55 +4,74 @@ import deleteProperty from '../../utils/deleteProperty.js';
 
 export default class {
 
+    type = discord.ApplicationCommandType.ChatInput;
+
+    dm = true;
+
+    priority = 0;
+
+    intents  = [];
+    partials = [];
+    options  = [];
+
+    events = {};
+
+    name        = { default: 'undefined' };
+    description = { default: 'undefined' };
+
+    permissions = {
+
+        member: null,
+        bot:    null
+    };
+
+    schema = {
+
+        type:                       this.type,
+        name:                       this.name.default,
+        default_member_permissions: this.permissions.member,
+        default_bot_permissions:    this.permissions.bot,
+        dm_permission:              this.dm,
+
+        name_localizations:        deleteProperty(this.name, 'default'),
+        description_localizations: deleteProperty(this.description, 'default')
+    };
+
     constructor (content) {
 
-        content.type = discord.ApplicationCommandType.ChatInput;
+        this.dm = content.dm ?? this.dm;
 
-        content.dm ??= true;
+        this.priority = content.priority ?? this.priority;
 
-        content.priority ??= 0;
+        this.intents  = content.intents  ?? this.intents;
+        this.partials = content.partials ?? this.partials;
 
-        content.intents  ??= [];
-        content.partials ??= [];
-        content.options  ??= [];
-
-        content.events ??= {};
+        this.events = content.events ?? this.events;
 
         // Nombre
-        content.name ??= {};
+        this.name = content.name ?? this.name;
 
-        content.name.default ??= 'undefined';
-
-        // Descripcion
-        content.description ??= {};
-
-        content.description.default ??= 'undefined';
+        this.name.default = content.name?.default ?? this.name.default;
 
         // Permisos
-        content.permissions ??= {};
+        this.permissions = content.permissions ?? this.permissions;
 
-        content.permissions.member ??= null;
-        content.permissions.bot    ??= null;
+        this.permissions.member = content.permissions?.member ?? this.permissions.member;
+        this.permissions.bot    = content.permissions?.bot    ?? this.permissions.bot;
 
         // Esquema
-        content.schema = {
+        this.schema = content.schema ?? this.schema;
 
-            type:                       content.type,
-            name:                       content.name.default,
-            description:                content.description.default,
-            options:                    content.options,
-            default_member_permissions: content.permissions.member,
-            default_bot_permissions:    content.permissions.bot,
-            dm_permission:              content.dm,
+        this.schema.name                       = this.name;
+        this.schema.dm_permission              = this.dm;
+        this.schema.default_member_permissions = this.permissions.member;
+        this.schema.default_bot_permissions    = this.permissions.bot;
 
-            name_localizations:        deleteProperty(content.name, 'default'),
-            description_localizations: deleteProperty(content.description, 'default')
-        };
+        this.schema.name_localizations        = deleteProperty(this.name, 'default');
+        this.schema.description_localizations = deleteProperty(this.description, 'default');
 
         // Elimina los "intents" y "partials" duplicados
-        content.intents  = content.intents.filter((value, index, array) => array.indexOf(value) === index);
-        content.partials = content.partials.filter((value, index, array) => array.indexOf(value) === index);
-
-        Object.assign(this, content);
+        this.intents  = this.intents.filter((value, index, array) => array.indexOf(value) === index);
+        this.partials = this.partials.filter((value, index, array) => array.indexOf(value) === index);
     };
 };

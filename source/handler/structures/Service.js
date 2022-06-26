@@ -1,20 +1,27 @@
 export default class {
 
+    name = 'undefined';
+
+    priority = 0;
+
+    intents  = [];
+    partials = [];
+
+    events = {};
+
     constructor (content) {
 
-        content.name ??= 'undefined';
+        this.name = content.name ?? this.name;
 
-        content.priority ??= 0;
+        this.priority = content.priority ?? this.priority;
 
-        content.intents  ??= [];
-        content.partials ??= [];
+        this.intents  = content.intents  ?? this.intents;
+        this.partials = content.partials ?? this.partials;
 
-        content.events ??= {};
+        this.events = content.events ?? this.events;
 
         // Elimina los "intents" y "partials" duplicados
-        content.intents  = content.intents.filter((value, index, array) => array.indexOf(value) === index);
-        content.partials = content.partials.filter((value, index, array) => array.indexOf(value) === index);
-
-        Object.assign(this, content);
+        this.intents  = this.intents.filter((value, index, array) => array.indexOf(value) === index);
+        this.partials = this.partials.filter((value, index, array) => array.indexOf(value) === index);
     };
 };
