@@ -27,7 +27,7 @@ Un ``Handler`` para desarrollar bots utilizando [discord.js](https://discord.js.
 
 ### 📂 Espacios de trabajo
 
-Utilice el parámetro ``--workspace`` seguido el nombre del espacio de trabajo a utilizar, ejemplo:
+Especifique un nombre seguido del parámetro ``--workspace`` para crear un nuevo espacio de trabajo, ejemplo:
 
 ```sh
 node ./index.js --workspace example
@@ -39,9 +39,9 @@ node ./index.js --workspace example
 
 Cree un archivo ``.env`` en el espacio de trabajo utilizado, luego abra el archivo y crear las siguientes llaves:
 
-| Nombre | Obligatorio | Contenido            |
-|--------|-------------|----------------------|
-| TOKEN  | Si          | El ``Token`` del bot |
+| Nombre | Necesario | Contenido            |
+|--------|-----------|----------------------|
+| TOKEN  | Si        | El ``Token`` del bot |
 
 ## 🧱 Estructura de archivos
 
@@ -93,10 +93,10 @@ source\
 ```js
 export default {
 
-    // El nombre del evento (automático).
+    // El nombre del evento (Automático).
     // name: 'example',
 
-    // La prioridad del evento para cargarlo antes que al resto (mientras mayor sea el número, más alta es).
+    // La prioridad del evento para cargarlo antes que al resto (Mientras mayor sea el número, más alta es).
     priority: 0,
 
     // Los "intents" necesarios.
@@ -118,10 +118,10 @@ export default {
 ```js
 export default {
 
-    // El nombre del servicio (automático).
+    // El nombre del servicio (Automático).
     // name: 'example',
 
-    // La prioridad del servicio para cargarlo antes que al resto (mientras mayor sea el número, mas alta es).
+    // La prioridad del servicio para cargarlo antes que al resto (Mientras mayor sea el número, mas alta es).
     priority: 0,
 
     // Los "intents" necesarios.
@@ -143,12 +143,12 @@ export default {
     // Los nombres de la aplicación.
     name: {
 
-        // El nombre por defecto de la aplicación (automático).
-        default: 'example',
+        // El nombre por defecto de la aplicación (Automático).
+        // default: 'example',
 
-        // 'es-ES': 'ejemplo',
-        // 'en-US': 'example',
-        // ...
+        // El nombre de la aplicacion segun la localidad.
+        'es-ES': 'ejemplo',
+        'en-US': 'example'
     },
 
     // Las descripciones de la aplicación.
@@ -157,15 +157,15 @@ export default {
         // La descripcion por defecto de la aplicación.
         default: 'Example command',
 
-        // 'es-ES': 'Comando de ejemplo',
-        // 'en-US': 'Example command',
-        // ...
+        // La descripcion de la aplicacion segun la localidad.
+        'es-ES': 'Comando de ejemplo',
+        'en-US': 'Example command'
     },
 
-    // El tipo de la aplicación (automático).
+    // El tipo de la aplicación (Automático).
     // type: 1,
 
-    // La prioridad del aplicación para cargarlo antes que al resto (mientras mayor sea el número, más alta es).
+    // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el número, más alta es).
     priority: 0,
     
     // Si la aplicacion puede ejecutarse en DM's.
@@ -187,7 +187,7 @@ export default {
     // Los "partials" necesarios.
     partials: [],
 
-    // El esquema de la aplicación (automático).
+    // El esquema de la aplicación (Automático).
     // schema: {
     // 
     //  name: 'example',
@@ -195,6 +195,7 @@ export default {
     //  type: 1,
     //  options: [],
     //  default_member_permissions: null,
+    //  default_bot_permissions: null,
     //  dm_permission: true,
     //  name_localizations: {},
     //  description_localizations: {}
@@ -210,15 +211,15 @@ export default {
     // Los nombres de la aplicación.
     name: {
 
-        // El nombre por defecto de la aplicación (automático).
-        default: 'example',
+        // El nombre por defecto de la aplicación (Automático).
+        // default: 'example',
 
-        // 'es-ES': 'ejemplo',
-        // 'en-US': 'example',
-        // ...
+        // El nombre de la aplicacion segun la localidad.
+        'es-ES': 'ejemplo',
+        'en-US': 'example'
     },
 
-    // El tipo de la aplicación (automático).
+    // El tipo de la aplicación (Automático).
     // type: 2,
 
     // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
@@ -243,12 +244,13 @@ export default {
     // Los "partials" necesarios.
     partials: [],
 
-    // El esquema de la aplicación (automático).
+    // El esquema de la aplicación (Automático).
     // schema: {
     // 
     //  name: 'example',
     //  type: 2,
     //  default_member_permissions: null,
+    //  default_bot_permissions: null,
     //  dm_permission: true,
     //  name_localizations: {}
     // }
@@ -263,18 +265,18 @@ export default {
     // Los nombres de la aplicación.
     name: {
 
-        // El nombre por defecto de la aplicación (automático).
-        default: 'example',
+        // El nombre por defecto de la aplicación (Automático).
+        // default: 'example',
 
-        // 'es-ES': 'ejemplo',
-        // 'en-US': 'example',
-        // ...
+        // El nombre de la aplicacion segun la localidad.
+        'es-ES': 'ejemplo',
+        'en-US': 'example'
     },
 
-    // El tipo de la aplicación (automático).
+    // El tipo de la aplicación (Automático).
     // type: 3,
 
-    // La prioridad del aplicación para cargarlo antes que al resto (mientras mayor sea el número, más alta es).
+    // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el número, más alta es).
     priority: 0,
 
     // Si la aplicación puede ejecutarse en DM's.
@@ -296,12 +298,13 @@ export default {
     // Los "partials" necesarios.
     partials: [],
 
-    // El esquema de la aplicación (automático).
+    // El esquema de la aplicación (Automático).
     // schema: {
     // 
     //  name: 'example',
     //  type: 3,
     //  default_member_permissions: null,
+    //  default_bot_permissions: null,
     //  dm_permission: true,
     //  name_localizations: {}
     // }
