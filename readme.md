@@ -175,7 +175,10 @@ export default {
     permissions: {
 
         // Los permisos que necesita un miembro para ejecutar la aplicación.
-        member: null
+        member: null,
+
+        // Los permisos que necesita el bot para ejecutar la aplicación.
+        bot: null
     },
 
     // Los eventos a utilizar.
@@ -232,7 +235,10 @@ export default {
     permissions: {
 
         // Los permisos que necesita un miembro para ejecutar la aplicación.
-        member: null
+        member: null,
+
+        // Los permisos que necesita el bot para ejecutar la aplicación.
+        bot: null
     },
 
     // Los eventos a utilizar.
@@ -286,7 +292,10 @@ export default {
     permissions: {
 
         // Los permisos que necesita un miembro para ejecutar la aplicación.
-        member: null
+        member: null,
+
+        // Los permisos que necesita el bot para ejecutar la aplicación.
+        bot: null
     },
 
     // Los eventos a utilizar.
