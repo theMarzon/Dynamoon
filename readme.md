@@ -1,5 +1,5 @@
-<div align="center">
-    <img src="https://i.ibb.co/02kJWXt/logo.png" width="512" />
+<div align='center'>
+    <img src='https://i.ibb.co/02kJWXt/logo.png' width='512' />
 </div>
 
 Un ``Handler`` para desarrollar bots utilizando [discord.js](https://discord.js.org/) de una forma rápida y modular
@@ -8,13 +8,9 @@ Un ``Handler`` para desarrollar bots utilizando [discord.js](https://discord.js.
 
 - Instale [Node](https://nodejs.org/) (Se recomienda la v18.4.0 o superior)
 
-- Ejecute:
+- Cree el archivo ``package.json``
 
-    ```sh
-    npm init --yes
-    ```
-
-- Abra el archivo ``package.json`` y agregue ``"type": "module"``
+- Agregue ``"type": "module"`` al archivo ``package.json``
 
 - Instale las siguientes dependencias:
 
