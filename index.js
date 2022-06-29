@@ -2,9 +2,9 @@ import path    from 'node:path';
 import discord from 'discord.js';
 import dotenv  from 'dotenv';
 
-import usedIntents    from './source/handler/groupers/usedIntents.js';
-import usedPartials   from './source/handler/groupers/usedPartials.js';
-import executeEvents  from './source/handler/managers/executeEvents.js';
+import usedIntents   from './source/handler/groupers/usedIntents.js';
+import usedPartials  from './source/handler/groupers/usedPartials.js';
+import executeEvents from './source/handler/managers/executeEvents.js';
 
 import { workspaceDirectory } from './source/handler/managers/directories.js';
 

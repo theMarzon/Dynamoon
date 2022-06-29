@@ -7,14 +7,14 @@ import UserApplication from '../../structures/Application/UserApplication.js';
 
 let loadedApplications = [];
 
-const applicationFolders = fs
-                            .readdirSync(userApplicationsDirectory)
-                            .filter((value) => !value.startsWith('.'));
+const folderNames = fs
+                     .readdirSync(userApplicationsDirectory)
+                     .filter((value) => !value.startsWith('.'));
 
-for (const _applicationFolder of applicationFolders) {
+for (const _folderName of folderNames) {
 
     // Genera una ruta del archivo principal
-    const filePath = path.join(userApplicationsDirectory, _applicationFolder, 'main.js');
+    const filePath = path.join(userApplicationsDirectory, _folderName, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);
@@ -23,7 +23,7 @@ for (const _applicationFolder of applicationFolders) {
 
         ...fileContent.default,
 
-        name: { default: _applicationFolder }
+        name: { default: _folderName }
     });
 
     loadedApplications.push(fileContent);

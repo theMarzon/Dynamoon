@@ -1,5 +1,8 @@
 import discord from 'discord.js';
 
+import botPermissions        from './features/botPermissions.js';
+import subcommandRedirection from './features/subcommandRedirection.js';
+
 export default {
 
     priority: 2,
@@ -32,6 +35,17 @@ export default {
                         me: _loadedApplication
                     });
                 };
+
+                // Para controlar si el bot cumple ciertos permisos
+                botPermissions();
+
+                // Para redireccionar los subcomandos
+                subcommandRedirection({
+
+                    client, event, loaded, grouped, directories,
+
+                    me: _loadedApplication
+                });
             };
         });
     }

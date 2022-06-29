@@ -10,10 +10,12 @@ export default {
         'en-US': 'Example command'
     },
 
+    redirections: true,
+
     events: {
 
         application: [
-
+/*
             ({ client, event, me, loaded, grouped, directories }) => {
 
                 const messageEmbed = new discord.EmbedBuilder({
@@ -25,6 +27,7 @@ export default {
 
                 event.reply({ embeds: [ messageEmbed ], ephemeral: true });
             }
+            */
         ]
     }
 };

@@ -6,7 +6,8 @@ export default class {
 
     type = discord.ApplicationCommandType.ChatInput;
 
-    dm = true;
+    dm           = true;
+    redirections = false;
 
     priority = 0;
 
@@ -39,7 +40,8 @@ export default class {
 
     constructor (content) {
 
-        this.dm = content.dm ?? this.dm;
+        this.dm           = content.dm           ?? this.dm;
+        this.redirections = content.redirections ?? this.redirections;
 
         this.priority = content.priority ?? this.priority;
 

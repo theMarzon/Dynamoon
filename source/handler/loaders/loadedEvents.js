@@ -7,14 +7,14 @@ import Event from '../structures/Event.js';
 
 let loadedEvents = [];
 
-const eventFolders = fs
-                      .readdirSync(eventsDirectory)
-                      .filter((value) => !value.startsWith('.'));
+const folderNames = fs
+                     .readdirSync(eventsDirectory)
+                     .filter((value) => !value.startsWith('.'));
 
-for (const _eventFolder of eventFolders) {
+for (const _folderName of folderNames) {
 
     // Genera una ruta del archivo principal
-    const filePath = path.join(eventsDirectory, _eventFolder, 'main.js');
+    const filePath = path.join(eventsDirectory, _folderName, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);
@@ -23,7 +23,7 @@ for (const _eventFolder of eventFolders) {
 
         ...fileContent.default,
 
-        name: _eventFolder
+        name: _folderName
     });
 
     loadedEvents.push(fileContent);

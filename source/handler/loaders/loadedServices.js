@@ -7,14 +7,14 @@ import Service from '../structures/Service.js';
 
 let loadedServices = [];
 
-const serviceFolders = fs
-                        .readdirSync(servicesDirectory)
-                        .filter((value) => !value.startsWith('.'));
+const folderNames = fs
+                     .readdirSync(servicesDirectory)
+                     .filter((value) => !value.startsWith('.'));
 
-for (const _serviceFolder of serviceFolders) {
+for (const _folderName of folderNames) {
 
     // Genera una ruta del archivo principal
-    const filePath = path.join(servicesDirectory, _serviceFolder, 'main.js');
+    const filePath = path.join(servicesDirectory, _folderName, 'main.js');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);
@@ -23,7 +23,7 @@ for (const _serviceFolder of serviceFolders) {
 
         ...fileContent.default,
 
-        name: _serviceFolder
+        name: _folderName
     });
 
     loadedServices.push(fileContent);
