@@ -1,4 +1,4 @@
-import discord from 'discord.js';
+// import discord from 'discord.js';
 
 export default {
 
@@ -15,7 +15,7 @@ export default {
     events: {
 
         application: [
-/*
+            /*
             ({ client, event, me, loaded, grouped, directories }) => {
 
                 const messageEmbed = new discord.EmbedBuilder({
