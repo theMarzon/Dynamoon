@@ -1,4 +1,4 @@
-const commandsVerifier = require('./verifiers/commands.js');
+const commandsVerifier = require('./verifiers/commands.mjs');
 
 module.exports = {
 

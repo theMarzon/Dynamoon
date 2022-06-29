@@ -1,7 +1,6 @@
 {
   "name": "dinamoon",
-  "main": "index.js",
-  "type": "module",
+  "main": "index.mjs",
   "private": true,
   "scripts": {
     "test": "node . --workspace example",

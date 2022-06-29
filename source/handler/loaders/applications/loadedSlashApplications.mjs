@@ -1,25 +1,25 @@
 import path from 'node:path';
 import fs   from 'node:fs';
 
-import { messageApplicationsDirectory } from '../../managers/directories.js';
+import { slashApplicationsDirectory } from '../../managers/directories.mjs';
 
-import MessageApplication from '../../structures/Application/MessageApplication.js';
+import SlashApplication from '../../structures/Application/SlashApplication.mjs';
 
 let loadedApplications = [];
 
 const folderNames = fs
-                     .readdirSync(messageApplicationsDirectory)
+                     .readdirSync(slashApplicationsDirectory)
                      .filter((value) => !value.startsWith('.'));
 
 for (const _folderName of folderNames) {
 
     // Genera una ruta del archivo principal
-    const filePath = path.join(messageApplicationsDirectory, _folderName, 'main.js');
+    const filePath = path.join(slashApplicationsDirectory, _folderName, 'main.mjs');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);
 
-    fileContent = new MessageApplication({
+    fileContent = new SlashApplication({
 
         ...fileContent.default,
 

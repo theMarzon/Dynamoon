@@ -1,5 +1,5 @@
-import loadedEvents from '../loaders/loadedEvents.js';
-import usedEvents   from './usedEvents.js';
+import loadedEvents from '../loaders/loadedEvents.mjs';
+import usedEvents   from './usedEvents.mjs';
 
 let groupedPartials = [];
 

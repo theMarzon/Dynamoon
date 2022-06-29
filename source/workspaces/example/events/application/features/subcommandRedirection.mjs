@@ -13,8 +13,8 @@ export default async ({ client, event, me, loaded, grouped, directories }) => {
 
     const subcommandsDirectory = path.join(directories.slashApplications, me.name.default, 'subcommands');
 
-    const filePath = (subcommandGroup) ? path.join(subcommandsDirectory, subcommandGroup, subcommand, 'subcommand.js')
-                                       : path.join(subcommandsDirectory, subcommand, 'subcommand.js');
+    const filePath = (subcommandGroup) ? path.join(subcommandsDirectory, subcommandGroup, subcommand, 'subcommand.mjs')
+                                       : path.join(subcommandsDirectory, subcommand, 'subcommand.mjs');
 
     let fileContent = await import(`file://${filePath}`);
 

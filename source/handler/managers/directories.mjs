@@ -1,7 +1,7 @@
 import path from 'node:path';
 import fs   from 'node:fs';
 
-import usedParameters from './usedParameters.js';
+import usedParameters from './usedParameters.mjs';
 
 export const workspaceDirectory = path.join(process.cwd(), 'source', 'workspaces', usedParameters.workspace);
 

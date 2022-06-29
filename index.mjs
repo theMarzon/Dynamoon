@@ -2,11 +2,11 @@ import path    from 'node:path';
 import discord from 'discord.js';
 import dotenv  from 'dotenv';
 
-import usedIntents   from './source/handler/groupers/usedIntents.js';
-import usedPartials  from './source/handler/groupers/usedPartials.js';
-import executeEvents from './source/handler/managers/executeEvents.js';
+import usedIntents   from './source/handler/groupers/usedIntents.mjs';
+import usedPartials  from './source/handler/groupers/usedPartials.mjs';
+import executeEvents from './source/handler/managers/executeEvents.mjs';
 
-import { workspaceDirectory } from './source/handler/managers/directories.js';
+import { workspaceDirectory } from './source/handler/managers/directories.mjs';
 
 // Crea el cliente
 const client = new discord.Client({

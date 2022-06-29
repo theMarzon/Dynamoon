@@ -1,7 +1,7 @@
 import discord from 'discord.js';
 
-import botPermissions        from './features/botPermissions.js';
-import subcommandRedirection from './features/subcommandRedirection.js';
+import botPermissions        from './features/botPermissions.mjs';
+import subcommandRedirection from './features/subcommandRedirection.mjs';
 
 export default {
 

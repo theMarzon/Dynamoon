@@ -1,9 +1,9 @@
 import path from 'node:path';
 import fs   from 'node:fs';
 
-import { eventsDirectory } from '../managers/directories.js';
+import { eventsDirectory } from '../managers/directories.mjs';
 
-import Event from '../structures/Event.js';
+import Event from '../structures/Event.mjs';
 
 let loadedEvents = [];
 
@@ -14,7 +14,7 @@ const folderNames = fs
 for (const _folderName of folderNames) {
 
     // Genera una ruta del archivo principal
-    const filePath = path.join(eventsDirectory, _folderName, 'main.js');
+    const filePath = path.join(eventsDirectory, _folderName, 'main.mjs');
 
     // Importa el contenido del archivo
     let fileContent = await import(`file://${filePath}`);

@@ -6,18 +6,13 @@ Un ``Handler`` para desarrollar bots utilizando [discord.js](https://discord.js.
 
 ## 📦 Preparando el proyecto
 
-- Instale [Node](https://nodejs.org/) (Se recomienda la v18.4.0 o superior)
+- Instale [Node](https://nodejs.org/) (Se recomienda la ``v18.4.0`` o superior)
 
-- Cree el archivo ``package.json``
+- Ejecute en su terminal:
 
-- Agregue ``"type": "module"`` al archivo ``package.json``
-
-- Instale las siguientes dependencias:
-
-    | Nombre     | Versión                       |
-    |------------|-------------------------------|
-    | discord.js | 14.0.0-dev.1656158629-c4653f9 |
-    | dotenv     | 16.0.1                        |
+    ```sh
+    yarn install
+    ```
 
 ## 🧰 Configurando el proyecto
 
@@ -26,7 +21,7 @@ Un ``Handler`` para desarrollar bots utilizando [discord.js](https://discord.js.
 Especifique un nombre seguido del parámetro ``--workspace`` para crear un nuevo espacio de trabajo, ejemplo:
 
 ```sh
-node ./index.js --workspace example
+node ./index.mjs --workspace example
 ```
 
 > Por defecto es ``none``
@@ -56,31 +51,31 @@ source\
         |   |   |
         |   |   |__ example\
         |   |       |
-        |   |       |__ main.js
+        |   |       |__ main.mjs
         |   |
         |   |__ messages\
         |   |   |
         |   |   |__ example\
         |   |       |
-        |   |       |__ main.js
+        |   |       |__ main.mjs
         |   |
         |   |__ users\
         |       |
         |       |__ example\
         |           |
-        |           |__ main.js
+        |           |__ main.mjs
         |
         |__ services\
         |   |
         |   |__ example\
         |       |
-        |       |__ main.js
+        |       |__ main.mjs
         |
         |__ events\
             |
             |__ example\
                 |
-                |__ main.js
+                |__ main.mjs
 ```
 ## 📦 Creando aplicaciones, eventos y archivos
 

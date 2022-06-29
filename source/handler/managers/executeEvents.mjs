@@ -1,11 +1,11 @@
-import loadedEvents              from '../loaders/loadedEvents.js';
-import loadedServices            from '../loaders/loadedServices.js';
-import loadedSlashApplications   from '../loaders/applications/loadedSlashApplications.js';
-import loadedUserApplications    from '../loaders/applications/loadedUserApplications.js';
-import loadedMessageApplications from '../loaders/applications/loadedMessageApplications.js';
-import usedEvents                from '../groupers/usedEvents.js';
-import usedIntents               from '../groupers/usedIntents.js';
-import usedPartials              from '../groupers/usedPartials.js';
+import loadedEvents              from '../loaders/loadedEvents.mjs';
+import loadedServices            from '../loaders/loadedServices.mjs';
+import loadedSlashApplications   from '../loaders/applications/loadedSlashApplications.mjs';
+import loadedUserApplications    from '../loaders/applications/loadedUserApplications.mjs';
+import loadedMessageApplications from '../loaders/applications/loadedMessageApplications.mjs';
+import usedEvents                from '../groupers/usedEvents.mjs';
+import usedIntents               from '../groupers/usedIntents.mjs';
+import usedPartials              from '../groupers/usedPartials.mjs';
 
 import {
 
@@ -16,7 +16,7 @@ import {
     slashApplicationsDirectory,
     userApplicationsDirectory,
     messageApplicationsDirectory
-} from './directories.js';
+} from './directories.mjs';
 
 export default (client) => {
 

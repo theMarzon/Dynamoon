@@ -1,9 +1,9 @@
 {
     "files.exclude": {
 
+        "**/.yarn/":          true,
         "**/.pnp.cjs":        true,
         "**/.pnp.loader.mjs": true,
-        "**/.yarn/":          true,
         "**/yarn.lock":       true
     }
 }

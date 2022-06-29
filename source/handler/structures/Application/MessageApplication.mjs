@@ -1,6 +1,6 @@
 import discord from 'discord.js';
 
-import deleteProperty from '../../utils/deleteProperty.js';
+import deleteProperty from '../../utils/deleteProperty.mjs';
 
 export default class {
 

@@ -1,6 +1,6 @@
 const discord = require('discord.js');
 
-const choicesVerifier = require('./choices.js');
+const choicesVerifier = require('./choices.mjs');
 
 module.exports = function (fileOption, botOption) {
 
