@@ -13,7 +13,8 @@ export default class {
     intents  = [];
     partials = [];
 
-    events = {};
+    events   = {};
+    features = {};
 
     name = { default: 'undefined' };
 
@@ -49,6 +50,9 @@ export default class {
         this.name = content.name ?? this.name;
 
         this.name.default = content.name?.default ?? this.name.default;
+
+        // Caracteristicas
+        this.features = content.features ?? this.features;
 
         // Permisos
         this.permissions = content.permissions ?? this.permissions;

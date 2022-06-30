@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "test": "node . --workspace example",
-    "lint": "eslint . --fix"
+    "lint": "eslint --fix"
   },
   "dependencies": {
     "discord.js": "14.0.0-dev.1656590649-525bf03",

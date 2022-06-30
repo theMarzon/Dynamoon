@@ -6,8 +6,7 @@ export default class {
 
     type = discord.ApplicationCommandType.ChatInput;
 
-    dm           = true;
-    redirections = false;
+    dm = true;
 
     priority = 0;
 
@@ -19,6 +18,8 @@ export default class {
 
     name        = { default: 'undefined' };
     description = { default: 'undefined' };
+
+    features = { redirections: false };
 
     permissions = {
 
@@ -40,8 +41,7 @@ export default class {
 
     constructor (content) {
 
-        this.dm           = content.dm           ?? this.dm;
-        this.redirections = content.redirections ?? this.redirections;
+        this.dm = content.dm ?? this.dm;
 
         this.priority = content.priority ?? this.priority;
 
@@ -54,6 +54,11 @@ export default class {
         this.name = content.name ?? this.name;
 
         this.name.default = content.name?.default ?? this.name.default;
+
+        // Caracteristicas
+        this.features = content.features ?? this.features;
+
+        this.features.redirections = content.features.redirections ?? this.features.redirections;
 
         // Permisos
         this.permissions = content.permissions ?? this.permissions;

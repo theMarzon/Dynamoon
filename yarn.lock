@@ -6,28 +6,28 @@ __metadata:
   cacheKey: 8
 
 "@discordjs/builders@npm:^0.16.0-dev":
-  version: 0.16.0-dev.1656158607-c4653f9
-  resolution: "@discordjs/builders@npm:0.16.0-dev.1656158607-c4653f9"
+  version: 0.16.0-dev.1656590636-525bf03
+  resolution: "@discordjs/builders@npm:0.16.0-dev.1656590636-525bf03"
   dependencies:
     "@sapphire/shapeshift": ^3.2.0
     discord-api-types: ^0.33.5
     fast-deep-equal: ^3.1.3
     ts-mixer: ^6.0.1
     tslib: ^2.4.0
-  checksum: 7def70832a8076167e23b1c7cb46a4573d899a687dc3fa005bbedc03b329e45265f78ce63d43aefa78358bc1eb780cf98d83e3352a91bc244f271916c49d9d7d
+  checksum: ab33d305f6bf6ebdcb93e6dd5a8a943206d38c7530a772639aba9bc0e8cb71efc0ddea2c3f777b0762960a52e4115f7b5ca7145bc3648a6e827348183dd88f79
   languageName: node
   linkType: hard
 
 "@discordjs/collection@npm:^0.8.0-dev":
-  version: 0.8.0-dev.1656158612-c4653f9
-  resolution: "@discordjs/collection@npm:0.8.0-dev.1656158612-c4653f9"
-  checksum: ecc3f6b85128be6f786953506dcb2da98caee016e8e7068aab0d1a8701419e575f603a351fae5f1972aa176d03afc997d0234193d261c0d79c14766281c62eda
+  version: 0.8.0-dev.1656590635-525bf03
+  resolution: "@discordjs/collection@npm:0.8.0-dev.1656590635-525bf03"
+  checksum: 7a0cb4a4d6d93f09a50453cc87f7a754113d034b9c0c33ff25fe60a719253c4338581e321b18c931a55bc83c23b17a02fd0372345ab8e43c7f14b373be748114
   languageName: node
   linkType: hard
 
 "@discordjs/rest@npm:^0.6.0-dev":
-  version: 0.6.0-dev.1656158624-c4653f9
-  resolution: "@discordjs/rest@npm:0.6.0-dev.1656158624-c4653f9"
+  version: 0.6.0-dev.1656590651-525bf03
+  resolution: "@discordjs/rest@npm:0.6.0-dev.1656590651-525bf03"
   dependencies:
     "@discordjs/collection": ^0.8.0-dev
     "@sapphire/async-queue": ^1.3.1
@@ -35,7 +35,7 @@ __metadata:
     discord-api-types: ^0.33.5
     tslib: ^2.4.0
     undici: ^5.5.1
-  checksum: bb9e03cbd330d08281d6ad0664e8719ecbec33451f77316a06b232149141ba5380f43507dacc25f0b05d6db222c3255268c3f86e00eb2aba6eb2c5d648bd93f6
+  checksum: 138d473f9d76d8749671883cd24a88e0eb298e8a03aa374076bd940f560197b951c24f0f3c1a1dc66184507492af3a53bd83b5068459996463581c981e59b3e5
   languageName: node
   linkType: hard
 
@@ -82,9 +82,9 @@ __metadata:
   linkType: hard
 
 "@sapphire/shapeshift@npm:^3.2.0":
-  version: 3.3.2
-  resolution: "@sapphire/shapeshift@npm:3.3.2"
-  checksum: e96249ca2d848d684fb380827f0f0f0a0a0a9b6dbdd7283c70d2edd160eda32e1e46ddad9332b467b37b4cf80a29aad09d1d0b7e624d55e62d11062a7f4de039
+  version: 3.4.0
+  resolution: "@sapphire/shapeshift@npm:3.4.0"
+  checksum: fede7cc81c360e4222328278a4cd5fb21b5dd79d3d3bd7365a1f9582215032dc8b7c75a3713d047254f69f327f7259f912605c23444bca1a3db9ea9ab0211269
   languageName: node
   linkType: hard
 

@@ -117,6 +117,9 @@ export default {
     // La prioridad del servicio para cargarlo antes que al resto (Mientras mayor sea el número, mas alta es).
     priority: 0,
 
+    // Para utilizar las caracteristicas de eventos por defecto del "Handler".
+    features: {},
+
     // Los "intents" necesarios.
     intents: [],
 
@@ -132,6 +135,15 @@ export default {
 
 ```js
 export default {
+
+    // El tipo de la aplicación (Automático).
+    // type: 1,
+
+    // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el número, más alta es).
+    priority: 0,
+    
+    // Si la aplicacion puede ejecutarse en DM's.
+    dm: true,
 
     // Los nombres de la aplicación.
     name: {
@@ -155,14 +167,12 @@ export default {
         'en-US': 'Example command'
     },
 
-    // El tipo de la aplicación (Automático).
-    // type: 1,
+    // Para utilizar las caracteristicas de eventos por defecto del "Handler".
+    features: {
 
-    // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el número, más alta es).
-    priority: 0,
-    
-    // Si la aplicacion puede ejecutarse en DM's.
-    dm: true,
+        // Para ejecutar los subcomandos de la aplicacion automaticamente.
+        redirections: false
+    },
 
     // Los permisos necesarios para ejecutar la aplicación.
     permissions: {
@@ -204,6 +214,15 @@ export default {
 ```js
 export default {
 
+    // El tipo de la aplicación (Automático).
+    // type: 2,
+
+    // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
+    priority: 0,
+
+    // Si la aplicación puede ejecutarse en DM's.
+    dm: true,
+
     // Los nombres de la aplicación.
     name: {
 
@@ -215,14 +234,8 @@ export default {
         'en-US': 'example'
     },
 
-    // El tipo de la aplicación (Automático).
-    // type: 2,
-
-    // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
-    priority: 0,
-
-    // Si la aplicación puede ejecutarse en DM's.
-    dm: true,
+    // Para utilizar las caracteristicas de eventos por defecto del "Handler".
+    features: {},
 
     // Los permisos necesarios para ejecutar la aplicación.
     permissions: {
@@ -261,6 +274,15 @@ export default {
 ```js
 export default {
 
+    // El tipo de la aplicación (Automático).
+    // type: 3,
+
+    // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el número, más alta es).
+    priority: 0,
+
+    // Si la aplicación puede ejecutarse en DM's.
+    dm: true,
+
     // Los nombres de la aplicación.
     name: {
 
@@ -272,14 +294,8 @@ export default {
         'en-US': 'example'
     },
 
-    // El tipo de la aplicación (Automático).
-    // type: 3,
-
-    // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el número, más alta es).
-    priority: 0,
-
-    // Si la aplicación puede ejecutarse en DM's.
-    dm: true,
+    // Para utilizar las caracteristicas de eventos por defecto del "Handler".
+    features: {},
 
     // Los permisos necesarios para ejecutar la aplicación.
     permissions: {

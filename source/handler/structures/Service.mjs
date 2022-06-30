@@ -7,7 +7,8 @@ export default class {
     intents  = [];
     partials = [];
 
-    events = {};
+    events   = {};
+    features = {};
 
     constructor (content) {
 
@@ -19,6 +20,9 @@ export default class {
         this.partials = content.partials ?? this.partials;
 
         this.events = content.events ?? this.events;
+
+        // Caracteristicas
+        this.features = content.features ?? this.features;
 
         // Elimina los "intents" y "partials" duplicados
         this.intents  = this.intents.filter((value, index, array) => array.indexOf(value) === index);

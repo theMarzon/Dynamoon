@@ -1,7 +1,6 @@
 import discord from 'discord.js';
 
-import botPermissions        from './features/botPermissions.mjs';
-import subcommandRedirection from './features/subcommandRedirection.mjs';
+// import subcommandRedirection from './features/subcommandRedirection.mjs';
 
 export default {
 
@@ -35,10 +34,8 @@ export default {
                         me: _loadedApplication
                     });
                 };
-
-                // Para controlar si el bot cumple ciertos permisos
-                botPermissions();
-
+                
+                /*
                 // Para redireccionar los subcomandos
                 subcommandRedirection({
 
@@ -46,6 +43,7 @@ export default {
 
                     me: _loadedApplication
                 });
+                */
             };
         });
     }

@@ -3,7 +3,7 @@ import path from 'node:path';
 export default async ({ client, event, me, loaded, grouped, directories }) => {
 
     // Si la caracteristica no fue activada
-    if (!me.redirections) return;
+    if (!me.features.redirections) return;
 
     const subcommand      = event.options.getSubcommand();
     const subcommandGroup = event.options.getSubcommandGroup();
