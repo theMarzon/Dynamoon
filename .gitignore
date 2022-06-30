@@ -3,6 +3,7 @@
 
 # Files
 .env
+.yarnrc.yml
 .pnp.loader.mjs
 .pnp.cjs
 

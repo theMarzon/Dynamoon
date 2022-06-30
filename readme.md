@@ -6,7 +6,9 @@ Un ``Handler`` para desarrollar bots utilizando [discord.js](https://discord.js.
 
 ## 📦 Preparando el proyecto
 
-- Instale [Node](https://nodejs.org/) (Se recomienda la ``v18.4.0`` o superior)
+- Instale la version ``18.4.0`` o superior de [Node](https://nodejs.org/)
+
+- Instale la version ``1.22.19`` o superior de [Yarn](https://yarnpkg.com/) (Proyecto compatible con ``Yarn Berry``)
 
 - Ejecute en su terminal:
 

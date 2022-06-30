@@ -334,7 +334,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "dinamoon@workspace:."
   dependencies:
-    discord.js: 14.0.0-dev.1656158629-c4653f9
+    discord.js: 14.0.0-dev.1656590649-525bf03
     dotenv: ^16.0.1
     eslint: ^8.0.1
     eslint-config-standard: latest
@@ -351,9 +351,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"discord.js@npm:14.0.0-dev.1656158629-c4653f9":
-  version: 14.0.0-dev.1656158629-c4653f9
-  resolution: "discord.js@npm:14.0.0-dev.1656158629-c4653f9"
+"discord.js@npm:14.0.0-dev.1656590649-525bf03":
+  version: 14.0.0-dev.1656590649-525bf03
+  resolution: "discord.js@npm:14.0.0-dev.1656590649-525bf03"
   dependencies:
     "@discordjs/builders": ^0.16.0-dev
     "@discordjs/collection": ^0.8.0-dev
@@ -366,7 +366,7 @@ __metadata:
     tslib: ^2.4.0
     undici: ^5.5.1
     ws: ^8.8.0
-  checksum: 469dd920ca4174bd217e25ec8d58b7e107118a374a4bfa38058ff49fff8aab6be7b5b66468922c51e82958f717da2afa48a46ee66d350cd8a678aa1f90bbe49e
+  checksum: c9ac8399aae87a2856e79dde6163730765a3800d00a1e42c34ad6198304ca47c889c6d112e7038369fc6d7832d8a5210ca8e931b99501e6594c5fb2e9e2206de
   languageName: node
   linkType: hard
 
