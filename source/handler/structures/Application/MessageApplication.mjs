@@ -13,8 +13,7 @@ export default class {
     intents  = [];
     partials = [];
 
-    events   = {};
-    features = {};
+    events = {};
 
     name = { default: 'undefined' };
 
@@ -51,9 +50,6 @@ export default class {
 
         this.name.default = content.name?.default ?? this.name.default;
 
-        // Caracteristicas
-        this.features = content.features ?? this.features;
-
         // Permisos
         this.permissions = content.permissions ?? this.permissions;
 
@@ -63,7 +59,7 @@ export default class {
         // Esquema
         this.schema = content.schema ?? this.schema;
 
-        this.schema.name                       = this.name;
+        this.schema.name                       = this.name.default;
         this.schema.dm_permission              = this.dm;
         this.schema.default_member_permissions = this.permissions.member;
         this.schema.default_bot_permissions    = this.permissions.bot;

@@ -1,7 +1,5 @@
 import discord from 'discord.js';
 
-// import subcommandRedirection from './features/subcommandRedirection.mjs';
-
 export default {
 
     priority: 2,
@@ -34,16 +32,6 @@ export default {
                         me: _loadedApplication
                     });
                 };
-                
-                /*
-                // Para redireccionar los subcomandos
-                subcommandRedirection({
-
-                    client, event, loaded, grouped, directories,
-
-                    me: _loadedApplication
-                });
-                */
             };
         });
     }

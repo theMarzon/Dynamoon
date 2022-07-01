@@ -117,9 +117,6 @@ export default {
     // La prioridad del servicio para cargarlo antes que al resto (Mientras mayor sea el número, mas alta es).
     priority: 0,
 
-    // Para utilizar las caracteristicas de eventos por defecto del "Handler".
-    features: {},
-
     // Los "intents" necesarios.
     intents: [],
 
@@ -165,13 +162,6 @@ export default {
         // La descripcion de la aplicacion segun la localidad.
         'es-ES': 'Comando de ejemplo',
         'en-US': 'Example command'
-    },
-
-    // Para utilizar las caracteristicas de eventos por defecto del "Handler".
-    features: {
-
-        // Para ejecutar los subcomandos de la aplicacion automaticamente.
-        redirections: false
     },
 
     // Los permisos necesarios para ejecutar la aplicación.
@@ -234,9 +224,6 @@ export default {
         'en-US': 'example'
     },
 
-    // Para utilizar las caracteristicas de eventos por defecto del "Handler".
-    features: {},
-
     // Los permisos necesarios para ejecutar la aplicación.
     permissions: {
 
@@ -293,10 +280,7 @@ export default {
         'es-ES': 'ejemplo',
         'en-US': 'example'
     },
-
-    // Para utilizar las caracteristicas de eventos por defecto del "Handler".
-    features: {},
-
+    
     // Los permisos necesarios para ejecutar la aplicación.
     permissions: {
 

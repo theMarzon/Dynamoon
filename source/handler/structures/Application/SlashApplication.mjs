@@ -19,8 +19,6 @@ export default class {
     name        = { default: 'undefined' };
     description = { default: 'undefined' };
 
-    features = { redirections: false };
-
     permissions = {
 
         member: null,
@@ -47,6 +45,7 @@ export default class {
 
         this.intents  = content.intents  ?? this.intents;
         this.partials = content.partials ?? this.partials;
+        this.options  = content.options  ?? this.options;
 
         this.events = content.events ?? this.events;
 
@@ -55,10 +54,10 @@ export default class {
 
         this.name.default = content.name?.default ?? this.name.default;
 
-        // Caracteristicas
-        this.features = content.features ?? this.features;
+        // Descripcion
+        this.description = content.description ?? this.description;
 
-        this.features.redirections = content.features.redirections ?? this.features.redirections;
+        this.description.default = content.description?.default ?? this.description.default;
 
         // Permisos
         this.permissions = content.permissions ?? this.permissions;
@@ -69,7 +68,9 @@ export default class {
         // Esquema
         this.schema = content.schema ?? this.schema;
 
-        this.schema.name                       = this.name;
+        this.schema.name                       = this.name.default;
+        this.schema.description                = this.description.default;
+        this.schema.options                    = this.options;
         this.schema.dm_permission              = this.dm;
         this.schema.default_member_permissions = this.permissions.member;
         this.schema.default_bot_permissions    = this.permissions.bot;
