@@ -6,6 +6,7 @@
 .yarnrc.yml
 .pnp.loader.mjs
 .pnp.cjs
+yarn.lock
 
 # Extensions
 *.log

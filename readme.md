@@ -155,7 +155,7 @@ export default {
 
     // Las descripciones de la aplicación.
     description: {
-        
+
         // La descripcion por defecto de la aplicación.
         default: 'Example command',
 
@@ -280,7 +280,7 @@ export default {
         'es-ES': 'ejemplo',
         'en-US': 'example'
     },
-    
+
     // Los permisos necesarios para ejecutar la aplicación.
     permissions: {
 

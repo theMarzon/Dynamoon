@@ -7,7 +7,7 @@
     "lint": "eslint --fix"
   },
   "dependencies": {
-    "discord.js": "14.0.0-dev.1656677097-741b3c8",
+    "discord.js": "14.0.0-dev.1656720731-d95197c",
     "dotenv": "^16.0.1"
   },
   "devDependencies": {
