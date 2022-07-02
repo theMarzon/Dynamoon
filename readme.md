@@ -1,10 +1,10 @@
 <div align='center'>
-    <img src='https://i.ibb.co/02kJWXt/logo.png' width='512' />
+  <img src='https://i.ibb.co/02kJWXt/logo.png' width='512' />
+
+  Un ``Handler`` para desarrollar bots utilizando [discord.js](https://discord.js.org/) de una forma rápida y modular
 </div>
 
-Un ``Handler`` para desarrollar bots utilizando [discord.js](https://discord.js.org/) de una forma rápida y modular
-
-## 📦 Preparando el proyecto
+# 📦 Preparando el proyecto
 
 - Instale la version ``18.4.0`` o superior de [Node](https://nodejs.org/)
 
@@ -16,19 +16,19 @@ Un ``Handler`` para desarrollar bots utilizando [discord.js](https://discord.js.
     yarn install
     ```
 
-## 🧰 Configurando el proyecto
+# 🧰 Configurando el proyecto
 
-### 📂 Espacios de trabajo
+## 📂 Espacios de trabajo
 
 Especifique un nombre seguido del parámetro ``--workspace`` para crear un nuevo espacio de trabajo, ejemplo:
+
+> El espacio de trabajo por defecto es ``none``
 
 ```sh
 node ./index.mjs --workspace example
 ```
 
-> Por defecto es ``none``
-
-### 🔐 Variables de entorno
+## 🔐 Variables de entorno
 
 Cree un archivo ``.env`` en el espacio de trabajo utilizado, luego abra el archivo y crear las siguientes llaves:
 
@@ -36,9 +36,9 @@ Cree un archivo ``.env`` en el espacio de trabajo utilizado, luego abra el archi
 |--------|-----------|----------------------|
 | TOKEN  | Si        | El ``Token`` del bot |
 
-## 🧱 Estructura de archivos
+# 🧱 Estructura de archivos
 
-```
+```scss
 source\
 |
 |__ workspaces\
@@ -79,9 +79,9 @@ source\
                 |
                 |__ main.mjs
 ```
-## 📦 Creando aplicaciones, eventos y archivos
+# 📦 Creando aplicaciones, eventos y archivos
 
-### 🎯 Evento
+## 🎯 Evento
 
 ```js
 export default {
@@ -106,7 +106,7 @@ export default {
 };
 ```
 
-### 🔧 Servicio
+## 📡 Servicio
 
 ```js
 export default {
@@ -128,7 +128,7 @@ export default {
 };
 ```
 
-### 💻 Aplicación de barra lateral
+## 💻 Aplicación de barra lateral
 
 ```js
 export default {
@@ -186,20 +186,25 @@ export default {
     // El esquema de la aplicación (Automático).
     // schema: {
     // 
-    //  name: 'example',
+    //  name:        'example',
     //  description: 'Example command',
-    //  type: 1,
-    //  options: [],
-    //  default_member_permissions: null,
-    //  default_bot_permissions: null,
+    //
     //  dm_permission: true,
-    //  name_localizations: {},
+    //
+    //  type: 1,
+    //
+    //  default_member_permissions: null,
+    //  default_bot_permissions:    null,
+    //
+    //  options: [],
+    //
+    //  name_localizations:        {},
     //  description_localizations: {}
     // }
 };
 ```
 
-### 💻 Aplicación de menú contextual para usuarios
+## 💻 Aplicación de menú contextual para usuarios
 
 ```js
 export default {
@@ -247,16 +252,20 @@ export default {
     // schema: {
     // 
     //  name: 'example',
-    //  type: 2,
-    //  default_member_permissions: null,
-    //  default_bot_permissions: null,
+    //
     //  dm_permission: true,
+    //
+    //  type: 2,
+    //
+    //  default_member_permissions: null,
+    //  default_bot_permissions:    null,
+    //
     //  name_localizations: {}
     // }
 };
 ```
 
-### 💻 Aplicación de menú contextual para mensajes
+## 💻 Aplicación de menú contextual para mensajes
 
 ```js
 export default {
@@ -304,10 +313,14 @@ export default {
     // schema: {
     // 
     //  name: 'example',
-    //  type: 3,
-    //  default_member_permissions: null,
-    //  default_bot_permissions: null,
+    //
     //  dm_permission: true,
+    //
+    //  type: 3,
+    //
+    //  default_member_permissions: null,
+    //  default_bot_permissions:    null,
+    //
     //  name_localizations: {}
     // }
 };
