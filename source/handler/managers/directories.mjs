@@ -1,14 +1,10 @@
 import path from 'node:path';
 import fs   from 'node:fs';
 
-import usedParameters from './usedParameters.mjs';
+export const eventsDirectory   = path.join(process.cwd(), 'source', 'events');
+export const servicesDirectory = path.join(process.cwd(), 'source', 'services');
 
-export const workspaceDirectory = path.join(process.cwd(), 'source', 'workspaces', usedParameters.workspace);
-
-export const eventsDirectory   = path.join(workspaceDirectory, 'events');
-export const servicesDirectory = path.join(workspaceDirectory, 'services');
-
-export const applicationsDirectory = path.join(workspaceDirectory, 'applications');
+export const applicationsDirectory = path.join(process.cwd(), 'source', 'applications');
 
 export const slashApplicationsDirectory   = path.join(applicationsDirectory, 'slash');
 export const userApplicationsDirectory    = path.join(applicationsDirectory, 'user');

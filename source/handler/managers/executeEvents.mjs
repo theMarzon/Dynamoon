@@ -9,7 +9,6 @@ import usedPartials              from '../groupers/usedPartials.mjs';
 
 import {
 
-    workspaceDirectory,
     eventsDirectory,
     servicesDirectory,
     applicationsDirectory,
@@ -53,7 +52,6 @@ export default (client) => {
 
             directories: {
 
-                workspace:           workspaceDirectory,
                 events:              eventsDirectory,
                 services:            servicesDirectory,
                 applications:        applicationsDirectory,

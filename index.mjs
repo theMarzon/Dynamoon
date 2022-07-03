@@ -1,12 +1,9 @@
-import path    from 'node:path';
 import discord from 'discord.js';
 import dotenv  from 'dotenv';
 
 import usedIntents   from './source/handler/groupers/usedIntents.mjs';
 import usedPartials  from './source/handler/groupers/usedPartials.mjs';
 import executeEvents from './source/handler/managers/executeEvents.mjs';
-
-import { workspaceDirectory } from './source/handler/managers/directories.mjs';
 
 // Crea el cliente
 const client = new discord.Client({
@@ -32,12 +29,12 @@ client.handler = {
     }
 };
 
-// Configura las variables de entorno del espacio de trabajo utilizado
-dotenv.config({ path: path.join(workspaceDirectory, '.env') });
+// Configura las variables de entorno
+dotenv.config();
 
 // Ejecuta los eventos
 executeEvents(client);
 
 client
-     .login(process.env.TOKEN)
+     .login(process.env.BOT_TOKEN)
      .then(() => console.log('Connection established'));

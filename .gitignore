@@ -1,12 +1,13 @@
 # Folders
+node_modules/
 .yarn/
 
 # Files
-.env
+yarn.lock
 .yarnrc.yml
 .pnp.loader.mjs
 .pnp.cjs
-yarn.lock
 
 # Extensions
 *.log
+*.env

@@ -1,87 +1,24 @@
 <div align='center'>
   <img src='https://i.ibb.co/02kJWXt/logo.png' width='512' />
 
-  Un ``Handler`` para desarrollar bots utilizando [discord.js](https://discord.js.org/) de una forma rápida y modular
+  Un `Handler` eficiente para desarrollar bots utilizando [discord.js](https://discord.js.org/) de una forma rápida y modular
 </div>
 
-# 📦 Preparando el proyecto
+# 🧰 Preparando el proyecto
 
-- Instale la version ``18.4.0`` o superior de [Node](https://nodejs.org/)
+- Instale la versión `18.x` o superior de [Node](https://nodejs.org/)
 
-- Instale la version ``1.22.19`` o superior de [Yarn](https://yarnpkg.com/) (Proyecto compatible con ``Yarn Berry``)
+- Instale las dependencias del proyecto
 
-- Ejecute en su terminal:
+- Cree el archivo `.env` en la raíz del proyecto y agregue las siguientes llaves:
 
-    ```sh
-    yarn install
-    ```
+  | 🔐 Nombre   | 🔑 Valor           |
+  |-------------|--------------------|
+  | `BOT_TOKEN` | El `Token` del bot |
 
-# 🧰 Configurando el proyecto
+# 🧱 Creando los eventos, servicios y aplicaciones
 
-## 📂 Espacios de trabajo
-
-Especifique un nombre seguido del parámetro ``--workspace`` para crear un nuevo espacio de trabajo, ejemplo:
-
-> El espacio de trabajo por defecto es ``none``
-
-```sh
-node ./index.mjs --workspace example
-```
-
-## 🔐 Variables de entorno
-
-Cree un archivo ``.env`` en el espacio de trabajo utilizado, luego abra el archivo y crear las siguientes llaves:
-
-| Nombre | Necesario | Contenido            |
-|--------|-----------|----------------------|
-| TOKEN  | Si        | El ``Token`` del bot |
-
-# 🧱 Estructura de archivos
-
-```scss
-source\
-|
-|__ workspaces\
-    |
-    |__ example\
-        |
-        |__ .env
-        |
-        |__ applications\
-        |   |
-        |   |__ slash\
-        |   |   |
-        |   |   |__ example\
-        |   |       |
-        |   |       |__ main.mjs
-        |   |
-        |   |__ messages\
-        |   |   |
-        |   |   |__ example\
-        |   |       |
-        |   |       |__ main.mjs
-        |   |
-        |   |__ users\
-        |       |
-        |       |__ example\
-        |           |
-        |           |__ main.mjs
-        |
-        |__ services\
-        |   |
-        |   |__ example\
-        |       |
-        |       |__ main.mjs
-        |
-        |__ events\
-            |
-            |__ example\
-                |
-                |__ main.mjs
-```
-# 📦 Creando aplicaciones, eventos y archivos
-
-## 🎯 Evento
+## 🎯 Creando un evento
 
 ```js
 export default {
@@ -106,7 +43,7 @@ export default {
 };
 ```
 
-## 📡 Servicio
+## 📡 Creando un servicio
 
 ```js
 export default {
@@ -114,7 +51,7 @@ export default {
     // El nombre del servicio (Automático).
     // name: 'example',
 
-    // La prioridad del servicio para cargarlo antes que al resto (Mientras mayor sea el número, mas alta es).
+    // La prioridad del servicio para cargarlo antes que al resto (Mientras mayor sea el número, más alta es).
     priority: 0,
 
     // Los "intents" necesarios.
@@ -128,7 +65,7 @@ export default {
 };
 ```
 
-## 💻 Aplicación de barra lateral
+## 💻 Creando una aplicación de barra lateral
 
 ```js
 export default {
@@ -136,7 +73,7 @@ export default {
     // El tipo de la aplicación (Automático).
     // type: 1,
 
-    // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el número, más alta es).
+    // La prioridad de la aplicación para cargarlo antes que al resto (Mientras mayor sea el número, más alta es).
     priority: 0,
     
     // Si la aplicacion puede ejecutarse en DM's.
@@ -148,7 +85,7 @@ export default {
         // El nombre por defecto de la aplicación (Automático).
         // default: 'example',
 
-        // El nombre de la aplicacion segun la localidad.
+        // El nombre de la aplicación según la localidad (Más información en https://discord.com/developers/docs/reference#locales).
         'es-ES': 'ejemplo',
         'en-US': 'example'
     },
@@ -156,10 +93,10 @@ export default {
     // Las descripciones de la aplicación.
     description: {
 
-        // La descripcion por defecto de la aplicación.
+        // La descripción por defecto de la aplicación.
         default: 'Example command',
 
-        // La descripcion de la aplicacion segun la localidad.
+        // La descripción de la aplicación según la localidad (Más información en https://discord.com/developers/docs/reference#locales).
         'es-ES': 'Comando de ejemplo',
         'en-US': 'Example command'
     },
@@ -204,7 +141,7 @@ export default {
 };
 ```
 
-## 💻 Aplicación de menú contextual para usuarios
+## 💻 Creando una aplicación de menú contextual para usuarios
 
 ```js
 export default {
@@ -212,7 +149,7 @@ export default {
     // El tipo de la aplicación (Automático).
     // type: 2,
 
-    // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el numero mas alta es).
+    // La prioridad de la aplicación para cargarlo antes que al resto (Mientras mayor sea el número, más alta es).
     priority: 0,
 
     // Si la aplicación puede ejecutarse en DM's.
@@ -224,7 +161,7 @@ export default {
         // El nombre por defecto de la aplicación (Automático).
         // default: 'example',
 
-        // El nombre de la aplicacion segun la localidad.
+        // El nombre de la aplicación según la localidad (Más información en https://discord.com/developers/docs/reference#locales).
         'es-ES': 'ejemplo',
         'en-US': 'example'
     },
@@ -265,7 +202,7 @@ export default {
 };
 ```
 
-## 💻 Aplicación de menú contextual para mensajes
+## 💻 Creando una aplicación de menú contextual para mensajes
 
 ```js
 export default {
@@ -273,7 +210,7 @@ export default {
     // El tipo de la aplicación (Automático).
     // type: 3,
 
-    // La prioridad del aplicación para cargarlo antes que al resto (Mientras mayor sea el número, más alta es).
+    // La prioridad de la aplicación para cargarlo antes que al resto (Mientras mayor sea el número, más alta es).
     priority: 0,
 
     // Si la aplicación puede ejecutarse en DM's.
@@ -285,7 +222,7 @@ export default {
         // El nombre por defecto de la aplicación (Automático).
         // default: 'example',
 
-        // El nombre de la aplicacion segun la localidad.
+        // El nombre de la aplicación según la localidad (Más información en https://discord.com/developers/docs/reference#locales).
         'es-ES': 'ejemplo',
         'en-US': 'example'
     },

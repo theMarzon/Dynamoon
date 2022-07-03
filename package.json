@@ -3,19 +3,18 @@
   "main": "index.mjs",
   "private": true,
   "scripts": {
-    "test": "node . --workspace example",
-    "lint": "eslint --fix"
+    "test": "node .",
+    "lint": "eslint . --fix --ext .cjs,.mjs,.js"
   },
   "dependencies": {
-    "discord.js": "14.0.0-dev.1656720731-d95197c",
+    "discord.js": "14.0.0-dev.1656864763-c7a205f",
     "dotenv": "^16.0.1"
   },
   "devDependencies": {
     "eslint": "^8.0.1",
-    "eslint-config-standard": "latest",
+    "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0"
-  },
-  "packageManager": "yarn@3.2.1"
+  }
 }
