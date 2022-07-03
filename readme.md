@@ -46,10 +46,7 @@ export default {
     partials: [],
 
     // El evento que se va a ejecutar.
-    execute: ({ client, me, loaded, grouped, directories }) => {
-
-        // ...
-    }
+    execute: ({ client, me, loaded, grouped, directories }) => {}
 };
 ```
 
@@ -70,8 +67,16 @@ export default {
     // Los "partials" necesarios.
     partials: [],
 
-    // Los eventos necesarios.
-    events: {}
+    // Los eventos a utilizar.
+    events: {
+
+        example: [
+            
+            // Dependiendo del evento puede tener el argumento "event" o no.
+            ({ client, event, me, loaded, grouped, directories }) => {},
+            ({ client, me, loaded, grouped, directories }) => {}
+        ]
+    }
 };
 ```
 
@@ -122,7 +127,15 @@ export default {
     },
 
     // Los eventos a utilizar.
-    events: {},
+    events: {
+
+        example: [
+            
+            // Dependiendo del evento puede tener el argumento "event" o no.
+            ({ client, event, me, loaded, grouped, directories }) => {},
+            ({ client, me, loaded, grouped, directories }) => {}
+        ]
+    },
 
     // Los "intents" necesarios.
     intents: [],
@@ -187,7 +200,15 @@ export default {
     },
 
     // Los eventos a utilizar.
-    events: {},
+    events: {
+
+        example: [
+            
+            // Dependiendo del evento puede tener el argumento "event" o no.
+            ({ client, event, me, loaded, grouped, directories }) => {},
+            ({ client, me, loaded, grouped, directories }) => {}
+        ]
+    },
 
     // Los "intents" necesarios.
     intents: [],
@@ -248,7 +269,15 @@ export default {
     },
 
     // Los eventos a utilizar.
-    events: {},
+    events: {
+
+        example: [
+            
+            // Dependiendo del evento puede tener el argumento "event" o no.
+            ({ client, event, me, loaded, grouped, directories }) => {},
+            ({ client, me, loaded, grouped, directories }) => {}
+        ]
+    },
 
     // Los "intents" necesarios.
     intents: [],

@@ -37,4 +37,4 @@ executeEvents(client);
 
 client
      .login(process.env.BOT_TOKEN)
-     .then(() => console.log('Connection established'));
+     .then(() => console.log('Bot connected'));

@@ -3,7 +3,7 @@ export default {
     events: {
 
         ready: [
-            
+
             ({ client, loaded }) => {
 
                 const slashApplications   = loaded.applications.slash.map((value) => value.schema);
@@ -15,7 +15,7 @@ export default {
                                                         .concat(messageApplications);
 
                 client.application.commands
-                                          .set(allApplications)   
+                                          .set(allApplications)
                                           .then(() => console.log('Indexed applications'));
             }
         ]
