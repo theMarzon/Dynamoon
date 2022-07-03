@@ -4,11 +4,21 @@
   Un `Handler` eficiente para desarrollar bots utilizando [discord.js](https://discord.js.org/) de una forma rápida y modular
 </div>
 
-# 🧰 Preparando el proyecto
+## 🧰 Preparando el proyecto
 
 - Instale la versión `18.x` o superior de [Node](https://nodejs.org/)
 
 - Instale las dependencias del proyecto
+
+  ```sh-session
+  npm install
+  ```
+  ```sh-session
+  pnpm install
+  ```
+  ```sh-session
+  yarn install
+  ```
 
 - Cree el archivo `.env` en la raíz del proyecto y agregue las siguientes llaves:
 
@@ -16,9 +26,9 @@
   |-------------|--------------------|
   | `BOT_TOKEN` | El `Token` del bot |
 
-# 🧱 Creando los eventos, servicios y aplicaciones
+## 🧱 Creando los eventos, servicios y aplicaciones
 
-## 🎯 Creando un evento
+### 🎯 Creando un evento
 
 ```js
 export default {
@@ -43,7 +53,7 @@ export default {
 };
 ```
 
-## 📡 Creando un servicio
+### 📡 Creando un servicio
 
 ```js
 export default {
@@ -65,7 +75,7 @@ export default {
 };
 ```
 
-## 💻 Creando una aplicación de barra lateral
+### 💻 Creando una aplicación de barra lateral
 
 ```js
 export default {
@@ -141,7 +151,7 @@ export default {
 };
 ```
 
-## 💻 Creando una aplicación de menú contextual para usuarios
+### 💻 Creando una aplicación de menú contextual para usuarios
 
 ```js
 export default {
@@ -202,7 +212,7 @@ export default {
 };
 ```
 
-## 💻 Creando una aplicación de menú contextual para mensajes
+### 💻 Creando una aplicación de menú contextual para mensajes
 
 ```js
 export default {
