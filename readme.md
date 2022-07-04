@@ -6,19 +6,19 @@
 
 ## 📚 Índice
 
-- [🧰 Preparando el proyecto](https://github.com/theMarzon/Dynamoon#Preparando-el-proyecto)
+- [🧰 Preparando el proyecto](https://github.com/theMarzon/Dynamoon#-preparando-el-proyecto)
 
-- [🧱 Creando los eventos, servicios y aplicaciones](https://github.com/theMarzon/Dynamoon#Creando-los-eventos-servicios-y-aplicaciones)
+- [🧱 Creando los eventos, servicios y aplicaciones](https://github.com/theMarzon/Dynamoon#-creando-los-eventos-servicios-y-aplicaciones)
 
-  - [🎯 Creando un evento](https://github.com/theMarzon/Dynamoon#Creando-un-evento)
+  - [🎯 Creando un evento](https://github.com/theMarzon/Dynamoon#-creando-un-evento)
   
-  - [📡 Creando un servicio](https://github.com/theMarzon/Dynamoon#Creando-un-servicio)
+  - [📡 Creando un servicio](https://github.com/theMarzon/Dynamoon#-creando-un-servicio)
   
-  - [💻 Creando una aplicación de barra lateral](https://github.com/theMarzon/Dynamoon#Creando-una-aplicaci%C3%B3n-de-barra-lateral)
+  - [💻 Creando una aplicación de barra lateral](https://github.com/theMarzon/Dynamoon#-creando-una-aplicaci%C3%B3n-de-barra-lateral)
   
-  - [💻 Creando una aplicación de menú contextual para usuarios](https://github.com/theMarzon/Dynamoon#Creando-una-aplicaci%C3%B3n-de-men%C3%BA-contextual-para-usuarios)
+  - [💻 Creando una aplicación de menú contextual para usuarios](https://github.com/theMarzon/Dynamoon#-creando-una-aplicaci%C3%B3n-de-men%C3%BA-contextual-para-usuarios)
   
-  - [💻 Creando una aplicación de menú contextual para mensajes](https://github.com/theMarzon/Dynamoon#Creando-una-aplicaci%C3%B3n-de-men%C3%BA-contextual-para-mensajes)
+  - [💻 Creando una aplicación de menú contextual para mensajes](https://github.com/theMarzon/Dynamoon#-creando-una-aplicaci%C3%B3n-de-men%C3%BA-contextual-para-mensajes)
 
 ## 🧰 Preparando el proyecto
 
