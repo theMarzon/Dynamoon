@@ -15,7 +15,7 @@ export default {
                     description: `👋😃 ${event.user.toString()}`
                 });
 
-                event.reply({ embeds: [ messageEmbed ], ephemeral: true });
+                event.reply({ ephemeral: true, embeds: [ messageEmbed ] });
             }
         ]
     }
