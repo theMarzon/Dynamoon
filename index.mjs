@@ -17,15 +17,15 @@ const client = new discord.Client({
 // Agrega al cliente informacion sobre el "Handler"
 client.handler = {
 
-    name:       'Dinamoon',
+    name:       'Dynamoon',
     version:    '0.6.0',
-    repository: 'https://github.com/theMarzon/Dinamoon',
+    repository: 'https://github.com/theMarzon/Dynamoon',
 
     images: {
 
-        banner: 'https://i.ibb.co/ZNwcYYH/banner.png',
-        icon:   'https://i.ibb.co/S56zQ17/icon.png',
-        logo:   'https://i.ibb.co/02kJWXt/logo.png'
+        banner: 'https://i.ibb.co/wNtKXXw/banner.png',
+        icon:   'https://i.ibb.co/sW9cJx4/icon.png',
+        logo:   'https://i.ibb.co/CKz4kQQ/logo.png'
     }
 };
 
