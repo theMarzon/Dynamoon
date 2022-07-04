@@ -4,7 +4,23 @@
   Un `Handler` eficiente para desarrollar bots utilizando [discord.js](https://discord.js.org/) de una forma rápida y modular
 </div>
 
-## 🧰 Preparando el proyecto
+## Índice
+
+- [🧰 Preparando el proyecto](https://github.com/theMarzon/Dynamoon#Preparando-el-proyecto)
+
+- [🧱 Creando los eventos, servicios y aplicaciones](https://github.com/theMarzon/Dynamoon#Creando-los-eventos-servicios-y-aplicaciones)
+
+  - [🎯 Creando un evento](https://github.com/theMarzon/Dynamoon#Creando-un-evento)
+  
+  - [📡 Creando un servicio](https://github.com/theMarzon/Dynamoon#Creando-un-servicio)
+  
+  - [💻 Creando una aplicación de barra lateral](https://github.com/theMarzon/Dynamoon#Creando-una-aplicaci%C3%B3n-de-barra-lateral)
+  
+  - [💻 Creando una aplicación de menú contextual para usuarios](https://github.com/theMarzon/Dynamoon#Creando-una-aplicaci%C3%B3n-de-men%C3%BA-contextual-para-usuarios)
+  
+  - [💻 Creando una aplicación de menú contextual para mensajes](https://github.com/theMarzon/Dynamoon#Creando-una-aplicaci%C3%B3n-de-men%C3%BA-contextual-para-mensajes)
+
+## Preparando el proyecto
 
 - Instale la versión `18.x` o superior de [Node](https://nodejs.org/)
 
@@ -24,13 +40,13 @@
 
 - Cree el archivo `.env` en la raíz del proyecto y agregue las siguientes llaves:
 
-  | 🔐 Nombre   | 🔑 Valor           |
+  | Nombre      | Valor           |
   |-------------|--------------------|
   | `BOT_TOKEN` | El `Token` del bot |
 
-## 🧱 Creando los eventos, servicios y aplicaciones
+## Creando los eventos, servicios y aplicaciones
 
-### 🎯 Creando un evento
+### Creando un evento
 
 ```js
 export default {
@@ -52,7 +68,7 @@ export default {
 };
 ```
 
-### 📡 Creando un servicio
+### Creando un servicio
 
 ```js
 export default {
@@ -82,7 +98,7 @@ export default {
 };
 ```
 
-### 💻 Creando una aplicación de barra lateral
+### Creando una aplicación de barra lateral
 
 ```js
 export default {
@@ -166,7 +182,7 @@ export default {
 };
 ```
 
-### 💻 Creando una aplicación de menú contextual para usuarios
+### Creando una aplicación de menú contextual para usuarios
 
 ```js
 export default {
@@ -235,7 +251,7 @@ export default {
 };
 ```
 
-### 💻 Creando una aplicación de menú contextual para mensajes
+### Creando una aplicación de menú contextual para mensajes
 
 ```js
 export default {
