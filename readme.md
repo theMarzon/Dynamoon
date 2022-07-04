@@ -40,7 +40,7 @@
 
 - Cree el archivo `.env` en la raíz del proyecto y agregue las siguientes llaves:
 
-  | Nombre      | Valor              |
+  | 🔐 Nombre   | 🔑 Contenido       |
   |-------------|--------------------|
   | `BOT_TOKEN` | El `Token` del bot |
 
