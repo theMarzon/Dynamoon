@@ -59,14 +59,14 @@ jobs:
           node-version: 'latest'
 
       - name: 'Install project dependencies'
-        run:  'npm install --no-audit --no-fund'
+        run:  'npm install --no-audit --no-fund --no-package-lock'
 
       - name: 'Execute lint'
         run:  'npm run lint'
 
-  start:
+  test:
 
-    name:    'Start'
+    name:    'Test'
     runs-on: 'ubuntu-latest'
 
     needs:
@@ -91,7 +91,7 @@ jobs:
           node-version: 'latest'
 
       - name: 'Install project dependencies'
-        run:  'npm install --no-audit --no-fund'
+        run:  'npm install --no-audit --no-fund --no-package-lock'
 
       - name: 'Execute project code'
         run:  'npm run test'
