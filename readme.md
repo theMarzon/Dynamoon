@@ -1,8 +1,8 @@
 <div align='center'>
     <div>
         <img src='https://i.ibb.co/CKz4kQQ/logo.png' width='512' />
-        <p>
-            <a href='https://github.com/theMarzon/Dynamoon/actions/workflows/check.yml'><img src='https://github.com/theMarzon/Dynamoon/actions/workflows/check.yml/badge.svg?branch=main&event=push' alt='Discord' /></a>
+        <p>  
+            [![Check](https://github.com/theMarzon/Dynamoon/actions/workflows/check.yml/badge.svg?branch=main&event=push)](https://github.com/theMarzon/Dynamoon/actions/workflows/check.yml)
         </p>
     </div>
     <p>
