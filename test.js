@@ -1,8 +1,8 @@
 import discord from 'discord.js';
 
-import usedIntents   from '../source/handler/groupers/usedIntents.js';
-import usedPartials  from '../source/handler/groupers/usedPartials.js';
-import executeEvents from '../source/handler/managers/executeEvents.js';
+import usedIntents   from './source/handler/groupers/usedIntents.js';
+import usedPartials  from './source/handler/groupers/usedPartials.js';
+import executeEvents from './source/handler/managers/executeEvents.js';
 
 const client = new discord.Client({
 
