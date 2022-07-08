@@ -1,12 +1,10 @@
-import discord from 'discord.js';
-
 export default {
 
     priority: 1,
 
     execute: ({ client, file, loaded, used, directories }) => {
 
-        client.on(discord.Events.InteractionCreate, (event) => {
+        client.on('interactionCreate', (event) => {
 
             for (const _loadedFile of used.events[file.name].all) {
 

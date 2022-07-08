@@ -6,7 +6,7 @@ export default {
 
     execute: ({ client, file, loaded, used, directories }) => {
 
-        client.on(discord.Events.InteractionCreate, (event) => {
+        client.on('interactionCreate', (event) => {
 
             // Si no es un comando
             if (!event.isChatInputCommand()
