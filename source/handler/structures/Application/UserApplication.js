@@ -71,7 +71,7 @@ export default class {
         this.schema.default_member_permissions = this.permissions.member;
         this.schema.default_bot_permissions    = this.permissions.bot;
 
-        this.schema.name_localizations = deleteProperty(this.name, 'default');
+        this.schema.name_localizations = deleteProperty(this.display.name, 'default');
 
         // Elimina los "intents" y "partials" duplicados
         this.intents  = this.intents.filter((value, index, array) => array.indexOf(value) === index);
