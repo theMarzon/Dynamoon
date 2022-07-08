@@ -12,53 +12,38 @@ export const messageApplicationsPath = path.join(applicationsPath, 'message');
 // Crea las carpetas si no existan en paralelo
 await Promise.all([
 
-    (async () => {
+    fs
+        .access(eventsPath)
+        .catch((error) => {
 
-        await fs
-            .access(eventsPath)
-            .catch((error) => {
+            if (error.code === 'ENOENT') fs.mkdir(eventsPath, { recursive: true });
+        }),
 
-                if (error.code === 'ENOENT') fs.mkdir(eventsPath, { recursive: true });
-            });
-    })(),
+    fs
+        .access(servicesPath)
+        .catch((error) => {
 
-    (async () => {
+            if (error.code === 'ENOENT') fs.mkdir(servicesPath, { recursive: true });
+        }),
 
-        await fs
-            .access(servicesPath)
-            .catch((error) => {
+    fs
+        .access(slashApplicationsPath)
+        .catch((error) => {
 
-                if (error.code === 'ENOENT') fs.mkdir(servicesPath, { recursive: true });
-            });
-    })(),
+            if (error.code === 'ENOENT') fs.mkdir(slashApplicationsPath, { recursive: true });
+        }),
 
-    (async () => {
+    fs
+        .access(userApplicationsPath)
+        .catch((error) => {
 
-        await fs
-            .access(slashApplicationsPath)
-            .catch((error) => {
+            if (error.code === 'ENOENT') fs.mkdir(userApplicationsPath, { recursive: true });
+        }),
 
-                if (error.code === 'ENOENT') fs.mkdir(slashApplicationsPath, { recursive: true });
-            });
-    })(),
+    fs
+        .access(messageApplicationsPath)
+        .catch((error) => {
 
-    (async () => {
-
-        await fs
-            .access(userApplicationsPath)
-            .catch((error) => {
-
-                if (error.code === 'ENOENT') fs.mkdir(userApplicationsPath, { recursive: true });
-            });
-    })(),
-
-    (async () => {
-
-        await fs
-            .access(messageApplicationsPath)
-            .catch((error) => {
-
-                if (error.code === 'ENOENT') fs.mkdir(messageApplicationsPath, { recursive: true });
-            });
-    })()
+            if (error.code === 'ENOENT') fs.mkdir(messageApplicationsPath, { recursive: true });
+        })
 ]);

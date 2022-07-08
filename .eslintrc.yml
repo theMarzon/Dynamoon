@@ -60,3 +60,7 @@ rules:
 
       SwitchCase:       1
       MemberExpression: 1
+
+      ignoredNodes:
+
+        - 'ConditionalExpression'

@@ -15,7 +15,8 @@ for (const _folderName of foldersName) {
 
     const filePath = path.join(slashApplicationsPath, _folderName, 'main.js');
 
-    let fileContent = await import(`file://${filePath}`);
+    let fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
+                                                     : await import(filePath);
 
     fileContent = new SlashApplication({
 
