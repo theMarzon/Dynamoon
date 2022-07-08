@@ -1,10 +1,11 @@
 {
   "name": "dynamoon",
+  "main": "index.js",
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "eslint ./ --fix --ext .js",
-    "test": "node ./index.js"
+    "lint": "eslint . --fix --ext .js",
+    "test": "node ."
   },
   "dependencies": {
     "discord.js": "14.0.0-dev.1657239101-e78c9c9",
