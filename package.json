@@ -1,0 +1,22 @@
+{
+  "name": "dynamoon",
+  "main": "index.js",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --fix --ext .js,.mjs,.cjs",
+    "test": "node ."
+  },
+  "dependencies": {
+    "discord.js": "14.0.0-dev.1657152699-10ba008",
+    "dotenv": "^16.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0"
+  },
+  "packageManager": "yarn@3.2.1"
+}

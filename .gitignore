@@ -1,0 +1,12 @@
+# Folders
+node_modules/
+.yarn/
+
+# Files
+.yarnrc.yml
+.pnp.loader.mjs
+.pnp.cjs
+
+# Extensions
+*.log
+*.env

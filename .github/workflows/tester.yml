@@ -1,0 +1,64 @@
+name: 'Tester'
+
+on:
+
+  push:
+
+    branches:
+
+      - 'main'
+
+  pull_request:
+
+    branches:
+
+      - 'main'
+
+    types:
+
+      - 'opened'
+      - 'reopened'
+      - 'synchronize'
+
+jobs:
+
+  redundancy:
+
+    name:    'Redundancy'
+    runs-on: 'ubuntu-latest'
+
+    steps:
+
+      - name: 'Stop previous checks'
+        uses: 'styfle/cancel-workflow-action@0.9.1'
+
+        with:
+
+          access_token: '${{ github.token }}'
+
+  lint:
+
+    name:    'Lint'
+    runs-on: 'ubuntu-latest'
+
+    steps:
+
+      - name: 'Import project code'
+        uses: 'actions/checkout@v3'
+
+        with:
+
+          fetch-depth: 0
+
+      - name: 'Install node'
+        uses: 'actions/setup-node@v3'
+
+        with:
+
+          node-version: 'latest'
+
+      - name: 'Install project dependencies'
+        run:  'npm install --no-audit --no-fund --no-package-lock'
+
+      - name: 'Execute lint'
+        run:  'npm run lint'
