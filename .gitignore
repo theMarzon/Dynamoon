@@ -1,9 +1,5 @@
 # Folders
 node_modules/
-.yarn/
-
-# Files
-.yarnrc.yml
 
 # Extensions
 *.log

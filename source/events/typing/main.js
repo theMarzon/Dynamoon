@@ -2,22 +2,22 @@ import discord from 'discord.js';
 
 export default {
 
-    execute: ({ client, me, loaded, grouped, directories }) => {
+    execute: ({ client, file, loaded, used, directories }) => {
 
         client.on(discord.Events.TypingStart, (event) => {
 
             // Si no es un boton
             if (!event.isButton()) return;
 
-            for (const _loadedFile of grouped.events[me.name].all) {
+            for (const _loadedFile of used.events[file.name].all) {
 
-                for (const _fileEvent of _loadedFile.events[me.name]) {
+                for (const _fileEvent of _loadedFile.events[file.name]) {
 
                     _fileEvent({
 
-                        client, event, loaded, grouped, directories,
+                        client, event, loaded, used, directories,
 
-                        me: _loadedFile
+                        file: _loadedFile
                     });
                 };
             };

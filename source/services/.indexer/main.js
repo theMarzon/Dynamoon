@@ -6,9 +6,9 @@ export default {
 
             ({ client, loaded }) => {
 
-                const slashApplications   = loaded.applications.slash.map((value) => value.schema);
-                const userApplications    = loaded.applications.user.map((value) => value.schema);
-                const messageApplications = loaded.applications.message.map((value) => value.schema);
+                const slashApplications   = used.applications.slash.map((value) => value.schema);
+                const userApplications    = used.applications.user.map((value) => value.schema);
+                const messageApplications = used.applications.message.map((value) => value.schema);
 
                 const allApplications = slashApplications
                     .concat(userApplications)

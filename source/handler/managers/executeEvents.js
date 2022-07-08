@@ -28,7 +28,7 @@ export default (client) => {
 
             client,
 
-            me: _loadedEvent,
+            file: _loadedEvent,
 
             loaded: {
 
@@ -43,7 +43,7 @@ export default (client) => {
                 }
             },
 
-            grouped: {
+            used: {
 
                 events:   usedEvents,
                 intents:  usedIntents,

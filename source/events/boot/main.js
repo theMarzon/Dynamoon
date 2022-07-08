@@ -2,17 +2,17 @@ export default {
 
     priority: 4,
 
-    execute: ({ client, me, loaded, grouped, directories }) => {
+    execute: ({ client, file, loaded, used, directories }) => {
 
-        for (const _loadedFile of grouped.events[me.name].all) {
+        for (const _loadedFile of used.events[file.name].all) {
 
-            for (const _fileEvent of _loadedFile.events[me.name]) {
+            for (const _fileEvent of _loadedFile.events[file.name]) {
 
                 _fileEvent({
 
-                    client, loaded, grouped, directories,
+                    client, loaded, used, directories,
 
-                    me: _loadedFile
+                    file: _loadedFile
                 });
             };
         };

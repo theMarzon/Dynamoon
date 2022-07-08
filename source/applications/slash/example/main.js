@@ -2,19 +2,24 @@ import discord from 'discord.js';
 
 export default {
 
-    description: {
+    display: {
 
-        default: 'Comando de ejemplo',
+        name: { default: 'example' },
 
-        'es-ES': 'Comando de ejemplo',
-        'en-US': 'Example command'
+        description: {
+
+            default: 'Comando de ejemplo',
+
+            'es-ES': 'Comando de ejemplo',
+            'en-US': 'Example command'
+        }
     },
 
     events: {
 
         application: [
 
-            ({ client, event, me, loaded, grouped, directories }) => {
+            ({ client, event, file, loaded, used, directories }) => {
 
                 const messageEmbed = new discord.EmbedBuilder({
 

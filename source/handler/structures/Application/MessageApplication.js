@@ -6,6 +6,8 @@ export default class {
 
     type = discord.ApplicationCommandType.Message;
 
+    name = 'undefined';
+
     dm = true;
 
     priority = 0;
@@ -15,7 +17,13 @@ export default class {
 
     events = {};
 
-    name = { default: 'undefined' };
+    display = {
+
+        name:        { default: 'undefined' },
+        description: { default: 'undefined' },
+
+        options: []
+    };
 
     permissions = {
 
@@ -36,7 +44,8 @@ export default class {
 
     constructor (content) {
 
-        this.dm = content.dm ?? this.dm;
+        this.name = content.name ?? this.name;
+        this.dm   = content.dm   ?? this.dm;
 
         this.priority = content.priority ?? this.priority;
 
@@ -45,10 +54,8 @@ export default class {
 
         this.events = content.events ?? this.events;
 
-        // Nombre
-        this.name = content.name ?? this.name;
-
-        this.name.default = content.name?.default ?? this.name.default;
+        // Visualizacion
+        this.display.name.default = content.display?.name?.default ?? this.display.name.default;
 
         // Permisos
         this.permissions = content.permissions ?? this.permissions;
@@ -59,7 +66,7 @@ export default class {
         // Esquema
         this.schema = content.schema ?? this.schema;
 
-        this.schema.name                       = this.name.default;
+        this.schema.name                       = this.display.name.default;
         this.schema.dm_permission              = this.dm;
         this.schema.default_member_permissions = this.permissions.member;
         this.schema.default_bot_permissions    = this.permissions.bot;

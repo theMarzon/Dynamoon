@@ -2,11 +2,13 @@ import discord from 'discord.js';
 
 export default {
 
+    display: { name: { default: 'example' } },
+
     events: {
 
         application: [
 
-            ({ client, event, me, loaded, grouped, directories }) => {
+            ({ client, event, file, loaded, used, directories }) => {
 
                 const messageEmbed = new discord.EmbedBuilder({
 

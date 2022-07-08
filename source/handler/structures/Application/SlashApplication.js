@@ -6,18 +6,24 @@ export default class {
 
     type = discord.ApplicationCommandType.ChatInput;
 
+    name = 'undefined';
+
     dm = true;
 
     priority = 0;
 
     intents  = [];
     partials = [];
-    options  = [];
 
     events = {};
 
-    name        = { default: 'undefined' };
-    description = { default: 'undefined' };
+    display = {
+
+        name:        { default: 'undefined' },
+        description: { default: 'undefined' },
+
+        options: []
+    };
 
     permissions = {
 
@@ -39,25 +45,20 @@ export default class {
 
     constructor (content) {
 
-        this.dm = content.dm ?? this.dm;
+        this.name = content.name ?? this.name;
+        this.dm   = content.dm   ?? this.dm;
 
         this.priority = content.priority ?? this.priority;
 
         this.intents  = content.intents  ?? this.intents;
         this.partials = content.partials ?? this.partials;
-        this.options  = content.options  ?? this.options;
 
         this.events = content.events ?? this.events;
 
-        // Nombre
-        this.name = content.name ?? this.name;
-
-        this.name.default = content.name?.default ?? this.name.default;
-
-        // Descripcion
-        this.description = content.description ?? this.description;
-
-        this.description.default = content.description?.default ?? this.description.default;
+        // Visualizacion
+        this.display.name.default        = content.display?.name?.default        ?? this.display.name.default;
+        this.display.description.default = content.display?.description?.default ?? this.display.description.default;
+        this.display.options             = content.display?.options              ?? this.display.options;
 
         // Permisos
         this.permissions = content.permissions ?? this.permissions;
@@ -68,15 +69,15 @@ export default class {
         // Esquema
         this.schema = content.schema ?? this.schema;
 
-        this.schema.name                       = this.name.default;
-        this.schema.description                = this.description.default;
-        this.schema.options                    = this.options;
-        this.schema.dm_permission              = this.dm;
+        this.schema.name                       = this.display.name.default;
+        this.schema.description                = this.display.description.default;
+        this.schema.options                    = this.display.options;
         this.schema.default_member_permissions = this.permissions.member;
         this.schema.default_bot_permissions    = this.permissions.bot;
+        this.schema.dm_permission              = this.dm;
 
-        this.schema.name_localizations        = deleteProperty(this.name, 'default');
-        this.schema.description_localizations = deleteProperty(this.description, 'default');
+        this.schema.name_localizations        = deleteProperty(this.display.name, 'default');
+        this.schema.description_localizations = deleteProperty(this.display.description, 'default');
 
         // Elimina los "intents" y "partials" duplicados
         this.intents  = this.intents.filter((value, index, array) => array.indexOf(value) === index);

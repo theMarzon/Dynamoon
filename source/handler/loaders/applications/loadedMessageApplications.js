@@ -21,7 +21,7 @@ for (const _folderName of foldersName) {
 
         ...fileContent.default,
 
-        name: { default: _folderName }
+        name: _folderName
     });
 
     loadedFiles.push(fileContent);
