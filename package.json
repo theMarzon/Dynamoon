@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint ./ --fix --ext .js,.mjs,.cjs",
     "test": "node ./index.js",
-	"test:initialize": " node ./tests/initialization.js"
+	"test:initialize": " node ./tests/initialize.js"
   },
   "dependencies": {
     "discord.js": "14.0.0-dev.1657239101-e78c9c9",
