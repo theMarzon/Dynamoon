@@ -2,7 +2,7 @@
     <div>
         <img src='https://i.ibb.co/CKz4kQQ/logo.png' width='512' />
         <p>
-            <a href='https://github.com/theMarzon/Dynamoon/actions/workflows/tester.yml'><img src='https://github.com/theMarzon/Dynamoon/actions/workflows/tester.yml/badge.svg' alt='Discord' /></a>
+            <a href='https://github.com/theMarzon/Dynamoon/actions/workflows/check.yml'><img src='https://github.com/theMarzon/Dynamoon/actions/workflows/check.yml/badge.svg' alt='Discord' /></a>
         </p>
     </div>
     <p>
