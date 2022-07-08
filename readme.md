@@ -46,8 +46,6 @@
 
         - [💻 Programando la aplicación de menú contextual para mensajes](https://github.com/theMarzon/Dynamoon#Programando-la-aplicación-de-menú-contextual-para-mensajes)
 
-- [📚 Acerca de los eventos, servicios y aplicaciones predefinidos](https://github.com/theMarzon/Dynamoon#Acerca-de-los-eventos-servicios-y-aplicaciones-predefinidos)
-
 ## Instalación del proyecto
 
 - Instale la versión `18.x` o superior de [Node](https://nodejs.org/)
@@ -66,13 +64,15 @@
 
 ## Creando los eventos, servicios y aplicaciones
 
+> Estos ejemplos fueron hechos basándose en los eventos, servicios y aplicaciones predefinidos
+
 ### Creando un evento
 
 #### Preparando el evento
 
-- Cree una carpeta en `source -> events` con el nombre del evento
+- Cree una carpeta en `source ➡ events` con el nombre del evento
 
-    > Si la carpeta `source -> events` no existe, créela
+    > Si la carpeta `source ➡ events` no existe, créela
 
 - Cree el archivo `main.js` en la carpeta del evento
 
@@ -84,7 +84,7 @@
     export default {};
     ```
 
-- Establecemos la prioridad de ejecución a nuestro evento _(Esto es opcional)_:
+- Establecemos la prioridad de ejecución a nuestro evento:
 
     ```mjs
     export default {
@@ -93,7 +93,7 @@
     };
     ```
 
-- Establecemos los `intents` que sean necesarios _(Esto es opcional)_:
+- Establecemos los `intents` que sean necesarios:
 
     ```mjs
     export default {
@@ -104,7 +104,7 @@
     };
     ```
 
-- Establecemos los `partials` que sean necesarios _(Esto es opcional)_:
+- Establecemos los `partials` que sean necesarios:
 
     ```mjs
     export default {
@@ -126,7 +126,7 @@
         intents:  [],
         partials: [],
 
-        execute: ({ client, me, loaded, grouped, directories }) => {
+        execute: ({ client, file, loaded, used, directories }) => {
 
             console.log('Hello world');
         }
@@ -137,9 +137,9 @@
 
 #### Preparando el servicio
 
-- Cree una carpeta en `source -> services` con el nombre del servicio
+- Cree una carpeta en `source ➡ services` con el nombre del servicio
 
-    > Si la carpeta `source -> services` no existe, créela
+    > Si la carpeta `source ➡ services` no existe, créela
 
 - Cree el archivo `main.js` en la carpeta del servicio
 
@@ -151,7 +151,7 @@
     export default {};
     ```
 
-- Establecemos la prioridad de ejecución a nuestro servicio _(Esto es opcional)_:
+- Establecemos la prioridad de ejecución a nuestro servicio:
 
     ```mjs
     export default {
@@ -160,7 +160,7 @@
     };
     ```
 
-- Establecemos los `intents` que sean necesarios _(Esto es opcional)_:
+- Establecemos los `intents` que sean necesarios:
 
     ```mjs
     export default {
@@ -171,7 +171,7 @@
     };
     ```
 
-- Establecemos los `partials` que sean necesarios _(Esto es opcional)_:
+- Establecemos los `partials` que sean necesarios:
 
     ```mjs
     export default {
@@ -183,7 +183,7 @@
     };
     ```
 
-- Establecemos un objeto que contendrá los eventos necesarios _(Esto es opcional)_:
+- Establecemos un objeto que contendrá los eventos necesarios:
 
     ```mjs
     export default {
@@ -197,7 +197,7 @@
 
             boot: [
                 
-                ({ client, me, loaded, grouped, directories }) => {
+                ({ client, file, loaded, used, directories }) => {
 
                     console.log('Hello world');
                 }
@@ -210,9 +210,9 @@
 
 #### Preparando la aplicación de barra lateral
 
-- Cree una carpeta en `source -> applications -> slash` con el nombre de la aplicación sin espacios y en minúsculas
+- Cree una carpeta en `source ➡ applications ➡ slash` con el nombre de la aplicación sin espacios y en minúsculas
 
-    > Si la carpeta `source -> applications -> slash` no existe, créela
+    > Si la carpeta `source ➡ applications ➡ slash` no existe, créela
 
 - Cree el archivo `main.js` en la carpeta de la aplicación
 
@@ -518,9 +518,9 @@
 
 #### Preparando la aplicación de menú contextual para usuarios
 
-- Cree una carpeta en `source -> applications -> user` con el nombre de la aplicación
+- Cree una carpeta en `source ➡ applications ➡ user` con el nombre de la aplicación
 
-    > Si la carpeta `source -> applications -> user` no existe, créela
+    > Si la carpeta `source ➡ applications ➡ user` no existe, créela
 
 - Cree el archivo `main.js` en la carpeta de la aplicación
 
@@ -700,9 +700,9 @@
 
 #### Preparando la aplicación de menú contextual para mensajes
 
-- Cree una carpeta en `source -> applications -> message` con el nombre de la aplicación sin espacios
+- Cree una carpeta en `source ➡ applications ➡ message` con el nombre de la aplicación sin espacios
 
-    > Si la carpeta `source -> applications -> message` no existe, créela
+    > Si la carpeta `source ➡ applications ➡ message` no existe, créela
 
 - Cree el archivo `main.js` en la carpeta de la aplicación
 
@@ -877,7 +877,3 @@
         }
     };
     ```
-
-## Acerca de los eventos, servicios y aplicaciones predefinidos
-
-> Apartado próximamente
