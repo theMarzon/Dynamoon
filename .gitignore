@@ -4,8 +4,6 @@ node_modules/
 
 # Files
 .yarnrc.yml
-.pnp.loader.mjs
-.pnp.cjs
 
 # Extensions
 *.log

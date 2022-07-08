@@ -7,7 +7,9 @@ import MessageApplication from '../../structures/Application/MessageApplication.
 
 let loadedFiles = [];
 
-const foldersName = (await fs.readdir(messageApplicationsPath, 'utf-8')).filter((value) => !value.startsWith('.'));
+let foldersName = await fs.readdir(messageApplicationsPath, 'utf-8');
+
+foldersName = foldersName.filter((value) => !value.startsWith('.'));
 
 for (const _folderName of foldersName) {
 

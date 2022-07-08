@@ -7,7 +7,9 @@ import SlashApplication from '../../structures/Application/SlashApplication.js';
 
 let loadedFiles = [];
 
-const foldersName = (await fs.readdir(slashApplicationsPath, 'utf-8')).filter((value) => !value.startsWith('.'));
+let foldersName = await fs.readdir(slashApplicationsPath, 'utf-8');
+
+foldersName = foldersName.filter((value) => !value.startsWith('.'));
 
 for (const _folderName of foldersName) {
 
