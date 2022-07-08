@@ -4,7 +4,13 @@ export default {
 
     display: {
 
-        name: { default: 'example' },
+        name: {
+
+            default: 'example',
+
+            'es-US': 'ejemplo',
+            'en-US': 'example'
+        },
 
         description: {
 

@@ -2,7 +2,16 @@ import discord from 'discord.js';
 
 export default {
 
-    display: { name: { default: 'example' } },
+    display: {
+
+        name: {
+
+            default: 'Example',
+
+            'es-US': 'Ejemplo',
+            'en-US': 'Example'
+        }
+    },
 
     events: {
 

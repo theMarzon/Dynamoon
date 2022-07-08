@@ -64,9 +64,9 @@ jobs:
       - name: 'Execute lint'
         run:  'npm run lint'
 
-  test:
+  initialization:
 
-    name:    'Test'
+    name:    'Initialization'
     runs-on: 'ubuntu-latest'
 
     needs:
@@ -94,4 +94,4 @@ jobs:
         run:  'npm install --no-audit --no-fund --no-package-lock'
 
       - name: 'Execute project code'
-        run:  'npm run test'
+        run:  'npm run test:initialization'
