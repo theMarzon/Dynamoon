@@ -2,19 +2,19 @@ export default {
 
     priority: 1,
 
-    execute: ({ client, file, loaded, used, directories }) => {
+    execute: ({ client, me, loaded, used, directories }) => {
 
         client.on('interactionCreate', (event) => {
 
-            for (const _loadedFile of used.events[file.name].all) {
+            for (const _loadedFile of used.events[me.name].all) {
 
-                for (const _fileEvent of _loadedFile.events[file.name]) {
+                for (const _fileEvent of _loadedFile.events[me.name]) {
 
                     _fileEvent({
 
                         client, event, loaded, used, directories,
 
-                        file: _loadedFile
+                        me: _loadedFile
                     });
                 };
             };

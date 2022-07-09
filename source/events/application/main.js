@@ -4,7 +4,7 @@ export default {
 
     priority: 2,
 
-    execute: ({ client, file, loaded, used, directories }) => {
+    execute: ({ client, me, loaded, used, directories }) => {
 
         client.on(discord.Events.InteractionCreate, (event) => {
 
@@ -13,7 +13,7 @@ export default {
             &&  !event.isUserContextMenuCommand()
             &&  !event.isMessageContextMenuCommand()) return;
 
-            for (const _loadedApplication of used.events[file.name].applications) {
+            for (const _loadedApplication of used.events[me.name].applications) {
 
                 // Si la aplicacion que creo la interaccion no tiene el mismo nombre
                 if (event.commandName !== _loadedApplication.display.name.default
@@ -24,13 +24,13 @@ export default {
                 if (event.isUserContextMenuCommand()    && _loadedApplication.type !== discord.ApplicationCommandType.User)      continue;
                 if (event.isMessageContextMenuCommand() && _loadedApplication.type !== discord.ApplicationCommandType.Message)   continue;
 
-                for (const _fileEvent of _loadedApplication.events[file.name]) {
+                for (const _fileEvent of _loadedApplication.events[me.name]) {
 
                     _fileEvent({
 
                         client, event, loaded, used, directories,
 
-                        file: _loadedApplication
+                        me: _loadedApplication
                     });
                 };
             };

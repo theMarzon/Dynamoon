@@ -28,7 +28,7 @@ export default (client) => {
 
             client,
 
-            file: _loadedEvent,
+            me: _loadedEvent,
 
             loaded: {
 
