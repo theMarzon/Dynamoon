@@ -87,7 +87,7 @@
     };
     ```
 
-- Establezca la función que se ejecutara al iniciarse el proyecto:
+- Establezca la función que se ejecutara al ejecutarse el proyecto:
 
     ```mjs
     export default {
@@ -106,11 +106,11 @@
 
 ### Creando un servicio
 
-- Cree una carpeta en `source ➡ services` con el nombre del evento
+- Cree una carpeta en `source ➡ services` con el nombre del servicio
 
     > Si la carpeta `source ➡ services` no existe, créela
 
-- Cree el archivo `main.js` en la raíz de la carpeta del evento
+- Cree el archivo `main.js` en la raíz de la carpeta del servicio
 
 - Abra el archivo `main.js` y exporte un objeto vacío:
 
@@ -188,15 +188,11 @@
 
 ### Creando una aplicación de barra lateral
 
-#### Preparando la aplicación de barra lateral
-
-- Cree una carpeta en `source ➡ applications ➡ slash` con el nombre de la aplicación sin espacios y en minúsculas
+- Cree una carpeta en `source ➡ applications ➡ slash` con el nombre de la aplicación
 
     > Si la carpeta `source ➡ applications ➡ slash` no existe, créela
 
-- Cree el archivo `main.js` en la carpeta de la aplicación
-
-#### Programando la aplicación de barra lateral
+- Cree el archivo `main.js` en la raíz de la carpeta de la aplicación
 
 - Exportamos un objeto vacío:
 
@@ -496,15 +492,11 @@
 
 ### Creando una aplicación de menú contextual para usuarios
 
-#### Preparando la aplicación de menú contextual para usuarios
-
 - Cree una carpeta en `source ➡ applications ➡ user` con el nombre de la aplicación
 
     > Si la carpeta `source ➡ applications ➡ user` no existe, créela
 
-- Cree el archivo `main.js` en la carpeta de la aplicación
-
-#### Programando la aplicación de menú contextual para usuarios
+- Cree el archivo `main.js` en la raíz de la carpeta de la aplicación
 
 - Exportamos un objeto vacío:
 
@@ -678,15 +670,11 @@
 
 ### Creando una aplicación de menú contextual para mensajes
 
-#### Preparando la aplicación de menú contextual para mensajes
-
-- Cree una carpeta en `source ➡ applications ➡ message` con el nombre de la aplicación sin espacios
+- Cree una carpeta en `source ➡ applications ➡ message` con el nombre de la aplicación
 
     > Si la carpeta `source ➡ applications ➡ message` no existe, créela
 
-- Cree el archivo `main.js` en la carpeta de la aplicación
-
-#### Programando la aplicación de menú contextual para mensajes
+- Cree el archivo `main.js` en la raíz de la carpeta de la aplicación
 
 - Exportamos un objeto vacío:
 
