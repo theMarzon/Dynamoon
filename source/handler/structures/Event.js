@@ -3,8 +3,8 @@ export default class {
     name = 'undefined';
 
     priority = 0;
+    intents  = 0;
 
-    intents  = [];
     partials = [];
 
     execute = function () {};
@@ -20,8 +20,7 @@ export default class {
 
         this.execute = content.execute ?? this.execute;
 
-        // Elimina los "intents" y "partials" duplicados
-        this.intents  = this.intents.filter((value, index, array) => array.indexOf(value) === index);
+        // Elimina los "partials" duplicados
         this.partials = this.partials.filter((value, index, array) => array.indexOf(value) === index);
     };
 };

@@ -11,8 +11,8 @@ export default class {
     dm = true;
 
     priority = 0;
+    intents  = 0;
 
-    intents  = [];
     partials = [];
 
     events = {};
@@ -48,8 +48,8 @@ export default class {
         this.dm   = content.dm   ?? this.dm;
 
         this.priority = content.priority ?? this.priority;
-
         this.intents  = content.intents  ?? this.intents;
+
         this.partials = content.partials ?? this.partials;
 
         this.events = content.events ?? this.events;
@@ -73,8 +73,7 @@ export default class {
 
         this.schema.name_localizations = deleteProperty(this.display.name, 'default');
 
-        // Elimina los "intents" y "partials" duplicados
-        this.intents  = this.intents.filter((value, index, array) => array.indexOf(value) === index);
+        // Elimina los "partials" duplicados
         this.partials = this.partials.filter((value, index, array) => array.indexOf(value) === index);
     };
 };
