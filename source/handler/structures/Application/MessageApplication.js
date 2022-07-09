@@ -22,24 +22,22 @@ export default class {
         name:        { default: 'undefined' },
         description: { default: 'undefined' },
 
-        options: []
-    };
+        permissions: {
 
-    permissions = {
-
-        member: null,
-        bot:    null
+            member: null,
+            bot:    null
+        }
     };
 
     schema = {
 
         type:                       this.type,
-        name:                       this.name.default,
-        default_member_permissions: this.permissions.member,
-        default_bot_permissions:    this.permissions.bot,
-        dm_permission:              this.dm,
+        name:                       this.display.name.default,
+        default_member_permissions: this.display.permissions.member,
+        default_bot_permissions:    this.display.permissions.bot,
+        dm_permission:              this.display.dm,
 
-        name_localizations: deleteProperty(this.name, 'default')
+        name_localizations: deleteProperty(this.display.name, 'default')
     };
 
     constructor (content) {
@@ -54,22 +52,22 @@ export default class {
         this.events = content.events ?? this.events;
 
         // Visualizacion
-        this.display.dm           = content.display.dm             ?? this.display.dm;
+        this.display.dm = content.display.dm ?? this.display.dm;
+
+        this.display.name         = content.display?.name          ?? this.display.name;
         this.display.name.default = content.display?.name?.default ?? this.display.name.default;
 
-        // Permisos
-        this.permissions = content.permissions ?? this.permissions;
-
-        this.permissions.member = content.permissions?.member ?? this.permissions.member;
-        this.permissions.bot    = content.permissions?.bot    ?? this.permissions.bot;
+        this.display.permissions        = content.display.permissions         ?? this.display.permissions;
+        this.display.permissions.member = content.display.permissions?.member ?? this.display.permissions.member;
+        this.display.permissions.bot    = content.display.permissions?.bot    ?? this.display.permissions.bot;
 
         // Esquema
         this.schema = content.schema ?? this.schema;
 
         this.schema.name                       = this.display.name.default;
+        this.schema.default_member_permissions = this.display.permissions.member;
+        this.schema.default_bot_permissions    = this.display.permissions.bot;
         this.schema.dm_permission              = this.display.dm;
-        this.schema.default_member_permissions = this.permissions.member;
-        this.schema.default_bot_permissions    = this.permissions.bot;
 
         this.schema.name_localizations = deleteProperty(this.display.name, 'default');
 

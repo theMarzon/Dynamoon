@@ -22,25 +22,27 @@ export default class {
         name:        { default: 'undefined' },
         description: { default: 'undefined' },
 
+        permissions: {
+
+            member: null,
+            bot:    null
+        },
+
         options: []
-    };
-
-    permissions = {
-
-        member: null,
-        bot:    null
     };
 
     schema = {
 
         type:                       this.type,
-        name:                       this.name.default,
-        default_member_permissions: this.permissions.member,
-        default_bot_permissions:    this.permissions.bot,
-        dm_permission:              this.dm,
+        options:                    this.display.options,
+        name:                       this.display.name.default,
+        description:                this.display.description.default,
+        default_member_permissions: this.display.permissions.member,
+        default_bot_permissions:    this.display.permissions.bot,
+        dm_permission:              this.display.dm,
 
-        name_localizations:        deleteProperty(this.name, 'default'),
-        description_localizations: deleteProperty(this.description, 'default')
+        name_localizations:        deleteProperty(this.display.name, 'default'),
+        description_localizations: deleteProperty(this.display.description, 'default')
     };
 
     constructor (content) {
@@ -56,26 +58,28 @@ export default class {
         this.events = content.events ?? this.events;
 
         // Visualizacion
-        this.display.dm                  = content.display.dm                    ?? this.display.dm;
-        this.display.name.default        = content.display?.name?.default        ?? this.display.name.default;
+        this.display.dm      = content.display.dm      ?? this.display.dm;
+        this.display.options = content.display.options ?? this.display.options;
+
+        this.display.name         = content.display?.name          ?? this.display.name;
+        this.display.name.default = content.display?.name?.default ?? this.display.name.default;
+
+        this.display.description         = content.display?.description          ?? this.display.description;
         this.display.description.default = content.display?.description?.default ?? this.display.description.default;
-        this.display.options             = content.display?.options              ?? this.display.options;
 
-        // Permisos
-        this.permissions = content.permissions ?? this.permissions;
-
-        this.permissions.member = content.permissions?.member ?? this.permissions.member;
-        this.permissions.bot    = content.permissions?.bot    ?? this.permissions.bot;
+        this.display.permissions        = content.display.permissions         ?? this.display.permissions;
+        this.display.permissions.member = content.display.permissions?.member ?? this.display.permissions.member;
+        this.display.permissions.bot    = content.display.permissions?.bot    ?? this.display.permissions.bot;
 
         // Esquema
         this.schema = content.schema ?? this.schema;
 
+        this.schema.options                    = this.display.options;
         this.schema.name                       = this.display.name.default;
         this.schema.description                = this.display.description.default;
-        this.schema.options                    = this.display.options;
+        this.schema.default_member_permissions = this.display.permissions.member;
+        this.schema.default_bot_permissions    = this.display.permissions.bot;
         this.schema.dm_permission              = this.display.dm;
-        this.schema.default_member_permissions = this.permissions.member;
-        this.schema.default_bot_permissions    = this.permissions.bot;
 
         this.schema.name_localizations        = deleteProperty(this.display.name, 'default');
         this.schema.description_localizations = deleteProperty(this.display.description, 'default');
