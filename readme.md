@@ -64,7 +64,7 @@
     };
     ```
 
-- Establezca los "intents" necesarios:
+- Establezca los `intents` necesarios:
 
     ```mjs
     export default {
@@ -75,7 +75,7 @@
     };
     ```
 
-- Establezca los "partials" necesarios:
+- Establezca los `partials` necesarios:
 
     ```mjs
     export default {
@@ -127,7 +127,7 @@
     };
     ```
 
-- Establezca los "intents" necesarios:
+- Establezca los `intents` necesarios:
 
     ```mjs
     export default {
@@ -138,7 +138,7 @@
     };
     ```
 
-- Establezca los "partials" necesarios:
+- Establezca los `partials` necesarios:
 
     ```mjs
     export default {
@@ -150,7 +150,7 @@
     };
     ```
 
-- Establezca un objeto llamado "events" que contendrá los eventos a utilizar:
+- Establezca un objeto llamado `events` que contendrá los eventos a utilizar:
 
     ```mjs
     export default {
@@ -163,7 +163,7 @@
         events: {}
     };
 
-- Establezca en el objeto "events", un arreglo con el nombre del evento a utilizarse y que contenga las funciones a ejecutarse cuando este evento se active:
+- Establezca en el objeto `events`, un arreglo con el nombre del evento a utilizarse y que contenga las funciones a ejecutarse cuando este evento se active:
 
     ```mjs
     export default {
