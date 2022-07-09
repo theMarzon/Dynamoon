@@ -8,8 +8,6 @@ export default class {
 
     name = 'undefined';
 
-    dm = true;
-
     priority = 0;
     intents  = 0;
 
@@ -18,6 +16,8 @@ export default class {
     events = {};
 
     display = {
+
+        dm: true,
 
         name:        { default: 'undefined' },
         description: { default: 'undefined' },
@@ -55,6 +55,7 @@ export default class {
         this.events = content.events ?? this.events;
 
         // Visualizacion
+        this.display.dm           = content.display.dm             ?? this.display.dm;
         this.display.name.default = content.display?.name?.default ?? this.display.name.default;
 
         // Permisos
@@ -67,7 +68,7 @@ export default class {
         this.schema = content.schema ?? this.schema;
 
         this.schema.name                       = this.display.name.default;
-        this.schema.dm_permission              = this.dm;
+        this.schema.dm_permission              = this.display.dm;
         this.schema.default_member_permissions = this.permissions.member;
         this.schema.default_bot_permissions    = this.permissions.bot;
 

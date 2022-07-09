@@ -8,8 +8,6 @@ export default class {
 
     name = 'undefined';
 
-    dm = true;
-
     priority = 0;
     intents  = 0;
 
@@ -18,6 +16,8 @@ export default class {
     events = {};
 
     display = {
+
+        dm: true,
 
         name:        { default: 'undefined' },
         description: { default: 'undefined' },
@@ -56,6 +56,7 @@ export default class {
         this.events = content.events ?? this.events;
 
         // Visualizacion
+        this.display.dm                  = content.display.dm                    ?? this.display.dm;
         this.display.name.default        = content.display?.name?.default        ?? this.display.name.default;
         this.display.description.default = content.display?.description?.default ?? this.display.description.default;
         this.display.options             = content.display?.options              ?? this.display.options;
@@ -72,9 +73,9 @@ export default class {
         this.schema.name                       = this.display.name.default;
         this.schema.description                = this.display.description.default;
         this.schema.options                    = this.display.options;
+        this.schema.dm_permission              = this.display.dm;
         this.schema.default_member_permissions = this.permissions.member;
         this.schema.default_bot_permissions    = this.permissions.bot;
-        this.schema.dm_permission              = this.dm;
 
         this.schema.name_localizations        = deleteProperty(this.display.name, 'default');
         this.schema.description_localizations = deleteProperty(this.display.description, 'default');
