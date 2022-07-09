@@ -1,10 +1,12 @@
+import discord from 'discord.js';
+
 export default {
 
     priority: 1,
 
     execute: ({ client, file, loaded, used, directories }) => {
 
-        client.on('interactionCreate', (event) => {
+        client.on(discord.Events.InteractionCreate, (event) => {
 
             // Si no es un modal
             if (!event.isModalSubmit()) return;

@@ -9,7 +9,7 @@ export const slashApplicationsPath   = path.join(applicationsPath, 'slash');
 export const userApplicationsPath    = path.join(applicationsPath, 'user');
 export const messageApplicationsPath = path.join(applicationsPath, 'message');
 
-// Crea las carpetas si no existan en paralelo
+// Crea las carpetas en paralelo que no existan
 await Promise.all([
 
     fs

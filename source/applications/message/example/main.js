@@ -8,8 +8,8 @@ export default {
 
             default: 'Example',
 
-            'es-US': 'Ejemplo',
-            'en-US': 'Example'
+            [discord.Locale.EnglishUS]: 'Example',
+            [discord.Locale.SpanishES]: 'Ejemplo'
         }
     },
 

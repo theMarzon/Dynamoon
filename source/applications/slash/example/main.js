@@ -8,16 +8,16 @@ export default {
 
             default: 'example',
 
-            'es-US': 'ejemplo',
-            'en-US': 'example'
+            [discord.Locale.EnglishUS]: 'example',
+            [discord.Locale.SpanishES]: 'ejemplo'
         },
 
         description: {
 
             default: 'Comando de ejemplo',
 
-            'es-ES': 'Comando de ejemplo',
-            'en-US': 'Example command'
+            [discord.Locale.EnglishUS]: 'Example command',
+            [discord.Locale.SpanishES]: 'Comando de ejemplo'
         }
     },
 

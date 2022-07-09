@@ -1,8 +1,10 @@
+import discord from 'discord.js';
+
 export default {
 
     execute: ({ client, file, loaded, used, directories }) => {
 
-        client.on('typingStart', (event) => {
+        client.on(discord.Events.TypingStart, (event) => {
 
             // Si no es un boton
             if (!event.isButton()) return;
