@@ -62,4 +62,4 @@ jobs:
         run:  'npm install --no-audit --no-fund --no-package-lock'
 
       - name: 'Execute lint'
-        run:  'npm run lint'
+        run:  'npm run check'

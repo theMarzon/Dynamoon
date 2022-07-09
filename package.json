@@ -4,11 +4,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "eslint . --fix --ext .js",
-    "test": "node ."
+    "test": "node .",
+    "check": "eslint . --ext .js",
+    "fix": "eslint . --fix --ext .js"
   },
   "dependencies": {
-    "discord.js": "14.0.0-dev.1657239101-e78c9c9",
+    "discord.js": "14.0.0-dev.1657325401-33ae7df",
     "dotenv": "^16.0.1"
   },
   "devDependencies": {
