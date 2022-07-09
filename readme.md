@@ -13,33 +13,13 @@
 
     - [🎯 Creando un evento](https://github.com/theMarzon/Dynamoon#Creando-un-evento)
 
-        - [📦 Preparando el evento](https://github.com/theMarzon/Dynamoon#Preparando-el-evento)
-
-        - [💻 Programando el evento](https://github.com/theMarzon/Dynamoon#Programando-el-evento)
-
     - [📡 Creando un servicio](https://github.com/theMarzon/Dynamoon#Creando-un-servicio)
-
-        - [📦 Preparando el servicio](https://github.com/theMarzon/Dynamoon#Preparando-el-servicio)
-
-        - [💻 Programando el servicio](https://github.com/theMarzon/Dynamoon#Programando-el-servicio)
 
     - [💻 Creando una aplicación de barra lateral](https://github.com/theMarzon/Dynamoon#Creando-una-aplicación-de-barra-lateral)
 
-        - [📦 Preparando la aplicación de barra lateral](https://github.com/theMarzon/Dynamoon#Preparando-la-aplicación-de-barra-lateral)
-
-        - [💻 Programando la aplicación de barra lateral](https://github.com/theMarzon/Dynamoon#Programando-la-aplicación-de-barra-lateral)
-
     - [💻 Creando una aplicación de menú contextual para usuarios](https://github.com/theMarzon/Dynamoon#Creando-una-aplicación-de-menú-contextual-para-usuarios)
 
-        - [📦 Preparando la aplicación de menú contextual para usuarios](https://github.com/theMarzon/Dynamoon#Preparando-la-aplicación-de-menú-contextual-para-usuarios)
-
-        - [💻 Programando la aplicación de menú contextual para usuarios](https://github.com/theMarzon/Dynamoon#Programando-la-aplicación-de-menú-contextual-para-usuarios)
-
     - [💻 Creando una aplicación de menú contextual para mensajes](https://github.com/theMarzon/Dynamoon#Creando-una-aplicación-de-menú-contextual-para-mensajes)
-
-        - [📦 Preparando la aplicación de menú contextual para mensajes](https://github.com/theMarzon/Dynamoon#Preparando-la-aplicación-de-menú-contextual-para-mensajes)
-
-        - [💻 Programando la aplicación de menú contextual para mensajes](https://github.com/theMarzon/Dynamoon#Programando-la-aplicación-de-menú-contextual-para-mensajes)
 
 ## Instalación del proyecto
 
@@ -63,23 +43,19 @@
 
 ### Creando un evento
 
-#### Preparando el evento
-
 - Cree una carpeta en `source ➡ events` con el nombre del evento
 
     > Si la carpeta `source ➡ events` no existe, créela
 
-- Cree el archivo `main.js` en la carpeta del evento
+- Cree el archivo `main.js` en la raíz de la carpeta del evento
 
-#### Programando el evento
-
-- Exportamos un objeto vacío:
+- Abra el archivo `main.js` y exporte un objeto vacío:
 
     ```mjs
     export default {};
     ```
 
-- Establecemos la prioridad de ejecución a nuestro evento:
+- Establezca la prioridad de ejecución:
 
     ```mjs
     export default {
@@ -88,7 +64,7 @@
     };
     ```
 
-- Establecemos los `intents` que sean necesarios:
+- Establezca los "intents" necesarios:
 
     ```mjs
     export default {
@@ -99,7 +75,7 @@
     };
     ```
 
-- Establecemos los `partials` que sean necesarios:
+- Establezca los "partials" necesarios:
 
     ```mjs
     export default {
@@ -111,7 +87,7 @@
     };
     ```
 
-- Establecemos la función que va a ejecutar el evento:
+- Establezca la función que se ejecutara al iniciarse el proyecto:
 
     ```mjs
     export default {
@@ -121,7 +97,7 @@
 
         partials: [],
 
-        execute: ({ client, file, loaded, used, directories }) => {
+        execute: ({ client, me, loaded, used, directories }) => {
 
             console.log('Hello world');
         }
@@ -130,23 +106,19 @@
 
 ### Creando un servicio
 
-#### Preparando el servicio
-
-- Cree una carpeta en `source ➡ services` con el nombre del servicio
+- Cree una carpeta en `source ➡ services` con el nombre del evento
 
     > Si la carpeta `source ➡ services` no existe, créela
 
-- Cree el archivo `main.js` en la carpeta del servicio
+- Cree el archivo `main.js` en la raíz de la carpeta del evento
 
-#### Programando el servicio
-
-- Exportamos un objeto vacío:
+- Abra el archivo `main.js` y exporte un objeto vacío:
 
     ```mjs
     export default {};
     ```
 
-- Establecemos la prioridad de ejecución a nuestro servicio:
+- Establezca la prioridad de ejecución:
 
     ```mjs
     export default {
@@ -155,44 +127,57 @@
     };
     ```
 
-- Establecemos los `intents` que sean necesarios:
+- Establezca los "intents" necesarios:
 
     ```mjs
     export default {
 
         priority: 0,
 
-        intents: []
+        intents: 0
     };
     ```
 
-- Establecemos los `partials` que sean necesarios:
+- Establezca los "partials" necesarios:
 
     ```mjs
     export default {
 
         priority: 0,
+        intents:  0,
 
-        intents:  [],
         partials: []
     };
     ```
 
-- Establecemos un objeto que contendrá los eventos necesarios:
+- Establezca un objeto llamado "events" que contendrá los eventos a utilizar:
 
     ```mjs
     export default {
 
         priority: 0,
+        intents:  0,
 
-        intents:  [],
+        partials: [],
+
+        events: {}
+    };
+
+- Establezca en el objeto "events", un arreglo con el nombre del evento a utilizarse y que contenga las funciones a ejecutarse cuando este evento se active:
+
+    ```mjs
+    export default {
+
+        priority: 0,
+        intents:  0,
+
         partials: [],
 
         events: {
 
             boot: [
                 
-                ({ client, file, loaded, used, directories }) => {
+                ({ client, me, loaded, used, directories }) => {
 
                     console.log('Hello world');
                 }
