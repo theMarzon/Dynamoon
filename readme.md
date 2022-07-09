@@ -70,8 +70,7 @@
     export default {
 
         priority: 0,
-
-        intents: 0
+        intents:  0
     };
     ```
 
@@ -133,8 +132,7 @@
     export default {
 
         priority: 0,
-
-        intents: 0
+        intents:  0
     };
     ```
 
