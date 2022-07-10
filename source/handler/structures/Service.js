@@ -20,7 +20,7 @@ export default class {
 
         this.events = content.events ?? this.events;
 
-        // Elimina los "intents" y "partials" duplicados
+        // Elimina los "partials" duplicados
         this.partials = this.partials.filter((value, index, array) => array.indexOf(value) === index);
     };
 };

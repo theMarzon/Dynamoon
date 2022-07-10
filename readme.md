@@ -192,42 +192,60 @@
 
 - Cree el archivo `main.js` en la raíz de la carpeta de la aplicación
 
-- Exportamos un objeto vacío:
+- Abra el archivo `main.js` y exporte un objeto vacío:
 
     ```mjs
     export default {};
     ```
 
-- Establecemos el nombre de la aplicación según la localidad _(Esto es opcional)_:
+- Establecemos:
 
     ```mjs
     export default {
 
-        name: {
-
-            'es-ES': 'ejemplo',
-            'en-US': 'example'
-        }
+        display: {}
     };
     ```
 
-- Establecemos la descripción de la aplicación por defecto:
+- Establecemos:
 
     ```mjs
     export default {
 
-        name: {
+        display: {
 
-            'es-ES': 'ejemplo',
-            'en-US': 'example'
-        },
+            name: {
 
-        description: {
-
-            default: 'Example command'
+                'es-ES': 'ejemplo',
+                'en-US': 'example'
+            }
         }
     };
     ```
+
+- Establecemos:
+
+    ```mjs
+    export default {
+
+        display: {
+
+            name: {
+
+                'es-ES': 'ejemplo',
+                'en-US': 'example'
+            },
+
+            description: {
+
+                default: 'Example command'
+            }
+        }
+    };
+    ```
+
+
+
 
 - Establecemos la descripción de la aplicación según la localidad _(Esto es opcional)_:
 
