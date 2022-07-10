@@ -1,9 +1,9 @@
 import discord from 'discord.js';
 import dotenv  from 'dotenv';
 
-import usedIntents   from './source/handler/groupers/usedIntents.js';
-import usedPartials  from './source/handler/groupers/usedPartials.js';
-import executeEvents from './source/handler/managers/executeEvents.js';
+import usedIntents   from './source/framework/groupers/usedIntents.js';
+import usedPartials  from './source/framework/groupers/usedPartials.js';
+import executeEvents from './source/framework/managers/executeEvents.js';
 
 // Crea el cliente
 const client = new discord.Client({
@@ -14,8 +14,8 @@ const client = new discord.Client({
     allowedMentions: { repliedUser: false, parse: []  }
 });
 
-// Agrega al cliente informacion sobre el gestor
-client.handler = {
+// Agrega al cliente informacion sobre el "Framework"
+client.framework = {
 
     name:       'Dynamoon',
     version:    '0.7.0',
