@@ -41,8 +41,8 @@ export default class {
         default_bot_permissions:    this.display.permissions.bot,
         dm_permission:              this.display.dm,
 
-        name_localizations:        deleteProperty(this.display.name, 'default'),
-        description_localizations: deleteProperty(this.display.description, 'default')
+        name_localizations:        {},
+        description_localizations: {}
     };
 
     constructor (content) {

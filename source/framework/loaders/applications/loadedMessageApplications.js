@@ -7,13 +7,13 @@ import MessageApplication from '../../structures/Application/MessageApplication.
 
 let loadedFiles = [];
 
-let foldersName = await fs.readdir(messageApplicationsPath, 'utf-8');
+let directoryNames = await fs.readdir(messageApplicationsPath, 'utf-8');
 
-foldersName = foldersName.filter((value) => !value.startsWith('.'));
+directoryNames = directoryNames.filter((value) => !value.startsWith('.'));
 
-for (const _folderName of foldersName) {
+for (const _directoryName of directoryNames) {
 
-    const filePath = path.join(messageApplicationsPath, _folderName, 'main.js');
+    const filePath = path.join(messageApplicationsPath, _directoryName, 'main.js');
 
     let fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
                                                      : await import(filePath);
@@ -22,7 +22,7 @@ for (const _folderName of foldersName) {
 
         ...fileContent.default,
 
-        name: _folderName
+        name: _directoryName
     });
 
     loadedFiles.push(fileContent);

@@ -16,8 +16,7 @@ export default {
             for (const _loadedApplication of used.events[me.name].applications) {
 
                 // Si la aplicacion que creo la interaccion no tiene el mismo nombre
-                if (event.commandName !== _loadedApplication.display.name.default
-                &&  event.commandName !== _loadedApplication.display.name[event.locale]) continue;
+                if (event.commandName !== _loadedApplication.display.name.default) continue;
 
                 // Si la aplicacion que creo la interaccion no tiene el mismo tipo
                 if (event.isChatInputCommand()          && _loadedApplication.type !== discord.ApplicationCommandType.ChatInput) continue;
