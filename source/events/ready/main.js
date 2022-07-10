@@ -6,7 +6,7 @@ export default {
 
     execute: ({ client, me, loaded, used, directories }) => {
 
-        client.on(discord.Events.ClientReady, () => {
+        client.once(discord.Events.ClientReady, () => {
 
             for (const _loadedFile of used.events[me.name].all) {
 
