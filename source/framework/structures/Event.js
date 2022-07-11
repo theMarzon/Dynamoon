@@ -14,8 +14,8 @@ export default class {
         this.name = content.name ?? this.name;
 
         this.priority = content.priority ?? this.priority;
-
         this.intents  = content.intents  ?? this.intents;
+
         this.partials = content.partials ?? this.partials;
 
         this.execute = content.execute ?? this.execute;
