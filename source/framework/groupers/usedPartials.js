@@ -16,7 +16,7 @@ for (const _loadedEvent of loadedEvents) {
     };
 };
 
-// Elimina los "Partials" duplicados
+// Elimina los partials duplicados
 groupedPartials = groupedPartials.filter((value, index, array) => array.indexOf(value) === index);
 
 export default groupedPartials;

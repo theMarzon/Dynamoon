@@ -14,7 +14,7 @@ const client = new discord.Client({
     allowedMentions: { repliedUser: false, parse: []  }
 });
 
-// Agrega al cliente informacion sobre el "Framework"
+// Agrega al cliente informacion sobre el framework
 client.framework = {
 
     name:       'Dynamoon',

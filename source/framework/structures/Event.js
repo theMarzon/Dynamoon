@@ -20,7 +20,7 @@ export default class {
 
         this.execute = content.execute ?? this.execute;
 
-        // Elimina los "Partials" duplicados
+        // Elimina los partials duplicados
         this.partials = this.partials.filter((value, index, array) => array.indexOf(value) === index);
     };
 };
