@@ -1,7 +1,7 @@
 <div align='center'>
     <img src='https://i.ibb.co/CKz4kQQ/logo.png' width='512' />
     <p>
-        Un framework eficiente para desarrollar bots utilizando discord.js de una forma rápida y sencilla
+        Un "Framework" eficiente para desarrollar bots utilizando discord.js de una forma rápida y sencilla
     </p>
 </div>
 
