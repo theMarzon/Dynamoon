@@ -5,7 +5,7 @@
     </p>
 </div>
 
-## Índice
+## Tabla de recursos
 
 - [📦 Instalación del proyecto](https://github.com/theMarzon/Dynamoon#Instalación-del-proyecto)
 
@@ -23,7 +23,7 @@
 
 ## Instalación del proyecto
 
-[⬅ Volver al índice](https://github.com/theMarzon/Dynamoon#Índice)
+[⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
 
 - Instale la versión `18.x` o superior de [Node](https://nodejs.org/)
 
@@ -41,13 +41,13 @@
 
 ## Creando los eventos, servicios y aplicaciones
 
-[⬅ Volver al índice](https://github.com/theMarzon/Dynamoon#Índice)
+[⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
 
 > Estos ejemplos fueron hechos basándose en los eventos, servicios y aplicaciones predefinidos
 
 ### Creando un evento
 
-[⬅ Volver al índice](https://github.com/theMarzon/Dynamoon#Índice)
+[⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
 
 - Cree una carpeta en `source ➡ events` con el nombre del evento
 
@@ -111,7 +111,7 @@
 
 ### Creando un servicio
 
-[⬅ Volver al índice](https://github.com/theMarzon/Dynamoon#Índice)
+[⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
 
 - Cree una carpeta en `source ➡ services` con el nombre del servicio
 
@@ -194,7 +194,7 @@
 
 ### Creando una aplicación de barra lateral
 
-[⬅ Volver al índice](https://github.com/theMarzon/Dynamoon#Índice)
+[⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
 
 - Cree una carpeta en `source ➡ applications ➡ slash` con el nombre de la aplicación
 
@@ -518,7 +518,7 @@
 
 ### Creando una aplicación de menú contextual para usuarios
 
-[⬅ Volver al índice](https://github.com/theMarzon/Dynamoon#Índice)
+[⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
 
 - Cree una carpeta en `source ➡ applications ➡ user` con el nombre de la aplicación
 
@@ -698,7 +698,7 @@
 
 ### Creando una aplicación de menú contextual para mensajes
 
-[⬅ Volver al índice](https://github.com/theMarzon/Dynamoon#Índice)
+[⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
 
 - Cree una carpeta en `source ➡ applications ➡ message` con el nombre de la aplicación
 
