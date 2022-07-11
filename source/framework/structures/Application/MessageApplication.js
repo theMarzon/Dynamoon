@@ -71,7 +71,7 @@ export default class {
 
         this.schema.name_localizations = deleteProperty(this.display.name, 'default');
 
-        // Elimina los "partials" duplicados
+        // Elimina los "Partials" duplicados
         this.partials = this.partials.filter((value, index, array) => array.indexOf(value) === index);
     };
 };
