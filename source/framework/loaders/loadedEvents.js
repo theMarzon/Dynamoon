@@ -1,32 +1,21 @@
-import fs   from 'node:fs/promises';
-import path from 'node:path';
+import fs from 'node:fs/promises';
+
+import loadEvent from '../utils/loaders/loadEvent.js';
 
 import { eventsPath } from '../managers/directoriesPath.js';
 
-import Event from '../structures/Event.js';
+const loadQueue = [];
 
-let loadedFiles = [];
-
-let directoryNames = await fs.readdir(eventsPath, 'utf-8');
+let directoryNames = await fs.readdir(eventsPath);
 
 directoryNames = directoryNames.filter((value) => !value.startsWith('.'));
 
 for (const _directoryName of directoryNames) {
 
-    const filePath = path.join(eventsPath, _directoryName, 'main.js');
-
-    let fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
-                                                     : await import(filePath);
-
-    fileContent = new Event({
-
-        ...fileContent.default,
-
-        name: _directoryName
-    });
-
-    loadedFiles.push(fileContent);
+    loadQueue.push(loadEvent(_directoryName));
 };
+
+let loadedFiles = await Promise.all(loadQueue);
 
 // Organiza los archivos por su prioridad
 loadedFiles = loadedFiles.sort((a, b) => b.priority - a.priority);

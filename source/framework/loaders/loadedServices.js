@@ -1,32 +1,21 @@
-import fs   from 'node:fs/promises';
-import path from 'node:path';
+import fs from 'node:fs/promises';
+
+import loadService from '../utils/loaders/loadService.js';
 
 import { servicesPath } from '../managers/directoriesPath.js';
 
-import Service from '../structures/Service.js';
+const loadQueue = [];
 
-let loadedFiles = [];
-
-let directoryNames = await fs.readdir(servicesPath, 'utf-8');
+let directoryNames = await fs.readdir(servicesPath);
 
 directoryNames = directoryNames.filter((value) => !value.startsWith('.'));
 
 for (const _directoryName of directoryNames) {
 
-    const filePath = path.join(servicesPath, _directoryName, 'main.js');
-
-    let fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
-                                                     : await import(filePath);
-
-    fileContent = new Service({
-
-        ...fileContent.default,
-
-        name: _directoryName
-    });
-
-    loadedFiles.push(fileContent);
+    loadQueue.push(loadService(_directoryName));
 };
+
+let loadedFiles = await Promise.all(loadQueue);
 
 // Organiza los archivos por su prioridad
 loadedFiles = loadedFiles.sort((a, b) => b.priority - a.priority);

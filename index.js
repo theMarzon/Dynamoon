@@ -5,14 +5,20 @@ import usedIntents   from './source/framework/groupers/usedIntents.js';
 import usedPartials  from './source/framework/groupers/usedPartials.js';
 import executeEvents from './source/framework/managers/executeEvents.js';
 
+// Configura las variables de entorno
+dotenv.config();
+
 // Crea el cliente
 const client = new discord.Client({
 
     intents:  usedIntents,
     partials: usedPartials,
 
-    allowedMentions: { repliedUser: false, parse: []  }
+    allowedMentions: { repliedUser: false, parse: [] }
 });
+
+// Configura los eventos maximos para el cliente
+client.setMaxListeners(1);
 
 // Agrega al cliente informacion sobre el framework
 client.framework = {
@@ -28,9 +34,6 @@ client.framework = {
         logo:   'https://i.ibb.co/CKz4kQQ/logo.png'
     }
 };
-
-// Configura las variables de entorno
-dotenv.config();
 
 // Ejecuta los eventos
 executeEvents(client);

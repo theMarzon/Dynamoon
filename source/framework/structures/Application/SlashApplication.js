@@ -58,8 +58,8 @@ export default class {
         this.events = content.events ?? this.events;
 
         // Visualizacion
-        this.display.dm      = content.display.dm      ?? this.display.dm;
-        this.display.options = content.display.options ?? this.display.options;
+        this.display.dm      = content.display?.dm      ?? this.display.dm;
+        this.display.options = content.display?.options ?? this.display.options;
 
         this.display.name         = content.display?.name          ?? this.display.name;
         this.display.name.default = content.display?.name?.default ?? this.display.name.default;
@@ -67,9 +67,9 @@ export default class {
         this.display.description         = content.display?.description          ?? this.display.description;
         this.display.description.default = content.display?.description?.default ?? this.display.description.default;
 
-        this.display.permissions        = content.display.permissions         ?? this.display.permissions;
-        this.display.permissions.member = content.display.permissions?.member ?? this.display.permissions.member;
-        this.display.permissions.bot    = content.display.permissions?.bot    ?? this.display.permissions.bot;
+        this.display.permissions        = content.display?.permissions         ?? this.display.permissions;
+        this.display.permissions.member = content.display?.permissions?.member ?? this.display.permissions.member;
+        this.display.permissions.bot    = content.display?.permissions?.bot    ?? this.display.permissions.bot;
 
         // Esquema
         this.schema = content.schema ?? this.schema;
