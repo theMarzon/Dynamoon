@@ -17,7 +17,7 @@ const client = new discord.Client({
     allowedMentions: { repliedUser: false, parse: [] }
 });
 
-// Configura los eventos maximos para el cliente
+// Configura los eventos maximos del cliente
 client.setMaxListeners(1);
 
 // Agrega al cliente informacion sobre el framework
