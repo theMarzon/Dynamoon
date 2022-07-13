@@ -1,6 +1,5 @@
-import fs from 'node:fs/promises';
-
-import buildFile from '../../utils/buildFile.js';
+import fs   from 'node:fs/promises';
+import path from 'node:path';
 
 import { userApplicationsPath } from '../../managers/directoriesPath.js';
 
@@ -14,7 +13,20 @@ directoryNames = directoryNames.filter((value) => !value.startsWith('.'));
 
 for (const _directoryName of directoryNames) {
 
-    loadQueue.push(buildFile(userApplicationsPath, _directoryName, UserApplication));
+    loadQueue.push((async () => {
+
+        const filePath = path.join(userApplicationsPath, _directoryName, 'main.js');
+
+        const fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
+                                                           : await import(filePath);
+
+        return new UserApplication({
+
+            ...fileContent.default,
+
+            name: _directoryName
+        });
+    })());
 };
 
 let loadedFiles = await Promise.all(loadQueue);
