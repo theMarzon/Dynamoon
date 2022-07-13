@@ -1,8 +1,10 @@
 import fs from 'node:fs/promises';
 
-import loadUserApplication from '../../utils/loaders/applications/loadUserApplication.js';
+import buildFile from '../../utils/buildFile.js';
 
 import { userApplicationsPath } from '../../managers/directoriesPath.js';
+
+import UserApplication from '../../structures/Application/UserApplication.js';
 
 const loadQueue = [];
 
@@ -12,7 +14,7 @@ directoryNames = directoryNames.filter((value) => !value.startsWith('.'));
 
 for (const _directoryName of directoryNames) {
 
-    loadQueue.push(loadUserApplication(_directoryName));
+    loadQueue.push(buildFile(userApplicationsPath, _directoryName, UserApplication));
 };
 
 let loadedFiles = await Promise.all(loadQueue);

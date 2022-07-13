@@ -1,8 +1,10 @@
 import fs from 'node:fs/promises';
 
-import loadEvent from '../utils/loaders/loadEvent.js';
+import buildFile from '../utils/buildFile.js';
 
 import { eventsPath } from '../managers/directoriesPath.js';
+
+import Event from '../structures/Event.js';
 
 const loadQueue = [];
 
@@ -12,7 +14,7 @@ directoryNames = directoryNames.filter((value) => !value.startsWith('.'));
 
 for (const _directoryName of directoryNames) {
 
-    loadQueue.push(loadEvent(_directoryName));
+    loadQueue.push(buildFile(eventsPath, _directoryName, Event));
 };
 
 let loadedFiles = await Promise.all(loadQueue);
