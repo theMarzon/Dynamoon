@@ -1,5 +1,6 @@
-import discord from 'discord.js';
 import dotenv  from 'dotenv';
+
+import { Client } from 'discord.js';
 
 import usedIntents   from './source/framework/groupers/usedIntents.js';
 import usedPartials  from './source/framework/groupers/usedPartials.js';
@@ -9,7 +10,7 @@ import executeEvents from './source/framework/managers/executeEvents.js';
 dotenv.config();
 
 // Crea el cliente
-const client = new discord.Client({
+const client = new Client({
 
     intents:  usedIntents,
     partials: usedPartials,

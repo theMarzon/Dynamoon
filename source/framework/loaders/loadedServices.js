@@ -1,4 +1,4 @@
-import fsp from 'node:fs/promises';
+import { readdir as readDirectory } from 'node:fs/promises';
 
 import importFile from '../utils/importFile.js';
 
@@ -6,11 +6,11 @@ import { servicesPath } from '../managers/directoriesPath.js';
 
 import Service from '../structures/Service.js';
 
-let directoryFolders = await fsp.readdir(servicesPath);
+let directoryFolders = await readDirectory(servicesPath);
 
 directoryFolders = directoryFolders.filter((folder) => !folder.startsWith('.'));
 
-// Importa los archivos de forma paralela
+// Importa los archivos en paralelo
 let loadedFiles = await Promise.all(directoryFolders.map((folder) => importFile(servicesPath, folder, Service)));
 
 // Organiza los archivos por su prioridad

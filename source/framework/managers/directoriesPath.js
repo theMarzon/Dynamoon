@@ -1,14 +1,14 @@
-import path from 'node:path';
+import { join as createPath } from 'node:path';
 
 import verifyDirectory from '../utils/verifyDirectory.js';
 
-export const eventsPath       = path.join(process.cwd(), 'source', 'events');
-export const servicesPath     = path.join(process.cwd(), 'source', 'services');
-export const applicationsPath = path.join(process.cwd(), 'source', 'applications');
+export const eventsPath       = createPath(process.cwd(), 'source', 'events');
+export const servicesPath     = createPath(process.cwd(), 'source', 'services');
+export const applicationsPath = createPath(process.cwd(), 'source', 'applications');
 
-export const slashApplicationsPath   = path.join(applicationsPath, 'slash');
-export const userApplicationsPath    = path.join(applicationsPath, 'user');
-export const messageApplicationsPath = path.join(applicationsPath, 'message');
+export const slashApplicationsPath   = createPath(applicationsPath, 'slash');
+export const userApplicationsPath    = createPath(applicationsPath, 'user');
+export const messageApplicationsPath = createPath(applicationsPath, 'message');
 
 // Crea los directorios en paralelo que no existan
 await Promise.all([
