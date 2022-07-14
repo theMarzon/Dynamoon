@@ -9,7 +9,7 @@
     "fix": "eslint . --fix --ext .js"
   },
   "dependencies": {
-    "discord.js": "14.0.0-dev.1657671090-1ed605e",
+    "discord.js": "14.0.0-dev.1657757514-fe34f48",
     "dotenv": "^16.0.1"
   },
   "devDependencies": {

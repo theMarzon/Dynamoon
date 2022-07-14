@@ -85,6 +85,6 @@ export default class {
         this.schema.description_localizations = deleteProperty(this.display.description, 'default');
 
         // Elimina los partials duplicados
-        this.partials = this.partials.filter((value, index, array) => array.indexOf(value) === index);
+        this.partials = this.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
     };
 };
