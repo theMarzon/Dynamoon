@@ -1,8 +1,8 @@
 import path from 'node:path';
 
-export default async (directoryPath, folderName, Structure) => {
+export default async (directory, folder, Structure) => {
 
-    const filePath = path.join(directoryPath, folderName, 'main.js');
+    const filePath = path.join(directory, folder, 'main.js');
 
     const fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
                                                        : await import(filePath);
@@ -11,6 +11,6 @@ export default async (directoryPath, folderName, Structure) => {
 
         ...fileContent.default,
 
-        name: folderName
+        name: folder
     });
 };

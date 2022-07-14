@@ -1,11 +1,11 @@
 import fsp from 'node:fs/promises';
 
-export default async (directoryPath) => {
+export default async (directory) => {
 
     return fsp
-        .access(directoryPath)
+        .access(directory)
         .catch((error) => {
 
-            if (error.code === 'ENOENT') fsp.mkdir(directoryPath, { recursive: true });
+            if (error.code === 'ENOENT') fsp.mkdir(directory, { recursive: true });
         });
 };

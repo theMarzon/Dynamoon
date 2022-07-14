@@ -8,12 +8,12 @@ const groupedEvents = {};
 
 for (const _loadedEvent of loadedEvents) {
 
-    const serviceFiles = loadedServices.filter((val) => val.events[_loadedEvent.name]);
+    const serviceFiles = loadedServices.filter((file) => file.events[_loadedEvent.name]);
 
     const applicationFiles = loadedSlashApplications
         .concat(loadedUserApplications)
         .concat(loadedMessageApplications)
-        .filter((val) => val.events[_loadedEvent.name]);
+        .filter((file) => file.events[_loadedEvent.name]);
 
     const allFiles = serviceFiles.concat(applicationFiles);
 

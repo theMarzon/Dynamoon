@@ -21,6 +21,6 @@ export default class {
         this.events = content.events ?? this.events;
 
         // Elimina los partials duplicados
-        this.partials = this.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
+        this.partials = this.partials.filter((partial, index, array) => array.indexOf(partial) === index);
     };
 };

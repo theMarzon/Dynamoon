@@ -8,10 +8,10 @@ import MessageApplication from '../../structures/Application/MessageApplication.
 
 let directoryFolders = await fsp.readdir(messageApplicationsPath);
 
-directoryFolders = directoryFolders.filter((val) => !val.startsWith('.'));
+directoryFolders = directoryFolders.filter((folder) => !folder.startsWith('.'));
 
 // Importa los archivos de forma paralela
-let loadedFiles = await Promise.all(directoryFolders.map((val) => importFile(messageApplicationsPath, val, MessageApplication)));
+let loadedFiles = await Promise.all(directoryFolders.map((folder) => importFile(messageApplicationsPath, folder, MessageApplication)));
 
 // Organiza los archivos por su prioridad
 loadedFiles = loadedFiles.sort((a, b) => b.priority - a.priority);

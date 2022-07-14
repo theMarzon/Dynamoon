@@ -21,6 +21,6 @@ export default class {
         this.execute = content.execute ?? this.execute;
 
         // Elimina los partials duplicados
-        this.partials = this.partials.filter((val, ind, arr) => arr.indexOf(val) === ind);
+        this.partials = this.partials.filter((partial, index, array) => array.indexOf(partial) === index);
     };
 };
