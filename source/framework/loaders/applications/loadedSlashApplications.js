@@ -1,6 +1,5 @@
 import { readdir as readDirectory } from 'node:fs/promises';
-
-import importFile from '../../utils/importFile.js';
+import { join    as createPath    } from 'node:path';
 
 import { slashApplicationsPath } from '../../managers/directoriesPath.js';
 
@@ -11,7 +10,20 @@ let directoryFolders = await readDirectory(slashApplicationsPath);
 directoryFolders = directoryFolders.filter((folder) => !folder.startsWith('.'));
 
 // Importa los archivos en paralelo
-let loadedFiles = await Promise.all(directoryFolders.map((folder) => importFile(slashApplicationsPath, folder, SlashApplication)));
+let loadedFiles = await Promise.all(directoryFolders.map(async (folder) => {
+
+    const filePath = createPath(slashApplicationsPath, folder, 'main.js');
+
+    const fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
+                                                       : await import(filePath);
+
+    return new SlashApplication({
+
+        ...fileContent.default,
+
+        name: folder
+    });
+}));
 
 // Organiza los archivos por su prioridad
 loadedFiles = loadedFiles.sort((a, b) => b.priority - a.priority);

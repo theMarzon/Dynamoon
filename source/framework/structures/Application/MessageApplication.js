@@ -4,12 +4,12 @@ import deleteProperty from '../../utils/deleteProperty.js';
 
 export default class {
 
-    type = discord.ApplicationCommandType.Message;
-
     name = 'undefined';
 
     priority = 0;
     intents  = 0;
+
+    type = discord.ApplicationCommandType.Message;
 
     partials = [];
 

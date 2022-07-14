@@ -4,12 +4,12 @@ import deleteProperty from '../../utils/deleteProperty.js';
 
 export default class {
 
-    type = discord.ApplicationCommandType.User;
-
     name = 'undefined';
 
     priority = 0;
     intents  = 0;
+
+    type = discord.ApplicationCommandType.User;
 
     partials = [];
 
@@ -43,7 +43,6 @@ export default class {
     constructor (content) {
 
         this.name = content.name ?? this.name;
-        this.dm   = content.dm   ?? this.dm;
 
         this.priority = content.priority ?? this.priority;
         this.intents  = content.intents  ?? this.intents;

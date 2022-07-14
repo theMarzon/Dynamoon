@@ -5,9 +5,9 @@ export default class {
     priority = 0;
     intents  = 0;
 
-    partials = [];
+    execute = () => {};
 
-    execute = function () {};
+    partials = [];
 
     constructor (content) {
 
