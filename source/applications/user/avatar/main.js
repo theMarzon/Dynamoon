@@ -26,9 +26,9 @@ export default {
 
                     event.reply({
 
-                        ephemeral: true,
+                        content: 'No tienes un avatar en tu **Perfil de usuario**',
 
-                        content: 'No tienes un avatar en tu **Perfil de usuario**'
+                        ephemeral: true
                     });
 
                     return;
