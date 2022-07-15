@@ -1,9 +1,9 @@
 import { readdir as readDirectory } from 'node:fs/promises';
 import { join    as createPath    } from 'node:path';
 
-import { userApplicationsPath } from '../../managers/directoriesPath.js';
+import { userApplicationsPath } from '../managers/directoriesPath.js';
 
-import UserApplication from '../../structures/Application/UserApplication.js';
+import UserApplication from '../structures/UserApplication.js';
 
 let directoryFolders = await readDirectory(userApplicationsPath);
 

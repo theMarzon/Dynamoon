@@ -1,9 +1,9 @@
 import { readdir as readDirectory } from 'node:fs/promises';
 import { join    as createPath    } from 'node:path';
 
-import { messageApplicationsPath } from '../../managers/directoriesPath.js';
+import { messageApplicationsPath } from '../managers/directoriesPath.js';
 
-import MessageApplication from '../../structures/Application/MessageApplication.js';
+import MessageApplication from '../structures/MessageApplication.js';
 
 let directoryFolders = await readDirectory(messageApplicationsPath);
 
