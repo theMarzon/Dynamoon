@@ -1,8 +1,12 @@
 import { Client } from 'discord.js';
 
-import loadedEvents from '../loaders/loadedEvents.js';
-import usedEvents   from '../groupers/usedEvents.js';
-import usedIntents  from '../groupers/usedIntents.js';
+import loadedEvents              from '../loaders/loadedEvents.js';
+import loadedServices            from '../loaders/loadedServices.js';
+import loadedChatApplications    from '../loaders/applications/loadedChatApplications.js';
+import loadedUserApplications    from '../loaders/applications/loadedUserApplications.js';
+import loadedMessageApplications from '../loaders/applications/loadedMessageApplications.js';
+import usedEvents                from '../groupers/usedEvents.js';
+import usedIntents               from '../groupers/usedIntents.js';
 
 import {
 
@@ -67,14 +71,14 @@ export default class extends Client {
 
                 loaded: {
 
-                    events: loadedEvents,
-                    // services: loadedServices,
+                    events:   loadedEvents,
+                    services: loadedServices,
 
                     applications: {
 
-                        // chat:    loadedChatApplications,
-                        // user:    loadedUserApplications,
-                        // message: loadedMessageApplications
+                        chat:    loadedChatApplications,
+                        user:    loadedUserApplications,
+                        message: loadedMessageApplications
                     }
                 },
 
