@@ -1,0 +1,73 @@
+parser: '@typescript-eslint/parser'
+
+root: true
+
+env:
+
+  es2022: true
+  node:   true
+
+parserOptions:
+
+  ecmaVersion: 'latest'
+  sourceType:  'module'
+  
+extends:
+
+  - 'standard'
+
+plugins:
+
+  - '@typescript-eslint'
+
+rules:
+
+  multiline-ternary:       'off'
+  padded-blocks:           'off'
+  no-mixed-operators:      'off'
+  no-case-declarations:    'off'
+  no-irregular-whitespace: 'off'
+  object-property-newline: 'off'
+  no-multi-spaces:         'off'
+  no-useless-constructor:  'off'
+
+  operator-linebreak:
+
+    - 'error'
+    - 'before'
+
+  array-bracket-spacing:
+
+    - 'error'
+    - 'always'
+
+  semi:
+
+    - 'error'
+    - 'always'
+
+  key-spacing:
+  
+    - 'error'
+
+    - afterColon: true
+
+      align: 'value'
+
+  indent:
+
+    - 'error'
+
+    - 4
+
+    - VariableDeclarator: 'first'
+      ArrayExpression:    'first'
+      ObjectExpression:   'first'
+      ImportDeclaration:  'first'
+
+      SwitchCase:       1
+      MemberExpression: 1
+
+      ignoredNodes:
+
+        - 'ConditionalExpression'

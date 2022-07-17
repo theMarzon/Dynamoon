@@ -1,0 +1,10 @@
+# Directories
+node_modules/
+build/
+source/applications/
+source/events/
+source/services/
+
+# Extensions
+*.log
+*.env
