@@ -9,6 +9,6 @@ export default async (directory: string) => {
     return verifyAccess(directory)
         .catch((error) => {
 
-            if (error.code === 'ENOENT') createDirectory(directory, { recursive: true });
+            if (error.code === 'ENOENT') createDirectory(directory);
         });
 };

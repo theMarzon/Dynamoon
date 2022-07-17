@@ -15,6 +15,9 @@ await Promise.all([
 
     verifyDirectory(eventsPath),
     verifyDirectory(servicesPath),
+
+    await verifyDirectory(applicationsPath),
+
     verifyDirectory(chatApplicationsPath),
     verifyDirectory(userApplicationsPath),
     verifyDirectory(messageApplicationsPath)

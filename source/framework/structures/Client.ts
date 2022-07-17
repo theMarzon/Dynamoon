@@ -34,13 +34,6 @@ export default class extends Client {
             banner: 'https://i.ibb.co/wNtKXXw/banner.png',
             icon:   'https://i.ibb.co/sW9cJx4/icon.png',
             logo:   'https://i.ibb.co/CKz4kQQ/logo.png'
-        },
-
-        loadeds: {
-
-            events:       [],
-            services:     [],
-            applications: []
         }
     };
 
