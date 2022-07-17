@@ -4,7 +4,7 @@ import {
     mkdir  as createDirectory
 } from 'node:fs/promises';
 
-export default async (directory) => {
+export default async (directory: string) => {
 
     return verifyAccess(directory)
         .catch((error) => {

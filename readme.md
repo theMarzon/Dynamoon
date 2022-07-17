@@ -57,13 +57,13 @@
 
 - Abra el archivo `main.js` y exporte un objeto vacío:
 
-    ```mjs
+    ```js
     export default {};
     ```
 
 - Establezca la prioridad de ejecución:
 
-    ```mjs
+    ```js
     export default {
 
         priority: 0
@@ -72,7 +72,7 @@
 
 - Establezca los `intents` necesarios:
 
-    ```mjs
+    ```js
     export default {
 
         priority: 0,
@@ -82,7 +82,7 @@
 
 - Establezca los `partials` necesarios:
 
-    ```mjs
+    ```js
     export default {
 
         priority: 0,
@@ -94,7 +94,7 @@
 
 - Establezca la función que se ejecutara al ejecutarse el proyecto:
 
-    ```mjs
+    ```js
     export default {
 
         priority: 0,
@@ -121,13 +121,13 @@
 
 - Abra el archivo `main.js` y exporte un objeto vacío:
 
-    ```mjs
+    ```js
     export default {};
     ```
 
 - Establezca la prioridad de ejecución:
 
-    ```mjs
+    ```js
     export default {
 
         priority: 0
@@ -136,7 +136,7 @@
 
 - Establezca los `intents` necesarios:
 
-    ```mjs
+    ```js
     export default {
 
         priority: 0,
@@ -146,7 +146,7 @@
 
 - Establezca los `partials` necesarios:
 
-    ```mjs
+    ```js
     export default {
 
         priority: 0,
@@ -158,7 +158,7 @@
 
 - Establezca un objeto llamado `events` que contendrá los eventos a utilizar:
 
-    ```mjs
+    ```js
     export default {
 
         priority: 0,
@@ -171,7 +171,7 @@
 
 - Establezca en el objeto `events`, un arreglo con el nombre del evento a utilizarse y que contenga las funciones a ejecutarse cuando este evento se active:
 
-    ```mjs
+    ```js
     export default {
 
         priority: 0,
@@ -196,21 +196,21 @@
 
 [⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
 
-- Cree una carpeta en `source ➡ applications ➡ slash` con el nombre de la aplicación
+- Cree una carpeta en `source ➡ applications ➡ chat` con el nombre de la aplicación
 
-    > Si la carpeta `source ➡ applications ➡ slash` no existe, créela
+    > Si la carpeta `source ➡ applications ➡ chat` no existe, créela
 
 - Cree el archivo `main.js` en la raíz de la carpeta de la aplicación
 
 - Abra el archivo `main.js` y exporte un objeto vacío:
 
-    ```mjs
+    ```js
     export default {};
     ```
 
 - Establecemos:
 
-    ```mjs
+    ```js
     export default {
 
         display: {}
@@ -219,7 +219,7 @@
 
 - Establecemos:
 
-    ```mjs
+    ```js
     export default {
 
         display: {
@@ -235,7 +235,7 @@
 
 - Establecemos:
 
-    ```mjs
+    ```js
     export default {
 
         display: {
@@ -259,7 +259,7 @@
 
 - Establecemos la descripción de la aplicación según la localidad _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -280,7 +280,7 @@
 
 - Establecemos los permisos necesarios para ejecutar la aplicación _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -307,7 +307,7 @@
 
 - Establecemos las opciones de la aplicación _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -336,7 +336,7 @@
 
 - Establecemos la prioridad de ejecución a nuestra aplicación _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -367,7 +367,7 @@
 
 - Establecemos si la aplicación puede ejecutarse en DM _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -400,7 +400,7 @@
 
 - Establecemos los `intents` que sean necesarios _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -435,7 +435,7 @@
 
 - Establecemos los `partials` que sean necesarios _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -471,7 +471,7 @@
 
 - Establecemos un objeto que contendrá los eventos necesarios _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -528,13 +528,13 @@
 
 - Exportamos un objeto vacío:
 
-    ```mjs
+    ```js
     export default {};
     ```
 
 - Establecemos el nombre de la aplicación según la localidad _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -547,7 +547,7 @@
 
 - Establecemos los permisos necesarios para ejecutar la aplicación _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -566,7 +566,7 @@
 
 - Establecemos la prioridad de ejecución a nuestra aplicación _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -587,7 +587,7 @@
 
 - Establecemos si la aplicación puede ejecutarse en DM _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -610,7 +610,7 @@
 
 - Establecemos los `intents` que sean necesarios _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -635,7 +635,7 @@
 
 - Establecemos los `partials` que sean necesarios _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -661,7 +661,7 @@
 
 - Establecemos un objeto que contendrá los eventos necesarios _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -708,13 +708,13 @@
 
 - Exportamos un objeto vacío:
 
-    ```mjs
+    ```js
     export default {};
     ```
 
 - Establecemos el nombre de la aplicación según la localidad _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -727,7 +727,7 @@
 
 - Establecemos los permisos necesarios para ejecutar la aplicación _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -746,7 +746,7 @@
 
 - Establecemos la prioridad de ejecución a nuestra aplicación _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -767,7 +767,7 @@
 
 - Establecemos si la aplicación puede ejecutarse en DM _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -790,7 +790,7 @@
 
 - Establecemos los `intents` que sean necesarios _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -815,7 +815,7 @@
 
 - Establecemos los `partials` que sean necesarios _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {
@@ -841,7 +841,7 @@
 
 - Establecemos un objeto que contendrá los eventos necesarios _(Esto es opcional)_:
 
-    ```mjs
+    ```js
     export default {
 
         name: {

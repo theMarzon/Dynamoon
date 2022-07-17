@@ -1,23 +1,23 @@
 import { readdir as readDirectory } from 'node:fs/promises';
 import { join    as createPath    } from 'node:path';
 
-import { eventsPath } from '../managers/directoriesPath.js';
+import { chatApplicationsPath } from '../../directoriesPath.js';
 
-import Event from '../structures/Event.js';
+import ChatApplication from '../../structures/Applications/ChatApplication.js';
 
-let directoryFolders = await readDirectory(eventsPath);
+let directoryFolders = await readDirectory(chatApplicationsPath);
 
-directoryFolders = directoryFolders.filter((folder) => !folder.startsWith('.'));
+directoryFolders = directoryFolders.filter((name) => !name.startsWith('.'));
 
 // Importa los archivos en paralelo
 let loadedFiles = await Promise.all(directoryFolders.map(async (folder) => {
 
-    const filePath = createPath(eventsPath, folder, 'main.js');
+    const filePath = createPath(chatApplicationsPath, folder, 'main.js');
 
     const fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
                                                        : await import(filePath);
 
-    return new Event({
+    return new ChatApplication({
 
         ...fileContent.default,
 

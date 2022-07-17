@@ -1,23 +1,23 @@
 import { readdir as readDirectory } from 'node:fs/promises';
 import { join    as createPath    } from 'node:path';
 
-import { servicesPath } from '../managers/directoriesPath.js';
+import { messageApplicationsPath } from '../../directoriesPath.js';
 
-import Service from '../structures/Service.js';
+import MessageApplication from '../../structures/Applications/MessageApplication.js';
 
-let directoryFolders = await readDirectory(servicesPath);
+let directoryFolders = await readDirectory(messageApplicationsPath);
 
-directoryFolders = directoryFolders.filter((folder) => !folder.startsWith('.'));
+directoryFolders = directoryFolders.filter((name) => !name.startsWith('.'));
 
 // Importa los archivos en paralelo
 let loadedFiles = await Promise.all(directoryFolders.map(async (folder) => {
 
-    const filePath = createPath(servicesPath, folder, 'main.js');
+    const filePath = createPath(messageApplicationsPath, folder, 'main.js');
 
     const fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
                                                        : await import(filePath);
 
-    return new Service({
+    return new MessageApplication({
 
         ...fileContent.default,
 

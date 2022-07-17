@@ -6,11 +6,11 @@ export default {
 
             ({ client, loaded }) => {
 
-                const slashApplications   = loaded.applications.slash.map((file) => file.schema);
+                const chatApplications    = loaded.applications.chat.map((file) => file.schema);
                 const userApplications    = loaded.applications.user.map((file) => file.schema);
                 const messageApplications = loaded.applications.message.map((file) => file.schema);
 
-                const allApplications = slashApplications
+                const allApplications = chatApplications
                     .concat(userApplications)
                     .concat(messageApplications);
 
