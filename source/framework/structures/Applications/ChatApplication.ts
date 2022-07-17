@@ -21,76 +21,14 @@ export default class {
 
         options: discord.ApplicationCommandOptionData[]
 
-        name: {
+        name: Partial<Record<keyof typeof discord.Locale, string>> & {
 
             default: string
-
-            [discord.Locale.Bulgarian]?:    string
-            [discord.Locale.ChineseCN]?:    string
-            [discord.Locale.ChineseTW]?:    string
-            [discord.Locale.Croatian]?:     string
-            [discord.Locale.Czech]?:        string
-            [discord.Locale.Danish]?:       string
-            [discord.Locale.Dutch]?:        string
-            [discord.Locale.EnglishGB]?:    string
-            [discord.Locale.EnglishUS]?:    string
-            [discord.Locale.Finnish]?:      string
-            [discord.Locale.French]?:       string
-            [discord.Locale.German]?:       string
-            [discord.Locale.Greek]?:        string
-            [discord.Locale.Hindi]?:        string
-            [discord.Locale.Hungarian]?:    string
-            [discord.Locale.Italian]?:      string
-            [discord.Locale.Japanese]?:     string
-            [discord.Locale.Korean]?:       string
-            [discord.Locale.Lithuanian]?:   string
-            [discord.Locale.Norwegian]?:    string
-            [discord.Locale.Polish]?:       string
-            [discord.Locale.PortugueseBR]?: string
-            [discord.Locale.Romanian]?:     string
-            [discord.Locale.Russian]?:      string
-            [discord.Locale.SpanishES]?:    string
-            [discord.Locale.Swedish]?:      string
-            [discord.Locale.Thai]?:         string
-            [discord.Locale.Turkish]?:      string
-            [discord.Locale.Ukrainian]?:    string
-            [discord.Locale.Vietnamese]?:   string
         }
 
-        description: {
+        description: Partial<Record<keyof typeof discord.Locale, string>> & {
 
             default: string
-
-            [discord.Locale.Bulgarian]?:    string
-            [discord.Locale.ChineseCN]?:    string
-            [discord.Locale.ChineseTW]?:    string
-            [discord.Locale.Croatian]?:     string
-            [discord.Locale.Czech]?:        string
-            [discord.Locale.Danish]?:       string
-            [discord.Locale.Dutch]?:        string
-            [discord.Locale.EnglishGB]?:    string
-            [discord.Locale.EnglishUS]?:    string
-            [discord.Locale.Finnish]?:      string
-            [discord.Locale.French]?:       string
-            [discord.Locale.German]?:       string
-            [discord.Locale.Greek]?:        string
-            [discord.Locale.Hindi]?:        string
-            [discord.Locale.Hungarian]?:    string
-            [discord.Locale.Italian]?:      string
-            [discord.Locale.Japanese]?:     string
-            [discord.Locale.Korean]?:       string
-            [discord.Locale.Lithuanian]?:   string
-            [discord.Locale.Norwegian]?:    string
-            [discord.Locale.Polish]?:       string
-            [discord.Locale.PortugueseBR]?: string
-            [discord.Locale.Romanian]?:     string
-            [discord.Locale.Russian]?:      string
-            [discord.Locale.SpanishES]?:    string
-            [discord.Locale.Swedish]?:      string
-            [discord.Locale.Thai]?:         string
-            [discord.Locale.Turkish]?:      string
-            [discord.Locale.Ukrainian]?:    string
-            [discord.Locale.Vietnamese]?:   string
         }
 
         permissions: {
@@ -135,73 +73,8 @@ export default class {
         default_member_permissions: null | discord.PermissionFlags
         default_bot_permissions:    null | discord.PermissionFlags
 
-        name_localizations: {
-
-            [discord.Locale.Bulgarian]?:    string
-            [discord.Locale.ChineseCN]?:    string
-            [discord.Locale.ChineseTW]?:    string
-            [discord.Locale.Croatian]?:     string
-            [discord.Locale.Czech]?:        string
-            [discord.Locale.Danish]?:       string
-            [discord.Locale.Dutch]?:        string
-            [discord.Locale.EnglishGB]?:    string
-            [discord.Locale.EnglishUS]?:    string
-            [discord.Locale.Finnish]?:      string
-            [discord.Locale.French]?:       string
-            [discord.Locale.German]?:       string
-            [discord.Locale.Greek]?:        string
-            [discord.Locale.Hindi]?:        string
-            [discord.Locale.Hungarian]?:    string
-            [discord.Locale.Italian]?:      string
-            [discord.Locale.Japanese]?:     string
-            [discord.Locale.Korean]?:       string
-            [discord.Locale.Lithuanian]?:   string
-            [discord.Locale.Norwegian]?:    string
-            [discord.Locale.Polish]?:       string
-            [discord.Locale.PortugueseBR]?: string
-            [discord.Locale.Romanian]?:     string
-            [discord.Locale.Russian]?:      string
-            [discord.Locale.SpanishES]?:    string
-            [discord.Locale.Swedish]?:      string
-            [discord.Locale.Thai]?:         string
-            [discord.Locale.Turkish]?:      string
-            [discord.Locale.Ukrainian]?:    string
-            [discord.Locale.Vietnamese]?:   string
-        }
-
-        description_localizations: {
-
-            [discord.Locale.Bulgarian]?:    string
-            [discord.Locale.ChineseCN]?:    string
-            [discord.Locale.ChineseTW]?:    string
-            [discord.Locale.Croatian]?:     string
-            [discord.Locale.Czech]?:        string
-            [discord.Locale.Danish]?:       string
-            [discord.Locale.Dutch]?:        string
-            [discord.Locale.EnglishGB]?:    string
-            [discord.Locale.EnglishUS]?:    string
-            [discord.Locale.Finnish]?:      string
-            [discord.Locale.French]?:       string
-            [discord.Locale.German]?:       string
-            [discord.Locale.Greek]?:        string
-            [discord.Locale.Hindi]?:        string
-            [discord.Locale.Hungarian]?:    string
-            [discord.Locale.Italian]?:      string
-            [discord.Locale.Japanese]?:     string
-            [discord.Locale.Korean]?:       string
-            [discord.Locale.Lithuanian]?:   string
-            [discord.Locale.Norwegian]?:    string
-            [discord.Locale.Polish]?:       string
-            [discord.Locale.PortugueseBR]?: string
-            [discord.Locale.Romanian]?:     string
-            [discord.Locale.Russian]?:      string
-            [discord.Locale.SpanishES]?:    string
-            [discord.Locale.Swedish]?:      string
-            [discord.Locale.Thai]?:         string
-            [discord.Locale.Turkish]?:      string
-            [discord.Locale.Ukrainian]?:    string
-            [discord.Locale.Vietnamese]?:   string
-        }
+        name_localizations:        Partial<Record<keyof typeof discord.Locale, string>>
+        description_localizations: Partial<Record<keyof typeof discord.Locale, string>>
     } = {
 
             type:                       this.type,
