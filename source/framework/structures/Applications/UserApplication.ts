@@ -1,6 +1,6 @@
 import discord from 'discord.js';
 
-import { UserApplicationOptions } from '../../types/Applications.js';
+import { UserApplicationOptions } from '../../types/Application.js';
 
 import deleteProperty from '../../utils/deleteProperty.js';
 

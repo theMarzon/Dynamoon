@@ -1,6 +1,6 @@
 import discord from 'discord.js';
 
-import { MessageApplicationOptions } from '../../types/Applications.js';
+import { MessageApplicationOptions } from '../../types/Application.js';
 
 import deleteProperty from '../../utils/deleteProperty.js';
 
