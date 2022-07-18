@@ -3,7 +3,7 @@ export type ContentOption = {
     [key: string | number]: any
 };
 
-export default <T extends ContentOption, U extends string | number> (content: T, key: U): Omit<T, U> => {
+export default <P extends ContentOption, S extends string | number> (content: P, key: S): Omit<P, S> => {
 
     content = { ...content };
 

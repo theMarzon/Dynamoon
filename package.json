@@ -3,16 +3,19 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "test": "tsc --build ./ && node ./build/index.js",
-    "build": "tsc --build ./",
-    "check": "eslint ./ --ext .ts",
-    "fix": "eslint ./ --fix --ext .ts"
+    "test": "yarn run build && yarn run start",
+    "start": "node ./build/index.js",
+    "build": "swc --config-file ./.swcrc.json ./source/ -d ./build/",
+    "check": "eslint ./ --ext .js,.ts",
+    "fix": "eslint ./ --fix --ext .js,.ts"
   },
   "dependencies": {
     "discord.js": "^14.0.1",
     "dotenv": "^16.0.1"
   },
   "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.215",
     "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "eslint": "^8.0.1",
