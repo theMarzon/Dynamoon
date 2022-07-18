@@ -76,7 +76,16 @@ export interface ChatApplicationData {
 
         type: discord.ApplicationCommandType
 
-        options: discord.ApplicationCommandOptionData[]
+    display: ChatApplicatioDisplayData
+    schema:  ChatApplicatioSchemaData
+};
+
+export type ChatApplicationOptions = {
+
+    name: string
+
+    priority?: number
+    intents?:  number
 
         default_member_permissions: null | discord.PermissionFlags
         default_bot_permissions:    null | discord.PermissionFlags
