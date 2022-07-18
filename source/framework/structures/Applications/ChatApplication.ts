@@ -2,9 +2,11 @@ import discord from 'discord.js';
 
 import {
 
+    ChatApplicationDisplayData,
+    ChatApplicationSchemaData,
     ChatApplicationData,
     ChatApplicationOptions
-} from '../../types/Applications.js';
+} from '../../types/Applications/ChatApplications.js';
 
 import deleteProperty from '../../utils/deleteProperty.js';
 
@@ -19,7 +21,7 @@ export default class implements ChatApplicationData {
 
     type = discord.ApplicationCommandType.ChatInput;
 
-    display = {
+    display: ChatApplicationDisplayData = {
 
         dm: true,
 
@@ -42,7 +44,7 @@ export default class implements ChatApplicationData {
         }
     };
 
-    schema = {
+    schema: ChatApplicationSchemaData = {
 
         type:                       this.type,
         options:                    this.display.options,
@@ -68,22 +70,16 @@ export default class implements ChatApplicationData {
         // Visualizacion
         this.display.dm = options.display?.dm ?? this.display.dm;
 
-        // @ts-ignore
         this.display.options = options.display?.options ?? this.display.options;
 
-        // @ts-ignore
         this.display.name         = options.display?.name          ?? this.display.name;
         this.display.name.default = options.display?.name?.default ?? this.display.name.default;
 
-        // @ts-ignore
         this.display.description         = options.display?.description          ?? this.display.description;
         this.display.description.default = options.display?.description?.default ?? this.display.description.default;
 
-        // @ts-ignore
         this.display.permissions.member = options.display?.permissions?.member ?? this.display.permissions.member;
-
-        // @ts-ignore
-        this.display.permissions.bot = options.display?.permissions?.bot ?? this.display.permissions.bot;
+        this.display.permissions.bot    = options.display?.permissions?.bot    ?? this.display.permissions.bot;
 
         // Esquema
         this.schema.options                    = this.display.options;

@@ -2,9 +2,11 @@ import discord from 'discord.js';
 
 import {
 
+    MessageApplicationDisplayData,
+    MessageApplicationSchemaData,
     MessageApplicationData,
     MessageApplicationOptions
-} from '../../types/Applications.js';
+} from '../../types/Applications/MessageApplications.js';
 
 import deleteProperty from '../../utils/deleteProperty.js';
 
@@ -19,7 +21,7 @@ export default class implements MessageApplicationData {
 
     type = discord.ApplicationCommandType.Message;
 
-    display = {
+    display: MessageApplicationDisplayData = {
 
         dm: true,
 
@@ -35,7 +37,7 @@ export default class implements MessageApplicationData {
         }
     };
 
-    schema = {
+    schema: MessageApplicationSchemaData = {
 
         type:                       this.type,
         name:                       this.display.name.default,
@@ -58,15 +60,11 @@ export default class implements MessageApplicationData {
         // Visualizacion
         this.display.dm = options.display?.dm ?? this.display.dm;
 
-        // @ts-ignore
         this.display.name         = options.display?.name          ?? this.display.name;
         this.display.name.default = options.display?.name?.default ?? this.display.name.default;
 
-        // @ts-ignore
         this.display.permissions.member = options.display?.permissions?.member ?? this.display.permissions.member;
-
-        // @ts-ignore
-        this.display.permissions.bot = options.display?.permissions?.bot ?? this.display.permissions.bot;
+        this.display.permissions.bot    = options.display?.permissions?.bot    ?? this.display.permissions.bot;
 
         // Esquema
         this.schema.name                       = this.display.name.default;
