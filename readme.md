@@ -80,18 +80,6 @@
     };
     ```
 
-- Establezca los `partials` necesarios:
-
-    ```js
-    export default {
-
-        priority: 0,
-        intents:  0,
-
-        partials: []
-    };
-    ```
-
 - Establezca la función que se ejecutara al ejecutarse el proyecto:
 
     ```js
@@ -99,8 +87,6 @@
 
         priority: 0,
         intents:  0,
-
-        partials: [],
 
         execute: ({ client, me, loaded, used, directories }) => {
 
@@ -144,18 +130,6 @@
     };
     ```
 
-- Establezca los `partials` necesarios:
-
-    ```js
-    export default {
-
-        priority: 0,
-        intents:  0,
-
-        partials: []
-    };
-    ```
-
 - Establezca un objeto llamado `events` que contendrá los eventos a utilizar:
 
     ```js
@@ -163,8 +137,6 @@
 
         priority: 0,
         intents:  0,
-
-        partials: [],
 
         events: {}
     };
@@ -176,8 +148,6 @@
 
         priority: 0,
         intents:  0,
-
-        partials: [],
 
         events: {
 

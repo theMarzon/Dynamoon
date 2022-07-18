@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 
-import Client from './source/framework/structures/Client.js';
+import Client from './framework/structures/Client.js';
 
 // Configura las variables de entorno
 dotenv.config();

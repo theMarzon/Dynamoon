@@ -1,13 +1,18 @@
-import { EventOptions } from '../types/Event.js';
+import {
 
-export default class {
+    EventData,
+    EventOptions
+} from '../types/Event.js';
+
+export default class implements EventData {
 
     name = 'undefined';
 
     priority = 0;
     intents  = 0;
 
-    execute = (options: any) => {};
+    // @ts-ignore
+    execute = () => {};
 
     constructor (content: EventOptions) {
 

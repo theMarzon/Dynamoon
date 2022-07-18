@@ -1,6 +1,10 @@
-import { ServiceOptions } from '../types/Service.js';
+import {
 
-export default class {
+    ServiceData,
+    ServiceOptions
+} from '../types/Service.js';
+
+export default class implements ServiceData {
 
     name = 'undefined';
 

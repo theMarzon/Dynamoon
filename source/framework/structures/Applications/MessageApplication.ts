@@ -1,10 +1,14 @@
 import discord from 'discord.js';
 
-import { MessageApplicationOptions } from '../../types/Application.js';
+import {
+
+    MessageApplicationData,
+    MessageApplicationOptions
+} from '../../types/Application.js';
 
 import deleteProperty from '../../utils/deleteProperty.js';
 
-export default class {
+export default class implements MessageApplicationData {
 
     name = 'undefined';
 
@@ -15,58 +19,32 @@ export default class {
 
     type = discord.ApplicationCommandType.Message;
 
-    display: {
+    display = {
 
-        dm: boolean
+        dm: true,
 
-        name: Partial<Record<keyof typeof discord.Locale, string>> & {
+        name: {
 
-            default: string
-        }
+            default: 'undefined'
+        },
 
         permissions: {
 
-            member: null | discord.PermissionFlags
-            bot:    null | discord.PermissionFlags
+            member: null,
+            bot:    null
         }
-    } = {
+    };
 
-            dm: true,
+    schema = {
 
-            name: {
+        type:                       this.type,
+        name:                       this.display.name.default,
+        default_member_permissions: this.display.permissions.member,
+        default_bot_permissions:    this.display.permissions.bot,
+        dm_permission:              this.display.dm,
 
-                default: 'undefined'
-            },
-
-            permissions: {
-
-                member: null,
-                bot:    null
-            }
-        };
-
-    schema: {
-
-        name: string
-
-        dm_permission: boolean
-
-        type: discord.ApplicationCommandType
-
-        default_member_permissions: null | discord.PermissionFlags
-        default_bot_permissions:    null | discord.PermissionFlags
-
-        name_localizations: Partial<Record<keyof typeof discord.Locale, string>>
-    } = {
-
-            type:                       this.type,
-            name:                       this.display.name.default,
-            default_member_permissions: this.display.permissions.member,
-            default_bot_permissions:    this.display.permissions.bot,
-            dm_permission:              this.display.dm,
-
-            name_localizations: {}
-        };
+        name_localizations: {}
+    };
 
     constructor (options: MessageApplicationOptions) {
 
@@ -80,10 +58,15 @@ export default class {
         // Visualizacion
         this.display.dm = options.display?.dm ?? this.display.dm;
 
+        // @ts-ignore
+        this.display.name         = options.display?.name          ?? this.display.name;
         this.display.name.default = options.display?.name?.default ?? this.display.name.default;
 
+        // @ts-ignore
         this.display.permissions.member = options.display?.permissions?.member ?? this.display.permissions.member;
-        this.display.permissions.bot    = options.display?.permissions?.bot    ?? this.display.permissions.bot;
+
+        // @ts-ignore
+        this.display.permissions.bot = options.display?.permissions?.bot ?? this.display.permissions.bot;
 
         // Esquema
         this.schema.name                       = this.display.name.default;

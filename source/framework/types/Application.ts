@@ -9,8 +9,6 @@ export type ChatApplicationOptions = {
 
     events?: object
 
-    type?: discord.ApplicationCommandType
-
     display?: {
 
         dm?: boolean
@@ -33,23 +31,58 @@ export type ChatApplicationOptions = {
             bot?:    null | discord.PermissionFlags
         }
     }
+};
 
-    schema?: {
+export interface ChatApplicationData {
 
-        name?:        string
-        description?: string
+    name: string
 
-        dm_permission?: boolean
+    priority: number
+    intents:  number
 
-        type?: discord.ApplicationCommandType
+    events: object
 
-        options?: discord.ApplicationCommandOptionData[]
+    type: discord.ApplicationCommandType
 
-        default_member_permissions?: null | discord.PermissionFlags
-        default_bot_permissions?:    null | discord.PermissionFlags
+    display: {
 
-        name_localizations?:        Partial<Record<keyof typeof discord.Locale, string>>
-        description_localizations?: Partial<Record<keyof typeof discord.Locale, string>>
+        dm: boolean
+
+        options: discord.ApplicationCommandOptionData[]
+
+        name: Partial<Record<keyof typeof discord.Locale, string>> & {
+
+            default: string
+        }
+
+        description: Partial<Record<keyof typeof discord.Locale, string>> & {
+
+            default: string
+        }
+
+        permissions: {
+
+            member: null | discord.PermissionFlags
+            bot:    null | discord.PermissionFlags
+        }
+    }
+
+    schema: {
+
+        name:        string
+        description: string
+
+        dm_permission: boolean
+
+        type: discord.ApplicationCommandType
+
+        options: discord.ApplicationCommandOptionData[]
+
+        default_member_permissions: null | discord.PermissionFlags
+        default_bot_permissions:    null | discord.PermissionFlags
+
+        name_localizations:        Partial<Record<keyof typeof discord.Locale, string>>
+        description_localizations: Partial<Record<keyof typeof discord.Locale, string>>
     }
 };
 
@@ -79,19 +112,47 @@ export type UserApplicationOptions = {
             bot?:    null | discord.PermissionFlags
         }
     }
+};
 
-    schema?: {
+export interface UserApplicationData {
 
-        name?: string
+    name: string
 
-        dm_permission?: boolean
+    priority: number
+    intents:  number
 
-        type?: discord.ApplicationCommandType
+    events: object
 
-        default_member_permissions?: null | discord.PermissionFlags
-        default_bot_permissions?:    null | discord.PermissionFlags
+    type: discord.ApplicationCommandType
 
-        name_localizations?: Partial<Record<keyof typeof discord.Locale, string>>
+    display: {
+
+        dm: boolean
+
+        name: Partial<Record<keyof typeof discord.Locale, string>> & {
+
+            default: string
+        }
+
+        permissions: {
+
+            member: null | discord.PermissionFlags
+            bot:    null | discord.PermissionFlags
+        }
+    }
+
+    schema: {
+
+        name: string
+
+        dm_permission: boolean
+
+        type: discord.ApplicationCommandType
+
+        default_member_permissions: null | discord.PermissionFlags
+        default_bot_permissions:    null | discord.PermissionFlags
+
+        name_localizations: Partial<Record<keyof typeof discord.Locale, string>>
     }
 };
 
@@ -121,21 +182,46 @@ export type MessageApplicationOptions = {
             bot?:    null | discord.PermissionFlags
         }
     }
+};
 
-    schema?: {
+export interface MessageApplicationData {
 
-        name?: string
+    name: string
 
-        dm_permission?: boolean
+    priority: number
+    intents:  number
 
-        type?: discord.ApplicationCommandType
+    events: object
 
-        default_member_permissions?: null | discord.PermissionFlags
-        default_bot_permissions?:    null | discord.PermissionFlags
+    type: discord.ApplicationCommandType
 
-        name_localizations?: Partial<Record<keyof typeof discord.Locale, string>> & {
+    display: {
 
-            default?: string
+        dm: boolean
+
+        name: Partial<Record<keyof typeof discord.Locale, string>> & {
+
+            default: string
         }
+
+        permissions: {
+
+            member: null | discord.PermissionFlags
+            bot:    null | discord.PermissionFlags
+        }
+    }
+
+    schema: {
+
+        name: string
+
+        dm_permission: boolean
+
+        type: discord.ApplicationCommandType
+
+        default_member_permissions: null | discord.PermissionFlags
+        default_bot_permissions:    null | discord.PermissionFlags
+
+        name_localizations: Partial<Record<keyof typeof discord.Locale, string>>
     }
 };

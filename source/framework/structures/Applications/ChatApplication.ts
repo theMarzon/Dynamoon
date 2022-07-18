@@ -1,10 +1,14 @@
 import discord from 'discord.js';
 
-import { ChatApplicationOptions } from '../../types/Application.js';
+import {
+
+    ChatApplicationData,
+    ChatApplicationOptions
+} from '../../types/Application.js';
 
 import deleteProperty from '../../utils/deleteProperty.js';
 
-export default class {
+export default class implements ChatApplicationData {
 
     name = 'undefined';
 
@@ -15,79 +19,42 @@ export default class {
 
     type = discord.ApplicationCommandType.ChatInput;
 
-    display: {
+    display = {
 
-        dm: boolean
+        dm: true,
 
-        options: discord.ApplicationCommandOptionData[]
+        options: [],
 
-        name: Partial<Record<keyof typeof discord.Locale, string>> & {
+        name: {
 
-            default: string
-        }
+            default: 'undefined'
+        },
 
-        description: Partial<Record<keyof typeof discord.Locale, string>> & {
+        description: {
 
-            default: string
-        }
+            default: 'Undefined'
+        },
 
         permissions: {
 
-            member: null | discord.PermissionFlags
-            bot:    null | discord.PermissionFlags
+            member: null,
+            bot:    null
         }
-    } = {
+    };
 
-            dm: true,
+    schema = {
 
-            options: [],
+        type:                       this.type,
+        options:                    this.display.options,
+        name:                       this.display.name.default,
+        description:                this.display.description.default,
+        default_member_permissions: this.display.permissions.member,
+        default_bot_permissions:    this.display.permissions.bot,
+        dm_permission:              this.display.dm,
 
-            name: {
-
-                default: 'undefined'
-            },
-
-            description: {
-
-                default: 'Undefined'
-            },
-
-            permissions: {
-
-                member: null,
-                bot:    null
-            }
-        };
-
-    schema: {
-
-        name:        string
-        description: string
-
-        dm_permission: boolean
-
-        type: discord.ApplicationCommandType
-
-        options: discord.ApplicationCommandOptionData[]
-
-        default_member_permissions: null | discord.PermissionFlags
-        default_bot_permissions:    null | discord.PermissionFlags
-
-        name_localizations:        Partial<Record<keyof typeof discord.Locale, string>>
-        description_localizations: Partial<Record<keyof typeof discord.Locale, string>>
-    } = {
-
-            type:                       this.type,
-            options:                    this.display.options,
-            name:                       this.display.name.default,
-            description:                this.display.description.default,
-            default_member_permissions: this.display.permissions.member,
-            default_bot_permissions:    this.display.permissions.bot,
-            dm_permission:              this.display.dm,
-
-            name_localizations:        {},
-            description_localizations: {}
-        };
+        name_localizations:        {},
+        description_localizations: {}
+    };
 
     constructor (options: ChatApplicationOptions) {
 
@@ -100,14 +67,23 @@ export default class {
 
         // Visualizacion
         this.display.dm      = options.display?.dm      ?? this.display.dm;
+
+        // @ts-ignore
         this.display.options = options.display?.options ?? this.display.options;
 
+        // @ts-ignore
+        this.display.name         = options.display?.name          ?? this.display.name;
         this.display.name.default = options.display?.name?.default ?? this.display.name.default;
 
+        // @ts-ignore
+        this.display.description         = options.display?.description          ?? this.display.description;
         this.display.description.default = options.display?.description?.default ?? this.display.description.default;
 
+        // @ts-ignore
         this.display.permissions.member = options.display?.permissions?.member ?? this.display.permissions.member;
-        this.display.permissions.bot    = options.display?.permissions?.bot    ?? this.display.permissions.bot;
+
+        // @ts-ignore
+        this.display.permissions.bot = options.display?.permissions?.bot ?? this.display.permissions.bot;
 
         // Esquema
         this.schema.options                    = this.display.options;
