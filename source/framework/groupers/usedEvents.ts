@@ -4,9 +4,24 @@ import loadedChatApplications    from '../loaders/applications/loadedChatApplica
 import loadedUserApplications    from '../loaders/applications/loadedUserApplications.js';
 import loadedMessageApplications from '../loaders/applications/loadedMessageApplications.js';
 
-import { UsedEventsGroup } from '../types/Event.js';
+interface EventsGroup {
 
-const groupedEvents: UsedEventsGroup = {};
+    [name: string]: {
+
+        applications: typeof loadedChatApplications
+                    | typeof loadedUserApplications
+                    | typeof loadedMessageApplications
+
+        services: typeof loadedServices
+
+        all: typeof loadedServices
+           | typeof loadedChatApplications
+           | typeof loadedUserApplications
+           | typeof loadedMessageApplications
+    }
+};
+
+const groupedEvents: EventsGroup = {};
 
 for (const _loadedEvent of loadedEvents) {
 

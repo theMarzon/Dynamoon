@@ -66,7 +66,7 @@ export default class implements ChatApplicationData {
         this.events = options.events ?? this.events;
 
         // Visualizacion
-        this.display.dm      = options.display?.dm      ?? this.display.dm;
+        this.display.dm = options.display?.dm ?? this.display.dm;
 
         // @ts-ignore
         this.display.options = options.display?.options ?? this.display.options;

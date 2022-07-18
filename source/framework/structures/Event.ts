@@ -11,7 +11,6 @@ export default class implements EventData {
     priority = 0;
     intents  = 0;
 
-    // @ts-ignore
     execute = () => {};
 
     constructor (content: EventOptions) {

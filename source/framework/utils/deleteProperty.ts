@@ -1,9 +1,9 @@
 export type ContentOption = {
 
-    [key: string | number]: any
+    [key: string | number | symbol]: any
 };
 
-export default <P extends ContentOption, S extends string | number> (content: P, key: S): Omit<P, S> => {
+export default <P extends ContentOption, S extends string | number | symbol> (content: P, key: S): Omit<P, S> => {
 
     content = { ...content };
 
