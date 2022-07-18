@@ -18,7 +18,7 @@ import {
     messageApplicationsPath
 } from '../directoriesPath.js';
 
-import { ClientOptions } from '../types/Client.js';
+import { ClientOptions } from '../types/Clients.js';
 
 export default class extends Client {
 

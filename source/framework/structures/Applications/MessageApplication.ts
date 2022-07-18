@@ -4,7 +4,7 @@ import {
 
     MessageApplicationData,
     MessageApplicationOptions
-} from '../../types/Application.js';
+} from '../../types/Applications.js';
 
 import deleteProperty from '../../utils/deleteProperty.js';
 

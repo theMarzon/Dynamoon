@@ -2,7 +2,7 @@ import {
 
     EventData,
     EventOptions
-} from '../types/Event.js';
+} from '../types/Events.js';
 
 export default class implements EventData {
 
