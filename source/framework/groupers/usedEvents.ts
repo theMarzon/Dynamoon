@@ -4,22 +4,7 @@ import loadedChatApplications    from '../loaders/applications/loadedChatApplica
 import loadedUserApplications    from '../loaders/applications/loadedUserApplications.js';
 import loadedMessageApplications from '../loaders/applications/loadedMessageApplications.js';
 
-interface EventsGroup {
-
-    [name: string]: {
-
-        applications: typeof loadedChatApplications
-                    | typeof loadedUserApplications
-                    | typeof loadedMessageApplications
-
-        services: typeof loadedServices
-
-        all: typeof loadedServices
-           | typeof loadedChatApplications
-           | typeof loadedUserApplications
-           | typeof loadedMessageApplications
-    }
-};
+import { EventsGroup } from '../types/Events.js';
 
 const groupedEvents: EventsGroup = {};
 

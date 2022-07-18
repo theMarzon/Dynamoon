@@ -1,7 +1,8 @@
 import {
 
     EventData,
-    EventOptions
+    EventOptions,
+    ExecuteOptions
 } from '../types/Events.js';
 
 export default class implements EventData {
@@ -11,7 +12,7 @@ export default class implements EventData {
     priority = 0;
     intents  = 0;
 
-    execute = () => {};
+    execute = (options: ExecuteOptions) => {};
 
     constructor (content: EventOptions) {
 

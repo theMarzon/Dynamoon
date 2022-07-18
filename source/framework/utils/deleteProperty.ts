@@ -1,9 +1,10 @@
-export type ContentOption = {
+import {
 
-    [key: string | number | symbol]: any
-};
+    ContentOption,
+    ContentType
+} from '../types/Utils.js';
 
-export default <P extends ContentOption, S extends string | number | symbol> (content: P, key: S): Omit<P, S> => {
+export default <P extends ContentOption, S extends ContentType> (content: P, key: S): Omit<P, S> => {
 
     content = { ...content };
 

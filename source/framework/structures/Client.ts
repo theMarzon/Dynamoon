@@ -56,7 +56,6 @@ export default class extends Client {
             // Omite el evento si no se esta utilizando
             if (!usedEvents[_loadedEvent.name]) continue;
 
-            // @ts-ignore
             _loadedEvent.execute({
 
                 client: this,
