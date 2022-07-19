@@ -3,7 +3,7 @@ import {
     EventData,
     EventOptions,
     ExecuteOptions
-} from '../types/Events.js';
+} from '../types/Event.js';
 
 export default class implements EventData {
 

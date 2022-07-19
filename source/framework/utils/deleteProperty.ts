@@ -1,10 +1,10 @@
 import {
 
-    ContentOption,
-    ContentType
-} from '../types/Utils.js';
+    DeletePropertyOption,
+    DeletePropertyType
+} from '../types/Utils/DeleteProperty.js';
 
-export default <P extends ContentOption, S extends ContentType> (content: P, key: S): Omit<P, S> => {
+export default <P extends DeletePropertyOption, S extends DeletePropertyType> (content: P, key: S): Omit<P, S> => {
 
     content = { ...content };
 

@@ -2,11 +2,11 @@ import discord from 'discord.js';
 
 import {
 
-    ChatApplicationDisplayData,
-    ChatApplicationSchemaData,
+    ChatApplicationDisplay,
+    ChatApplicationSchema,
     ChatApplicationData,
     ChatApplicationOptions
-} from '../../types/Applications/ChatApplications.js';
+} from '../../types/Applications/ChatApplication.js';
 
 import deleteProperty from '../../utils/deleteProperty.js';
 
@@ -21,7 +21,7 @@ export default class implements ChatApplicationData {
 
     type = discord.ApplicationCommandType.ChatInput;
 
-    display: ChatApplicationDisplayData = {
+    display: ChatApplicationDisplay = {
 
         dm: true,
 
@@ -44,7 +44,7 @@ export default class implements ChatApplicationData {
         }
     };
 
-    schema: ChatApplicationSchemaData = {
+    schema: ChatApplicationSchema = {
 
         type:                       this.type,
         options:                    this.display.options,

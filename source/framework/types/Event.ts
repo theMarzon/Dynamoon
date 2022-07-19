@@ -35,16 +35,6 @@ export interface EventsGroup {
     }
 };
 
-export type EventOptions = {
-
-    name: string
-
-    priority?: number
-    intents?:  number
-
-    execute?: () => void
-};
-
 export type ExecuteOptions = {
 
     me: object
@@ -89,4 +79,9 @@ export interface EventData {
     intents:  number
 
     execute: ({ client, me, loaded, used, directories }: ExecuteOptions) => void
+};
+
+export type EventOptions = Partial<EventData> & {
+
+    name: string
 };

@@ -1,6 +1,6 @@
 import discord from 'discord.js';
 
-export interface MessageApplicationDisplayData {
+export interface UserApplicationDisplay {
 
     dm: boolean
 
@@ -16,7 +16,7 @@ export interface MessageApplicationDisplayData {
     }
 };
 
-export interface MessageApplicationSchemaData {
+export interface UserApplicationSchema {
 
     name: string
 
@@ -30,7 +30,7 @@ export interface MessageApplicationSchemaData {
     name_localizations: Partial<Record<keyof typeof discord.Locale, string>>
 };
 
-export interface MessageApplicationData {
+export interface UserApplicationData {
 
     name: string
 
@@ -41,11 +41,11 @@ export interface MessageApplicationData {
 
     type: discord.ApplicationCommandType
 
-    display: MessageApplicationDisplayData
-    schema:  MessageApplicationSchemaData
+    display: UserApplicationDisplay
+    schema:  UserApplicationSchema
 };
 
-export type MessageApplicationOptions = Omit<Partial<MessageApplicationData>, 'schema'> & {
+export type UserApplicationOptions = Partial<Omit<UserApplicationData, 'schema'>> & {
 
     name: string
 };

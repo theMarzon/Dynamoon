@@ -1,6 +1,6 @@
 import discord from 'discord.js';
 
-export interface ChatApplicationDisplayData {
+export interface ChatApplicationDisplay {
 
     dm: boolean
 
@@ -23,7 +23,7 @@ export interface ChatApplicationDisplayData {
     }
 };
 
-export interface ChatApplicationSchemaData {
+export interface ChatApplicationSchema {
 
     name:        string
     description: string
@@ -52,11 +52,11 @@ export interface ChatApplicationData {
 
     type: discord.ApplicationCommandType
 
-    display: ChatApplicationDisplayData
-    schema:  ChatApplicationSchemaData
+    display: ChatApplicationDisplay
+    schema:  ChatApplicationSchema
 };
 
-export type ChatApplicationOptions = Omit<Partial<ChatApplicationData>, 'schema'> & {
+export type ChatApplicationOptions = Partial<Omit<ChatApplicationData, 'schema'>> & {
 
     name: string
 };

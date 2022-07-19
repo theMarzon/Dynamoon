@@ -2,7 +2,7 @@ import {
 
     ServiceData,
     ServiceOptions
-} from '../types/Services.js';
+} from '../types/Service.js';
 
 export default class implements ServiceData {
 

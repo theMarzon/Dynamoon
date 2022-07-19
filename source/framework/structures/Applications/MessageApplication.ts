@@ -2,11 +2,11 @@ import discord from 'discord.js';
 
 import {
 
-    MessageApplicationDisplayData,
-    MessageApplicationSchemaData,
+    MessageApplicationDisplay,
+    MessageApplicationSchema,
     MessageApplicationData,
     MessageApplicationOptions
-} from '../../types/Applications/MessageApplications.js';
+} from '../../types/Applications/MessageApplication.js';
 
 import deleteProperty from '../../utils/deleteProperty.js';
 
@@ -21,7 +21,7 @@ export default class implements MessageApplicationData {
 
     type = discord.ApplicationCommandType.Message;
 
-    display: MessageApplicationDisplayData = {
+    display: MessageApplicationDisplay = {
 
         dm: true,
 
@@ -37,7 +37,7 @@ export default class implements MessageApplicationData {
         }
     };
 
-    schema: MessageApplicationSchemaData = {
+    schema: MessageApplicationSchema = {
 
         type:                       this.type,
         name:                       this.display.name.default,

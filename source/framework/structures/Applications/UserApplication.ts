@@ -2,11 +2,11 @@ import discord from 'discord.js';
 
 import {
 
-    UserApplicationDisplayData,
-    UserApplicationSchemaData,
+    UserApplicationDisplay,
+    UserApplicationSchema,
     UserApplicationOptions,
     UserApplicationData
-} from '../../types/Applications/UserApplications.js';
+} from '../../types/Applications/UserApplication.js';
 
 import deleteProperty from '../../utils/deleteProperty.js';
 
@@ -21,7 +21,7 @@ export default class implements UserApplicationData {
 
     type = discord.ApplicationCommandType.User;
 
-    display: UserApplicationDisplayData = {
+    display: UserApplicationDisplay = {
 
         dm: true,
 
@@ -37,7 +37,7 @@ export default class implements UserApplicationData {
         }
     };
 
-    schema: UserApplicationSchemaData = {
+    schema: UserApplicationSchema = {
 
         type:                       this.type,
         name:                       this.display.name.default,

@@ -4,7 +4,7 @@ import loadedChatApplications    from '../loaders/applications/loadedChatApplica
 import loadedUserApplications    from '../loaders/applications/loadedUserApplications.js';
 import loadedMessageApplications from '../loaders/applications/loadedMessageApplications.js';
 
-import { EventsGroup } from '../types/Events.js';
+import { EventsGroup } from '../types/Event.js';
 
 const groupedEvents: EventsGroup = {};
 
