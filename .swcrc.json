@@ -8,11 +8,6 @@
         "parser": {
 
             "syntax": "typescript"
-        },
-
-        "minify": {
-
-            "mangle": true
         }
     }
 }
