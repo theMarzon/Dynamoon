@@ -4,7 +4,7 @@ export interface ChatApplicationDisplay {
 
     dm: boolean
 
-    parameters: discord.ApplicationCommandOptionData[]
+    options: discord.ApplicationCommandOptionData[]
 
     name: Partial<Record<keyof typeof discord.Locale, string>> & {
 

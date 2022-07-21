@@ -3,14 +3,12 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "test": "yarn run build && yarn run start",
-    "start": "node ./build/source/index.js",
     "build": "swc ./source/ -d ./build/source/",
-    "check": "eslint ./ --ext .ts",
-    "fix": "eslint ./ --fix --ext .ts"
+    "check": "eslint --ext .ts ./",
+    "fix": "eslint --fix --ext .ts ./"
   },
   "dependencies": {
-    "discord.js": "^14.0.3",
+    "discord.js": "*",
     "dotenv": "^16.0.1"
   },
   "devDependencies": {
