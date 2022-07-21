@@ -6,7 +6,7 @@ export default {
 
     execute: ({ client, file, loaded, used }) => {
 
-        client.on(discord.Events.InteractionCreate, (event: discord.Interaction) => {
+        client.on(discord.Events.InteractionCreate, (event) => {
 
             // Si no es una aplicacion
             if (event.type !== discord.InteractionType.ApplicationCommand) return;
