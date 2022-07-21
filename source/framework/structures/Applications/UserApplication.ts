@@ -2,10 +2,10 @@ import discord from 'discord.js';
 
 import {
 
+    UserApplicationData,
     UserApplicationDisplay,
     UserApplicationSchema,
-    UserApplicationOptions,
-    UserApplicationData
+    UserApplicationOptions
 } from '../../types/Applications/UserApplication.js';
 
 import deleteProperty from '../../utils/deleteProperty.js';

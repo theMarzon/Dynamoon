@@ -8,7 +8,7 @@ export interface ServiceData {
     events: object
 };
 
-export type ServiceOptions = Partial<ServiceData> & {
+export interface ServiceOptions extends Partial<ServiceData> {
 
     name: string
 };

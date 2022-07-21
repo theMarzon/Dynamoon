@@ -4,7 +4,7 @@ export interface ChatApplicationDisplay {
 
     dm: boolean
 
-    options: discord.ApplicationCommandOptionData[]
+    parameters: discord.ApplicationCommandOptionData[]
 
     name: Partial<Record<keyof typeof discord.Locale, string>> & {
 
@@ -56,7 +56,7 @@ export interface ChatApplicationData {
     schema:  ChatApplicationSchema
 };
 
-export type ChatApplicationOptions = Partial<Omit<ChatApplicationData, 'schema'>> & {
+export interface ChatApplicationOptions extends Partial<Omit<ChatApplicationData, 'schema'>> {
 
     name: string
 };

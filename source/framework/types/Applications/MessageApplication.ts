@@ -45,7 +45,7 @@ export interface MessageApplicationData {
     schema:  MessageApplicationSchema
 };
 
-export type MessageApplicationOptions = Partial<Omit<MessageApplicationData, 'schema'>> & {
+export interface MessageApplicationOptions extends Partial<Omit<MessageApplicationData, 'schema'>> {
 
     name: string
 };

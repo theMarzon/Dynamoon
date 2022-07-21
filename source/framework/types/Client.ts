@@ -1,3 +1,5 @@
 import discord from 'discord.js';
 
-export type ClientOptions = Omit<discord.ClientOptions, 'intents'>;
+export interface ClientOptions extends Omit<discord.ClientOptions, 'intents'> {
+
+};

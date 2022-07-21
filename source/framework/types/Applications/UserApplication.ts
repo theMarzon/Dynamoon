@@ -45,7 +45,7 @@ export interface UserApplicationData {
     schema:  UserApplicationSchema
 };
 
-export type UserApplicationOptions = Partial<Omit<UserApplicationData, 'schema'>> & {
+export interface UserApplicationOptions extends Partial<Omit<UserApplicationData, 'schema'>> {
 
     name: string
 };

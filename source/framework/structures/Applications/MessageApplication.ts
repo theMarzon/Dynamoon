@@ -2,9 +2,9 @@ import discord from 'discord.js';
 
 import {
 
+    MessageApplicationData,
     MessageApplicationDisplay,
     MessageApplicationSchema,
-    MessageApplicationData,
     MessageApplicationOptions
 } from '../../types/Applications/MessageApplication.js';
 

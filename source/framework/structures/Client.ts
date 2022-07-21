@@ -8,16 +8,6 @@ import loadedMessageApplications from '../loaders/applications/loadedMessageAppl
 import usedEvents                from '../groupers/usedEvents.js';
 import usedIntents               from '../groupers/usedIntents.js';
 
-import {
-
-    eventsPath,
-    servicesPath,
-    applicationsPath,
-    chatApplicationsPath,
-    userApplicationsPath,
-    messageApplicationsPath
-} from '../directoriesPath.js';
-
 import { ClientOptions } from '../types/Client.js';
 
 export default class extends Client {
@@ -25,8 +15,7 @@ export default class extends Client {
     framework = {
 
         name:       'Dynamoon',
-        fork:       'Berry',
-        version:    '0.1.0',
+        version:    '0.8.0',
         repository: 'https://github.com/theMarzon/Dynamoon',
 
         images: {
@@ -49,7 +38,7 @@ export default class extends Client {
         this.setMaxListeners(1);
     };
 
-    executeEvents () {
+    openEvents () {
 
         for (const _loadedEvent of loadedEvents) {
 
@@ -60,7 +49,7 @@ export default class extends Client {
 
                 client: this,
 
-                me: _loadedEvent,
+                file: _loadedEvent,
 
                 loaded: {
 
@@ -79,16 +68,6 @@ export default class extends Client {
 
                     events:  usedEvents,
                     intents: usedIntents
-                },
-
-                directories: {
-
-                    events:              eventsPath,
-                    services:            servicesPath,
-                    applications:        applicationsPath,
-                    chatApplications:    chatApplicationsPath,
-                    userApplications:    userApplicationsPath,
-                    messageApplications: messageApplicationsPath
                 }
             });
         }

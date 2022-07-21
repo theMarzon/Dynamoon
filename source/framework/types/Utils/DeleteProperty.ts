@@ -2,7 +2,7 @@ export type DeletePropertyType = string
                                | number
                                | symbol;
 
-export type DeletePropertyOption = {
+export interface DeletePropertyOption {
 
-    [key: DeletePropertyType]: any
+    [key: DeletePropertyType]: unknown
 };

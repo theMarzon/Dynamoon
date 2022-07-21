@@ -12,15 +12,15 @@ export default class implements EventData {
     priority = 0;
     intents  = 0;
 
-    execute = (options: ExecuteOptions) => {};
+    execute = ({ client, file, loaded, used }: ExecuteOptions) => {};
 
-    constructor (content: EventOptions) {
+    constructor (options: EventOptions) {
 
-        this.name = content.name;
+        this.name = options.name;
 
-        this.priority = content.priority ?? this.priority;
-        this.intents  = content.intents  ?? this.intents;
+        this.priority = options.priority ?? this.priority;
+        this.intents  = options.intents  ?? this.intents;
 
-        this.execute = content.execute ?? this.execute;
+        this.execute = options.execute ?? this.execute;
     };
 };

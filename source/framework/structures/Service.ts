@@ -1,7 +1,7 @@
 import {
 
-    ServiceData,
-    ServiceOptions
+    ServiceOptions,
+    ServiceData
 } from '../types/Service.js';
 
 export default class implements ServiceData {
@@ -13,13 +13,13 @@ export default class implements ServiceData {
 
     events = {};
 
-    constructor (content: ServiceOptions) {
+    constructor (options: ServiceOptions) {
 
-        this.name = content.name;
+        this.name = options.name;
 
-        this.priority = content.priority ?? this.priority;
-        this.intents  = content.intents  ?? this.intents;
+        this.priority = options.priority ?? this.priority;
+        this.intents  = options.intents  ?? this.intents;
 
-        this.events = content.events ?? this.events;
+        this.events = options.events ?? this.events;
     };
 };

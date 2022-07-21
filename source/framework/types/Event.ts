@@ -6,19 +6,9 @@ import loadedMessageApplications from '../loaders/applications/loadedMessageAppl
 import usedEvents                from '../groupers/usedEvents.js';
 import usedIntents               from '../groupers/usedIntents.js';
 
-import {
-
-    eventsPath,
-    servicesPath,
-    applicationsPath,
-    chatApplicationsPath,
-    userApplicationsPath,
-    messageApplicationsPath
-} from '../directoriesPath.js';
-
 import Client from '../structures/Client.js';
 
-export interface EventsGroup {
+export type EventsGroup = {
 
     [name: string]: {
 
@@ -35,9 +25,9 @@ export interface EventsGroup {
     }
 };
 
-export type ExecuteOptions = {
+export interface ExecuteOptions {
 
-    me: object
+    file: object
 
     client: Client
 
@@ -59,16 +49,6 @@ export type ExecuteOptions = {
         intents: typeof usedIntents
         events:  typeof usedEvents
     }
-
-    directories: {
-
-        events:              typeof eventsPath
-        services:            typeof servicesPath
-        applications:        typeof applicationsPath
-        chatApplications:    typeof chatApplicationsPath
-        userApplications:    typeof userApplicationsPath
-        messageApplications: typeof messageApplicationsPath
-    }
 };
 
 export interface EventData {
@@ -78,10 +58,10 @@ export interface EventData {
     priority: number
     intents:  number
 
-    execute: ({ client, me, loaded, used, directories }: ExecuteOptions) => void
+    execute: ({ client, file, loaded, used }: ExecuteOptions) => void
 };
 
-export type EventOptions = Partial<EventData> & {
+export interface EventOptions extends Partial<EventData> {
 
     name: string
 };

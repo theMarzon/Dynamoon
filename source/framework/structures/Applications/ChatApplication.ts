@@ -2,9 +2,9 @@ import discord from 'discord.js';
 
 import {
 
+    ChatApplicationData,
     ChatApplicationDisplay,
     ChatApplicationSchema,
-    ChatApplicationData,
     ChatApplicationOptions
 } from '../../types/Applications/ChatApplication.js';
 
@@ -25,7 +25,7 @@ export default class implements ChatApplicationData {
 
         dm: true,
 
-        options: [],
+        parameters: [],
 
         name: {
 
@@ -47,7 +47,7 @@ export default class implements ChatApplicationData {
     schema: ChatApplicationSchema = {
 
         type:                       this.type,
-        options:                    this.display.options,
+        options:                    this.display.parameters,
         name:                       this.display.name.default,
         description:                this.display.description.default,
         default_member_permissions: this.display.permissions.member,
@@ -70,7 +70,7 @@ export default class implements ChatApplicationData {
         // Visualizacion
         this.display.dm = options.display?.dm ?? this.display.dm;
 
-        this.display.options = options.display?.options ?? this.display.options;
+        this.display.parameters = options.display?.parameters ?? this.display.parameters;
 
         this.display.name         = options.display?.name          ?? this.display.name;
         this.display.name.default = options.display?.name?.default ?? this.display.name.default;
@@ -82,7 +82,7 @@ export default class implements ChatApplicationData {
         this.display.permissions.bot    = options.display?.permissions?.bot    ?? this.display.permissions.bot;
 
         // Esquema
-        this.schema.options                    = this.display.options;
+        this.schema.options                    = this.display.parameters;
         this.schema.name                       = this.display.name.default;
         this.schema.description                = this.display.description.default;
         this.schema.default_member_permissions = this.display.permissions.member;
