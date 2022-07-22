@@ -5,8 +5,8 @@
   "scripts": {
     "test": "ts-node --swc --esm ./source/index.ts",
     "build": "swc ./source/ --out-dir ./build/",
-    "check": "eslint --ext .ts ./",
-    "fix": "eslint --fix --ext .ts ./"
+    "check": "eslint --ext .ts,.js ./",
+    "fix": "eslint --fix --ext .ts,.js ./"
   },
   "dependencies": {
     "discord.js": "*",

@@ -1,6 +1,8 @@
 {
     "$schema": "https://json.schemastore.org/swcrc",
 
+    "minify": true,
+
     "jsc": {
 
         "target": "es2022",
