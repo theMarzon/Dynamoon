@@ -4,7 +4,7 @@ export interface UserApplicationDisplay {
 
     dm: boolean
 
-    name: Partial<Record<keyof typeof discord.Locale, string>> & {
+    name: Partial<Record<discord.Locale, string>> & {
 
         default: string
     }
@@ -27,7 +27,7 @@ export interface UserApplicationSchema {
     default_member_permissions: null | discord.PermissionFlags
     default_bot_permissions:    null | discord.PermissionFlags
 
-    name_localizations: Partial<Record<keyof typeof discord.Locale, string>>
+    name_localizations: Partial<Record<discord.Locale, string>>
 };
 
 export interface UserApplicationData {

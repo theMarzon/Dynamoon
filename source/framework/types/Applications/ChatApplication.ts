@@ -6,12 +6,12 @@ export interface ChatApplicationDisplay {
 
     options: discord.ApplicationCommandOptionData[]
 
-    name: Partial<Record<keyof typeof discord.Locale, string>> & {
+    name: Partial<Record<discord.Locale, string>> & {
 
         default: string
     }
 
-    description: Partial<Record<keyof typeof discord.Locale, string>> & {
+    description: Partial<Record<discord.Locale, string>> & {
 
         default: string
     }
@@ -37,8 +37,8 @@ export interface ChatApplicationSchema {
     default_member_permissions: null | discord.PermissionFlags
     default_bot_permissions:    null | discord.PermissionFlags
 
-    name_localizations:        Partial<Record<keyof typeof discord.Locale, string>>
-    description_localizations: Partial<Record<keyof typeof discord.Locale, string>>
+    name_localizations:        Partial<Record<discord.Locale, string>>
+    description_localizations: Partial<Record<discord.Locale, string>>
 };
 
 export interface ChatApplicationData {
