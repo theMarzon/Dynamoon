@@ -10,9 +10,12 @@ export default {
                 const userApplications    = loaded.applications.user.map((file) => file.schema);
                 const messageApplications = loaded.applications.message.map((file) => file.schema);
 
-                const allApplications = chatApplications
-                    .concat(userApplications)
-                    .concat(messageApplications);
+                const allApplications = [
+
+                    ...chatApplications,
+                    ...userApplications,
+                    ...messageApplications
+                ];
 
                 client.application.commands
                     .set(allApplications)

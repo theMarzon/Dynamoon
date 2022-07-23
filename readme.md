@@ -41,13 +41,9 @@
 
 ## Creando los eventos, servicios y aplicaciones
 
-[⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
-
-> Estos ejemplos fueron hechos basándose en los eventos, servicios y aplicaciones predefinidos
+> Estos ejemplos fueron hechos basándose en los eventos, servicios y aplicaciones pre-creados
 
 ### Creando un evento
-
-[⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
 
 - Cree una carpeta en `source ➡ events` con el nombre del evento
 
@@ -88,7 +84,7 @@
         priority: 0,
         intents:  0,
 
-        execute: ({ client, me, loaded, used, directories }) => {
+        execute: ({ client, file, loaded, used }) => {
 
             console.log('Hello world');
         }
@@ -96,8 +92,6 @@
     ```
 
 ### Creando un servicio
-
-[⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
 
 - Cree una carpeta en `source ➡ services` con el nombre del servicio
 
@@ -153,7 +147,7 @@
 
             boot: [
                 
-                ({ client, me, loaded, used, directories }) => {
+                ({ client, file, loaded, used }) => {
 
                     console.log('Hello world');
                 }
@@ -163,8 +157,6 @@
     ```
 
 ### Creando una aplicación de barra lateral
-
-[⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
 
 - Cree una carpeta en `source ➡ applications ➡ chat` con el nombre de la aplicación
 
@@ -488,8 +480,6 @@
 
 ### Creando una aplicación de menú contextual para usuarios
 
-[⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
-
 - Cree una carpeta en `source ➡ applications ➡ user` con el nombre de la aplicación
 
     > Si la carpeta `source ➡ applications ➡ user` no existe, créela
@@ -667,8 +657,6 @@
     ```
 
 ### Creando una aplicación de menú contextual para mensajes
-
-[⬅ Volver a la tabla de recursos](https://github.com/theMarzon/Dynamoon#Tabla-de-recursos)
 
 - Cree una carpeta en `source ➡ applications ➡ message` con el nombre de la aplicación
 

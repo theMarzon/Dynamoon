@@ -12,16 +12,19 @@ for (const _loadedEvent of loadedEvents) {
 
     const serviceFiles = loadedServices.filter((file) => file.events[_loadedEvent.name]);
 
-    const applicationFiles = loadedChatApplications
+    const applicationFiles = [
 
-        // @ts-ignore
-        .concat(loadedUserApplications)
-
-        // @ts-ignore
-        .concat(loadedMessageApplications)
+        ...loadedChatApplications,
+        ...loadedUserApplications,
+        ...loadedMessageApplications
+    ]
         .filter((file) => file.events[_loadedEvent.name]);
 
-    const allFiles = applicationFiles;
+    const allFiles = [
+
+        ...serviceFiles,
+        ...applicationFiles
+    ];
 
     // Omite el evento si no se esta utilizando
     if (!allFiles.length) continue;
