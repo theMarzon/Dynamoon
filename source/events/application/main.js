@@ -17,7 +17,7 @@ export default {
                 if (_loadedApplication.type !== event.commandType) continue;
 
                 // Si la aplicacion que de la interaccion no tiene el mismo nombre
-                if (event.commandName !== _loadedApplication.display.name.default) continue;
+                if (event.commandName !== _loadedApplication.show.name.default) continue;
 
                 for (const _fileEvent of _loadedApplication.events[file.name]) {
 

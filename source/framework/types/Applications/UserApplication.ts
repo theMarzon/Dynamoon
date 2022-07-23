@@ -1,6 +1,6 @@
 import discord from 'discord.js';
 
-export interface UserApplicationDisplay {
+export interface UserApplicationShow {
 
     dm: boolean
 
@@ -41,7 +41,7 @@ export interface UserApplicationData {
 
     type: discord.ApplicationCommandType
 
-    display: UserApplicationDisplay
+    show: UserApplicationShow
     schema:  UserApplicationSchema
 };
 

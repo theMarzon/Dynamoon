@@ -1,6 +1,6 @@
 import discord from 'discord.js';
 
-export interface MessageApplicationDisplay {
+export interface MessageApplicationShow {
 
     dm: boolean
 
@@ -41,8 +41,8 @@ export interface MessageApplicationData {
 
     type: discord.ApplicationCommandType
 
-    display: MessageApplicationDisplay
-    schema:  MessageApplicationSchema
+    show:   MessageApplicationShow
+    schema: MessageApplicationSchema
 };
 
 export interface MessageApplicationOptions extends Partial<Omit<MessageApplicationData, 'schema'>> {

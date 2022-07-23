@@ -3,7 +3,7 @@ import discord from 'discord.js';
 import {
 
     ChatApplicationData,
-    ChatApplicationDisplay,
+    ChatApplicationShow,
     ChatApplicationSchema,
     ChatApplicationOptions
 } from '../../types/Applications/ChatApplication.js';
@@ -21,7 +21,7 @@ export default class implements ChatApplicationData {
 
     type = discord.ApplicationCommandType.ChatInput;
 
-    display: ChatApplicationDisplay = {
+    show: ChatApplicationShow = {
 
         dm: true,
 
@@ -47,12 +47,12 @@ export default class implements ChatApplicationData {
     schema: ChatApplicationSchema = {
 
         type:                       this.type,
-        options:                    this.display.options,
-        name:                       this.display.name.default,
-        description:                this.display.description.default,
-        default_member_permissions: this.display.permissions.member,
-        default_bot_permissions:    this.display.permissions.bot,
-        dm_permission:              this.display.dm,
+        options:                    this.show.options,
+        name:                       this.show.name.default,
+        description:                this.show.description.default,
+        default_member_permissions: this.show.permissions.member,
+        default_bot_permissions:    this.show.permissions.bot,
+        dm_permission:              this.show.dm,
 
         name_localizations:        {},
         description_localizations: {}
@@ -68,28 +68,28 @@ export default class implements ChatApplicationData {
         this.events = options.events ?? this.events;
 
         // Visualizacion
-        this.display.dm = options.display?.dm ?? this.display.dm;
+        this.show.dm = options.show?.dm ?? this.show.dm;
 
-        this.display.options = options.display?.options ?? this.display.options;
+        this.show.options = options.show?.options ?? this.show.options;
 
-        this.display.name         = options.display?.name          ?? this.display.name;
-        this.display.name.default = options.display?.name?.default ?? this.display.name.default;
+        this.show.name         = options.show?.name          ?? this.show.name;
+        this.show.name.default = options.show?.name?.default ?? this.show.name.default;
 
-        this.display.description         = options.display?.description          ?? this.display.description;
-        this.display.description.default = options.display?.description?.default ?? this.display.description.default;
+        this.show.description         = options.show?.description          ?? this.show.description;
+        this.show.description.default = options.show?.description?.default ?? this.show.description.default;
 
-        this.display.permissions.member = options.display?.permissions?.member ?? this.display.permissions.member;
-        this.display.permissions.bot    = options.display?.permissions?.bot    ?? this.display.permissions.bot;
+        this.show.permissions.member = options.show?.permissions?.member ?? this.show.permissions.member;
+        this.show.permissions.bot    = options.show?.permissions?.bot    ?? this.show.permissions.bot;
 
         // Esquema
-        this.schema.options                    = this.display.options;
-        this.schema.name                       = this.display.name.default;
-        this.schema.description                = this.display.description.default;
-        this.schema.default_member_permissions = this.display.permissions.member;
-        this.schema.default_bot_permissions    = this.display.permissions.bot;
-        this.schema.dm_permission              = this.display.dm;
+        this.schema.options                    = this.show.options;
+        this.schema.name                       = this.show.name.default;
+        this.schema.description                = this.show.description.default;
+        this.schema.default_member_permissions = this.show.permissions.member;
+        this.schema.default_bot_permissions    = this.show.permissions.bot;
+        this.schema.dm_permission              = this.show.dm;
 
-        this.schema.name_localizations        = deleteProperty(this.display.name, 'default');
-        this.schema.description_localizations = deleteProperty(this.display.description, 'default');
+        this.schema.name_localizations        = deleteProperty(this.show.name, 'default');
+        this.schema.description_localizations = deleteProperty(this.show.description, 'default');
     };
 };
