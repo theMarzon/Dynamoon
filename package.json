@@ -10,7 +10,7 @@
     "fix": "eslint --fix --ext .ts,.js ./"
   },
   "dependencies": {
-    "discord.js": "*",
+    "discord.js": "^14.0.3",
     "dotenv": "^16.0.1"
   },
   "devDependencies": {
