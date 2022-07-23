@@ -17,7 +17,7 @@
 
 ## Instalación del proyecto
 
-- Instale la versión `18.x` o superior de [Node](https://nodejs.org)
+- Instale la versión `18.6.0` o superior de [Node](https://nodejs.org)
 
 - Instale las dependencias del proyecto utilizando `Yarn`
   
