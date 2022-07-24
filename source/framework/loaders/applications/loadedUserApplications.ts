@@ -7,7 +7,7 @@ import UserApplication from '../../structures/Applications/UserApplication.js';
 
 let directoryFolders = await readDirectory(userApplicationsPath);
 
-directoryFolders = directoryFolders.filter((name) => !name.startsWith('.'));
+directoryFolders = directoryFolders.filter((folder) => !folder.startsWith('.'));
 
 // Importa los archivos en paralelo
 let loadedFiles = await Promise.all(directoryFolders.map(async (folder) => {

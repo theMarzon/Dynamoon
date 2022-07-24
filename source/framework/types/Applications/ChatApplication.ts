@@ -18,27 +18,15 @@ export interface ChatApplicationShow {
 
     permissions: {
 
-        member: null | discord.PermissionFlags
-        bot:    null | discord.PermissionFlags
+        member: null | bigint
+        bot:    null | bigint
     }
 };
 
-export interface ChatApplicationSchema {
+export interface ChatApplicationSchema extends Required<discord.ChatInputApplicationCommandData> {
 
-    name:        string
-    description: string
-
-    dm_permission: boolean
-
-    options: discord.ApplicationCommandOptionData[]
-
-    type: discord.ApplicationCommandType
-
-    default_member_permissions: null | discord.PermissionFlags
-    default_bot_permissions:    null | discord.PermissionFlags
-
-    name_localizations:        Partial<Record<discord.Locale, string>>
-    description_localizations: Partial<Record<discord.Locale, string>>
+    defaultMemberPermissions: null | bigint
+    defaultBotPermissions:    null | bigint
 };
 
 export interface ChatApplicationData {
@@ -50,7 +38,7 @@ export interface ChatApplicationData {
 
     events: object
 
-    type: discord.ApplicationCommandType
+    type: discord.ApplicationCommandType.ChatInput
 
     show:   ChatApplicationShow
     schema: ChatApplicationSchema

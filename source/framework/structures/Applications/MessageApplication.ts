@@ -19,7 +19,7 @@ export default class implements MessageApplicationData {
 
     events = {};
 
-    type = discord.ApplicationCommandType.Message;
+    type: discord.ApplicationCommandType.Message = discord.ApplicationCommandType.Message;
 
     show: MessageApplicationShow = {
 
@@ -39,13 +39,13 @@ export default class implements MessageApplicationData {
 
     schema: MessageApplicationSchema = {
 
-        type:                       this.type,
-        name:                       this.show.name.default,
-        default_member_permissions: this.show.permissions.member,
-        default_bot_permissions:    this.show.permissions.bot,
-        dm_permission:              this.show.dm,
+        type:                     this.type,
+        name:                     this.show.name.default,
+        defaultMemberPermissions: this.show.permissions.member,
+        defaultBotPermissions:    this.show.permissions.bot,
+        dmPermission:             this.show.dm,
 
-        name_localizations: {}
+        nameLocalizations: {}
     };
 
     constructor (options: MessageApplicationOptions) {
@@ -67,11 +67,11 @@ export default class implements MessageApplicationData {
         this.show.permissions.bot    = options.show?.permissions?.bot    ?? this.show.permissions.bot;
 
         // Esquema
-        this.schema.name                       = this.show.name.default;
-        this.schema.default_member_permissions = this.show.permissions.member;
-        this.schema.default_bot_permissions    = this.show.permissions.bot;
-        this.schema.dm_permission              = this.show.dm;
+        this.schema.name                     = this.show.name.default;
+        this.schema.defaultMemberPermissions = this.show.permissions.member;
+        this.schema.defaultBotPermissions    = this.show.permissions.bot;
+        this.schema.dmPermission             = this.show.dm;
 
-        this.schema.name_localizations = deleteProperty(this.show.name, 'default');
+        this.schema.nameLocalizations = deleteProperty(this.show.name, 'default');
     };
 };

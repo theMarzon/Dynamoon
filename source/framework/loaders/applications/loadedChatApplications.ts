@@ -7,7 +7,7 @@ import ChatApplication from '../../structures/Applications/ChatApplication.js';
 
 let directoryFolders = await readDirectory(chatApplicationsPath);
 
-directoryFolders = directoryFolders.filter((name) => !name.startsWith('.'));
+directoryFolders = directoryFolders.filter((folder) => !folder.startsWith('.'));
 
 // Importa los archivos en paralelo
 let loadedFiles = await Promise.all(directoryFolders.map(async (folder) => {

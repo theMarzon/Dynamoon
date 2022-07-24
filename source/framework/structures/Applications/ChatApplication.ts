@@ -19,7 +19,7 @@ export default class implements ChatApplicationData {
 
     events = {};
 
-    type = discord.ApplicationCommandType.ChatInput;
+    type: discord.ApplicationCommandType.ChatInput = discord.ApplicationCommandType.ChatInput;
 
     show: ChatApplicationShow = {
 
@@ -46,16 +46,16 @@ export default class implements ChatApplicationData {
 
     schema: ChatApplicationSchema = {
 
-        type:                       this.type,
-        options:                    this.show.options,
-        name:                       this.show.name.default,
-        description:                this.show.description.default,
-        default_member_permissions: this.show.permissions.member,
-        default_bot_permissions:    this.show.permissions.bot,
-        dm_permission:              this.show.dm,
+        type:                     this.type,
+        options:                  this.show.options,
+        name:                     this.show.name.default,
+        description:              this.show.description.default,
+        defaultMemberPermissions: this.show.permissions.member,
+        defaultBotPermissions:    this.show.permissions.bot,
+        dmPermission:             this.show.dm,
 
-        name_localizations:        {},
-        description_localizations: {}
+        nameLocalizations:        {},
+        descriptionLocalizations: {}
     };
 
     constructor (options: ChatApplicationOptions) {
@@ -82,14 +82,14 @@ export default class implements ChatApplicationData {
         this.show.permissions.bot    = options.show?.permissions?.bot    ?? this.show.permissions.bot;
 
         // Esquema
-        this.schema.options                    = this.show.options;
-        this.schema.name                       = this.show.name.default;
-        this.schema.description                = this.show.description.default;
-        this.schema.default_member_permissions = this.show.permissions.member;
-        this.schema.default_bot_permissions    = this.show.permissions.bot;
-        this.schema.dm_permission              = this.show.dm;
+        this.schema.options                  = this.show.options;
+        this.schema.name                     = this.show.name.default;
+        this.schema.description              = this.show.description.default;
+        this.schema.defaultMemberPermissions = this.show.permissions.member;
+        this.schema.defaultBotPermissions    = this.show.permissions.bot;
+        this.schema.dmPermission             = this.show.dm;
 
-        this.schema.name_localizations        = deleteProperty(this.show.name, 'default');
-        this.schema.description_localizations = deleteProperty(this.show.description, 'default');
+        this.schema.nameLocalizations        = deleteProperty(this.show.name, 'default');
+        this.schema.descriptionLocalizations = deleteProperty(this.show.description, 'default');
     };
 };

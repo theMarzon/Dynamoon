@@ -10,7 +10,7 @@ import Client from '../structures/Client.js';
 
 export type EventsGroup = {
 
-    [name: string]: {
+    [event: string]: {
 
         applications: typeof loadedChatApplications
                     | typeof loadedUserApplications

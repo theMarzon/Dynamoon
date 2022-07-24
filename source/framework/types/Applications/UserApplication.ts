@@ -11,23 +11,15 @@ export interface UserApplicationShow {
 
     permissions: {
 
-        member: null | discord.PermissionFlags
-        bot:    null | discord.PermissionFlags
+        member: null | bigint
+        bot:    null | bigint
     }
 };
 
-export interface UserApplicationSchema {
+export interface UserApplicationSchema extends Required<discord.UserApplicationCommandData> {
 
-    name: string
-
-    dm_permission: boolean
-
-    type: discord.ApplicationCommandType
-
-    default_member_permissions: null | discord.PermissionFlags
-    default_bot_permissions:    null | discord.PermissionFlags
-
-    name_localizations: Partial<Record<discord.Locale, string>>
+    defaultMemberPermissions: null | bigint
+    defaultBotPermissions:    null | bigint
 };
 
 export interface UserApplicationData {
@@ -39,7 +31,7 @@ export interface UserApplicationData {
 
     events: object
 
-    type: discord.ApplicationCommandType
+    type: discord.ApplicationCommandType.User
 
     show: UserApplicationShow
     schema:  UserApplicationSchema

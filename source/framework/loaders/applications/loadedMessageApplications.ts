@@ -7,7 +7,7 @@ import MessageApplication from '../../structures/Applications/MessageApplication
 
 let directoryFolders = await readDirectory(messageApplicationsPath);
 
-directoryFolders = directoryFolders.filter((name) => !name.startsWith('.'));
+directoryFolders = directoryFolders.filter((folder) => !folder.startsWith('.'));
 
 // Importa los archivos en paralelo
 let loadedFiles = await Promise.all(directoryFolders.map(async (folder) => {
