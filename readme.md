@@ -25,6 +25,10 @@
 
 - 🧱 Estructura de archivos modular
 
+- 🧽 Sin código basura
+
+- 🌃 Escrito en ``TypeScript``
+
 ## Implementaciones
 
 Puede ver el estado de las implementaciones en esta [aquí](https://themarzon.notion.site/3a93960b980b484780c38e8c9aa360e1)
