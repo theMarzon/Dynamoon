@@ -5,25 +5,31 @@
     </p>
 </div>
 
-## ✨ Características
+## Índice
 
-- 📦 Estructura de archivos modular
+- [✨ Características](https://github.com/theMarzon/Dynamoon#Características)
 
-- 🧽 Gestión de archivos eficiente
+- [🚚 Implementaciones](https://github.com/theMarzon/Dynamoon#Implementaciones)
 
-## 📚 Índice
+- [📦 Instalación](https://github.com/theMarzon/Dynamoon#Instalación-del-proyecto)
 
-- [📦 Instalación del proyecto](https://github.com/theMarzon/Dynamoon#-instalación-del-proyecto)
+- 🧱 Crear un evento, servicio o aplicación
 
-- [🧱 Creando los eventos, servicios y aplicaciones](https://github.com/theMarzon/Dynamoon#-creando-los-eventos-servicios-y-aplicaciones)
+    > _Ejemplos basados en los eventos, servicios y aplicaciones pre-creadas_
 
-    - [🎯 Creando un evento](https://github.com/theMarzon/Dynamoon#-creando-un-evento)
+    - [🎯 Crear un evento](https://github.com/theMarzon/Dynamoon#Crear-un-evento)
 
-    - [📡 Creando un servicio](https://github.com/theMarzon/Dynamoon#-creando-un-servicio)
+## Características
 
-- [🚚 Lista de implementaciones](https://github.com/theMarzon/Dynamoon#-lista-de-implementaciones)
+- ⚡️ Gestión de archivos eficientes 
 
-## 📦 Instalación del proyecto
+- 🧱 Estructura de archivos modular
+
+## Implementaciones
+
+Puede ver el estado de las implementaciones en esta [aquí](https://themarzon.notion.site/3a93960b980b484780c38e8c9aa360e1)
+
+## Instalación
 
 - Instale la versión ``18.6.0`` o superior de [**Node**](https://nodejs.org)
 
@@ -35,129 +41,70 @@
 
 - Cree el archivo ``.env`` en la raíz del proyecto y agregue las siguientes llaves:
 
-    | 🔒 Nombre   | 🔑 Contenido       |
+    | Nombre      | Contenido          |
     |-------------|--------------------|
     | `BOT_TOKEN` | El `Token` del bot |
 
-## 🧱 Creando los eventos, servicios y aplicaciones
+## Crear un evento
 
-> Estos ejemplos fueron hechos basándose en los eventos, servicios y aplicaciones pre-creados
+Cree una carpeta en ``source ➡ events`` con el nombre del evento
 
-### 🎯 Creando un evento
+> _Si la carpeta ``source ➡ events`` no existe, créela_
 
-- Cree una carpeta en ``source ➡ events`` con el nombre del evento
+##
 
-    > Si la carpeta ``source ➡ events`` no existe, créela
+Cree el archivo ``main.js`` en la carpeta creada y luego, exporte un objeto vacío:
 
-- Cree el archivo ``main.js`` en la raíz de la carpeta del evento
+```js
+export default {};
+```
 
-- Abra el archivo ``main.js`` y exporte un objeto vacío:
+##
 
-    ```js
-    export default {};
-    ```
+Define la prioridad de ejecución:
 
-- Establezca la prioridad de ejecución:
+- Mientras más alta es la cifra, más prioridad tendrá
 
-    ```js
-    export default {
+- [x] Es opcional
 
-        priority: 0
-    };
-    ```
+```js
+export default {
 
-- Establezca los ``Intents`` necesarios:
+    priority: 0
+};
+```
 
-    ```js
-    export default {
+##
 
-        priority: 0,
-        intents:  0
-    };
-    ```
+Define los ``Intents`` necesarios:
 
-- Establezca la función que se ejecutara al ejecutarse el proyecto:
+- [x] Es opcional
 
-    ```js
-    export default {
+```js
+export default {
 
-        priority: 0,
-        intents:  0,
+    priority: 0,
+    intents:  0
+};
+```
 
-        execute: ({ client, file, loaded, used }) => {
+##
 
-            console.log('Hello world');
-        }
-    };
-    ```
+Define la función a ejecutarse:
 
-### 📡 Creando un servicio
+- [x] Es opcional
 
-- Cree una carpeta en ``source ➡ services`` con el nombre del servicio
+```js
+export default {
 
-    > Si la carpeta ``source ➡ services`` no existe, créela
+    priority: 0,
+    intents:  0,
 
-- Cree el archivo ``main.js`` en la raíz de la carpeta del servicio
+    execute: ({ client, file, loaded, used }) => {
 
-- Abra el archivo ``main.js`` y exporte un objeto vacío:
+        console.log('Hello world');
+    }
+};
+```
 
-    ```js
-    export default {};
-    ```
-
-- Establezca la prioridad de ejecución:
-
-    ```js
-    export default {
-
-        priority: 0
-    };
-    ```
-
-- Establezca los ``Intents`` necesarios:
-
-    ```js
-    export default {
-
-        priority: 0,
-        intents:  0
-    };
-    ```
-
-- Establezca un objeto llamado ``events`` que contendrá los eventos a utilizar:
-
-    ```js
-    export default {
-
-        priority: 0,
-        intents:  0,
-
-        events: {}
-    };
-
-- Establezca en el objeto ``events``, un ``Array`` con el nombre del evento a utilizar y que este contenga las funciones a ejecutarse:
-
-    ```js
-    export default {
-
-        priority: 0,
-        intents:  0,
-
-        events: {
-
-            boot: [
-                
-                ({ client, file, loaded, used }) => {
-
-                    console.log('Hello world');
-                }
-            ]
-        }
-    };
-    ```
-
-## 🚚 Lista de implementaciones
-
-Puede ver el estado de las implementaciones en esta [aquí](https://themarzon.notion.site/3a93960b980b484780c38e8c9aa360e1)
-
-> Más documentación próximamente...
+> _Más documentación próximamente..._
