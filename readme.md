@@ -19,6 +19,8 @@
 
     - [🎯 Crear un evento](https://github.com/theMarzon/Dynamoon#Crear-un-evento)
 
+    - [📡 Crear un servicio](https://github.com/theMarzon/Dynamoon#Crear-un-servicio)
+
 ## Características
 
 - ⚡️ Gestión de recursos eficientes 
@@ -27,7 +29,7 @@
 
 - 🧽 Sin código basura
 
-- ✍ Escrito en ``TypeScript``
+- ✍ Escrito en [**TypeScript**](https://www.typescriptlang.org)
 
 - 🌃 Utiliza las últimas versiones de las dependencias
 
@@ -109,6 +111,74 @@ export default {
     execute: ({ client, file, loaded, used }) => {
 
         console.log('Hello world');
+    }
+};
+```
+
+## Crear un servicio
+
+Cree una carpeta en ``source ➡ services`` con el nombre del servicio
+
+> _Si la carpeta ``source ➡ services`` no existe, créela_
+
+##
+
+Cree el archivo ``main.js`` en la carpeta creada y luego, exporte un objeto vacío:
+
+```js
+export default {};
+```
+
+##
+
+Define la prioridad de ejecución:
+
+- Mientras más alta es la cifra, más prioridad tendrá
+
+- [x] Es opcional
+
+```js
+export default {
+
+    priority: 0
+};
+```
+
+##
+
+Define los ``Intents`` necesarios:
+
+- [x] Es opcional
+
+```js
+export default {
+
+    priority: 0,
+    intents:  0
+};
+```
+
+##
+
+Define los eventos a utilizarse:
+
+- [x] Es opcional
+
+```js
+export default {
+
+    priority: 0,
+    intents:  0,
+
+    events: {
+
+        boot: [
+
+            ({ client, file, loaded, used }) => {
+
+                console.log('Hello world');
+            }
+        ]
     }
 };
 ```
