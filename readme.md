@@ -15,6 +15,9 @@
 
     - [📡 Creando un servicio](https://github.com/theMarzon/Dynamoon#Creando-un-servicio)
 
+
+- [🚚 Lista de implementaciones](https://github.com/theMarzon/Dynamoon#Lista-de-implementaciones)
+
 ## Instalación del proyecto
 
 - Instale la versión `18.6.0` o superior de [Node](https://nodejs.org)
@@ -147,4 +150,9 @@
         }
     };
     ```
+
+## Lista de implementaciones
+
+Puede ver el estado de las implementaciones en esta [aquí](https://themarzon.notion.site/3a93960b980b484780c38e8c9aa360e1?v=469840de43db4e12b2355d6d8bd8588e)
+
 > Más documentación próximamente
