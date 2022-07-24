@@ -1,28 +1,33 @@
 <div align='center'>
     <img src='https://i.ibb.co/CKz4kQQ/logo.png' width='512' />
     <p>
-        Un framework eficiente para desarrollar bots utilizando discord.js de una forma rápida y sencilla
+        Un framework eficiente para desarrollar bots utilizando discord.js
     </p>
 </div>
 
-## Tabla de recursos
+## ✨ Características
 
-- [📦 Instalación del proyecto](https://github.com/theMarzon/Dynamoon#Instalación-del-proyecto)
+- 📦 Estructura de archivos modular
 
-- [🧱 Creando los eventos, servicios y aplicaciones](https://github.com/theMarzon/Dynamoon#Creando-los-eventos-servicios-y-aplicaciones)
+- 🧽 Gestión de archivos eficiente
 
-    - [🎯 Creando un evento](https://github.com/theMarzon/Dynamoon#Creando-un-evento)
+## 📚 Índice
 
-    - [📡 Creando un servicio](https://github.com/theMarzon/Dynamoon#Creando-un-servicio)
+- [📦 Instalación del proyecto](https://github.com/theMarzon/Dynamoon#-instalación-del-proyecto)
 
+- [🧱 Creando los eventos, servicios y aplicaciones](https://github.com/theMarzon/Dynamoon#-creando-los-eventos-servicios-y-aplicaciones)
 
-- [🚚 Lista de implementaciones](https://github.com/theMarzon/Dynamoon#Lista-de-implementaciones)
+    - [🎯 Creando un evento](https://github.com/theMarzon/Dynamoon#-creando-un-evento)
 
-## Instalación del proyecto
+    - [📡 Creando un servicio](https://github.com/theMarzon/Dynamoon#-creando-un-servicio)
+
+- [🚚 Lista de implementaciones](https://github.com/theMarzon/Dynamoon#-lista-de-implementaciones)
+
+## 📦 Instalación del proyecto
 
 - Instale la versión `18.6.0` o superior de [Node](https://nodejs.org)
 
-- Instale las dependencias del proyecto utilizando `Yarn`
+- Instale las dependencias del proyecto utilizando `Yarn`:
   
     ```sh-session
     yarn install
@@ -34,11 +39,11 @@
     |-------------|--------------------|
     | `BOT_TOKEN` | El `Token` del bot |
 
-## Creando los eventos, servicios y aplicaciones
+## 🧱 Creando los eventos, servicios y aplicaciones
 
 > Estos ejemplos fueron hechos basándose en los eventos, servicios y aplicaciones pre-creados
 
-### Creando un evento
+### 🎯 Creando un evento
 
 - Cree una carpeta en `source ➡ events` con el nombre del evento
 
@@ -86,7 +91,7 @@
     };
     ```
 
-### Creando un servicio
+### 📡 Creando un servicio
 
 - Cree una carpeta en `source ➡ services` con el nombre del servicio
 
@@ -151,8 +156,8 @@
     };
     ```
 
-## Lista de implementaciones
+## 🚚 Lista de implementaciones
 
 Puede ver el estado de las implementaciones en esta [aquí](https://themarzon.notion.site/3a93960b980b484780c38e8c9aa360e1?v=469840de43db4e12b2355d6d8bd8588e)
 
-> Más documentación próximamente
+> Más documentación próximamente...
