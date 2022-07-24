@@ -25,17 +25,17 @@
 
 ## 📦 Instalación del proyecto
 
-- Instale la versión `18.6.0` o superior de [Node](https://nodejs.org)
+- Instale la versión ``18.6.0`` o superior de [**Node**](https://nodejs.org)
 
-- Instale las dependencias del proyecto utilizando `Yarn`:
+- Instale las dependencias del proyecto utilizando [**Yarn**](https://yarnpkg.com):
   
     ```sh-session
     yarn install
     ```
 
-- Cree el archivo `.env` en la raíz del proyecto y agregue las siguientes llaves:
+- Cree el archivo ``.env`` en la raíz del proyecto y agregue las siguientes llaves:
 
-    | Nombre      | Contenido          |
+    | 🔒 Nombre   | 🔑 Contenido       |
     |-------------|--------------------|
     | `BOT_TOKEN` | El `Token` del bot |
 
@@ -45,13 +45,13 @@
 
 ### 🎯 Creando un evento
 
-- Cree una carpeta en `source ➡ events` con el nombre del evento
+- Cree una carpeta en ``source ➡ events`` con el nombre del evento
 
-    > Si la carpeta `source ➡ events` no existe, créela
+    > Si la carpeta ``source ➡ events`` no existe, créela
 
-- Cree el archivo `main.js` en la raíz de la carpeta del evento
+- Cree el archivo ``main.js`` en la raíz de la carpeta del evento
 
-- Abra el archivo `main.js` y exporte un objeto vacío:
+- Abra el archivo ``main.js`` y exporte un objeto vacío:
 
     ```js
     export default {};
@@ -66,7 +66,7 @@
     };
     ```
 
-- Establezca los `Intents` necesarios:
+- Establezca los ``Intents`` necesarios:
 
     ```js
     export default {
@@ -93,13 +93,13 @@
 
 ### 📡 Creando un servicio
 
-- Cree una carpeta en `source ➡ services` con el nombre del servicio
+- Cree una carpeta en ``source ➡ services`` con el nombre del servicio
 
-    > Si la carpeta `source ➡ services` no existe, créela
+    > Si la carpeta ``source ➡ services`` no existe, créela
 
-- Cree el archivo `main.js` en la raíz de la carpeta del servicio
+- Cree el archivo ``main.js`` en la raíz de la carpeta del servicio
 
-- Abra el archivo `main.js` y exporte un objeto vacío:
+- Abra el archivo ``main.js`` y exporte un objeto vacío:
 
     ```js
     export default {};
@@ -114,7 +114,7 @@
     };
     ```
 
-- Establezca los `Intents` necesarios:
+- Establezca los ``Intents`` necesarios:
 
     ```js
     export default {
@@ -124,7 +124,7 @@
     };
     ```
 
-- Establezca un objeto llamado `events` que contendrá los eventos a utilizar:
+- Establezca un objeto llamado ``events`` que contendrá los eventos a utilizar:
 
     ```js
     export default {
@@ -135,7 +135,7 @@
         events: {}
     };
 
-- Establezca en el objeto `events`, un `Array` con el nombre del evento a utilizar y que este contenga las funciones a ejecutarse:
+- Establezca en el objeto ``events``, un ``Array`` con el nombre del evento a utilizar y que este contenga las funciones a ejecutarse:
 
     ```js
     export default {
@@ -158,6 +158,6 @@
 
 ## 🚚 Lista de implementaciones
 
-Puede ver el estado de las implementaciones en esta [aquí](https://themarzon.notion.site/3a93960b980b484780c38e8c9aa360e1?v=469840de43db4e12b2355d6d8bd8588e)
+Puede ver el estado de las implementaciones en esta [aquí](https://themarzon.notion.site/3a93960b980b484780c38e8c9aa360e1)
 
 > Más documentación próximamente...
