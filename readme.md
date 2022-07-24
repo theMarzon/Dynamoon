@@ -21,13 +21,15 @@
 
 ## Características
 
-- ⚡️ Gestión de archivos eficientes 
+- ⚡️ Gestión de recursos eficientes 
 
 - 🧱 Estructura de archivos modular
 
 - 🧽 Sin código basura
 
-- 🌃 Escrito en ``TypeScript``
+- ✍ Escrito en ``TypeScript``
+
+- 🌃 Utiliza las últimas versiones de las dependencias
 
 ## Implementaciones
 
