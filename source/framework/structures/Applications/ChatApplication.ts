@@ -60,26 +60,22 @@ export default class implements ChatApplicationData {
 
     constructor (options: ChatApplicationOptions) {
 
-        this.name = options.name;
+        this.name   = options.name;
+        this.events = options.events;
 
         this.priority = options.priority ?? this.priority;
         this.intents  = options.intents  ?? this.intents;
 
-        this.events = options.events ?? this.events;
-
         // Visualizacion
-        this.show.dm = options.show?.dm ?? this.show.dm;
+        this.show.name        = options.show.name;
+        this.show.description = options.show.description;
 
-        this.show.options = options.show?.options ?? this.show.options;
+        this.show.dm = options.show.dm ?? this.show.dm;
 
-        this.show.name         = options.show?.name          ?? this.show.name;
-        this.show.name.default = options.show?.name?.default ?? this.show.name.default;
+        this.show.options = options.show.options ?? this.show.options;
 
-        this.show.description         = options.show?.description          ?? this.show.description;
-        this.show.description.default = options.show?.description?.default ?? this.show.description.default;
-
-        this.show.permissions.member = options.show?.permissions?.member ?? this.show.permissions.member;
-        this.show.permissions.bot    = options.show?.permissions?.bot    ?? this.show.permissions.bot;
+        this.show.permissions.member = options.show.permissions?.member ?? this.show.permissions.member;
+        this.show.permissions.bot    = options.show.permissions?.bot    ?? this.show.permissions.bot;
 
         // Esquema
         this.schema.options                  = this.show.options;

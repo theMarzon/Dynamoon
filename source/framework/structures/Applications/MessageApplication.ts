@@ -50,21 +50,19 @@ export default class implements MessageApplicationData {
 
     constructor (options: MessageApplicationOptions) {
 
-        this.name = options.name;
+        this.name   = options.name;
+        this.events = options.events;
 
         this.priority = options.priority ?? this.priority;
         this.intents  = options.intents  ?? this.intents;
 
-        this.events = options.events ?? this.events;
-
         // Visualizacion
-        this.show.dm = options.show?.dm ?? this.show.dm;
+        this.show.name = options.show.name;
 
-        this.show.name         = options.show?.name          ?? this.show.name;
-        this.show.name.default = options.show?.name?.default ?? this.show.name.default;
+        this.show.dm = options.show.dm ?? this.show.dm;
 
-        this.show.permissions.member = options.show?.permissions?.member ?? this.show.permissions.member;
-        this.show.permissions.bot    = options.show?.permissions?.bot    ?? this.show.permissions.bot;
+        this.show.permissions.member = options.show.permissions?.member ?? this.show.permissions.member;
+        this.show.permissions.bot    = options.show.permissions?.bot    ?? this.show.permissions.bot;
 
         // Esquema
         this.schema.name                     = this.show.name.default;

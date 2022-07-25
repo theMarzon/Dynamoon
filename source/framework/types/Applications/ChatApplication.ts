@@ -48,26 +48,26 @@ export interface ChatApplicationOptions {
 
     name: string
 
+    events: object
+
     priority?: number
     intents?:  number
 
-    events?: object
+    show: {
 
-    show?: {
+        name: Partial<Record<discord.Locale, string>> & {
+
+            default: string
+        }
+
+        description: Partial<Record<discord.Locale, string>> & {
+
+            default: string
+        }
 
         dm?: boolean
 
         options?: discord.ApplicationCommandOptionData[]
-
-        name?: Partial<Record<discord.Locale, string>> & {
-
-            default: string
-        }
-
-        description?: Partial<Record<discord.Locale, string>> & {
-
-            default: string
-        }
 
         permissions?: {
 

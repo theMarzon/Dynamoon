@@ -29,31 +29,34 @@ export interface MessageApplicationData {
     priority: number
     intents:  number
 
-    events: object
-
     type: discord.ApplicationCommandType.Message
 
     show:   MessageApplicationShow
     schema: MessageApplicationSchema
+
+    events: {
+
+        [event: string]: unknown
+    }
 };
 
 export interface MessageApplicationOptions {
 
     name: string
 
+    events: object
+
     priority?: number
     intents?:  number
 
-    events?: object
+    show: {
 
-    show?: {
-
-        dm?: boolean
-
-        name?: Partial<Record<discord.Locale, string>> & {
+        name: Partial<Record<discord.Locale, string>> & {
 
             default: string
         }
+
+        dm?: boolean
 
         permissions?: {
 

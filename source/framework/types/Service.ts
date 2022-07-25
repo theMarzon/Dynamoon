@@ -12,8 +12,8 @@ export interface ServiceOptions {
 
     name: string
 
+    events: object
+
     priority?: number
     intents?:  number
-
-    events?: object
 };

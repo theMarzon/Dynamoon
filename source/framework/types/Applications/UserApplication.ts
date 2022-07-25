@@ -29,31 +29,34 @@ export interface UserApplicationData {
     priority: number
     intents:  number
 
-    events: object
-
     type: discord.ApplicationCommandType.User
 
     show:   UserApplicationShow
     schema: UserApplicationSchema
+
+    events: {
+
+        [event: string]: unknown
+    }
 };
 
 export interface UserApplicationOptions {
 
     name: string
 
+    events: object
+
     priority?: number
     intents?:  number
 
-    events?: object
+    show: {
 
-    show?: {
-
-        dm?: boolean
-
-        name?: Partial<Record<discord.Locale, string>> & {
+        name: Partial<Record<discord.Locale, string>> & {
 
             default: string
         }
+
+        dm?: boolean
 
         permissions?: {
 

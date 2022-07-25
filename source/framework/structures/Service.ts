@@ -15,11 +15,10 @@ export default class implements ServiceData {
 
     constructor (options: ServiceOptions) {
 
-        this.name = options.name;
+        this.name   = options.name;
+        this.events = options.events;
 
         this.priority = options.priority ?? this.priority;
         this.intents  = options.intents  ?? this.intents;
-
-        this.events = options.events ?? this.events;
     };
 };

@@ -63,8 +63,8 @@ export interface EventOptions {
 
     name: string
 
+    execute: ({ client, file, loaded, used }: ExecuteOptions) => void
+
     priority?: number
     intents?:  number
-
-    execute?: ({ client, file, loaded, used }: ExecuteOptions) => void
 };

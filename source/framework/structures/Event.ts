@@ -16,11 +16,10 @@ export default class implements EventData {
 
     constructor (options: EventOptions) {
 
-        this.name = options.name;
+        this.name    = options.name;
+        this.execute = options.execute;
 
         this.priority = options.priority ?? this.priority;
         this.intents  = options.intents  ?? this.intents;
-
-        this.execute = options.execute ?? this.execute;
     };
 };
