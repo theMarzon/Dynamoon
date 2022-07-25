@@ -2,7 +2,7 @@ export default {
 
     events: {
 
-        ready: [
+        clientReady: [
 
             ({ client, loaded }) => {
 
@@ -19,7 +19,7 @@ export default {
 
                 client.application.commands
                     .set(allApplications)
-                    .then(() => console.log('Indexed applications'));
+                    .then(() => console.log('Applications indexed'));
             }
         ]
     }

@@ -15,7 +15,7 @@
 
 - 🧱 Crear un evento, servicio o aplicación
 
-    > _Ejemplos basados en los eventos, servicios y aplicaciones pre-creadas_
+    > _Ejemplos basados en los eventos, servicios y aplicaciones pre-creados_
 
     - [🎯 Crear un evento](https://github.com/theMarzon/Dynamoon#Crear-un-evento)
 
