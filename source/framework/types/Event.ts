@@ -1,27 +1,24 @@
-import loadedEvents              from '../loaders/loadedEvents.js';
-import loadedServices            from '../loaders/loadedServices.js';
-import loadedChatApplications    from '../loaders/applications/loadedChatApplications.js';
-import loadedUserApplications    from '../loaders/applications/loadedUserApplications.js';
-import loadedMessageApplications from '../loaders/applications/loadedMessageApplications.js';
-import usedEvents                from '../groupers/usedEvents.js';
-import usedIntents               from '../groupers/usedIntents.js';
-
-import Client from '../structures/Client.js';
+import Client             from '../structures/Client.js';
+import Event              from '../structures/Event.js';
+import Service            from '../structures/Service.js';
+import ChatApplication    from '../structures/Applications/ChatApplication.js';
+import UserApplication    from '../structures/Applications/UserApplication.js';
+import MessageApplication from '../structures/Applications/MessageApplication.js';
 
 export type EventsGroup = {
 
     [event: string]: {
 
-        applications: typeof loadedChatApplications
-                    | typeof loadedUserApplications
-                    | typeof loadedMessageApplications
+        applications: (ChatApplication
+                    |  UserApplication
+                    |  MessageApplication)[]
 
-        services: typeof loadedServices
+        services: Service[]
 
-        all: typeof loadedServices
-           | typeof loadedChatApplications
-           | typeof loadedUserApplications
-           | typeof loadedMessageApplications
+        all: (Service
+           |  ChatApplication
+           |  UserApplication
+           |  MessageApplication)[]
     }
 };
 
@@ -33,21 +30,22 @@ export interface ExecuteOptions {
 
     loaded: {
 
-        events:   typeof loadedEvents
-        services: typeof loadedServices
+        events:   Event[]
+        services: Service[]
 
         applications: {
 
-            chat:    typeof loadedChatApplications
-            user:    typeof loadedUserApplications
-            message: typeof loadedMessageApplications
+            chat:    ChatApplication[]
+            user:    UserApplication[]
+            message: MessageApplication[]
         }
     }
 
     used: {
 
-        intents: typeof usedIntents
-        events:  typeof usedEvents
+        intents: number
+
+        events: EventsGroup
     }
 };
 

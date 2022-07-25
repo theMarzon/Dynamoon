@@ -35,6 +35,8 @@ export default class extends Client {
             intents: usedIntents
         });
 
+        this.ws.setMaxListeners(1);
+
         this.setMaxListeners(1);
     };
 

@@ -23,7 +23,7 @@
 
 ## Características
 
-- ⚡️ Gestión de recursos eficientes 
+- ⚡️ Gestión de recursos eficiente
 
 - 🧱 Estructura de archivos modular
 
@@ -41,9 +41,11 @@ Puede ver el estado de las implementaciones en esta [aquí](https://themarzon.no
 
 - Instale la versión ``18.6.0`` o superior de [**Node**](https://nodejs.org)
 
-- Instale las dependencias del proyecto utilizando [**Yarn**](https://yarnpkg.com):
+- Instale las dependencias del proyecto:
   
     ```sh-session
+    npm install
+    pnpm install
     yarn install
     ```
 
@@ -55,25 +57,21 @@ Puede ver el estado de las implementaciones en esta [aquí](https://themarzon.no
 
 ## Crear un evento
 
-Cree una carpeta en ``source ➡ events`` con el nombre del evento
+1. Cree una carpeta en ``source ➡ events`` con el nombre del evento
 
-> _Si la carpeta ``source ➡ events`` no existe, créela_
+    > _Si la carpeta ``source ➡ events`` no existe, créela_
 
-##
-
-Cree el archivo ``main.js`` en la carpeta creada y luego, exporte un objeto vacío:
+2. Cree el archivo ``main.js`` en la carpeta creada y luego, exporte un objeto vacío:
 
 ```js
 export default {};
 ```
 
-##
+#
 
-Define la prioridad de ejecución:
+3. Define la prioridad de ejecución:
 
-- Mientras más alta es la cifra, más prioridad tendrá
-
-- [x] Es opcional
+    - Mientras más alta es la cifra, más prioridad tendrá
 
 ```js
 export default {
@@ -82,11 +80,11 @@ export default {
 };
 ```
 
-##
-
-Define los ``Intents`` necesarios:
-
 - [x] Es opcional
+
+#
+
+4. Define los ``Intents`` necesarios:
 
 ```js
 export default {
@@ -96,11 +94,11 @@ export default {
 };
 ```
 
-##
-
-Define la función a ejecutarse:
-
 - [x] Es opcional
+
+#
+
+5. Define la función a ejecutarse:
 
 ```js
 export default {
@@ -115,27 +113,25 @@ export default {
 };
 ```
 
+- [x] Es opcional
+
 ## Crear un servicio
 
-Cree una carpeta en ``source ➡ services`` con el nombre del servicio
+1. Cree una carpeta en ``source ➡ services`` con el nombre del servicio
 
-> _Si la carpeta ``source ➡ services`` no existe, créela_
+    > _Si la carpeta ``source ➡ services`` no existe, créela_
 
-##
-
-Cree el archivo ``main.js`` en la carpeta creada y luego, exporte un objeto vacío:
+2. Cree el archivo ``main.js`` en la carpeta creada y luego, exporte un objeto vacío:
 
 ```js
 export default {};
 ```
 
-##
+#
 
-Define la prioridad de ejecución:
+3. Define la prioridad de ejecución:
 
-- Mientras más alta es la cifra, más prioridad tendrá
-
-- [x] Es opcional
+    - Mientras más alta es la cifra, más prioridad tendrá
 
 ```js
 export default {
@@ -144,11 +140,11 @@ export default {
 };
 ```
 
-##
-
-Define los ``Intents`` necesarios:
-
 - [x] Es opcional
+
+#
+
+4. Define los ``Intents`` necesarios:
 
 ```js
 export default {
@@ -158,11 +154,11 @@ export default {
 };
 ```
 
-##
-
-Define los eventos a utilizarse:
-
 - [x] Es opcional
+
+#
+
+5. Define los eventos a utilizarse:
 
 ```js
 export default {
@@ -182,5 +178,7 @@ export default {
     }
 };
 ```
+
+- [x] Es opcional
 
 > _Más documentación próximamente..._
