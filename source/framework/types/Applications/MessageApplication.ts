@@ -37,7 +37,28 @@ export interface MessageApplicationData {
     schema: MessageApplicationSchema
 };
 
-export interface MessageApplicationOptions extends Partial<Omit<MessageApplicationData, 'schema'>> {
+export interface MessageApplicationOptions {
 
     name: string
+
+    priority?: number
+    intents?:  number
+
+    events?: object
+
+    show?: {
+
+        dm?: boolean
+
+        name?: Partial<Record<discord.Locale, string>> & {
+
+            default: string
+        }
+
+        permissions?: {
+
+            member?: null | bigint
+            bot?:    null | bigint
+        }
+    };
 };

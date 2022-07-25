@@ -33,11 +33,32 @@ export interface UserApplicationData {
 
     type: discord.ApplicationCommandType.User
 
-    show: UserApplicationShow
-    schema:  UserApplicationSchema
+    show:   UserApplicationShow
+    schema: UserApplicationSchema
 };
 
-export interface UserApplicationOptions extends Partial<Omit<UserApplicationData, 'schema'>> {
+export interface UserApplicationOptions {
 
     name: string
+
+    priority?: number
+    intents?:  number
+
+    events?: object
+
+    show?: {
+
+        dm?: boolean
+
+        name?: Partial<Record<discord.Locale, string>> & {
+
+            default: string
+        }
+
+        permissions?: {
+
+            member?: null | bigint
+            bot?:    null | bigint
+        }
+    };
 };

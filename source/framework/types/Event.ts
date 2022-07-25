@@ -5,7 +5,7 @@ import ChatApplication    from '../structures/Applications/ChatApplication.js';
 import UserApplication    from '../structures/Applications/UserApplication.js';
 import MessageApplication from '../structures/Applications/MessageApplication.js';
 
-export type EventsGroup = {
+export interface EventsGroup {
 
     [event: string]: {
 
@@ -59,7 +59,12 @@ export interface EventData {
     execute: ({ client, file, loaded, used }: ExecuteOptions) => void
 };
 
-export interface EventOptions extends Partial<EventData> {
+export interface EventOptions {
 
     name: string
+
+    priority?: number
+    intents?:  number
+
+    execute?: ({ client, file, loaded, used }: ExecuteOptions) => void
 };

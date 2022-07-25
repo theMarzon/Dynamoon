@@ -44,7 +44,35 @@ export interface ChatApplicationData {
     schema: ChatApplicationSchema
 };
 
-export interface ChatApplicationOptions extends Partial<Omit<ChatApplicationData, 'schema'>> {
+export interface ChatApplicationOptions {
 
     name: string
+
+    priority?: number
+    intents?:  number
+
+    events?: object
+
+    show?: {
+
+        dm?: boolean
+
+        options?: discord.ApplicationCommandOptionData[]
+
+        name?: Partial<Record<discord.Locale, string>> & {
+
+            default: string
+        }
+
+        description?: Partial<Record<discord.Locale, string>> & {
+
+            default: string
+        }
+
+        permissions?: {
+
+            member?: null | bigint
+            bot?:    null | bigint
+        }
+    };
 };

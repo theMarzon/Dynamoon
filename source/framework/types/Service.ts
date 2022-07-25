@@ -8,7 +8,12 @@ export interface ServiceData {
     events: object
 };
 
-export interface ServiceOptions extends Partial<ServiceData> {
+export interface ServiceOptions {
 
     name: string
+
+    priority?: number
+    intents?:  number
+
+    events?: object
 };
