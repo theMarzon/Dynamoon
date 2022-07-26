@@ -1,25 +1,33 @@
 <div align='center'>
     <img src='https://i.ibb.co/CKz4kQQ/logo.png' width='512' />
     <p>
-        Un framework eficiente para desarrollar bots utilizando discord.js
+        Un framework eficiente, rápido y modular para desarrollar bots utilizando discord.js
     </p>
 </div>
 
 ## Índice
 
-- [✨ Características](https://github.com/theMarzon/Dynamoon#Características)
+- [✨ Características]()
 
-- [🚚 Implementaciones](https://github.com/theMarzon/Dynamoon#Implementaciones)
+- [🚚 Implementaciones]()
 
-- [📦 Instalación](https://github.com/theMarzon/Dynamoon#Instalación)
+- [📦 Preparación]()
 
-- 🧱 Crear un evento, servicio o aplicación
+- 🧱 Como crear un evento, servicio o aplicación
 
-    > _Ejemplos basados en los eventos, servicios y aplicaciones pre-creados_
+    > _Ejemplos basados en los eventos, servicios y aplicaciones que contiene el **Framework** por defecto_
 
-    - [🎯 Crear un evento](https://github.com/theMarzon/Dynamoon#Crear-un-evento)
+    - [🎯 Como crear un evento]()
 
-    - [📡 Crear un servicio](https://github.com/theMarzon/Dynamoon#Crear-un-servicio)
+    - [📡 Como crear un servicio]()
+
+- 🚧 Como trasladar un evento, servicio o aplicación a **TypeScript**
+
+    > _Ejemplos basados en los eventos, servicios y aplicaciones que contiene el **Framework** por defecto_
+
+    - [🎯 Como trasladar un evento a **TypeScript**]()
+
+    - [📡 Como trasladar un servicio a **TypeScript**]()
 
 ## Características
 
@@ -29,19 +37,21 @@
 
 - 🧽 Sin código basura
 
-- ✍ Escrito en [**TypeScript**](https://www.typescriptlang.org)
+- ✍ Escrito en **TypeScript**
 
-- 🌃 Utiliza las últimas versiones de las dependencias
+- 🌃 Actualizado a las últimas versiones
+
+- 🛡 Sin dependencias de terceros
 
 ## Implementaciones
 
-Puede ver el estado de las implementaciones en esta [aquí](https://themarzon.notion.site/3a93960b980b484780c38e8c9aa360e1)
+Puede ver el estado actual de las implementaciones [aquí](https://themarzon.notion.site/3a93960b980b484780c38e8c9aa360e1)
 
-## Instalación
+## Preparación
 
-- Instale la versión ``18.6.0`` o superior de [**Node**](https://nodejs.org)
+- Primero instale **Node** en la versión ``18.6.0`` o superior [aquí](https://nodejs.org)
 
-- Instale las dependencias del proyecto:
+- Luego, instale las dependencias:
   
     ```sh-session
     npm install
@@ -49,44 +59,58 @@ Puede ver el estado de las implementaciones en esta [aquí](https://themarzon.no
     yarn install
     ```
 
-- Cree el archivo ``.env`` en la raíz del proyecto y agregue las siguientes llaves:
+- Por último, cree el archivo ``.env`` en la raíz del proyecto y agregue las siguientes claves:
 
     | Nombre      | Contenido          |
     |-------------|--------------------|
     | `BOT_TOKEN` | El `Token` del bot |
 
-## Crear un evento
+# Estructura
 
-1. Cree una carpeta en ``source ➡ events`` con el nombre del evento
+> _Aqui iran la estructura de los directorios y archivos_
 
-    > _Si la carpeta ``source ➡ events`` no existe, créela_
+## Como crear un evento
 
-2. Cree el archivo ``main.js`` en la carpeta creada y luego, exporte un objeto vacío:
+- Primero debe crear una carpeta en el directorio ``source ➡ events`` con el nombre del evento, esta carpeta contendrá todos nuestros futuros archivos
 
-```js
+    > _Si el directorio ``source ➡ events`` no existe, créelo_
+
+- Cree un archivo ``main.js`` o ``main.ts`` según su preferencia, en la carpeta del evento
+
+    > _En este caso utilizaremos **JavaScript** para este ejemplo_
+    >
+    > Si desea utilizar **TypeScript**, primero lea estos pasos y luego vaya a la sección [Como trasladar un evento a **TypeScript**]()
+
+- Luego, exporte un objeto vacío:
+
+```ts
 export default {};
 ```
 
 #
 
-3. Define la prioridad de ejecución:
+- Para definir la prioridad de ejecución que tendrá nuestro evento, cree la siguiente propiedad:
 
-    - Mientras más alta es la cifra, más prioridad tendrá
+    > _Tenga en cuenta que mientras más alta es la cifra, más prioridad tendrá el evento_
 
-```js
+```ts
 export default {
 
     priority: 0
 };
 ```
 
-- [x] Es opcional
+- [x] Este paso es opcional
 
 #
 
-4. Define los ``Intents`` necesarios:
+- Para definir los ``Intents`` necesarios de su evento, cree la siguiente propiedad:
 
-```js
+    > _Por favor, utilicé estos [valores para definir los ``Intents``](https://discord.com/developers/docs/topics/gateway#gateway-intents)_
+    > 
+    > En este ejemplo, no serán necesarios
+
+```ts
 export default {
 
     priority: 0,
@@ -94,17 +118,37 @@ export default {
 };
 ```
 
-- [x] Es opcional
+- [x] Este paso es opcional
 
 #
 
-5. Define la función a ejecutarse:
+- Para definir los ``Partials`` necesarios de su evento, cree la siguiente propiedad:
 
-```js
+    > En este ejemplo, no serán necesarios
+
+```ts
 export default {
 
     priority: 0,
     intents:  0,
+
+    partials: []
+};
+```
+
+- [x] Este paso es opcional
+
+#
+
+- Y por último, para definir la función a ejecutar cuando el **Framework** sea ejecutado:
+
+```ts
+export default {
+
+    priority: 0,
+    intents:  0,
+
+    partials: [],
 
     execute: ({ client, file, loaded, used }) => {
 
@@ -113,72 +157,6 @@ export default {
 };
 ```
 
-- [x] Es opcional
-
-## Crear un servicio
-
-1. Cree una carpeta en ``source ➡ services`` con el nombre del servicio
-
-    > _Si la carpeta ``source ➡ services`` no existe, créela_
-
-2. Cree el archivo ``main.js`` en la carpeta creada y luego, exporte un objeto vacío:
-
-```js
-export default {};
-```
-
 #
-
-3. Define la prioridad de ejecución:
-
-    - Mientras más alta es la cifra, más prioridad tendrá
-
-```js
-export default {
-
-    priority: 0
-};
-```
-
-- [x] Es opcional
-
-#
-
-4. Define los ``Intents`` necesarios:
-
-```js
-export default {
-
-    priority: 0,
-    intents:  0
-};
-```
-
-- [x] Es opcional
-
-#
-
-5. Define los eventos a utilizarse:
-
-```js
-export default {
-
-    priority: 0,
-    intents:  0,
-
-    events: {
-
-        boot: [
-
-            ({ client, file, loaded, used }) => {
-
-                console.log('Hello world');
-            }
-        ]
-    }
-};
-```
-
-- [x] Es opcional
 
 > _Más documentación próximamente..._

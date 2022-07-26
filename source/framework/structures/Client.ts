@@ -72,8 +72,9 @@ export default class extends Client {
 
                 used: {
 
-                    events:  usedEvents,
-                    intents: usedIntents
+                    events:   usedEvents,
+                    intents:  usedIntents,
+                    partials: usedPartials
                 }
             });
         }
