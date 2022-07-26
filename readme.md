@@ -44,19 +44,19 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
 ## Estructuras
 
 
-- ``sources\``
+- 📂 ``sources\``
 
-    - ``events\``
+    - 📂 ``events\``
 
-    - ``services\``
+    - 📂 ``services\``
 
-    - ``applications\``
+    - 📂 ``applications\``
 
-        - ``chat\``
+        - 📂 ``chat\``
 
-        - ``user\``
+        - 📂 ``user\``
 
-        - ``message\``
+        - 📂 ``message\``
 
 
 # Como crear un evento, servicio o aplicación
