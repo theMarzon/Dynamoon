@@ -7,13 +7,15 @@
 
 ## Índice
 
-- [✨ Características]()
+- [✨ Características](https://github.com/theMarzon/Dynamoon/#Características)
 
-- [🚚 Implementaciones]()
+- [🚚 Implementaciones](https://github.com/theMarzon/Dynamoon/#Implementaciones)
 
-- [📦 Preparación]()
+- [📦 Preparación](https://github.com/theMarzon/Dynamoon/#Preparación)
 
-- 🧱 Como crear un evento, servicio o aplicación
+- [🧱 Estructuras](https://github.com/theMarzon/Dynamoon/#Estructuras)
+
+- 🏗 Como crear un evento, servicio o aplicación
 
     > _Ejemplos basados en los eventos, servicios y aplicaciones que contiene el **Framework** por defecto_
 
@@ -65,9 +67,64 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
     |-------------|--------------------|
     | `BOT_TOKEN` | El `Token` del bot |
 
-# Estructura
+## Estructuras
 
-> _Aqui iran la estructura de los directorios y archivos_
+- Directorio para los eventos
+
+```
+sources\
+|
+|__ events\
+```
+
+#
+
+- Directorio para los servicios
+
+
+```
+sources\
+|
+|__ services\
+```
+
+#
+
+- Directorio para las aplicaciones de barra lateral
+
+
+```
+sources\
+|
+|__ applications\
+    |
+    |__ chat\
+```
+
+#
+
+- Directorio para las aplicaciones de menú contextual para usuarios
+
+
+```
+sources\
+|
+|__ applications\
+    |
+    |__ user\
+```
+
+#
+
+- Directorio para las aplicaciones de menú contextual para mensajes
+
+```
+sources\
+|
+|__ applications\
+    |
+    |__ message\
+```
 
 ## Como crear un evento
 
@@ -79,7 +136,7 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
 
     > _En este caso utilizaremos **JavaScript** para este ejemplo_
     >
-    > Si desea utilizar **TypeScript**, primero lea estos pasos y luego vaya a la sección [Como trasladar un evento a **TypeScript**]()
+    > Si desea utilizar **TypeScript**, primero termine estos pasos y luego vaya a [Como trasladar un evento a **TypeScript**]()
 
 - Luego, exporte un objeto vacío:
 
@@ -156,7 +213,5 @@ export default {
     }
 };
 ```
-
-#
 
 > _Más documentación próximamente..._
