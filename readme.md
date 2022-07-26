@@ -5,33 +5,7 @@
     </p>
 </div>
 
-## Índice
-
-- [✨ Características](https://github.com/theMarzon/Dynamoon/#Características)
-
-- [🚚 Implementaciones](https://github.com/theMarzon/Dynamoon/#Implementaciones)
-
-- [📦 Preparación](https://github.com/theMarzon/Dynamoon/#Preparación)
-
-- [🧱 Estructuras](https://github.com/theMarzon/Dynamoon/#Estructuras)
-
-- 🏗 Como crear un evento, servicio o aplicación
-
-    > _Ejemplos basados en los eventos, servicios y aplicaciones que contiene el **Framework** por defecto_
-
-    - [🎯 Como crear un evento]()
-
-    - [📡 Como crear un servicio]()
-
-- 🚧 Como trasladar un evento, servicio o aplicación a **TypeScript**
-
-    > _Ejemplos basados en los eventos, servicios y aplicaciones que contiene el **Framework** por defecto_
-
-    - [🎯 Como trasladar un evento a **TypeScript**]()
-
-    - [📡 Como trasladar un servicio a **TypeScript**]()
-
-## ✨ Características
+## ``✨`` Características
 
 - ⚡️ Gestión de recursos eficiente
 
@@ -126,6 +100,10 @@ sources\
     |__ message\
 ```
 
+# Como crear un evento, servicio o aplicación
+
+> _Ejemplos basados en los eventos, servicios y aplicaciones que contiene el **Framework** por defecto_
+
 ## Como crear un evento
 
 - Primero debe crear una carpeta en el directorio ``source ➡ events`` con el nombre del evento, esta carpeta contendrá todos nuestros futuros archivos
@@ -213,5 +191,7 @@ export default {
     }
 };
 ```
+
+# 🚧 Como trasladar un evento, servicio o aplicación a **TypeScript**
 
 > _Más documentación próximamente..._
