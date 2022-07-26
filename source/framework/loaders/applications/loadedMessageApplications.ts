@@ -1,26 +1,39 @@
-import path, { join as createPath } from 'node:path';
-
-import createTree from '../../utils/createTree.js';
+import { readdir as readDirectory } from 'node:fs/promises';
+import { join    as createPath    } from 'node:path';
 
 import { messageApplicationsPath } from '../../directoriesPath.js';
 
 import MessageApplication from '../../structures/Applications/MessageApplication.js';
 
-const directoryItems = await createTree(createPath(messageApplicationsPath), 'main.js', 'main.mjs', 'main.cjs', 'main.ts', 'main.mts', 'main.cts');
+let directoryFolders = await readDirectory(messageApplicationsPath);
+
+directoryFolders = directoryFolders.filter((folder) => !folder.startsWith('.'));
 
 // Importa los archivos en paralelo
-let loadedFiles = await Promise.all(directoryItems.map(async (item) => {
+let loadedFiles = await Promise.all(directoryFolders.map(async (folder) => {
 
-    const filePath = createPath(item.join(path.sep));
+    let fileContent;
 
-    const fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
-                                                       : await import(filePath);
+    for (const _fileName of [ 'main.js', 'main.ts' ]) {
+
+        const filePath = createPath(messageApplicationsPath, folder, _fileName);
+
+        try {
+
+            fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
+                                                         : await import(filePath);
+
+        } catch {
+
+            continue;
+        };
+    };
 
     return new MessageApplication({
 
         ...fileContent.default,
 
-        name: item.at(-2)
+        name: folder
     });
 }));
 
