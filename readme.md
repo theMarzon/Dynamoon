@@ -11,7 +11,7 @@
 
 - [🚚 Implementaciones](https://github.com/theMarzon/Dynamoon#Implementaciones)
 
-- [📦 Instalación](https://github.com/theMarzon/Dynamoon#Instalación-del-proyecto)
+- [📦 Instalación](https://github.com/theMarzon/Dynamoon#Instalación)
 
 - 🧱 Crear un evento, servicio o aplicación
 

@@ -59,7 +59,7 @@ jobs:
           node-version: 'latest'
 
       - name: 'Install project dependencies'
-        run:  'npm install --no-audit --no-fund --no-package-lock'
+        run:  'npm install --no-audit --no-fund'
 
       - name: 'Execute lint'
         run:  'npm run check'
