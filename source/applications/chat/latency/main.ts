@@ -1,7 +1,7 @@
 import discord from 'discord.js';
 
 import { ChatApplicationOptions } from '../../../framework/types/Applications/ChatApplication.js';
-import { ApplicationOptions     } from '../../../events/application/types/Event.js';
+import { ApplicationOptions     } from '../../../events/application/types/Execution.js';
 
 export default <Omit<ChatApplicationOptions, 'name'>> {
 

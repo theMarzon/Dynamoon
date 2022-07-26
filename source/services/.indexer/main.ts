@@ -1,5 +1,5 @@
 import { ServiceOptions     } from '../../framework/types/Service.js';
-import { ClientReadyOptions } from '../../events/clientReady/types/Event.js';
+import { ClientReadyOptions } from '../../events/clientReady/types/Execution.js';
 
 export default <Omit<ServiceOptions, 'name'>> {
 
