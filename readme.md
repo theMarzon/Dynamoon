@@ -5,7 +5,7 @@
     </p>
 </div>
 
-## ``✨`` Características
+## Características
 
 - ⚡️ Gestión de recursos eficiente
 
@@ -43,68 +43,37 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
 
 ## Estructuras
 
-- Directorio para los eventos
 
-```
-sources\
-|
-|__ events\
-```
+- ``sources\``
 
-#
+    > Directorio para los eventos
 
-- Directorio para los servicios
+    - ``events\``
 
+    > Directorio para los servicios
 
-```
-sources\
-|
-|__ services\
-```
+    - ``services\``
 
-#
+    - ``applications\``
 
-- Directorio para las aplicaciones de barra lateral
+        > Directorio para las aplicaciones de barra lateral
 
+        - ``chat\``
 
-```
-sources\
-|
-|__ applications\
-    |
-    |__ chat\
-```
+        > Directorio para las aplicaciones de menú contextual para usuarios
 
-#
+        - ``user\``
 
-- Directorio para las aplicaciones de menú contextual para usuarios
+        > Directorio para las aplicaciones de menú contextual para mensajes
 
+        - ``message\``
 
-```
-sources\
-|
-|__ applications\
-    |
-    |__ user\
-```
-
-#
-
-- Directorio para las aplicaciones de menú contextual para mensajes
-
-```
-sources\
-|
-|__ applications\
-    |
-    |__ message\
-```
 
 # Como crear un evento, servicio o aplicación
 
 > _Ejemplos basados en los eventos, servicios y aplicaciones que contiene el **Framework** por defecto_
 
-## Como crear un evento
+## Evento
 
 - Primero debe crear una carpeta en el directorio ``source ➡ events`` con el nombre del evento, esta carpeta contendrá todos nuestros futuros archivos
 
@@ -192,6 +161,6 @@ export default {
 };
 ```
 
-# 🚧 Como trasladar un evento, servicio o aplicación a **TypeScript**
+# Como trasladar un evento, servicio o aplicación a **TypeScript**
 
 > _Más documentación próximamente..._
