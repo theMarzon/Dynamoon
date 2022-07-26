@@ -21,13 +21,13 @@
 
 ## Implementaciones
 
-Puede ver el estado actual de las implementaciones [aquí](https://themarzon.notion.site/3a93960b980b484780c38e8c9aa360e1)
+Puedes ver el estado actual de las implementaciones [aquí](https://themarzon.notion.site/3a93960b980b484780c38e8c9aa360e1)
 
-## Preparación
+## Instalación
 
-- Primero instale **Node** en la versión ``18.6.0`` o superior [aquí](https://nodejs.org)
+1. Instale **Node** ``v18.7.0`` o superior [aquí](https://nodejs.org)
 
-- Luego, instale las dependencias:
+2. Instale las dependencias del proyecto:
   
     ```sh-session
     npm install
@@ -41,27 +41,27 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
     yarn install
     ```
 
-- Por último, cree el archivo ``.env`` en la raíz del proyecto y agregue las siguientes claves:
+3. Cree un archivo llamado ``.env`` en la raíz del proyecto y agregue las siguientes claves:
 
-    | Nombre      | Contenido          |
-    |-------------|--------------------|
-    | `BOT_TOKEN` | El `Token` del bot |
+    | Nombre      | Contenido        |
+    |-------------|------------------|
+    | `BOT_TOKEN` | La firma del bot |
 
 ## Directorios
 
 - 📂 ``sources\``
 
-    - 📂 ``events\`` _(Para los eventos)_
+    - 📂 ``events\`` _(Eventos)_
 
-    - 📂 ``services\`` _(Para los servicios)_
+    - 📂 ``services\`` _(Servicios)_
 
     - 📂 ``applications\``
 
-        - 📂 ``chat\`` _(Para las aplicaciones de barra lateral)_
+        - 📂 ``chat\`` _(Aplicaciones de barra lateral)_
 
-        - 📂 ``user\`` _(Para las aplicaciones en el menú contextual de usuarios)_
+        - 📂 ``user\`` _(Aplicaciones en el menú contextual de usuarios)_
 
-        - 📂 ``message\`` _(Para las aplicaciones en el menú contextual de mensajes)_
+        - 📂 ``message\`` _(Aplicaciones en el menú contextual de mensajes)_
 
 
 # Como crear un evento, servicio o aplicación
@@ -70,19 +70,19 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
 
 ## Evento
 
-- Primero debe crear una carpeta en el [directorio para los eventos](https://github.com/theMarzon/Dynamoon/#Directorios) con el nombre del evento, esta carpeta contendrá todos nuestros futuros archivos
+- Primero debe crear una carpeta en el [directorio de los eventos](https://github.com/theMarzon/Dynamoon/#Directorios) con el nombre del evento, esta carpeta contendrá todos nuestros futuros archivos
 
     > Si el directorio no existe, créelo
 
-- Cree un archivo ``main.js`` o ``main.ts`` según su preferencia, en la carpeta del evento
+- Cree un archivo llamado ``main.js`` o ``main.ts`` según sus necesidades, en la carpeta del evento
 
     > En este caso utilizaremos **JavaScript** para este ejemplo
     >
-    > Si desea utilizar **TypeScript**, primero termine estos pasos y luego vaya a [Como trasladar un evento a **TypeScript**]()
+    > Si desea utilizar **TypeScript**, termine este ejemplo y luego vaya a [Como trasladar un evento a **TypeScript**]()
 
 - Luego, exporte un objeto vacío:
 
-```ts
+```js
 export default {};
 ```
 
@@ -92,7 +92,7 @@ export default {};
 
     > Tenga en cuenta que mientras más alta es la cifra, más prioridad tendrá el evento
 
-```ts
+```js
 export default {
 
     priority: 0
@@ -109,7 +109,7 @@ export default {
     > 
     > En este ejemplo, no serán necesarios
 
-```ts
+```js
 export default {
 
     priority: 0,
@@ -125,7 +125,7 @@ export default {
 
     > En este ejemplo, no serán necesarios
 
-```ts
+```js
 export default {
 
     priority: 0,
@@ -141,7 +141,7 @@ export default {
 
 - Y por último, para definir la función a ejecutar cuando el **Framework** sea ejecutado:
 
-```ts
+```js
 export default {
 
     priority: 0,
@@ -157,5 +157,7 @@ export default {
 ```
 
 # Como trasladar un evento, servicio o aplicación a **TypeScript**
+
+> Ejemplos creados a partir de los eventos, servicios y aplicaciones que contiene el **Framework** por defecto
 
 > Más documentación próximamente...
