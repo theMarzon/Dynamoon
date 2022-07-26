@@ -66,17 +66,17 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
 
 # Como crear un evento, servicio o aplicación
 
-> _Ejemplos basados en los eventos, servicios y aplicaciones que contiene el **Framework** por defecto_
+> Ejemplos basados en los eventos, servicios y aplicaciones que contiene el **Framework** por defecto
 
 ## Evento
 
 - Primero debe crear una carpeta en el directorio ``source ➡ events`` con el nombre del evento, esta carpeta contendrá todos nuestros futuros archivos
 
-    > _Si el directorio ``source ➡ events`` no existe, créelo_
+    > Si el directorio ``source ➡ events`` no existe, créelo
 
 - Cree un archivo ``main.js`` o ``main.ts`` según su preferencia, en la carpeta del evento
 
-    > _En este caso utilizaremos **JavaScript** para este ejemplo_
+    > En este caso utilizaremos **JavaScript** para este ejemplo
     >
     > Si desea utilizar **TypeScript**, primero termine estos pasos y luego vaya a [Como trasladar un evento a **TypeScript**]()
 
@@ -90,7 +90,7 @@ export default {};
 
 - Para definir la prioridad de ejecución que tendrá nuestro evento, cree la siguiente propiedad:
 
-    > _Tenga en cuenta que mientras más alta es la cifra, más prioridad tendrá el evento_
+    > Tenga en cuenta que mientras más alta es la cifra, más prioridad tendrá el evento
 
 ```ts
 export default {
@@ -105,7 +105,7 @@ export default {
 
 - Para definir los ``Intents`` necesarios de su evento, cree la siguiente propiedad:
 
-    > _Por favor, utilicé estos [valores para definir los ``Intents``](https://discord.com/developers/docs/topics/gateway#gateway-intents)_
+    > Por favor, utilicé estos [valores para definir los ``Intents``](https://discord.com/developers/docs/topics/gateway#gateway-intents)
     > 
     > En este ejemplo, no serán necesarios
 
@@ -158,4 +158,4 @@ export default {
 
 # Como trasladar un evento, servicio o aplicación a **TypeScript**
 
-> _Más documentación próximamente..._
+> Más documentación próximamente...
