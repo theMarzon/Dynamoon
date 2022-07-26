@@ -1,5 +1,7 @@
 import discord from 'discord.js';
 
+import { ExecuteOptions } from '../Event.js';
+
 export interface ChatApplicationShow {
 
     dm: boolean
@@ -36,21 +38,27 @@ export interface ChatApplicationData {
     priority: number
     intents:  number
 
-    events: object
-
     partials: number[]
 
     type: discord.ApplicationCommandType.ChatInput
 
     show:   ChatApplicationShow
     schema: ChatApplicationSchema
+
+    events: {
+
+        [event: string]: ({ client, event, loaded, used }: ExecuteOptions & { event?: any }) => void
+    }
 };
 
 export interface ChatApplicationOptions {
 
     name: string
 
-    events: object
+    events: {
+
+        [event: string]: ({ client, event, loaded, used }: ExecuteOptions & { event?: any }) => void
+    }
 
     show: {
 

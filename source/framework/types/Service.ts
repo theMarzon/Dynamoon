@@ -1,3 +1,5 @@
+import { ExecuteOptions } from './Event.js';
+
 export interface ServiceData {
 
     name: string
@@ -14,10 +16,13 @@ export interface ServiceOptions {
 
     name: string
 
-    events: object
-
     priority?: number
     intents?:  number
 
     partials?: number[]
+
+    events: {
+
+        [event: string]: ({ client, event, loaded, used }: ExecuteOptions & { event?: any }) => void
+    }
 };

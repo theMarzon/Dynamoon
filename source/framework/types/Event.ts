@@ -24,7 +24,7 @@ export interface EventsGroup {
 
 export interface ExecuteOptions {
 
-    file: object
+    file: any
 
     client: Client
 

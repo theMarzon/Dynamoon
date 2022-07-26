@@ -1,5 +1,7 @@
 import discord from 'discord.js';
 
+import { ExecuteOptions } from '../Event.js';
+
 export interface MessageApplicationShow {
 
     dm: boolean
@@ -29,21 +31,27 @@ export interface MessageApplicationData {
     priority: number
     intents:  number
 
-    events: object
-
     partials: number[]
 
     type: discord.ApplicationCommandType.Message
 
     show:   MessageApplicationShow
     schema: MessageApplicationSchema
+
+    events: {
+
+        [event: string]: ({ client, event, loaded, used }: ExecuteOptions & { event?: any }) => void
+    }
 };
 
 export interface MessageApplicationOptions {
 
     name: string
 
-    events: object
+    events: {
+
+        [event: string]: ({ client, event, loaded, used }: ExecuteOptions & { event?: any }) => void
+    }
 
     show: {
 

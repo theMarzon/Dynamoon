@@ -1,6 +1,8 @@
 import discord from 'discord.js';
 
-export default {
+import { EventOptions } from '../../framework/types/Event.js';
+
+export default <Omit<EventOptions, 'name'>> {
 
     priority: 2,
 
@@ -19,15 +21,12 @@ export default {
                 // Si la aplicacion que de la interaccion no tiene el mismo nombre
                 if (event.commandName !== _loadedApplication.show.name.default) continue;
 
-                for (const _fileEvent of _loadedApplication.events[file.name]) {
+                _loadedApplication.events[file.name]({
 
-                    _fileEvent({
+                    client, event, loaded, used,
 
-                        client, event, loaded, used,
-
-                        file: _loadedApplication
-                    });
-                };
+                    file: _loadedApplication
+                });
             };
         });
     }

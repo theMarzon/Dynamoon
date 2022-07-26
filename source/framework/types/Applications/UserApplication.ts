@@ -1,5 +1,7 @@
 import discord from 'discord.js';
 
+import { ExecuteOptions } from '../Event.js';
+
 export interface UserApplicationShow {
 
     dm: boolean
@@ -29,21 +31,27 @@ export interface UserApplicationData {
     priority: number
     intents:  number
 
-    events: object
-
     partials: number[]
 
     type: discord.ApplicationCommandType.User
 
     show:   UserApplicationShow
     schema: UserApplicationSchema
+
+    events: {
+
+        [event: string]: ({ client, event, loaded, used }: ExecuteOptions & { event?: any }) => void
+    }
 };
 
 export interface UserApplicationOptions {
 
     name: string
 
-    events: object
+    events: {
+
+        [event: string]: ({ client, event, loaded, used }: ExecuteOptions & { event?: any }) => void
+    }
 
     show: {
 
