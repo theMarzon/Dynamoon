@@ -46,25 +46,15 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
 
 - ``sources\``
 
-    > Directorio para los eventos
-
     - ``events\``
-
-    > Directorio para los servicios
 
     - ``services\``
 
     - ``applications\``
 
-        > Directorio para las aplicaciones de barra lateral
-
         - ``chat\``
 
-        > Directorio para las aplicaciones de menú contextual para usuarios
-
         - ``user\``
-
-        > Directorio para las aplicaciones de menú contextual para mensajes
 
         - ``message\``
 
