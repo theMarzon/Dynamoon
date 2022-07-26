@@ -13,6 +13,8 @@ export default class implements ServiceData {
 
     events = {};
 
+    partials: number[] = [];
+
     constructor (options: ServiceOptions) {
 
         this.name   = options.name;
@@ -20,5 +22,9 @@ export default class implements ServiceData {
 
         this.priority = options.priority ?? this.priority;
         this.intents  = options.intents  ?? this.intents;
+
+        this.partials = options.partials ?? this.partials;
+
+        this.partials = this.partials.filter((partial, index, array) => array.indexOf(partial) === index);
     };
 };

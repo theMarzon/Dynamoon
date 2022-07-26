@@ -7,6 +7,7 @@ import loadedUserApplications    from '../loaders/applications/loadedUserApplica
 import loadedMessageApplications from '../loaders/applications/loadedMessageApplications.js';
 import usedEvents                from '../groupers/usedEvents.js';
 import usedIntents               from '../groupers/usedIntents.js';
+import usedPartials              from '../groupers/usedPartials.js';
 
 import { ClientOptions } from '../types/Client.js';
 
@@ -32,10 +33,13 @@ export default class extends Client {
 
             ...options,
 
-            intents: usedIntents
+            intents:  usedIntents,
+            partials: usedPartials
         });
 
         this.ws.setMaxListeners(1);
+
+        this.rest.setMaxListeners(1);
 
         this.setMaxListeners(1);
     };

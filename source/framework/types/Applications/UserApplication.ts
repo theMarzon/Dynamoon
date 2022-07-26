@@ -29,15 +29,14 @@ export interface UserApplicationData {
     priority: number
     intents:  number
 
+    events: object
+
+    partials: number[]
+
     type: discord.ApplicationCommandType.User
 
     show:   UserApplicationShow
     schema: UserApplicationSchema
-
-    events: {
-
-        [event: string]: unknown
-    }
 };
 
 export interface UserApplicationOptions {
@@ -45,9 +44,6 @@ export interface UserApplicationOptions {
     name: string
 
     events: object
-
-    priority?: number
-    intents?:  number
 
     show: {
 
@@ -64,4 +60,9 @@ export interface UserApplicationOptions {
             bot?:    null | bigint
         }
     };
+
+    priority?: number
+    intents?:  number
+
+    partials?: number[]
 };

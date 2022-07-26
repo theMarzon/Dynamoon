@@ -1,18 +1,17 @@
-import { readdir as readDirectory } from 'node:fs/promises';
-import { join    as createPath    } from 'node:path';
+import path, { join as createPath } from 'node:path';
+
+import createTree from '../../utils/createTree.js';
 
 import { chatApplicationsPath } from '../../directoriesPath.js';
 
 import ChatApplication from '../../structures/Applications/ChatApplication.js';
 
-let directoryFolders = await readDirectory(chatApplicationsPath);
-
-directoryFolders = directoryFolders.filter((folder) => !folder.startsWith('.'));
+const directoryItems = await createTree(createPath(chatApplicationsPath), 'main.js', 'main.mjs', 'main.cjs', 'main.ts', 'main.mts', 'main.cts');
 
 // Importa los archivos en paralelo
-let loadedFiles = await Promise.all(directoryFolders.map(async (folder) => {
+let loadedFiles = await Promise.all(directoryItems.map(async (item) => {
 
-    const filePath = createPath(chatApplicationsPath, folder, 'main.js');
+    const filePath = createPath(item.join(path.sep));
 
     const fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
                                                        : await import(filePath);
@@ -21,7 +20,7 @@ let loadedFiles = await Promise.all(directoryFolders.map(async (folder) => {
 
         ...fileContent.default,
 
-        name: folder
+        name: item.at(-2)
     });
 }));
 

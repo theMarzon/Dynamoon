@@ -19,6 +19,8 @@ export default class implements MessageApplicationData {
 
     events = {};
 
+    partials: number[] = [];
+
     type: discord.ApplicationCommandType.Message = discord.ApplicationCommandType.Message;
 
     show: MessageApplicationShow = {
@@ -55,6 +57,10 @@ export default class implements MessageApplicationData {
 
         this.priority = options.priority ?? this.priority;
         this.intents  = options.intents  ?? this.intents;
+
+        this.partials = options.partials ?? this.partials;
+
+        this.partials = this.partials.filter((partial, index, array) => array.indexOf(partial) === index);
 
         // Visualizacion
         this.show.name = options.show.name;

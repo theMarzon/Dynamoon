@@ -19,6 +19,8 @@ export default class implements ChatApplicationData {
 
     events = {};
 
+    partials: number[] = [];
+
     type: discord.ApplicationCommandType.ChatInput = discord.ApplicationCommandType.ChatInput;
 
     show: ChatApplicationShow = {
@@ -65,6 +67,10 @@ export default class implements ChatApplicationData {
 
         this.priority = options.priority ?? this.priority;
         this.intents  = options.intents  ?? this.intents;
+
+        this.partials = options.partials ?? this.partials;
+
+        this.partials = this.partials.filter((partial, index, array) => array.indexOf(partial) === index);
 
         // Visualizacion
         this.show.name        = options.show.name;

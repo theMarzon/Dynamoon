@@ -56,6 +56,8 @@ export interface EventData {
     priority: number
     intents:  number
 
+    partials: number[]
+
     execute: ({ client, file, loaded, used }: ExecuteOptions) => void
 };
 
@@ -67,4 +69,6 @@ export interface EventOptions {
 
     priority?: number
     intents?:  number
+
+    partials?: number[]
 };

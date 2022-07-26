@@ -19,6 +19,8 @@ export default class implements UserApplicationData {
 
     events = {};
 
+    partials: number[] = [];
+
     type: discord.ApplicationCommandType.User = discord.ApplicationCommandType.User;
 
     show: UserApplicationShow = {
@@ -55,6 +57,10 @@ export default class implements UserApplicationData {
 
         this.priority = options.priority ?? this.priority;
         this.intents  = options.intents  ?? this.intents;
+
+        this.partials = options.partials ?? this.partials;
+
+        this.partials = this.partials.filter((partial, index, array) => array.indexOf(partial) === index);
 
         // Visualizacion
         this.show.name = options.show.name;

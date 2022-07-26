@@ -20,11 +20,7 @@ for (const _loadedEvent of loadedEvents) {
     ]
         .filter((file) => file.events[_loadedEvent.name]);
 
-    const allFiles = [
-
-        ...serviceFiles,
-        ...applicationFiles
-    ];
+    const allFiles = [ ...serviceFiles, ...applicationFiles ];
 
     // Omite el evento si no se esta utilizando
     if (!allFiles.length) continue;

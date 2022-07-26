@@ -1,5 +1,5 @@
 import discord from 'discord.js';
 
-export interface ClientOptions extends Omit<discord.ClientOptions, 'intents'> {
+export interface ClientOptions extends Omit<Omit<discord.ClientOptions, 'intents'>, 'partials'> {
 
 };

@@ -6,6 +6,8 @@ export interface ServiceData {
     intents:  number
 
     events: object
+
+    partials: number[]
 };
 
 export interface ServiceOptions {
@@ -16,4 +18,6 @@ export interface ServiceOptions {
 
     priority?: number
     intents?:  number
+
+    partials?: number[]
 };

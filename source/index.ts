@@ -6,7 +6,7 @@ import Client from './framework/structures/Client.js';
 dotenv.config();
 
 // Crea el cliente
-const client = new Client({ partials: [], allowedMentions: { repliedUser: false, parse: [] } });
+const client = new Client({ allowedMentions: { repliedUser: false, parse: [] } });
 
 // Ejecuta los eventos
 client.openEvents();

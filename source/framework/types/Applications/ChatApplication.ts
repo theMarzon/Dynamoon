@@ -38,6 +38,8 @@ export interface ChatApplicationData {
 
     events: object
 
+    partials: number[]
+
     type: discord.ApplicationCommandType.ChatInput
 
     show:   ChatApplicationShow
@@ -49,9 +51,6 @@ export interface ChatApplicationOptions {
     name: string
 
     events: object
-
-    priority?: number
-    intents?:  number
 
     show: {
 
@@ -75,4 +74,9 @@ export interface ChatApplicationOptions {
             bot?:    null | bigint
         }
     };
+
+    priority?: number
+    intents?:  number
+
+    partials?: number[]
 };

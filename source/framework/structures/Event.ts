@@ -12,6 +12,8 @@ export default class implements EventData {
     priority = 0;
     intents  = 0;
 
+    partials: number[] = [];
+
     execute = ({ client, file, loaded, used }: ExecuteOptions) => {};
 
     constructor (options: EventOptions) {
@@ -21,5 +23,9 @@ export default class implements EventData {
 
         this.priority = options.priority ?? this.priority;
         this.intents  = options.intents  ?? this.intents;
+
+        this.partials = options.partials ?? this.partials;
+
+        this.partials = this.partials.filter((partial, index, array) => array.indexOf(partial) === index);
     };
 };
