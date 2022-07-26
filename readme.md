@@ -7,17 +7,17 @@
 
 ## Características
 
-- ⚡️ Gestión de recursos eficiente
+- ⚡️ Gestión eficiente
 
-- 🧱 Estructura de archivos modular
+- 🧱 Estructura modular
 
-- 🧽 Sin código basura
+- 🧽 Código limpio
 
-- ✍ Escrito en **TypeScript**
+- ✍ Hecho en **TypeScript**
 
 - 🌃 Actualizado a lo último
 
-- 🛡 No utiliza dependencias de terceros
+- 🛡 Sin dependencias de terceros
 
 ## Implementaciones
 
