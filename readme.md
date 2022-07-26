@@ -31,7 +31,7 @@
 
     - [📡 Como trasladar un servicio a **TypeScript**]()
 
-## Características
+## ✨ Características
 
 - ⚡️ Gestión de recursos eficiente
 
