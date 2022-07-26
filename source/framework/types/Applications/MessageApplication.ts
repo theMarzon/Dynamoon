@@ -1,15 +1,10 @@
 import discord from 'discord.js';
 
-import { ExecuteOptions } from '../Event.js';
-
 export interface MessageApplicationShow {
 
     dm: boolean
 
-    name: Partial<Record<discord.Locale, string>> & {
-
-        default: string
-    }
+    name: Partial<Record<discord.Locale, string>> & { default: string }
 
     permissions: {
 
@@ -30,37 +25,31 @@ export interface MessageApplicationData {
 
     priority: number
     intents:  number
-
     partials: number[]
+
+    events: object
 
     type: discord.ApplicationCommandType.Message
 
     show:   MessageApplicationShow
     schema: MessageApplicationSchema
-
-    events: {
-
-        [event: string]: ({ client, event, loaded, used }: ExecuteOptions & { event?: any }) => void
-    }
 };
 
 export interface MessageApplicationOptions {
 
     name: string
 
-    events: {
+    priority?: number
+    intents?:  number
+    partials?: number[]
 
-        [event: string]: ({ client, event, loaded, used }: ExecuteOptions & { event?: any }) => void
-    }
+    events: object
 
     show: {
 
-        name: Partial<Record<discord.Locale, string>> & {
-
-            default: string
-        }
-
         dm?: boolean
+
+        name: Partial<Record<discord.Locale, string>> & { default: string }
 
         permissions?: {
 
@@ -68,9 +57,4 @@ export interface MessageApplicationOptions {
             bot?:    null | bigint
         }
     };
-
-    priority?: number
-    intents?:  number
-
-    partials?: number[]
 };

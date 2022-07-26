@@ -1,9 +1,9 @@
-# Files
-yarn.lock
-
 # Directories
 node_modules/
 build/
+
+# Files
+yarn.lock
 
 # Extensions
 *.log

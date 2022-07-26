@@ -1,7 +1,7 @@
 import { readdir as readDirectory } from 'node:fs/promises';
 import { join    as createPath    } from 'node:path';
 
-import { userApplicationsPath } from '../../directoriesPath.js';
+import { userApplicationsPath } from '../../directories.js';
 
 import UserApplication from '../../structures/Applications/UserApplication.js';
 
@@ -10,24 +10,12 @@ let directoryFolders = await readDirectory(userApplicationsPath);
 directoryFolders = directoryFolders.filter((folder) => !folder.startsWith('.'));
 
 // Importa los archivos en paralelo
-let loadedFiles = await Promise.all(directoryFolders.map(async (folder) => {
+let loadedUserApplications = await Promise.all(directoryFolders.map(async (folder) => {
 
-    let fileContent;
+    const filePath = createPath(userApplicationsPath, folder, 'main.js');
 
-    for (const _fileName of [ 'main.js', 'main.ts' ]) {
-
-        const filePath = createPath(userApplicationsPath, folder, _fileName);
-
-        try {
-
-            fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
-                                                         : await import(filePath);
-
-        } catch {
-
-            continue;
-        };
-    };
+    const fileContent = (process.platform === 'win32') ? await import(`file:///${filePath}`)
+                                                       : await import(filePath);
 
     return new UserApplication({
 
@@ -38,6 +26,6 @@ let loadedFiles = await Promise.all(directoryFolders.map(async (folder) => {
 }));
 
 // Organiza los archivos por su prioridad
-loadedFiles = loadedFiles.sort((a, b) => b.priority - a.priority);
+loadedUserApplications = loadedUserApplications.sort((a, b) => b.priority - a.priority);
 
-export default loadedFiles;
+export default loadedUserApplications;

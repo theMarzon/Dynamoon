@@ -1,10 +1,11 @@
-import { ServiceOptions } from '../../framework/types/Service.js';
+import { ServiceOptions     } from '../../framework/types/Service.js';
+import { ClientReadyOptions } from '../../events/clientReady/types/Event.js';
 
 export default <Omit<ServiceOptions, 'name'>> {
 
     events: {
 
-        clientReady: ({ client, loaded }) => {
+        clientReady: ({ client, loaded }: ClientReadyOptions) => {
 
             const chatApplications    = loaded.applications.chat.map((file) => file.schema);
             const userApplications    = loaded.applications.user.map((file) => file.schema);
@@ -17,7 +18,7 @@ export default <Omit<ServiceOptions, 'name'>> {
                 ...messageApplications
             ];
 
-            client.application!.commands
+            client.application?.commands
                 .set(allApplications)
                 .then(() => console.log('Applications indexed'));
         }

@@ -1,22 +1,13 @@
 import discord from 'discord.js';
 
-import { ExecuteOptions } from '../Event.js';
-
 export interface ChatApplicationShow {
 
     dm: boolean
 
     options: discord.ApplicationCommandOptionData[]
 
-    name: Partial<Record<discord.Locale, string>> & {
-
-        default: string
-    }
-
-    description: Partial<Record<discord.Locale, string>> & {
-
-        default: string
-    }
+    name:        Partial<Record<discord.Locale, string>> & { default: string }
+    description: Partial<Record<discord.Locale, string>> & { default: string }
 
     permissions: {
 
@@ -37,44 +28,34 @@ export interface ChatApplicationData {
 
     priority: number
     intents:  number
-
     partials: number[]
+
+    events: object
 
     type: discord.ApplicationCommandType.ChatInput
 
     show:   ChatApplicationShow
     schema: ChatApplicationSchema
-
-    events: {
-
-        [event: string]: ({ client, event, loaded, used }: ExecuteOptions & { event?: any }) => void
-    }
 };
 
 export interface ChatApplicationOptions {
 
     name: string
 
-    events: {
+    priority?: number
+    intents?:  number
+    partials?: number[]
 
-        [event: string]: ({ client, event, loaded, used }: ExecuteOptions & { event?: any }) => void
-    }
+    events: object
 
     show: {
-
-        name: Partial<Record<discord.Locale, string>> & {
-
-            default: string
-        }
-
-        description: Partial<Record<discord.Locale, string>> & {
-
-            default: string
-        }
 
         dm?: boolean
 
         options?: discord.ApplicationCommandOptionData[]
+
+        name:        Partial<Record<discord.Locale, string>> & { default: string }
+        description: Partial<Record<discord.Locale, string>> & { default: string }
 
         permissions?: {
 
@@ -82,9 +63,4 @@ export interface ChatApplicationOptions {
             bot?:    null | bigint
         }
     };
-
-    priority?: number
-    intents?:  number
-
-    partials?: number[]
 };

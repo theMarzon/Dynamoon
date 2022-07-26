@@ -27,25 +27,19 @@ export default class implements UserApplicationData {
 
         dm: true,
 
-        name: {
+        name: { default: 'undefined' },
 
-            default: 'undefined'
-        },
-
-        permissions: {
-
-            member: null,
-            bot:    null
-        }
+        permissions: { member: null, bot: null }
     };
 
     schema: UserApplicationSchema = {
 
-        type:                     this.type,
         name:                     this.show.name.default,
         defaultMemberPermissions: this.show.permissions.member,
         defaultBotPermissions:    this.show.permissions.bot,
         dmPermission:             this.show.dm,
+
+        type: this.type,
 
         nameLocalizations: {}
     };
@@ -57,12 +51,11 @@ export default class implements UserApplicationData {
 
         this.priority = options.priority ?? this.priority;
         this.intents  = options.intents  ?? this.intents;
-
         this.partials = options.partials ?? this.partials;
 
+        // Elimina los "Partials" duplicados
         this.partials = this.partials.filter((partial, index, array) => array.indexOf(partial) === index);
 
-        // Visualizacion
         this.show.name = options.show.name;
 
         this.show.dm = options.show.dm ?? this.show.dm;
@@ -70,7 +63,6 @@ export default class implements UserApplicationData {
         this.show.permissions.member = options.show.permissions?.member ?? this.show.permissions.member;
         this.show.permissions.bot    = options.show.permissions?.bot    ?? this.show.permissions.bot;
 
-        // Esquema
         this.schema.name                     = this.show.name.default;
         this.schema.defaultMemberPermissions = this.show.permissions.member;
         this.schema.defaultBotPermissions    = this.show.permissions.bot;

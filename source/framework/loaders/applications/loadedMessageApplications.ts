@@ -1,7 +1,7 @@
 import { readdir as readDirectory } from 'node:fs/promises';
 import { join    as createPath    } from 'node:path';
 
-import { messageApplicationsPath } from '../../directoriesPath.js';
+import { messageApplicationsPath } from '../../directories.js';
 
 import MessageApplication from '../../structures/Applications/MessageApplication.js';
 
@@ -10,24 +10,12 @@ let directoryFolders = await readDirectory(messageApplicationsPath);
 directoryFolders = directoryFolders.filter((folder) => !folder.startsWith('.'));
 
 // Importa los archivos en paralelo
-let loadedFiles = await Promise.all(directoryFolders.map(async (folder) => {
+let loadedMessageApplications = await Promise.all(directoryFolders.map(async (folder) => {
 
-    let fileContent;
+    const filePath = createPath(messageApplicationsPath, folder, 'main.js');
 
-    for (const _fileName of [ 'main.js', 'main.ts' ]) {
-
-        const filePath = createPath(messageApplicationsPath, folder, _fileName);
-
-        try {
-
-            fileContent = (process.platform === 'win32') ? await import(`file://${filePath}`)
-                                                         : await import(filePath);
-
-        } catch {
-
-            continue;
-        };
-    };
+    const fileContent = (process.platform === 'win32') ? await import(`file:///${filePath}`)
+                                                       : await import(filePath);
 
     return new MessageApplication({
 
@@ -38,6 +26,6 @@ let loadedFiles = await Promise.all(directoryFolders.map(async (folder) => {
 }));
 
 // Organiza los archivos por su prioridad
-loadedFiles = loadedFiles.sort((a, b) => b.priority - a.priority);
+loadedMessageApplications = loadedMessageApplications.sort((a, b) => b.priority - a.priority);
 
-export default loadedFiles;
+export default loadedMessageApplications;

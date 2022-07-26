@@ -43,7 +43,8 @@ export interface ExecuteOptions {
 
     used: {
 
-        intents: number
+        intents:  number
+        partials: number[]
 
         events: EventsGroup
     }
@@ -55,7 +56,6 @@ export interface EventData {
 
     priority: number
     intents:  number
-
     partials: number[]
 
     execute: ({ client, file, loaded, used }: ExecuteOptions) => void
@@ -65,10 +65,9 @@ export interface EventOptions {
 
     name: string
 
-    execute: ({ client, file, loaded, used }: ExecuteOptions) => void
-
     priority?: number
     intents?:  number
-
     partials?: number[]
+
+    execute: ({ client, file, loaded, used }: ExecuteOptions) => void
 };

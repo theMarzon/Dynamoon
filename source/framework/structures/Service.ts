@@ -1,7 +1,7 @@
 import {
 
-    ServiceOptions,
-    ServiceData
+    ServiceData,
+    ServiceOptions
 } from '../types/Service.js';
 
 export default class implements ServiceData {
@@ -22,9 +22,9 @@ export default class implements ServiceData {
 
         this.priority = options.priority ?? this.priority;
         this.intents  = options.intents  ?? this.intents;
-
         this.partials = options.partials ?? this.partials;
 
+        // Elimina los "Partials" duplicados
         this.partials = this.partials.filter((partial, index, array) => array.indexOf(partial) === index);
     };
 };
