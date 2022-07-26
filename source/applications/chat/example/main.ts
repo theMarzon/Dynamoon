@@ -1,7 +1,7 @@
 import discord from 'discord.js';
 
 import { ChatApplicationOptions } from '../../../framework/types/Applications/ChatApplication.js';
-import { ApplicationOptions     } from '../../../events/application/types/Execution.js';
+import { ApplicationEvent       } from '../../../events/application/types/Execution.js';
 
 export default <Omit<ChatApplicationOptions, 'name'>> {
 
@@ -24,7 +24,7 @@ export default <Omit<ChatApplicationOptions, 'name'>> {
 
     events: {
 
-        application: ({ client, event, file, loaded, used }: ApplicationOptions) => {
+        application: ({ client, event, file, loaded, used }: ApplicationEvent) => {
 
             event.reply({ content: `${client.ws.ping} ms`, ephemeral: true });
         }

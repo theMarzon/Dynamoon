@@ -2,7 +2,7 @@ import discord from 'discord.js';
 
 import { ExecuteOptions } from '../../../framework/types/Event.js';
 
-export interface ApplicationOptions extends ExecuteOptions {
+export interface ApplicationEvent extends ExecuteOptions {
 
     event: discord.ChatInputCommandInteraction
 };

@@ -1,3 +1,3 @@
 import { ExecuteOptions } from '../../../framework/types/Event.js';
 
-export interface BootOptions extends ExecuteOptions {};
+export interface BootEvent extends ExecuteOptions {};
