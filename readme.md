@@ -31,7 +31,13 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
   
     ```sh-session
     npm install
+    ```
+    
+    ```sh-session
     pnpm install
+    ```
+
+    ```sh-session
     yarn install
     ```
 
@@ -41,22 +47,21 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
     |-------------|--------------------|
     | `BOT_TOKEN` | El `Token` del bot |
 
-## Estructuras
-
+## Directorios
 
 - 📂 ``sources\``
 
-    - 📂 ``events\``
+    - 📂 ``events\`` para los eventos
 
-    - 📂 ``services\``
+    - 📂 ``services\`` para los servicios
 
     - 📂 ``applications\``
 
-        - 📂 ``chat\``
+        - 📂 ``chat\`` para las aplicaciones de barra lateral
 
-        - 📂 ``user\``
+        - 📂 ``user\`` para las aplicaciones de menu contextual para usuarios
 
-        - 📂 ``message\``
+        - 📂 ``message\`` para las aplicaciones de menu contextual para mensajes
 
 
 # Como crear un evento, servicio o aplicación
