@@ -51,17 +51,17 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
 
 - 📂 ``sources\``
 
-    - 📂 ``events\`` para los eventos
+    - 📂 ``events\`` _(Para los eventos)_
 
-    - 📂 ``services\`` para los servicios
+    - 📂 ``services\`` _(Para los servicios)_
 
     - 📂 ``applications\``
 
-        - 📂 ``chat\`` para las aplicaciones de barra lateral
+        - 📂 ``chat\`` _(Para las aplicaciones de barra lateral)_
 
-        - 📂 ``user\`` para las aplicaciones de menu contextual para usuarios
+        - 📂 ``user\`` _(Para las aplicaciones de menu contextual para usuarios)_
 
-        - 📂 ``message\`` para las aplicaciones de menu contextual para mensajes
+        - 📂 ``message\`` _(Para las aplicaciones de menu contextual para mensajes)_
 
 
 # Como crear un evento, servicio o aplicación
