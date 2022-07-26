@@ -15,9 +15,9 @@
 
 - ✍ Escrito en **TypeScript**
 
-- 🌃 Actualizado a las últimas versiones
+- 🌃 Actualizado a lo último
 
-- 🛡 Sin dependencias de terceros
+- 🛡 No utiliza dependencias de terceros
 
 ## Implementaciones
 
@@ -59,9 +59,9 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
 
         - 📂 ``chat\`` _(Para las aplicaciones de barra lateral)_
 
-        - 📂 ``user\`` _(Para las aplicaciones en el menu contextual de usuarios)_
+        - 📂 ``user\`` _(Para las aplicaciones en el menú contextual de usuarios)_
 
-        - 📂 ``message\`` _(Para las aplicaciones en el menu contextual de mensajes)_
+        - 📂 ``message\`` _(Para las aplicaciones en el menú contextual de mensajes)_
 
 
 # Como crear un evento, servicio o aplicación
