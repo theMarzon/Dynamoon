@@ -59,9 +59,9 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
 
         - 📂 ``chat\`` _(Para las aplicaciones de barra lateral)_
 
-        - 📂 ``user\`` _(Para las aplicaciones de menu contextual para usuarios)_
+        - 📂 ``user\`` _(Para las aplicaciones en el menu contextual de usuarios)_
 
-        - 📂 ``message\`` _(Para las aplicaciones de menu contextual para mensajes)_
+        - 📂 ``message\`` _(Para las aplicaciones en el menu contextual de mensajes)_
 
 
 # Como crear un evento, servicio o aplicación
@@ -70,9 +70,9 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
 
 ## Evento
 
-- Primero debe crear una carpeta en el directorio ``source ➡ events`` con el nombre del evento, esta carpeta contendrá todos nuestros futuros archivos
+- Primero debe crear una carpeta en el [directorio para los eventos](https://github.com/theMarzon/Dynamoon/#Directorios) con el nombre del evento, esta carpeta contendrá todos nuestros futuros archivos
 
-    > Si el directorio ``source ➡ events`` no existe, créelo
+    > Si el directorio no existe, créelo
 
 - Cree un archivo ``main.js`` o ``main.ts`` según su preferencia, en la carpeta del evento
 
