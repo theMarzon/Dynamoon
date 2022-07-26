@@ -66,7 +66,7 @@ Puede ver el estado actual de las implementaciones [aquí](https://themarzon.not
 
 # Como crear un evento, servicio o aplicación
 
-> Ejemplos basados en los eventos, servicios y aplicaciones que contiene el **Framework** por defecto
+> Ejemplos creados a partir de los eventos, servicios y aplicaciones que contiene el **Framework** por defecto
 
 ## Evento
 
