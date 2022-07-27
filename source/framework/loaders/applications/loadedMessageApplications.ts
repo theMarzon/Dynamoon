@@ -14,8 +14,10 @@ let loadedMessageApplications = await Promise.all(directoryFolders.map(async (fo
 
     const filePath = createPath(messageApplicationsPath, folder, 'main.js');
 
-    const fileContent = (process.platform === 'win32') ? await import(`file:///${filePath}`)
-                                                       : await import(filePath);
+    const fileContent = (process.platform === 'win32')
+
+        ? await import(`file:///${filePath}`)
+        : await import(filePath);
 
     return new MessageApplication({
 

@@ -14,8 +14,10 @@ let loadedServices = await Promise.all(directoryFolders.map(async (folder) => {
 
     const filePath = createPath(servicesPath, folder, 'main.js');
 
-    const fileContent = (process.platform === 'win32') ? await import(`file:///${filePath}`)
-                                                       : await import(filePath);
+    const fileContent = (process.platform === 'win32')
+
+        ? await import(`file:///${filePath}`)
+        : await import(filePath);
 
     return new Service({
 

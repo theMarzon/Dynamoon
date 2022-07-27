@@ -14,8 +14,10 @@ let loadedChatApplications = await Promise.all(directoryFolders.map(async (folde
 
     const filePath = createPath(chatApplicationsPath, folder, 'main.js');
 
-    const fileContent = (process.platform === 'win32') ? await import(`file:///${filePath}`)
-                                                       : await import(filePath);
+    const fileContent = (process.platform === 'win32')
+
+        ? await import(`file:///${filePath}`)
+        : await import(filePath);
 
     return new ChatApplication({
 
