@@ -1,12 +1,8 @@
-import { ServiceOptions } from '../../framework/types/Service.js';
-
-import { EventOptions as ClientReadyOptions } from '../../events/clientReady/types/Options.js';
-
-export default <ServiceOptions> {
+export default {
 
     events: {
 
-        clientReady: ({ client, loaded }: ClientReadyOptions) => {
+        clientReady: ({ client, loaded }) => {
 
             const chatApplications    = loaded.applications.chat.map((file) => file.schema);
             const userApplications    = loaded.applications.user.map((file) => file.schema);
@@ -19,7 +15,7 @@ export default <ServiceOptions> {
                 ...messageApplications
             ];
 
-            client.application?.commands
+            client.application.commands
                 .set(allApplications)
                 .then(() => console.log('Applications indexed'));
         }

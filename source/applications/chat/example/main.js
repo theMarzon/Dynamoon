@@ -1,16 +1,12 @@
 import discord from 'discord.js';
 
-import { ChatApplicationOptions } from '../../../framework/types/Applications/ChatApplication.js';
-
-import { EventOptions as ApplicationOptions } from '../../../events/application/types/Options.js';
-
-export default <ChatApplicationOptions> {
+export default {
 
     show: {
 
         name: {
 
-            default: 'ts-latency',
+            default: 'latency',
 
             [discord.Locale.SpanishES]: 'latencia'
         },
@@ -25,7 +21,7 @@ export default <ChatApplicationOptions> {
 
     events: {
 
-        application: ({ client, event, file, loaded, used }: ApplicationOptions) => {
+        application: ({ client, event, file, loaded, used }) => {
 
             event.reply({ content: `${client.ws.ping} ms`, ephemeral: true });
         }

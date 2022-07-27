@@ -74,11 +74,7 @@ Puedes ver el estado actual de las implementaciones [aquí.](https://themarzon.n
 
     > Si el directorio no existe, créelo.
 
-2. Cree un archivo llamado ``main.js`` o ``main.ts`` en la carpeta del evento.
-
-    > En este caso, se utilizará **JavaScript** para este ejemplo.
-    >
-    > Si desea utilizar **TypeScript**, termine este ejemplo y luego vaya a [Como trasladar un evento a **TypeScript**.]()
+2. Cree un archivo llamado ``main.js`` en la carpeta del evento.
 
 3. Exporte un objeto vacío:
 
@@ -155,9 +151,5 @@ export default {
     }
 };
 ```
-
-# Como trasladar un evento, servicio o aplicación a **TypeScript**.
-
-> Ejemplos creados a partir de los eventos, servicios y aplicaciones que contiene el **Framework** por defecto.
 
 > Más documentación próximamente...

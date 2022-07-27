@@ -1,6 +1,4 @@
-import { EventOptions } from '../../framework/types/Event.js';
-
-export default <EventOptions> {
+export default {
 
     priority: 4,
 
