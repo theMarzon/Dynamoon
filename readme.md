@@ -70,17 +70,17 @@ Puedes ver el estado actual de las implementaciones [aquí.](https://themarzon.n
 
 ## Eventos
 
-- Primero debe crear una carpeta en el [directorio de los eventos](https://github.com/theMarzon/Dynamoon/#Directorios) con el nombre del evento, esta carpeta contendrá todos nuestros futuros archivos.
+1. Cree una carpeta en el [directorio de eventos](https://github.com/theMarzon/Dynamoon/#Directorios) con el nombre del evento, esta carpeta contendrá todos los archivos del evento.
 
     > Si el directorio no existe, créelo.
 
-- Cree un archivo llamado ``main.js`` o ``main.ts`` según sus necesidades, en la carpeta del evento.
+2. Cree un archivo llamado ``main.js`` o ``main.ts`` en la carpeta del evento.
 
     > En este caso utilizaremos **JavaScript** para este ejemplo.
     >
     > Si desea utilizar **TypeScript**, termine este ejemplo y luego vaya a [Como trasladar un evento a **TypeScript**.]()
 
-- Luego, exporte un objeto vacío:
+3. Exporte un objeto vacío:
 
 ```js
 export default {};
@@ -88,7 +88,7 @@ export default {};
 
 #
 
-- Para definir la prioridad de ejecución que tendrá nuestro evento, cree la siguiente propiedad:
+4. Para definir la prioridad de ejecución del evento, cree la siguiente propiedad:
 
     > Tenga en cuenta que mientras más alta es la cifra, más prioridad tendrá el evento.
 
@@ -103,7 +103,7 @@ export default {
 
 #
 
-- Para definir los ``Intents`` necesarios de su evento, cree la siguiente propiedad:
+5. Para definir los ``Intents`` necesarios del evento, cree la siguiente propiedad:
 
     > Por favor, utilicé estos [valores para definir los ``Intents``.](https://discord.com/developers/docs/topics/gateway#gateway-intents)
     > 
@@ -121,7 +121,7 @@ export default {
 
 #
 
-- Para definir los ``Partials`` necesarios de su evento, cree la siguiente propiedad:
+6. Para definir los ``Partials`` necesarios del evento, cree la siguiente propiedad:
 
     > En este ejemplo, no serán necesarios.
 
@@ -139,7 +139,7 @@ export default {
 
 #
 
-- Y por último, para definir la función a ejecutar cuando el **Framework** sea ejecutado:
+7. Para definir la función a ejecutar por el **Framework**:
 
 ```js
 export default {
