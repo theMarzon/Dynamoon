@@ -76,7 +76,7 @@ Puedes ver el estado actual de las implementaciones [aquí.](https://themarzon.n
 
 2. Cree un archivo llamado ``main.js`` o ``main.ts`` en la carpeta del evento.
 
-    > En este caso utilizaremos **JavaScript** para este ejemplo.
+    > En este caso, se utilizará **JavaScript** para este ejemplo.
     >
     > Si desea utilizar **TypeScript**, termine este ejemplo y luego vaya a [Como trasladar un evento a **TypeScript**.]()
 
