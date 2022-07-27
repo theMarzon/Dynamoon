@@ -3,6 +3,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "start": "ts-node --swc --esm ./source/index.ts",
     "test": "nodemon --ext .ts,.js --exec \"ts-node --swc --esm ./source/index.ts\"",
     "build": "swc ./source/ --out-dir ./build/",
     "check": "eslint --ext .ts,.js ./",
