@@ -59,8 +59,10 @@ export default class implements ChatApplicationData {
         this.intents  = options.intents  ?? this.intents;
         this.partials = options.partials ?? this.partials;
 
-        // Elimina los "Partials" duplicados
-        this.partials = this.partials.filter((partial, index, array) => array.indexOf(partial) === index);
+        // Elimina los "Partials" duplicados y los organiza
+        this.partials = this.partials
+            .filter((partial, index, array) => array.indexOf(partial) === index)
+            .sort((a, b) => a - b);
 
         this.show.name        = options.show.name;
         this.show.description = options.show.description;

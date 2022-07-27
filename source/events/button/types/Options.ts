@@ -2,7 +2,7 @@ import discord from 'discord.js';
 
 import { ExecuteOptions } from '../../../framework/types/Event.js';
 
-export interface InteractionCreateEvent extends ExecuteOptions {
+export interface EventOptions extends ExecuteOptions {
 
-    event: discord.Interaction
+    event: discord.ButtonInteraction
 };

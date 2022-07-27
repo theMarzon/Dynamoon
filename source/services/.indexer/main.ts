@@ -1,11 +1,12 @@
-import { ServiceOptions   } from '../../framework/types/Service.js';
-import { ClientReadyEvent } from '../../events/clientReady/types/Execution.js';
+import { ServiceOptions } from '../../framework/types/Service.js';
+
+import { EventOptions as ClientReadyOptions } from '../../events/clientReady/types/Options.js';
 
 export default <Omit<ServiceOptions, 'name'>> {
 
     events: {
 
-        clientReady: ({ client, loaded }: ClientReadyEvent) => {
+        clientReady: ({ client, loaded }: ClientReadyOptions) => {
 
             const chatApplications    = loaded.applications.chat.map((file) => file.schema);
             const userApplications    = loaded.applications.user.map((file) => file.schema);
