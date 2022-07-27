@@ -1,6 +1,6 @@
 import { EventOptions } from '../../framework/types/Event.js';
 
-export default <Omit<EventOptions, 'name'>> {
+export default <EventOptions> {
 
     priority: 4,
 

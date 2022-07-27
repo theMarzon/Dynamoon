@@ -4,35 +4,42 @@ export interface UserApplicationShow {
 
     dm: boolean
 
-    name: Partial<Record<discord.Locale, string>> & { default: string }
+    name: Partial<Record<discord.Locale, string>> & {
+
+        default: string
+    }
 
     permissions: {
 
-        member: null | bigint
-        bot:    null | bigint
+        member: null | discord.PermissionFlags
+        bot:    null | discord.PermissionFlags
     }
 };
 
-export interface UserApplicationSchema extends Required<discord.UserApplicationCommandData> {
+export interface UserApplicationSchema extends Required<Omit<discord.UserApplicationCommandData, 'defaultMemberPermissions'>> {
 
-    defaultMemberPermissions: null | bigint
-    defaultBotPermissions:    null | bigint
+    defaultMemberPermissions: null | discord.PermissionFlags
+    defaultBotPermissions:    null | discord.PermissionFlags
 };
 
 export interface UserApplicationData {
 
     name: string
 
-    priority: number
-    intents:  number
-    partials: number[]
-
-    events: object
-
     type: discord.ApplicationCommandType.User
+
+    priority: number
+
+    intents:  discord.GatewayIntentBits
+    partials: discord.Partials[]
 
     show:   UserApplicationShow
     schema: UserApplicationSchema
+
+    events: {
+
+        [event: string | number | symbol]: (options: any) => void
+    }
 };
 
 export interface UserApplicationOptions {
@@ -40,24 +47,28 @@ export interface UserApplicationOptions {
     name: string
 
     priority?: number
-    intents?:  number
-    partials?: number[]
 
-    events: object
+    intents?:  discord.GatewayIntentBits
+    partials?: discord.Partials[]
 
     show: {
+
+        dm?: boolean
 
         name: Partial<Record<discord.Locale, string>> & {
 
             default: string
         }
 
-        dm?: boolean
-
         permissions?: {
 
-            member?: null | bigint
-            bot?:    null | bigint
+            member?: null | discord.PermissionFlags
+            bot?:    null | discord.PermissionFlags
         }
     };
+
+    events: {
+
+        [event: string | number | symbol]: (options: any) => void
+    }
 };

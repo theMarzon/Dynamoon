@@ -2,7 +2,7 @@ import discord from 'discord.js';
 
 import { EventOptions } from '../../framework/types/Event.js';
 
-export default <Omit<EventOptions, 'name'>> {
+export default <EventOptions> {
 
     execute: ({ client, file, loaded, used }) => {
 

@@ -6,36 +6,47 @@ export interface ChatApplicationShow {
 
     options: discord.ApplicationCommandOptionData[]
 
-    name:        Partial<Record<discord.Locale, string>> & { default: string }
-    description: Partial<Record<discord.Locale, string>> & { default: string }
+    name: Partial<Record<discord.Locale, string>> & {
+
+        default: string
+    }
+
+    description: Partial<Record<discord.Locale, string>> & {
+
+        default: string
+    }
 
     permissions: {
 
-        member: null | bigint
-        bot:    null | bigint
+        member: null | discord.PermissionFlags
+        bot:    null | discord.PermissionFlags
     }
 };
 
-export interface ChatApplicationSchema extends Required<discord.ChatInputApplicationCommandData> {
+export interface ChatApplicationSchema extends Required<Omit<discord.ChatInputApplicationCommandData, 'defaultMemberPermissions'>> {
 
-    defaultMemberPermissions: null | bigint
-    defaultBotPermissions:    null | bigint
+    defaultMemberPermissions: null | discord.PermissionFlags
+    defaultBotPermissions:    null | discord.PermissionFlags
 };
 
 export interface ChatApplicationData {
 
     name: string
 
-    priority: number
-    intents:  number
-    partials: number[]
-
-    events: object
-
     type: discord.ApplicationCommandType.ChatInput
+
+    priority: number
+
+    intents:  discord.GatewayIntentBits
+    partials: discord.Partials[]
 
     show:   ChatApplicationShow
     schema: ChatApplicationSchema
+
+    events: {
+
+        [event: string | number | symbol]: (options: any) => void
+    }
 };
 
 export interface ChatApplicationOptions {
@@ -43,10 +54,9 @@ export interface ChatApplicationOptions {
     name: string
 
     priority?: number
-    intents?:  number
-    partials?: number[]
 
-    events: object
+    intents?:  discord.GatewayIntentBits
+    partials?: discord.Partials[]
 
     show: {
 
@@ -54,13 +64,25 @@ export interface ChatApplicationOptions {
 
         options?: discord.ApplicationCommandOptionData[]
 
-        name:        Partial<Record<discord.Locale, string>> & { default: string }
-        description: Partial<Record<discord.Locale, string>> & { default: string }
+        name: Partial<Record<discord.Locale, string>> & {
+
+            default: string
+        }
+
+        description: Partial<Record<discord.Locale, string>> & {
+
+            default: string
+        }
 
         permissions?: {
 
-            member?: null | bigint
-            bot?:    null | bigint
+            member?: null | discord.PermissionFlags
+            bot?:    null | discord.PermissionFlags
         }
     };
+
+    events: {
+
+        [event: string | number | symbol]: (options: any) => void
+    }
 };

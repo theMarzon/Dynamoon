@@ -4,35 +4,42 @@ export interface MessageApplicationShow {
 
     dm: boolean
 
-    name: Partial<Record<discord.Locale, string>> & { default: string }
+    name: Partial<Record<discord.Locale, string>> & {
+
+        default: string
+    }
 
     permissions: {
 
-        member: null | bigint
-        bot:    null | bigint
+        member: null | discord.PermissionFlags
+        bot:    null | discord.PermissionFlags
     }
 };
 
-export interface MessageApplicationSchema extends Required<discord.MessageApplicationCommandData> {
+export interface MessageApplicationSchema extends Required<Omit<discord.MessageApplicationCommandData, 'defaultMemberPermissions'>> {
 
-    defaultMemberPermissions: null | bigint
-    defaultBotPermissions:    null | bigint
+    defaultMemberPermissions: null | discord.PermissionFlags
+    defaultBotPermissions:    null | discord.PermissionFlags
 };
 
 export interface MessageApplicationData {
 
     name: string
 
-    priority: number
-    intents:  number
-    partials: number[]
-
-    events: object
-
     type: discord.ApplicationCommandType.Message
+
+    priority: number
+
+    intents:  discord.GatewayIntentBits
+    partials: discord.Partials[]
 
     show:   MessageApplicationShow
     schema: MessageApplicationSchema
+
+    events: {
+
+        [event: string | number | symbol]: (options: any) => void
+    }
 };
 
 export interface MessageApplicationOptions {
@@ -40,21 +47,28 @@ export interface MessageApplicationOptions {
     name: string
 
     priority?: number
-    intents?:  number
-    partials?: number[]
 
-    events: object
+    intents?:  discord.GatewayIntentBits
+    partials?: discord.Partials[]
 
     show: {
 
         dm?: boolean
 
-        name: Partial<Record<discord.Locale, string>> & { default: string }
+        name: Partial<Record<discord.Locale, string>> & {
+
+            default: string
+        }
 
         permissions?: {
 
-            member?: null | bigint
-            bot?:    null | bigint
+            member?: null | discord.PermissionFlags
+            bot?:    null | discord.PermissionFlags
         }
     };
+
+    events: {
+
+        [event: string | number | symbol]: (options: any) => void
+    }
 };

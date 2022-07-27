@@ -4,7 +4,7 @@ import { ChatApplicationOptions } from '../../../framework/types/Applications/Ch
 
 import { EventOptions as ApplicationOptions } from '../../../events/application/types/Options.js';
 
-export default <Omit<ChatApplicationOptions, 'name'>> {
+export default <ChatApplicationOptions> {
 
     show: {
 

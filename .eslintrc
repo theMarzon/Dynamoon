@@ -31,6 +31,7 @@
         "no-multi-spaces":         "off",
         "no-useless-constructor":  "off",
 
+        "linebreak-style":       [ "error", "unix"   ],
         "operator-linebreak":    [ "error", "before" ],
         "array-bracket-spacing": [ "error", "always" ],
         "semi":                  [ "error", "always" ],

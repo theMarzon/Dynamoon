@@ -1,7 +1,9 @@
+import discord from 'discord.js';
+
 import loadedEvents from '../loaders/loadedEvents.js';
 import usedEvents   from './usedEvents.js';
 
-let usedPartials: number[] = [];
+let usedPartials: discord.Partials[] = [];
 
 for (const _loadedEvent of loadedEvents) {
 

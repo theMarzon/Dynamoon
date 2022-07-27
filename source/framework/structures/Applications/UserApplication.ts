@@ -14,14 +14,15 @@ export default class implements UserApplicationData {
 
     name = 'undefined';
 
+    type: discord.ApplicationCommandType.User = discord.ApplicationCommandType.User;
+
     priority = 0;
-    intents  = 0;
+
+    intents: discord.GatewayIntentBits = 0;
+
+    partials: discord.Partials[] = [];
 
     events = {};
-
-    partials: number[] = [];
-
-    type: discord.ApplicationCommandType.User = discord.ApplicationCommandType.User;
 
     show: UserApplicationShow = {
 

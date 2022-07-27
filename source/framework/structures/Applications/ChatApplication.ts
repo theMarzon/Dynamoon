@@ -14,14 +14,15 @@ export default class implements ChatApplicationData {
 
     name = 'undefined';
 
+    type: discord.ApplicationCommandType.ChatInput = discord.ApplicationCommandType.ChatInput;
+
     priority = 0;
-    intents  = 0;
+
+    intents: discord.GatewayIntentBits = 0;
+
+    partials: discord.Partials[] = [];
 
     events = {};
-
-    partials: number[] = [];
-
-    type: discord.ApplicationCommandType.ChatInput = discord.ApplicationCommandType.ChatInput;
 
     show: ChatApplicationShow = {
 
