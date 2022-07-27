@@ -56,7 +56,7 @@ export default class implements MessageApplicationData {
 
         // Elimina los "Partials" duplicados y los organiza
         this.partials = this.partials
-            .filter((partial, i, arr) => arr.indexOf(partial) === i)
+            .filter((partial, ind, arr) => arr.indexOf(partial) === ind)
             .sort((a, b) => a - b);
 
         this.show.name = options.show.name;
