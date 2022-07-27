@@ -1,5 +1,5 @@
 import { readdir as readDirectory } from 'node:fs/promises';
-import { join    as createPath    } from 'node:path';
+import { resolve as resolvePath   } from 'node:path';
 
 import { servicesPath } from '../directories.js';
 
@@ -12,7 +12,7 @@ directoryFolders = directoryFolders.filter((folder) => !folder.startsWith('.'));
 // Importa los archivos en paralelo
 let loadedServices = await Promise.all(directoryFolders.map(async (folder) => {
 
-    const filePath = createPath(servicesPath, folder, 'main.js');
+    const filePath = resolvePath(servicesPath, folder, 'main.js');
 
     const fileContent = (process.platform === 'win32')
 

@@ -80,9 +80,7 @@
                 "ImportDeclaration":  "first",
  
                 "SwitchCase":       1,
-                "MemberExpression": 1,
-
-                "ignoredNodes": [ "ConditionalExpression" ]
+                "MemberExpression": 1
             }
         ]
     }
