@@ -18,7 +18,7 @@ for (const _loadedEvent of loadedEvents) {
 
 // Elimina los "Partials" duplicados y los organiza
 usedPartials = usedPartials
-    .filter((partial, index, array) => array.indexOf(partial) === index)
+    .filter((partial, i, arr) => arr.indexOf(partial) === i)
     .sort((a, b) => a - b);
 
 export default usedPartials;

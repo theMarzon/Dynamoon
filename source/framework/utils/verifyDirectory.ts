@@ -7,8 +7,8 @@ import {
 export default async (directory: string) => {
 
     return verifyAccess(directory)
-        .catch((error) => {
+        .catch((err) => {
 
-            if (error.code === 'ENOENT') createDirectory(directory);
+            if (err.code === 'ENOENT') createDirectory(directory);
         });
 };

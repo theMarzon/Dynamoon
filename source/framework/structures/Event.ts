@@ -27,7 +27,7 @@ export default class implements EventData {
 
         // Elimina los "Partials" duplicados y los organiza
         this.partials = this.partials
-            .filter((partial, index, array) => array.indexOf(partial) === index)
+            .filter((partial, i, arr) => arr.indexOf(partial) === i)
             .sort((a, b) => a - b);
     };
 };
