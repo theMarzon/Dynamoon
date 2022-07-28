@@ -63,7 +63,7 @@ Puedes ver el estado actual de las implementaciones [aquí.](https://themarzon.n
 
         - 📂 ``message\`` _(Aplicaciones en el menú contextual de mensajes)_
 
-## Enfoques
+## Enfoque
 
 - Los eventos son para interactuar con el **Framework**.
 
@@ -159,4 +159,12 @@ export default {
 };
 ```
 
-> Más documentación próximamente...
+## Desarrollo
+
+- El **Framework** no puede depender de archivos externos, pero los archivos externos si de él.
+
+- Implementaciones verdaderamente necesarias.
+
+- Anteponer la eficiencia y estabilidad ante todo.
+
+> _(28 / 7 / 2022)_ Más documentación próximamente...
