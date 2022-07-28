@@ -36,9 +36,8 @@ export interface ChatApplicationData {
     type: discord.ApplicationCommandType.ChatInput
 
     priority: number
-
-    intents:  discord.GatewayIntentBits
-    partials: discord.Partials[]
+    intents:  number
+    partials: number[]
 
     show:   ChatApplicationShow
     schema: ChatApplicationSchema
@@ -54,9 +53,8 @@ export interface ChatApplicationOptions {
     name: string
 
     priority?: number
-
-    intents?:  discord.GatewayIntentBits
-    partials?: discord.Partials[]
+    intents?:  number
+    partials?: number[]
 
     show: {
 

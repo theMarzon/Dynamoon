@@ -1,6 +1,8 @@
 import discord from 'discord.js';
 
-export default {
+import { ChatApplicationOptions } from '../../../framework/types/Applications/ChatApplication.js';
+
+export default <Omit<Omit<ChatApplicationOptions, 'name'>, 'schema'>> {
 
     show: {
 

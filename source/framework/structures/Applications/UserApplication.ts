@@ -17,10 +17,9 @@ export default class implements UserApplicationData {
     type: discord.ApplicationCommandType.User = discord.ApplicationCommandType.User;
 
     priority = 0;
+    intents  = 0;
 
-    intents: discord.GatewayIntentBits = 0;
-
-    partials: discord.Partials[] = [];
+    partials: number[] = [];
 
     events = {};
 

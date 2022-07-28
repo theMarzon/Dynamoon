@@ -1,5 +1,3 @@
-import discord from 'discord.js';
-
 import {
 
     EventData,
@@ -12,10 +10,9 @@ export default class implements EventData {
     name = 'undefined';
 
     priority = 0;
+    intents  = 0;
 
-    intents: discord.GatewayIntentBits = 0;
-
-    partials: discord.Partials[] = [];
+    partials: number[] = [];
 
     execute = ({ client, file, loaded, used }: ExecuteOptions) => {};
 

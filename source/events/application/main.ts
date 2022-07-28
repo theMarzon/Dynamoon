@@ -1,6 +1,8 @@
 import discord from 'discord.js';
 
-export default {
+import { EventOptions } from '../../framework/types/Event.js';
+
+export default <Omit<EventOptions, 'name'>> {
 
     priority: 2,
 

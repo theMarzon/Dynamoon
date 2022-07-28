@@ -16,7 +16,7 @@ export default class extends Client {
     framework = {
 
         name:       'Dynamoon',
-        version:    '0.9.0',
+        version:    '0.10.0',
         repository: 'https://github.com/theMarzon/Dynamoon',
 
         images: {

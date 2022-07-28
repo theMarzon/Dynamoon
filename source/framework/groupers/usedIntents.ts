@@ -1,9 +1,7 @@
-import discord from 'discord.js';
-
 import loadedEvents from '../loaders/loadedEvents.js';
 import usedEvents   from './usedEvents.js';
 
-let usedIntents: discord.GatewayIntentBits = 0;
+let usedIntents = 0;
 
 for (const _loadedEvent of loadedEvents) {
 

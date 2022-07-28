@@ -1,5 +1,3 @@
-import discord from 'discord.js';
-
 import {
 
     ServiceData,
@@ -11,10 +9,9 @@ export default class implements ServiceData {
     name = 'undefined';
 
     priority = 0;
+    intents  = 0;
 
-    intents: discord.GatewayIntentBits = 0;
-
-    partials: discord.Partials[] = [];
+    partials: number[] = [];
 
     events = {};
 

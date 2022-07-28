@@ -17,10 +17,9 @@ export default class implements MessageApplicationData {
     type: discord.ApplicationCommandType.Message = discord.ApplicationCommandType.Message;
 
     priority = 0;
+    intents  = 0;
 
-    intents: discord.GatewayIntentBits = 0;
-
-    partials: discord.Partials[] = [];
+    partials: number[] = [];
 
     events = {};
 

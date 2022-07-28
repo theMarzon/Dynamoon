@@ -1,5 +1,3 @@
-import discord from 'discord.js';
-
 import Client             from '../structures/Client.js';
 import Event              from '../structures/Event.js';
 import Service            from '../structures/Service.js';
@@ -47,8 +45,8 @@ export interface ExecuteOptions {
 
     used: {
 
-        intents:  discord.GatewayIntentBits
-        partials: discord.Partials[]
+        intents:  number
+        partials: number[]
 
         events: EventsGroup
     }
@@ -59,9 +57,8 @@ export interface EventData {
     name: string
 
     priority: number
-
-    intents:  discord.GatewayIntentBits
-    partials: discord.Partials[]
+    intents:  number
+    partials: number[]
 
     execute: ({ client, file, loaded, used }: ExecuteOptions) => void
 };
@@ -71,9 +68,8 @@ export interface EventOptions {
     name: string
 
     priority?: number
-
-    intents?:  discord.GatewayIntentBits
-    partials?: discord.Partials[]
+    intents?:  number
+    partials?: number[]
 
     execute: ({ client, file, loaded, used }: ExecuteOptions) => void
 };

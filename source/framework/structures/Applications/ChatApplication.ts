@@ -17,10 +17,9 @@ export default class implements ChatApplicationData {
     type: discord.ApplicationCommandType.ChatInput = discord.ApplicationCommandType.ChatInput;
 
     priority = 0;
+    intents  = 0;
 
-    intents: discord.GatewayIntentBits = 0;
-
-    partials: discord.Partials[] = [];
+    partials: number[] = [];
 
     events = {};
 

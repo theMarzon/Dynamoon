@@ -1,18 +1,18 @@
 import discord from 'discord.js';
 
-export default {
+import { EventOptions } from '../../framework/types/Event.js';
 
-    priority: 3,
+export default <Omit<EventOptions, 'name'>> {
 
     execute: ({ client, file, loaded, used }) => {
 
-        client.once(discord.Events.ClientReady, () => {
+        client.on(discord.Events.TypingStart, (event) => {
 
             for (const _loadedFile of used.events[file.name].all) {
 
                 _loadedFile.events[file.name]({
 
-                    client, loaded, used,
+                    client, event, loaded, used,
 
                     file: _loadedFile
                 });

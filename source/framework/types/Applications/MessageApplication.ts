@@ -29,9 +29,8 @@ export interface MessageApplicationData {
     type: discord.ApplicationCommandType.Message
 
     priority: number
-
-    intents:  discord.GatewayIntentBits
-    partials: discord.Partials[]
+    intents:  number
+    partials: number[]
 
     show:   MessageApplicationShow
     schema: MessageApplicationSchema
@@ -47,9 +46,8 @@ export interface MessageApplicationOptions {
     name: string
 
     priority?: number
-
-    intents?:  discord.GatewayIntentBits
-    partials?: discord.Partials[]
+    intents?:  number
+    partials?: number[]
 
     show: {
 

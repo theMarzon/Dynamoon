@@ -1,13 +1,10 @@
-import discord from 'discord.js';
-
 export interface ServiceData {
 
     name: string
 
     priority: number
-
-    intents:  discord.GatewayIntentBits
-    partials: discord.Partials[]
+    intents:  number
+    partials: number[]
 
     events: {
 
@@ -20,9 +17,8 @@ export interface ServiceOptions {
     name: string
 
     priority?: number
-
-    intents?:  discord.GatewayIntentBits
-    partials?: discord.Partials[]
+    intents?:  number
+    partials?: number[]
 
     events: {
 

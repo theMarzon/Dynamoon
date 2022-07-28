@@ -29,9 +29,8 @@ export interface UserApplicationData {
     type: discord.ApplicationCommandType.User
 
     priority: number
-
-    intents:  discord.GatewayIntentBits
-    partials: discord.Partials[]
+    intents:  number
+    partials: number[]
 
     show:   UserApplicationShow
     schema: UserApplicationSchema
@@ -47,9 +46,8 @@ export interface UserApplicationOptions {
     name: string
 
     priority?: number
-
-    intents?:  discord.GatewayIntentBits
-    partials?: discord.Partials[]
+    intents?:  number
+    partials?: number[]
 
     show: {
 

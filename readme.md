@@ -63,6 +63,13 @@ Puedes ver el estado actual de las implementaciones [aquí.](https://themarzon.n
 
         - 📂 ``message\`` _(Aplicaciones en el menú contextual de mensajes)_
 
+## Enfoques
+
+- Los eventos son para interactuar con el **Framework**.
+
+- Los servicios son para interactuar con los usuarios sin necesidad de una acción visual.
+
+- Las aplicaciones son para interactuar con los usuarios mediante una acción visual.
 
 # Como crear eventos, servicios y aplicaciones
 
