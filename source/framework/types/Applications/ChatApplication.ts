@@ -44,23 +44,15 @@ export interface ChatApplicationData {
 
     events: {
 
-        [event: string | number | symbol]: (options: any) => void
+        [event: PropertyKey]: (options: any) => void
     }
 };
 
-export interface ChatApplicationOptions {
+export interface ChatApplicationOptions extends Partial<Omit<ChatApplicationData, 'name' | 'type' | 'show' | 'events' | 'schema'>> {
 
     name: string
 
-    priority?: number
-    intents?:  number
-    partials?: number[]
-
-    show: {
-
-        dm?: boolean
-
-        options?: discord.ApplicationCommandOptionData[]
+    show: Partial<Omit<ChatApplicationShow, 'name' | 'description' | 'permissions'>> & {
 
         name: Partial<Record<discord.Locale, string>> & {
 
@@ -81,6 +73,6 @@ export interface ChatApplicationOptions {
 
     events: {
 
-        [event: string | number | symbol]: (options: any) => void
+        [event: PropertyKey]: (options: any) => void
     }
 };

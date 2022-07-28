@@ -8,7 +8,7 @@ export interface ServiceData {
 
     events: {
 
-        [event: string | number | symbol]: (options: any) => void
+        [event: PropertyKey]: (options: any) => void
     }
 };
 
@@ -22,6 +22,6 @@ export interface ServiceOptions {
 
     events: {
 
-        [event: string | number | symbol]: (options: any) => void
+        [event: PropertyKey]: (options: any) => void
     }
 };

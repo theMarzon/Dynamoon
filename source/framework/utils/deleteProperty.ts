@@ -1,10 +1,6 @@
-import {
+import { DeletePropertyOption } from '../types/Utils.js';
 
-    DeletePropertyOption,
-    DeletePropertyType
-} from '../types/Utils.js';
-
-export default <P extends DeletePropertyOption, S extends DeletePropertyType> (content: P, key: S): Omit<P, S> => {
+export default <P extends DeletePropertyOption, S extends PropertyKey> (content: P, key: S): Omit<P, S> => {
 
     content = { ...content };
 

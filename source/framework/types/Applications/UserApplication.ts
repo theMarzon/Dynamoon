@@ -37,21 +37,15 @@ export interface UserApplicationData {
 
     events: {
 
-        [event: string | number | symbol]: (options: any) => void
+        [event: PropertyKey]: (options: any) => void
     }
 };
 
-export interface UserApplicationOptions {
+export interface UserApplicationOptions extends Partial<Omit<UserApplicationData, 'name' | 'type' | 'show' | 'events' | 'schema'>> {
 
     name: string
 
-    priority?: number
-    intents?:  number
-    partials?: number[]
-
-    show: {
-
-        dm?: boolean
+    show: Partial<Omit<UserApplicationShow, 'name' | 'permissions'>> & {
 
         name: Partial<Record<discord.Locale, string>> & {
 
@@ -67,6 +61,6 @@ export interface UserApplicationOptions {
 
     events: {
 
-        [event: string | number | symbol]: (options: any) => void
+        [event: PropertyKey]: (options: any) => void
     }
 };

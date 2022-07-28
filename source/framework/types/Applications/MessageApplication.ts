@@ -37,21 +37,15 @@ export interface MessageApplicationData {
 
     events: {
 
-        [event: string | number | symbol]: (options: any) => void
+        [event: PropertyKey]: (options: any) => void
     }
 };
 
-export interface MessageApplicationOptions {
+export interface ChatApplicationOptions extends Partial<Omit<MessageApplicationData, 'name' | 'type' | 'show' | 'events' | 'schema'>> {
 
     name: string
 
-    priority?: number
-    intents?:  number
-    partials?: number[]
-
-    show: {
-
-        dm?: boolean
+    show: Partial<Omit<MessageApplicationShow, 'name' | 'permissions'>> & {
 
         name: Partial<Record<discord.Locale, string>> & {
 
@@ -67,6 +61,6 @@ export interface MessageApplicationOptions {
 
     events: {
 
-        [event: string | number | symbol]: (options: any) => void
+        [event: PropertyKey]: (options: any) => void
     }
 };

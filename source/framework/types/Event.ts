@@ -7,7 +7,7 @@ import MessageApplication from '../structures/Applications/MessageApplication.js
 
 export interface EventsGroup {
 
-    [event: string | number | symbol]: {
+    [event: PropertyKey]: {
 
         applications:
              (ChatApplication
