@@ -87,7 +87,7 @@ Puedes ver el estado actual de las implementaciones [aquí.](https://themarzon.n
 
 ## Eventos
 
-1. Cree una carpeta en el [directorio de eventos](https://github.com/theMarzon/Dynamoon/#Directorios) con el nombre del evento, esta carpeta contendrá todos los archivos del evento.
+1. Cree una carpeta en el [directorio de eventos](https://github.com/theMarzon/Dynamoon/#directorios) con el nombre del evento, esta carpeta contendrá todos los archivos del evento.
 
     > Si el directorio no existe, créelo.
 
@@ -168,5 +168,108 @@ export default {
     }
 };
 ```
+
+## Servicios
+
+1. Cree una carpeta en el [directorio de servicios](https://github.com/theMarzon/Dynamoon/#directorios) con el nombre del servcicio, esta carpeta contendrá todos los archivos del servicio.
+
+    > Si el directorio no existe, créelo.
+
+2. Cree un archivo llamado ``main.js`` en la carpeta del servicio.
+
+3. Exporte un objeto vacío:
+
+```js
+export default {};
+```
+
+#
+
+4. Para definir la prioridad de ejecución del servicio, cree la siguiente propiedad:
+
+    > Tenga en cuenta que mientras más alta es la cifra, más prioridad tendrá el servicio.
+
+```js
+export default {
+
+    priority: 0
+};
+```
+
+- [x] Este paso es opcional.
+
+#
+
+5. Para definir los ``Intents`` necesarios del servicio, cree la siguiente propiedad:
+
+    > Por favor, utilicé estos [valores para definir los ``Intents``.](https://discord.com/developers/docs/topics/gateway#gateway-intents)
+    > 
+    > En este ejemplo, no serán necesarios.
+
+```js
+export default {
+
+    priority: 0,
+    intents:  0
+};
+```
+
+- [x] Este paso es opcional.
+
+#
+
+6. Para definir los ``Partials`` necesarios del servicio, cree la siguiente propiedad:
+
+    > En este ejemplo, no serán necesarios.
+
+```js
+export default {
+
+    priority: 0,
+    intents:  0,
+
+    partials: []
+};
+```
+
+- [x] Este paso es opcional.
+
+#
+
+7. Para definir los eventos utilizados, cree la siguiente propiedad:
+
+```js
+export default {
+
+    priority: 0,
+    intents:  0,
+
+    partials: [],
+
+    events: {}
+};
+```
+
+8. Para definir un evento a utilizar, cree una funcion con el nombre del evento a utilizar en la propiedad ``events``:
+
+```js
+export default {
+
+    priority: 0,
+    intents:  0,
+
+    partials: [],
+
+    events: {
+
+        boot: ({ client, file, loaded, used }) => {
+
+            console.log('Hello world');
+        }
+    }
+};
+```
+
+- [x] Este paso es opcional.
 
 > _(28 / 7 / 2022)_ Más documentación próximamente...
