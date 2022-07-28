@@ -161,7 +161,7 @@ export default {
 
 ## Desarrollo
 
-- El **Framework** no puede depender de archivos externos, pero los archivos externos si de él.
+- El **Framework** no puede depender de los eventos, servicios y aplicaciones modulares.
 
 - Implementaciones verdaderamente necesarias.
 
