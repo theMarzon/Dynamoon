@@ -47,6 +47,8 @@ Puedes ver el estado actual de las implementaciones [aquí.](https://themarzon.n
     |-------------|------------------|
     | `BOT_TOKEN` | La firma del bot |
 
+# Estructura del proyecto
+
 ## Directorios
 
 - 📂 ``sources\``
@@ -63,13 +65,21 @@ Puedes ver el estado actual de las implementaciones [aquí.](https://themarzon.n
 
         - 📂 ``message\`` _(Aplicaciones en el menú contextual de mensajes)_
 
-## Enfoque
+## Archivos
 
-- Los eventos son para interactuar con el **Framework**.
+- 🎯 Los eventos se utilizan para interactuar con el **Framework**.
 
-- Los servicios son para interactuar con los usuarios sin necesidad de una acción visual.
+- 📡 Los servicios se utilizan para interactuar con los usuarios sin necesidad de una acción visual.
 
-- Las aplicaciones son para interactuar con los usuarios mediante una acción visual.
+- 💻 Las aplicaciones se utilizan para interactuar con los usuarios mediante una acción visual.
+
+## Desarrollo
+
+- 🔀 El **Framework** no puede depender de los eventos, servicios y aplicaciones modulares.
+
+- 🚧 Solo implementaciones verdaderamente necesarias.
+
+- 🧹 Anteponer la eficiencia, estabilidad y utilidad ante todo.
 
 # Como crear eventos, servicios y aplicaciones
 
@@ -158,13 +168,5 @@ export default {
     }
 };
 ```
-
-## Desarrollo
-
-- El **Framework** no puede depender de los eventos, servicios y aplicaciones modulares.
-
-- Implementaciones verdaderamente necesarias.
-
-- Anteponer la eficiencia y estabilidad ante todo.
 
 > _(28 / 7 / 2022)_ Más documentación próximamente...
