@@ -87,7 +87,7 @@ Puedes ver el estado actual de las implementaciones [aquí.](https://themarzon.n
 
 ## Eventos
 
-1. Cree una carpeta en el [directorio de eventos](https://github.com/theMarzon/Dynamoon/#directorios) con el nombre del evento, esta carpeta contendrá todos los archivos del evento.
+1. Cree una carpeta en el [directorio de los eventos](https://github.com/theMarzon/Dynamoon/#directorios) con el nombre del evento, esta carpeta contendrá todos los archivos del evento.
 
     > Si el directorio no existe, créelo.
 
@@ -171,7 +171,7 @@ export default {
 
 ## Servicios
 
-1. Cree una carpeta en el [directorio de servicios](https://github.com/theMarzon/Dynamoon/#directorios) con el nombre del servcicio, esta carpeta contendrá todos los archivos del servicio.
+1. Cree una carpeta en el [directorio de los servicios](https://github.com/theMarzon/Dynamoon/#directorios) con el nombre del servcicio, esta carpeta contendrá todos los archivos del servicio.
 
     > Si el directorio no existe, créelo.
 
@@ -249,6 +249,8 @@ export default {
     events: {}
 };
 ```
+
+#
 
 8. Para definir un evento a utilizar, cree una funcion con el nombre del evento a utilizar en la propiedad ``events``:
 
