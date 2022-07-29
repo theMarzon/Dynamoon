@@ -16,7 +16,7 @@ export default <Omit<EventOptions, 'name'>> {
             for (const _loadedFile of used.events[file.name].applications) {
 
                 // Si la aplicacion que de la interaccion no tiene el mismo tipo
-                if (_loadedFile.type !== event.commandType) continue;
+                if (event.commandType !== _loadedFile.type) continue;
 
                 // Si la aplicacion que de la interaccion no tiene el mismo nombre
                 if (event.commandName !== _loadedFile.show.name.default) continue;

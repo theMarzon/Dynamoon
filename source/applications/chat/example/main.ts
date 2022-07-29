@@ -25,7 +25,7 @@ export default <Omit<ChatApplicationOptions, 'name' | 'schema'>> {
 
         application: ({ client, event, file, loaded, used }) => {
 
-            event.reply({ content: `${client.ws.ping} ms`, ephemeral: true });
+            event.reply(`${client.ws.ping} ms`);
         }
     }
 };
