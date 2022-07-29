@@ -5,24 +5,21 @@ import ChatApplication    from '../structures/Applications/ChatApplication.js';
 import UserApplication    from '../structures/Applications/UserApplication.js';
 import MessageApplication from '../structures/Applications/MessageApplication.js';
 
-export interface EventsGroup {
+export interface EventsGroup extends Map<string, {
 
-    [event: PropertyKey]: {
+    applications:
+         (ChatApplication
+        | UserApplication
+        | MessageApplication)[]
 
-        applications:
-             (ChatApplication
-            | UserApplication
-            | MessageApplication)[]
+    services: Service[]
 
-        services: Service[]
-
-        all:
-             (Service
-            | ChatApplication
-            | UserApplication
-            | MessageApplication)[]
-    }
-};
+    all:
+         (Service
+        | ChatApplication
+        | UserApplication
+        | MessageApplication)[]
+}> {};
 
 export interface ExecuteOptions {
 

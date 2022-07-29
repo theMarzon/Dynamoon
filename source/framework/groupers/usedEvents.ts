@@ -6,7 +6,7 @@ import loadedMessageApplications from '../loaders/applications/loadedMessageAppl
 
 import { EventsGroup } from '../types/Event.js';
 
-const usedEvents: EventsGroup = {};
+const usedEvents: EventsGroup = new Map();
 
 for (const _loadedEvent of loadedEvents) {
 
@@ -25,12 +25,12 @@ for (const _loadedEvent of loadedEvents) {
     // Omite el evento si no se esta utilizando
     if (!allFiles.length) continue;
 
-    usedEvents[_loadedEvent.name] = {
+    usedEvents.set(_loadedEvent.name, {
 
         services:     serviceFiles,
         applications: applicationFiles,
         all:          allFiles
-    };
+    });
 };
 
 export default usedEvents;

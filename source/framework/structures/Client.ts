@@ -49,7 +49,7 @@ export default class extends Client {
         for (const _loadedEvent of loadedEvents) {
 
             // Omite el evento si no se esta utilizando
-            if (!usedEvents[_loadedEvent.name]) continue;
+            if (!usedEvents.has(_loadedEvent.name)) continue;
 
             _loadedEvent.execute({
 

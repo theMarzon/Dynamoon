@@ -13,7 +13,7 @@ export default <Omit<EventOptions, 'name'>> {
             // Si no es una aplicacion
             if (event.type !== discord.InteractionType.ApplicationCommand) return;
 
-            for (const _loadedFile of used.events[file.name].applications) {
+            for (const _loadedFile of used.events.get(file.name)!!.applications) {
 
                 // Si la aplicacion que de la interaccion no tiene el mismo tipo
                 if (event.commandType !== _loadedFile.type) continue;

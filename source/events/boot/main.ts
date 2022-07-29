@@ -6,7 +6,7 @@ export default <Omit<EventOptions, 'name'>> {
 
     execute: ({ client, file, loaded, used }) => {
 
-        for (const _loadedFile of used.events[file.name].all) {
+        for (const _loadedFile of used.events.get(file.name)!!.all) {
 
             _loadedFile.events[file.name]({
 

@@ -6,11 +6,11 @@ let usedPartials: number[] = [];
 for (const _loadedEvent of loadedEvents) {
 
     // Omite el evento si no se esta utilizando
-    if (!usedEvents[_loadedEvent.name]) continue;
+    if (!usedEvents.has(_loadedEvent.name)) continue;
 
     usedPartials = [ ...usedPartials, ..._loadedEvent.partials ];
 
-    for (const _eventFile of usedEvents[_loadedEvent.name].all) {
+    for (const _eventFile of usedEvents.get(_loadedEvent.name)!!.all) {
 
         usedPartials = [ ...usedPartials, ..._eventFile.partials ];
     };

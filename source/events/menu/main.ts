@@ -14,7 +14,7 @@ export default <Omit<EventOptions, 'name'>> {
             if (event.type          !== discord.InteractionType.MessageComponent
             ||  event.componentType !== discord.ComponentType.SelectMenu) return;
 
-            for (const _loadedFile of used.events[file.name].all) {
+            for (const _loadedFile of used.events.get(file.name)!!.all) {
 
                 _loadedFile.events[file.name]({
 
