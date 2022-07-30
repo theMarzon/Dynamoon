@@ -14,7 +14,7 @@ export default class implements EventData {
 
     partials: number[] = [];
 
-    execute = ({ client, file, loaded, used }: ExecuteOptions) => {};
+    execute = ({ client, me, loaded, used }: ExecuteOptions) => {};
 
     constructor (options: EventOptions) {
 

@@ -4,17 +4,17 @@ import { EventOptions } from '../../framework/types/Event.js';
 
 export default <Omit<EventOptions, 'name'>> {
 
-    execute: ({ client, file, loaded, used }) => {
+    execute: ({ client, me, loaded, used }) => {
 
         client.on(discord.Events.TypingStart, (event) => {
 
-            for (const _loadedFile of used.events.get(file.name)!!.all) {
+            for (const _loadedFile of used.events.get(me.name)!!.all) {
 
-                _loadedFile.events[file.name]({
+                _loadedFile.events[me.name]({
 
                     client, event, loaded, used,
 
-                    file: _loadedFile
+                    me: _loadedFile
                 });
             };
         });

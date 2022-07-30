@@ -29,7 +29,7 @@
         "no-irregular-whitespace": "off",
         "object-property-newline": "off",
         "no-multi-spaces":         "off",
-        "no-useless-constructor":  "off",
+        "no-empty-pattern":        "off",
 
         "operator-linebreak":    [ "error", "before" ],
         "array-bracket-spacing": [ "error", "always" ],
@@ -38,6 +38,7 @@
         "padding-line-between-statements": [
 
             "error",
+
             { "blankLine": "always", "prev": "case",     "next": "*" },
             { "blankLine": "always", "prev": "continue", "next": "*" },
             { "blankLine": "always", "prev": "return",   "next": "*" },

@@ -10,14 +10,15 @@ import UserApplication    from '../../framework/structures/Applications/UserAppl
 import MessageApplication from '../../framework/structures/Applications/MessageApplication.js';
 
 import { ServiceOptions } from '../../framework/types/Service.js';
+import { ClientReady    } from '../../events/clientReady/types/Options.js';
 
 export default <Omit<ServiceOptions, 'name'>> {
 
     events: {
 
-        clientReady: async ({ client, loaded }) => {
+        clientReady: async ({ client, loaded }: ClientReady) => {
 
-            const botApplications = await client.application.commands.fetch();
+            const botApplications = await client.application!!.commands.fetch();
 
             const chatApplications    = loaded.applications.chat.map((file: ChatApplication) => file.schema);
             const userApplications    = loaded.applications.user.map((file: UserApplication) => file.schema);
@@ -91,7 +92,7 @@ export default <Omit<ServiceOptions, 'name'>> {
             };
 
             // Verifica si en las aplicaciones cargadas por el "Framework" y las aplicaciones del bot tienen algun cambio
-            for (const _frameworkApplication of chatApplications) {
+            for (const _frameworkApplication of loadedApplications) {
 
                 switch (_frameworkApplication.type) {
 

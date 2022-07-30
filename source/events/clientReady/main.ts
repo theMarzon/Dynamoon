@@ -6,17 +6,17 @@ export default <Omit<EventOptions, 'name'>> {
 
     priority: 3,
 
-    execute: ({ client, file, loaded, used }) => {
+    execute: ({ client, me, loaded, used }) => {
 
         client.once(discord.Events.ClientReady, () => {
 
-            for (const _loadedFile of used.events.get(file.name)!!.all) {
+            for (const _loadedFile of used.events.get(me.name)!!.all) {
 
-                _loadedFile.events[file.name]({
+                _loadedFile.events[me.name]({
 
                     client, loaded, used,
 
-                    file: _loadedFile
+                    me: _loadedFile
                 });
             };
         });

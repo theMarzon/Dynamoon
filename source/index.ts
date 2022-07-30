@@ -9,7 +9,7 @@ dotenv.config();
 const client = new Client({ allowedMentions: { repliedUser: false, parse: [] } });
 
 // Ejecuta los eventos
-client.openEvents();
+client.executeEvents();
 
 // Conecta el cliente
 client

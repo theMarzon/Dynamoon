@@ -2,7 +2,7 @@ import discord from 'discord.js';
 
 import {
 
-    ApplicationName,
+    ApplicationLocalizations,
     ApplicationType,
     ApplicationPermissions,
     ApplicationEvents
@@ -12,7 +12,7 @@ export interface MessageApplicationDisplay {
 
     dm: boolean
 
-    name: ApplicationName
+    name: ApplicationLocalizations & { default: string }
 
     permissions: {
 
@@ -21,7 +21,7 @@ export interface MessageApplicationDisplay {
     }
 };
 
-export interface MessageApplicationSchema extends Required<Omit<discord.MessageApplicationCommandData, 'defaultMemberPermissions'>> {
+export interface MessageApplicationSchema extends Required<discord.MessageApplicationCommandData> {
 
     defaultMemberPermissions: ApplicationPermissions
     defaultBotPermissions:    ApplicationPermissions
@@ -55,7 +55,7 @@ export interface MessageApplicationOptions {
 
         dm?: boolean
 
-        name: ApplicationName
+        name: ApplicationLocalizations & { default: string }
 
         permissions?: {
 

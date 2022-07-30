@@ -6,8 +6,7 @@ export type ApplicationPermissions = null | bigint;
 
 export type ApplicationOptions = discord.ApplicationCommandOptionData[];
 
-export type ApplicationName        = Partial<Record<discord.Locale, string>> & { default: string };
-export type ApplicationDescription = Partial<Record<discord.Locale, string>> & { default: string };
+export type ApplicationLocalizations = Partial<Record<discord.Locale, string>>;
 
 export interface ApplicationEvents {
 

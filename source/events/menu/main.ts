@@ -6,7 +6,7 @@ export default <Omit<EventOptions, 'name'>> {
 
     priority: 1,
 
-    execute: ({ client, file, loaded, used }) => {
+    execute: ({ client, me, loaded, used }) => {
 
         client.on(discord.Events.InteractionCreate, (event) => {
 
@@ -14,13 +14,13 @@ export default <Omit<EventOptions, 'name'>> {
             if (event.type          !== discord.InteractionType.MessageComponent
             ||  event.componentType !== discord.ComponentType.SelectMenu) return;
 
-            for (const _loadedFile of used.events.get(file.name)!!.all) {
+            for (const _loadedFile of used.events.get(me.name)!!.all) {
 
-                _loadedFile.events[file.name]({
+                _loadedFile.events[me.name]({
 
                     client, event, loaded, used,
 
-                    file: _loadedFile
+                    me: _loadedFile
                 });
             };
         });

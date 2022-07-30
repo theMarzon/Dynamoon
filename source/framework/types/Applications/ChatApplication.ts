@@ -2,8 +2,7 @@ import discord from 'discord.js';
 
 import {
 
-    ApplicationName,
-    ApplicationDescription,
+    ApplicationLocalizations,
     ApplicationType,
     ApplicationOptions,
     ApplicationPermissions,
@@ -14,9 +13,10 @@ export interface ChatApplicationDisplay {
 
     dm: boolean
 
-    name:        ApplicationName
-    description: ApplicationDescription
-    options:     ApplicationOptions
+    name:        ApplicationLocalizations & { default: string }
+    description: ApplicationLocalizations & { default: string }
+
+    options: ApplicationOptions
 
     permissions: {
 
@@ -25,7 +25,7 @@ export interface ChatApplicationDisplay {
     }
 };
 
-export interface ChatApplicationSchema extends Required<Omit<discord.ChatInputApplicationCommandData, 'defaultMemberPermissions'>> {
+export interface ChatApplicationSchema extends Required<discord.ChatInputApplicationCommandData> {
 
     defaultMemberPermissions: ApplicationPermissions
     defaultBotPermissions:    ApplicationPermissions
@@ -59,8 +59,9 @@ export interface ChatApplicationOptions {
 
         dm?: boolean
 
-        name:        ApplicationName
-        description: ApplicationDescription
+        name:        ApplicationLocalizations & { default: string }
+        description: ApplicationLocalizations & { default: string }
+
         options?:    ApplicationOptions
 
         permissions?: {

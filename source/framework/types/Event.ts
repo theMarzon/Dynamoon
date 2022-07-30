@@ -23,7 +23,7 @@ export interface EventsGroup extends Map<string, {
 
 export interface ExecuteOptions {
 
-    file: any
+    me: any
 
     client: Client
 
@@ -49,7 +49,7 @@ export interface ExecuteOptions {
     }
 };
 
-export type EventExecute = ({ client, file, loaded, used }: ExecuteOptions) => void;
+export type EventExecute = ({ client, me, loaded, used }: ExecuteOptions) => void;
 
 export interface EventData {
 

@@ -48,7 +48,7 @@ export default class extends Client implements ClientData {
         this.setMaxListeners(1);
     };
 
-    openEvents () {
+    executeEvents () {
 
         for (const _loadedEvent of loadedEvents) {
 
@@ -59,7 +59,7 @@ export default class extends Client implements ClientData {
 
                 client: this,
 
-                file: _loadedEvent,
+                me: _loadedEvent,
 
                 loaded: {
 
