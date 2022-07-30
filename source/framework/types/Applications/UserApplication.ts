@@ -1,66 +1,68 @@
 import discord from 'discord.js';
 
-export interface UserApplicationShow {
+import {
+
+    ApplicationName,
+    ApplicationType,
+    ApplicationPermissions,
+    ApplicationEvents
+} from '../Application.js';
+
+export interface UserApplicationDisplay {
 
     dm: boolean
 
-    name: Partial<Record<discord.Locale, string>> & {
-
-        default: string
-    }
+    name: ApplicationName
 
     permissions: {
 
-        member: null | discord.PermissionFlags
-        bot:    null | discord.PermissionFlags
+        member: ApplicationPermissions
+        bot:    ApplicationPermissions
     }
 };
 
 export interface UserApplicationSchema extends Required<Omit<discord.UserApplicationCommandData, 'defaultMemberPermissions'>> {
 
-    defaultMemberPermissions: null | discord.PermissionFlags
-    defaultBotPermissions:    null | discord.PermissionFlags
+    defaultMemberPermissions: ApplicationPermissions
+    defaultBotPermissions:    ApplicationPermissions
 };
 
 export interface UserApplicationData {
 
     name: string
 
-    type: discord.ApplicationCommandType.User
+    type: ApplicationType
 
     priority: number
     intents:  number
     partials: number[]
 
-    show:   UserApplicationShow
-    schema: UserApplicationSchema
+    display: UserApplicationDisplay
+    schema:  UserApplicationSchema
 
-    events: {
-
-        [event: PropertyKey]: (options: any) => void
-    }
+    events: ApplicationEvents
 };
 
-export interface UserApplicationOptions extends Partial<Omit<UserApplicationData, 'name' | 'type' | 'show' | 'events' | 'schema'>> {
+export interface UserApplicationOptions {
 
     name: string
 
-    show: Partial<Omit<UserApplicationShow, 'name' | 'permissions'>> & {
+    priority?: number
+    intents?:  number
+    partials?: number[]
 
-        name: Partial<Record<discord.Locale, string>> & {
+    display: {
 
-            default: string
-        }
+        dm?: boolean
+
+        name: ApplicationName
 
         permissions?: {
 
-            member?: null | discord.PermissionFlags
-            bot?:    null | discord.PermissionFlags
+            member?: ApplicationPermissions
+            bot?:    ApplicationPermissions
         }
-    };
-
-    events: {
-
-        [event: PropertyKey]: (options: any) => void
     }
+
+    events: ApplicationEvents
 };

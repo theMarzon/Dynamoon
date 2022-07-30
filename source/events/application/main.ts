@@ -19,7 +19,7 @@ export default <Omit<EventOptions, 'name'>> {
                 if (event.commandType !== _loadedFile.type) continue;
 
                 // Si la aplicacion que de la interaccion no tiene el mismo nombre
-                if (event.commandName !== _loadedFile.show.name.default) continue;
+                if (event.commandName !== _loadedFile.display.name.default) continue;
 
                 _loadedFile.events[file.name]({
 

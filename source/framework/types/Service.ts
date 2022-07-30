@@ -1,3 +1,8 @@
+export interface ServiceEvents {
+
+    [event: PropertyKey]: (options: any) => void
+};
+
 export interface ServiceData {
 
     name: string
@@ -6,10 +11,7 @@ export interface ServiceData {
     intents:  number
     partials: number[]
 
-    events: {
-
-        [event: PropertyKey]: (options: any) => void
-    }
+    events: ServiceEvents
 };
 
 export interface ServiceOptions {
@@ -20,8 +22,5 @@ export interface ServiceOptions {
     intents?:  number
     partials?: number[]
 
-    events: {
-
-        [event: PropertyKey]: (options: any) => void
-    }
+    events: ServiceEvents
 };

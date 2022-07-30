@@ -49,6 +49,8 @@ export interface ExecuteOptions {
     }
 };
 
+export type EventExecute = ({ client, file, loaded, used }: ExecuteOptions) => void;
+
 export interface EventData {
 
     name: string
@@ -57,7 +59,7 @@ export interface EventData {
     intents:  number
     partials: number[]
 
-    execute: ({ client, file, loaded, used }: ExecuteOptions) => void
+    execute: EventExecute
 };
 
 export interface EventOptions {
@@ -68,5 +70,5 @@ export interface EventOptions {
     intents?:  number
     partials?: number[]
 
-    execute: ({ client, file, loaded, used }: ExecuteOptions) => void
+    execute: EventExecute
 };

@@ -1,9 +1,11 @@
 import discord from 'discord.js';
 
+import { ApplicationType } from '../../types/Application.js';
+
 import {
 
     ChatApplicationData,
-    ChatApplicationShow,
+    ChatApplicationDisplay,
     ChatApplicationSchema,
     ChatApplicationOptions
 } from '../../types/Applications/ChatApplication.js';
@@ -14,7 +16,7 @@ export default class implements ChatApplicationData {
 
     name = 'undefined';
 
-    type: discord.ApplicationCommandType.ChatInput = discord.ApplicationCommandType.ChatInput;
+    type: ApplicationType = discord.ApplicationCommandType.ChatInput;
 
     priority = 0;
     intents  = 0;
@@ -23,7 +25,7 @@ export default class implements ChatApplicationData {
 
     events = {};
 
-    show: ChatApplicationShow = {
+    display: ChatApplicationDisplay = {
 
         dm: true,
 
@@ -37,14 +39,13 @@ export default class implements ChatApplicationData {
 
     schema: ChatApplicationSchema = {
 
-        options:                  this.show.options,
-        name:                     this.show.name.default,
-        description:              this.show.description.default,
-        defaultMemberPermissions: this.show.permissions.member,
-        defaultBotPermissions:    this.show.permissions.bot,
-        dmPermission:             this.show.dm,
-
-        type: this.type,
+        type:                     this.type,
+        name:                     this.display.name.default,
+        description:              this.display.description.default,
+        options:                  this.display.options,
+        defaultMemberPermissions: this.display.permissions.member,
+        defaultBotPermissions:    this.display.permissions.bot,
+        dmPermission:             this.display.dm,
 
         nameLocalizations:        {},
         descriptionLocalizations: {}
@@ -64,23 +65,23 @@ export default class implements ChatApplicationData {
             .filter((partial, ind, arr) => arr.indexOf(partial) === ind)
             .sort((a, b) => a - b);
 
-        this.show.name        = options.show.name;
-        this.show.description = options.show.description;
+        this.display.name        = options.display.name;
+        this.display.description = options.display.description;
 
-        this.show.dm      = options.show.dm      ?? this.show.dm;
-        this.show.options = options.show.options ?? this.show.options;
+        this.display.dm      = options.display.dm      ?? this.display.dm;
+        this.display.options = options.display.options ?? this.display.options;
 
-        this.show.permissions.member = options.show.permissions?.member ?? this.show.permissions.member;
-        this.show.permissions.bot    = options.show.permissions?.bot    ?? this.show.permissions.bot;
+        this.display.permissions.member = options.display.permissions?.member ?? this.display.permissions.member;
+        this.display.permissions.bot    = options.display.permissions?.bot    ?? this.display.permissions.bot;
 
-        this.schema.options                  = this.show.options;
-        this.schema.name                     = this.show.name.default;
-        this.schema.description              = this.show.description.default;
-        this.schema.defaultMemberPermissions = this.show.permissions.member;
-        this.schema.defaultBotPermissions    = this.show.permissions.bot;
-        this.schema.dmPermission             = this.show.dm;
+        this.schema.options                  = this.display.options;
+        this.schema.name                     = this.display.name.default;
+        this.schema.description              = this.display.description.default;
+        this.schema.defaultMemberPermissions = this.display.permissions.member;
+        this.schema.defaultBotPermissions    = this.display.permissions.bot;
+        this.schema.dmPermission             = this.display.dm;
 
-        this.schema.nameLocalizations        = deleteProperty(this.show.name, 'default');
-        this.schema.descriptionLocalizations = deleteProperty(this.show.description, 'default');
+        this.schema.nameLocalizations        = deleteProperty(this.display.name, 'default');
+        this.schema.descriptionLocalizations = deleteProperty(this.display.description, 'default');
     };
 };

@@ -1,9 +1,11 @@
 import discord from 'discord.js';
 
+import { ApplicationType } from '../../types/Application.js';
+
 import {
 
     UserApplicationData,
-    UserApplicationShow,
+    UserApplicationDisplay,
     UserApplicationSchema,
     UserApplicationOptions
 } from '../../types/Applications/UserApplication.js';
@@ -14,7 +16,7 @@ export default class implements UserApplicationData {
 
     name = 'undefined';
 
-    type: discord.ApplicationCommandType.User = discord.ApplicationCommandType.User;
+    type: ApplicationType = discord.ApplicationCommandType.User;
 
     priority = 0;
     intents  = 0;
@@ -23,7 +25,7 @@ export default class implements UserApplicationData {
 
     events = {};
 
-    show: UserApplicationShow = {
+    display: UserApplicationDisplay = {
 
         dm: true,
 
@@ -34,12 +36,11 @@ export default class implements UserApplicationData {
 
     schema: UserApplicationSchema = {
 
-        name:                     this.show.name.default,
-        defaultMemberPermissions: this.show.permissions.member,
-        defaultBotPermissions:    this.show.permissions.bot,
-        dmPermission:             this.show.dm,
-
-        type: this.type,
+        type:                     this.type,
+        name:                     this.display.name.default,
+        defaultMemberPermissions: this.display.permissions.member,
+        defaultBotPermissions:    this.display.permissions.bot,
+        dmPermission:             this.display.dm,
 
         nameLocalizations: {}
     };
@@ -58,18 +59,18 @@ export default class implements UserApplicationData {
             .filter((partial, ind, arr) => arr.indexOf(partial) === ind)
             .sort((a, b) => a - b);
 
-        this.show.name = options.show.name;
+        this.display.name = options.display.name;
 
-        this.show.dm = options.show.dm ?? this.show.dm;
+        this.display.dm = options.display.dm ?? this.display.dm;
 
-        this.show.permissions.member = options.show.permissions?.member ?? this.show.permissions.member;
-        this.show.permissions.bot    = options.show.permissions?.bot    ?? this.show.permissions.bot;
+        this.display.permissions.member = options.display.permissions?.member ?? this.display.permissions.member;
+        this.display.permissions.bot    = options.display.permissions?.bot    ?? this.display.permissions.bot;
 
-        this.schema.name                     = this.show.name.default;
-        this.schema.defaultMemberPermissions = this.show.permissions.member;
-        this.schema.defaultBotPermissions    = this.show.permissions.bot;
-        this.schema.dmPermission             = this.show.dm;
+        this.schema.name                     = this.display.name.default;
+        this.schema.defaultMemberPermissions = this.display.permissions.member;
+        this.schema.defaultBotPermissions    = this.display.permissions.bot;
+        this.schema.dmPermission             = this.display.dm;
 
-        this.schema.nameLocalizations = deleteProperty(this.show.name, 'default');
+        this.schema.nameLocalizations = deleteProperty(this.display.name, 'default');
     };
 };

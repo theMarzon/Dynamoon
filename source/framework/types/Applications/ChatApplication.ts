@@ -1,78 +1,74 @@
 import discord from 'discord.js';
 
-export interface ChatApplicationShow {
+import {
+
+    ApplicationName,
+    ApplicationDescription,
+    ApplicationType,
+    ApplicationOptions,
+    ApplicationPermissions,
+    ApplicationEvents
+} from '../Application.js';
+
+export interface ChatApplicationDisplay {
 
     dm: boolean
 
-    options: discord.ApplicationCommandOptionData[]
-
-    name: Partial<Record<discord.Locale, string>> & {
-
-        default: string
-    }
-
-    description: Partial<Record<discord.Locale, string>> & {
-
-        default: string
-    }
+    name:        ApplicationName
+    description: ApplicationDescription
+    options:     ApplicationOptions
 
     permissions: {
 
-        member: null | discord.PermissionFlags
-        bot:    null | discord.PermissionFlags
+        member: ApplicationPermissions
+        bot:    ApplicationPermissions
     }
 };
 
 export interface ChatApplicationSchema extends Required<Omit<discord.ChatInputApplicationCommandData, 'defaultMemberPermissions'>> {
 
-    defaultMemberPermissions: null | discord.PermissionFlags
-    defaultBotPermissions:    null | discord.PermissionFlags
+    defaultMemberPermissions: ApplicationPermissions
+    defaultBotPermissions:    ApplicationPermissions
 };
 
 export interface ChatApplicationData {
 
     name: string
 
-    type: discord.ApplicationCommandType.ChatInput
+    type: ApplicationType
 
     priority: number
     intents:  number
     partials: number[]
 
-    show:   ChatApplicationShow
-    schema: ChatApplicationSchema
+    display: ChatApplicationDisplay
+    schema:  ChatApplicationSchema
 
-    events: {
-
-        [event: PropertyKey]: (options: any) => void
-    }
+    events: ApplicationEvents
 };
 
-export interface ChatApplicationOptions extends Partial<Omit<ChatApplicationData, 'name' | 'type' | 'show' | 'events' | 'schema'>> {
+export interface ChatApplicationOptions {
 
     name: string
 
-    show: Partial<Omit<ChatApplicationShow, 'name' | 'description' | 'permissions'>> & {
+    priority?: number
+    intents?:  number
+    partials?: number[]
 
-        name: Partial<Record<discord.Locale, string>> & {
+    display: {
 
-            default: string
-        }
+        dm?: boolean
 
-        description: Partial<Record<discord.Locale, string>> & {
-
-            default: string
-        }
+        name:        ApplicationName
+        description: ApplicationDescription
+        options?:    ApplicationOptions
 
         permissions?: {
 
-            member?: null | discord.PermissionFlags
-            bot?:    null | discord.PermissionFlags
+            member?: ApplicationPermissions
+            bot?:    ApplicationPermissions
         }
-    };
-
-    events: {
-
-        [event: PropertyKey]: (options: any) => void
     }
+
+    events: ApplicationEvents
 };

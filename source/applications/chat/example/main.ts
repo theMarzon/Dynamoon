@@ -4,7 +4,7 @@ import { ChatApplicationOptions } from '../../../framework/types/Applications/Ch
 
 export default <Omit<ChatApplicationOptions, 'name' | 'schema'>> {
 
-    show: {
+    display: {
 
         name: {
 
