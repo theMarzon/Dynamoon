@@ -9,9 +9,13 @@ import usedEvents                from '../groupers/usedEvents.js';
 import usedIntents               from '../groupers/usedIntents.js';
 import usedPartials              from '../groupers/usedPartials.js';
 
-import { ClientOptions } from '../types/Client.js';
+import {
 
-export default class extends Client {
+    ClientData,
+    ClientOptions
+} from '../types/Client.js';
+
+export default class extends Client implements ClientData {
 
     framework = {
 
