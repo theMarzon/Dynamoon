@@ -2,7 +2,7 @@ import discord from 'discord.js';
 
 import { EventOptions } from '../../framework/types/Event.js';
 
-export default <Omit<EventOptions, 'name'>> {
+export default {
 
     priority: 2,
 
@@ -30,4 +30,4 @@ export default <Omit<EventOptions, 'name'>> {
             };
         });
     }
-};
+} as Omit<EventOptions, 'name'>;

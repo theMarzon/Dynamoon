@@ -3,7 +3,7 @@ import discord from 'discord.js';
 import { ChatApplicationOptions } from '../../../framework/types/Applications/ChatApplication.js';
 import { Application            } from '../../../events/application/types/Options.js';
 
-export default <Omit<ChatApplicationOptions, 'name' | 'schema'>> {
+export default {
 
     display: {
 
@@ -29,4 +29,4 @@ export default <Omit<ChatApplicationOptions, 'name' | 'schema'>> {
             event.reply(`${client.ws.ping} ms`);
         }
     }
-};
+} as Omit<ChatApplicationOptions, 'name' | 'schema'>;

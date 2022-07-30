@@ -12,7 +12,7 @@ import MessageApplication from '../../framework/structures/Applications/MessageA
 import { ServiceOptions } from '../../framework/types/Service.js';
 import { ClientReady    } from '../../events/clientReady/types/Options.js';
 
-export default <Omit<ServiceOptions, 'name'>> {
+export default {
 
     events: {
 
@@ -159,4 +159,4 @@ export default <Omit<ServiceOptions, 'name'>> {
             */
         }
     }
-};
+} as Omit<ServiceOptions, 'name'>;
